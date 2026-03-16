@@ -2,7 +2,8 @@ PROJECT_NAME           = "CPGen"
 PROJECT_BRIEF          = "C++ project generator"
 OUTPUT_DIRECTORY       = ./docs
 
-INPUT                  = ./src ./include
+USE_MDFILE_AS_MAINPAGE = readme.md
+INPUT                  = ./src ./include readme.md
 RECURSIVE              = YES
 FILE_PATTERNS          = *.c *.h *.cpp *.hpp *.asm
 
@@ -17,4 +18,3 @@ EXTRACT_STATIC         = YES
 HAVE_DOT               = YES
 CALL_GRAPH             = YES
 CALLER_GRAPH           = YES
-
