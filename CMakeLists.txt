@@ -16,7 +16,12 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI
   GIT_TAG v6.1.9)
 
-FetchContent_MakeAvailable(ftxui)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+)
+
+FetchContent_MakeAvailable(ftxui googletest)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Wshadow -Wconversion -Werror)
 
@@ -44,3 +49,18 @@ add_custom_command(
   POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/templates
           ${CMAKE_BINARY_DIR}/templates)
+
+enable_testing()
+
+add_executable(test_suite tests/main.cpp)
+target_include_directories(test_suite PRIVATE include)
+
+target_link_libraries(
+  test_suite
+  PRIVATE GTest::gtest_main
+  PRIVATE ftxui::screen
+  PRIVATE ftxui::dom
+  PRIVATE ftxui::component)
+
+include(GoogleTest)
+gtest_discover_tests(test_suite)
