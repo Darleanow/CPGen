@@ -7,6 +7,7 @@ RECURSIVE              = YES
 FILE_PATTERNS          = *.c *.h *.cpp *.hpp *.asm
 
 GENERATE_HTML          = YES
+HTML_OUTPUT            = HTML
 GENERATE_LATEX         = NO
 
 EXTRACT_ALL            = YES
