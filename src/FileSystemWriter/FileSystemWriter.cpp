@@ -1,7 +1,6 @@
 #include "CPGen/FileSystemWriter/FileSystemWriter.hpp"
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 #include <stdexcept>
 
 std::string FileSystemWriter::readFile(const std::filesystem::path &path) {

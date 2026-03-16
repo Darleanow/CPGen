@@ -1,8 +1,4 @@
 #include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
-#include "CPGen/CLI/CLI.hpp"
-#include "CPGen/FileSystemWriter/FileSystemWriter.hpp"
-#include <iostream>
-#include <unordered_map>
 
 ProjectGenerator::ProjectGenerator(const CLIOpts &opts) : m_opts(opts) {
   m_template_engine = TemplateEngine();
@@ -22,9 +18,6 @@ void ProjectGenerator::generate_project() {
   for (const auto &entry : fs::recursive_directory_iterator(source)) {
     fs::path rel = fs::relative(entry.path(), source);
     fs::path target = dest / rel;
-
-    std::cout << (entry.is_directory() ? "[DIRECTORY]: " : "[FILE]: ")
-              << entry.path().filename().c_str() << std::endl;
 
     if (entry.is_directory()) {
       fs::create_directories(target);
