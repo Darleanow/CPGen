@@ -31,18 +31,21 @@ if(CLANG_TIDY_EXE)
   set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY_EXE})
 endif()
 
-add_executable(
-  CPGen
-  src/main.cpp src/CLI/CLI.cpp src/FileSystemWriter/FileSystemWriter.cpp
+add_library(
+  CPGenSource
+  src/CLI/CLI.cpp src/FileSystemWriter/FileSystemWriter.cpp
   src/ProjectGenerator/ProjectGenerator.cpp
   src/TemplateEngine/TemplateEngine.cpp)
 
-target_include_directories(CPGen PRIVATE include)
+add_executable(CPGen src/main.cpp)
+
+target_include_directories(CPGenSource PUBLIC include)
 target_link_libraries(
   CPGen
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom
-  PRIVATE ftxui::component)
+  PRIVATE ftxui::component
+  PRIVATE CPGenSource)
 
 add_custom_command(
   TARGET CPGen
@@ -52,7 +55,7 @@ add_custom_command(
 
 enable_testing()
 
-add_executable(test_suite tests/main.cpp)
+add_executable(test_suite tests/main.cpp tests/UTCLI.cpp)
 target_include_directories(test_suite PRIVATE include)
 
 target_link_libraries(
@@ -60,7 +63,8 @@ target_link_libraries(
   PRIVATE GTest::gtest_main
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom
-  PRIVATE ftxui::component)
+  PRIVATE ftxui::component
+  PRIVATE CPGenSource)
 
 include(GoogleTest)
 gtest_discover_tests(test_suite)
