@@ -9,7 +9,7 @@ const CLIOpts CLI::parse(const int argc, char **argv) {
   CLIOpts opts;
 
   for (int i = 0; i < argc; i++) {
-    if (strcmp(argv[i], "-t") == 0 || strcmp(argv[i], "--tui") == 0) {
+    if (strcmp(argv[i], "-u") == 0 || strcmp(argv[i], "--tui") == 0) {
       opts.is_tui_mode = true;
       return opts; // Early return, the options will be set via tui
     }
@@ -50,14 +50,13 @@ const CLIOpts CLI::parse(const int argc, char **argv) {
     }
 
     if (strcmp(argv[i], "-t") == 0 || strcmp(argv[i], "--template") == 0) {
-      opts.use_template = true;
-
       i++;
 
       if (i >= argc) {
         throw std::runtime_error("No template argument provided!");
       }
 
+      opts.use_template = true;
       opts.template_name = argv[i];
 
       return opts; // We use the template as args, early return.
