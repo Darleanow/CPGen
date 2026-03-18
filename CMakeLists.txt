@@ -12,16 +12,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(FetchContent)
 
 FetchContent_Declare(
-  ftxui
-  GIT_REPOSITORY https://github.com/ArthurSonzogni/FTXUI
-  GIT_TAG v6.1.9)
-
-FetchContent_Declare(
   googletest
   URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 )
 
-FetchContent_MakeAvailable(ftxui googletest)
+FetchContent_MakeAvailable(googletest)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Wshadow -Wconversion -Werror)
 
@@ -33,19 +28,20 @@ endif()
 
 add_library(
   CPGenSource
-  src/CLI/CLI.cpp src/FileSystemWriter/FileSystemWriter.cpp
+  src/CLI/CLI.cpp
+  src/FileSystemWriter/FileSystemWriter.cpp
   src/ProjectGenerator/ProjectGenerator.cpp
-  src/TemplateEngine/TemplateEngine.cpp)
+  src/TemplateEngine/TemplateEngine.cpp
+  src/System/System.cpp
+  src/TUI/Components/Basic/Checkbox.cpp
+  src/TUI/Components/Groups/CheckboxGroup.cpp
+  src/TUI/View/MainView.cpp)
 
 add_executable(CPGen src/main.cpp)
 
-target_include_directories(CPGenSource PUBLIC include)
-target_link_libraries(
-  CPGen
-  PRIVATE ftxui::screen
-  PRIVATE ftxui::dom
-  PRIVATE ftxui::component
-  PRIVATE CPGenSource)
+target_include_directories(CPGenSource
+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(CPGen PRIVATE CPGenSource)
 
 add_custom_command(
   TARGET CPGen
@@ -61,9 +57,6 @@ target_include_directories(test_suite PRIVATE include)
 target_link_libraries(
   test_suite
   PRIVATE GTest::gtest_main
-  PRIVATE ftxui::screen
-  PRIVATE ftxui::dom
-  PRIVATE ftxui::component
   PRIVATE CPGenSource)
 
 include(GoogleTest)
