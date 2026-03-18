@@ -5,7 +5,7 @@ ProjectGenerator::ProjectGenerator(const CLIOpts &opts) : m_opts(opts) {
   m_writer = FileSystemWriter();
 }
 
-void ProjectGenerator::generate_project() {
+void ProjectGenerator::generateProject() {
   namespace fs = std::filesystem;
 
   fs::path source = "./templates/base";

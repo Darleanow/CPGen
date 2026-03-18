@@ -27,7 +27,7 @@ public:
   /**
    * @brief Generates the project
    */
-  void generate_project();
+  void generateProject();
 
 private:
   TemplateEngine m_template_engine; /**< Template Engine, handling the
