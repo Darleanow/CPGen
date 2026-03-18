@@ -1,11 +1,45 @@
 #include "CPGen/CLI/CLI.hpp"
 #include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
+#include "CPGen/System/System.hpp"
+#include "CPGen/TUI/Components/Groups/CheckboxGroup.hpp"
+#include "CPGen/TUI/Misc/Ascii.hpp"
+#include "CPGen/TUI/Misc/Utils.hpp"
+#include "CPGen/TUI/View/MainView.hpp"
+
+#include <cstdlib>
+#include <iostream>
 
 int main(int argc, char **argv) {
   CLI cli;
-  ProjectGenerator generator(cli.parse(argc, argv));
+  auto &opts = cli.parse(argc, argv);
+  ProjectGenerator generator(opts);
 
-  generator.generate_project();
+  if (!opts.is_tui_mode) {
+    generator.generateProject();
+  }
+
+  Utils::clear_screen();
+
+  if (!System::isFontValid()) {
+    std::cout << "Fallback to basic ascii output.\n";
+  }
+
+  Utils::clear_screen();
+
+  MainView view;
+  CLIOpts options;
+
+  auto group = std::make_unique<CheckboxGroup>(
+      "Testname", std::vector<std::string>({"Enable git ?", "Option 2"}),
+      std::vector<std::function<void(bool)>>(
+          {[&options](bool checked) { options.has_git = checked; },
+           [&options](bool checked) { options.name = checked ? "" : ""; }}),
+      Ascii::CppIcon);
+
+  view.addComponent(std::move(group));
+  view.render();
+
+  std::cout << options.has_git << "\n";
 
   return 0;
 }
