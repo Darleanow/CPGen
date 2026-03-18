@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['cli_0',['CLI',['../classCLI.html',1,'']]],
-  ['cli_2ecpp_1',['CLI.cpp',['../CLI_8cpp.html',1,'']]],
-  ['cli_2ehpp_2',['CLI.hpp',['../CLI_8hpp.html',1,'']]],
-  ['cliopts_3',['CLIOpts',['../structCLIOpts.html',1,'']]],
-  ['configurationmodel_2ecpp_4',['ConfigurationModel.cpp',['../ConfigurationModel_8cpp.html',1,'']]],
-  ['configurationmodel_2ehpp_5',['ConfigurationModel.hpp',['../ConfigurationModel_8hpp.html',1,'']]],
-  ['cpgen_6',['CPGen',['../index.html',1,'']]]
+  ['addcomponent_0',['addComponent',['../classMainView.html#a472b364592c981224b5ee10eb203a076',1,'MainView']]],
+  ['ascii_1',['Ascii',['../namespaceAscii.html',1,'']]],
+  ['ascii_2ehpp_2',['Ascii.hpp',['../Ascii_8hpp.html',1,'']]]
 ];

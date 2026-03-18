@@ -1,0 +1,19 @@
+<map id="include/CPGen/TUI/Components/Groups/CheckboxGroup.hpp" name="include/CPGen/TUI/Components/Groups/CheckboxGroup.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="243,5,454,46"/>
+<area shape="rect" id="Node000002" href="$Checkbox_8hpp.html" title=" " alt="" coords="120,94,286,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="317,49,250,88,248,84,314,44"/>
+<area shape="rect" id="Node000003" href="$Component_8hpp.html" title=" " alt="" coords="5,183,172,223"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="243,34,207,42,172,54,139,72,110,96,100,112,93,130,89,167,83,167,88,128,95,109,107,92,136,67,170,49,206,37,242,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="182,271,235,297"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="357,46,365,82,370,128,366,178,358,202,347,225,327,246,303,262,251,279,250,274,300,257,324,242,342,222,353,200,360,177,364,128,360,83,352,47"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="255,190,333,216"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="345,47,305,176,300,175,340,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="411,102,478,127"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="372,45,422,89,418,93,369,49"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="503,102,560,127"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="391,44,493,92,491,97,389,49"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,137,128,175,125,171,176,133"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="206,135,210,256,205,256,201,135"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="226,133,272,178,269,181,222,137"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="120,222,179,260,176,265,117,226"/>
+</map>

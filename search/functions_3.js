@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['readfile_0',['readFile',['../classFileSystemWriter.html#a133e432e2d67991814c5425c92d6fbad',1,'FileSystemWriter']]],
-  ['render_1',['render',['../classTemplateEngine.html#abdfb0a1b82ace67e58ad7fbda3c100ef',1,'TemplateEngine']]]
+  ['generateproject_0',['generateProject',['../classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d',1,'ProjectGenerator']]]
 ];

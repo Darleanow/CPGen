@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['template_5fname_0',['template_name',['../structCLIOpts.html#a36ecd29d631a6b0bdb75eee282055687',1,'CLIOpts']]],
-  ['templateengine_1',['TemplateEngine',['../classTemplateEngine.html',1,'']]],
-  ['templateengine_2ecpp_2',['TemplateEngine.cpp',['../TemplateEngine_8cpp.html',1,'']]],
-  ['templateengine_2ehpp_3',['TemplateEngine.hpp',['../TemplateEngine_8hpp.html',1,'']]]
+  ['main_0',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainview_2',['MainView',['../classMainView.html',1,'']]],
+  ['mainview_2ecpp_3',['MainView.cpp',['../MainView_8cpp.html',1,'']]],
+  ['mainview_2ehpp_4',['MainView.hpp',['../MainView_8hpp.html',1,'']]]
 ];

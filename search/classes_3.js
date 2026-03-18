@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['templateengine_0',['TemplateEngine',['../classTemplateEngine.html',1,'']]]
+  ['projectgenerator_0',['ProjectGenerator',['../classProjectGenerator.html',1,'']]]
 ];

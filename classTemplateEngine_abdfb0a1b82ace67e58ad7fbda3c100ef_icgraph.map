@@ -1,6 +1,6 @@
 <map id="TemplateEngine::render" name="TemplateEngine::render">
 <area shape="rect" id="Node000001" title="Renders a file content into a properly formatted string." alt="" coords="326,13,482,39"/>
-<area shape="rect" id="Node000002" href="$classProjectGenerator.html#a01c3255aaeac093e49235c9f09adfb23" title="Generates the project." alt="" coords="103,5,278,46"/>
+<area shape="rect" id="Node000002" href="$classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d" title="Generates the project." alt="" coords="103,5,278,46"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="310,28,278,28,278,23,310,23"/>
 <area shape="rect" id="Node000003" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,55,39"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,28,55,28,55,23,87,23"/>

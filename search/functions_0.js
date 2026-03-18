@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generate_5fproject_0',['generate_project',['../classProjectGenerator.html#a01c3255aaeac093e49235c9f09adfb23',1,'ProjectGenerator']]]
+  ['addcomponent_0',['addComponent',['../classMainView.html#a472b364592c981224b5ee10eb203a076',1,'MainView']]]
 ];

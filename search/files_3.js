@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['projectgenerator_2ecpp_0',['ProjectGenerator.cpp',['../ProjectGenerator_8cpp.html',1,'']]],
-  ['projectgenerator_2ehpp_1',['ProjectGenerator.hpp',['../ProjectGenerator_8hpp.html',1,'']]]
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainview_2ecpp_1',['MainView.cpp',['../MainView_8cpp.html',1,'']]],
+  ['mainview_2ehpp_2',['MainView.hpp',['../MainView_8hpp.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['projectgenerator_0',['ProjectGenerator',['../classProjectGenerator.html',1,'']]]
+  ['mainview_0',['MainView',['../classMainView.html',1,'']]]
 ];

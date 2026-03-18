@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name_0',['name',['../structCLIOpts.html#ac8a1ec3ededddf73ebdf849060658f3b',1,'CLIOpts']]]
+  ['dim_0',['DIM',['../namespaceUtils_1_1Colours.html#a92d78f537187865cf26f85aa0d66fb45',1,'Utils::Colours']]]
 ];
