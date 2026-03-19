@@ -1,11 +1,11 @@
 #include "CPGen/TUI/Components/Basic/Checkbox.hpp"
 #include "CPGen/TUI/Misc/Ascii.hpp"
 
-Checkbox::Checkbox(
-    std::string value_name,
-    std::function<void(bool)> callback) // I prefix here with space, simpler
-    : m_value_name(" " + std::move(value_name)), m_is_active(false),
-      m_callback(callback) {}
+Checkbox::Checkbox(std::string value_name,
+                   std::function<void(bool)> callback)
+    : m_value_name(" " +
+                   std::move(value_name)), // I prefix here with space, simpler
+      m_is_active(false), m_callback(callback) {}
 
 void Checkbox::check() {
   m_is_active = !m_is_active;
