@@ -1,9 +1,9 @@
 #include "CPGen/CLI/CLI.hpp"
 #include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
 #include "CPGen/System/System.hpp"
+#include "CPGen/TUI/Components/Basic/Input.hpp"
 #include "CPGen/TUI/Components/Groups/CheckboxGroup.hpp"
 #include "CPGen/TUI/Misc/Ascii.hpp"
-#include "CPGen/TUI/Misc/Utils.hpp"
 #include "CPGen/TUI/View/MainView.hpp"
 
 #include <cstdlib>
@@ -18,13 +18,13 @@ int main(int argc, char **argv) {
     generator.generateProject();
   }
 
-  Utils::clear_screen();
+  std::system("clear");
 
   if (!System::isFontValid()) {
     std::cout << "Fallback to basic ascii output.\n";
   }
 
-  Utils::clear_screen();
+  std::system("clear");
 
   MainView view;
   CLIOpts options;
@@ -36,7 +36,11 @@ int main(int argc, char **argv) {
            [&options](bool checked) { options.name = checked ? "" : ""; }}),
       Ascii::CppIcon);
 
+  auto input = std::make_unique<Input>(
+      "Name", [&options](std::string value) { options.name = value; });
+
   view.addComponent(std::move(group));
+  view.addComponent(std::move(input));
   view.render();
 
   std::cout << options.has_git << "\n";

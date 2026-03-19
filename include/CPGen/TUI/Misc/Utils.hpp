@@ -64,6 +64,4 @@ inline std::string esc(const char *code) {
 
 } // namespace Colours
 
-static void clear_screen() { std::system("clear"); }
-
 } // namespace Utils
