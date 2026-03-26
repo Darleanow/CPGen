@@ -88,11 +88,13 @@ $(function() {
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#aComponent" alt=""/>
 <map name="aComponent" id="aComponent">
-<area shape="rect" href="classComponent.html" title=" " alt="" coords="5,31,93,56"/>
-<area shape="rect" href="classCheckbox.html" title=" " alt="" coords="158,5,237,31"/>
-<area shape="poly" title=" " alt="" coords="108,31,157,22,158,27,109,36"/>
-<area shape="rect" href="classCheckboxGroup.html" title=" " alt="" coords="141,55,254,80"/>
-<area shape="poly" title=" " alt="" coords="109,50,141,56,140,61,108,56"/>
+<area shape="rect" href="classComponent.html" title="Abstract base for all TUI components." alt="" coords="5,55,93,80"/>
+<area shape="rect" href="classCheckbox.html" title="A toggleable checkbox component." alt="" coords="163,5,241,31"/>
+<area shape="poly" title=" " alt="" coords="105,47,161,28,163,33,107,52"/>
+<area shape="rect" href="classComponentGroup.html" title="A generic container that holds child components." alt="" coords="141,55,263,80"/>
+<area shape="poly" title=" " alt="" coords="108,65,140,65,140,70,108,70"/>
+<area shape="rect" href="classInput.html" title="A single&#45;line text input component." alt="" coords="177,104,227,130"/>
+<area shape="poly" title=" " alt="" coords="106,83,177,106,176,111,105,88"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#aFileSystemWriter" alt=""/>
@@ -100,19 +102,24 @@ $(function() {
 <area shape="rect" href="classFileSystemWriter.html" title="Permits reading and writing file based on our use case." alt="" coords="5,5,126,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aMainView" alt=""/>
-<map name="aMainView" id="aMainView">
-<area shape="rect" href="classMainView.html" title=" " alt="" coords="5,5,84,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aProjectGenerator" alt=""/>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aProjectGenerator" alt=""/>
 <map name="aProjectGenerator" id="aProjectGenerator">
 <area shape="rect" href="classProjectGenerator.html" title="Generates a project by using FileSystemWriter and TemplateEngine." alt="" coords="5,5,125,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aTemplateEngine" alt=""/>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aTemplateEngine" alt=""/>
 <map name="aTemplateEngine" id="aTemplateEngine">
 <area shape="rect" href="classTemplateEngine.html" title=" " alt="" coords="5,5,120,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aTerminal" alt=""/>
+<map name="aTerminal" id="aTerminal">
+<area shape="rect" href="classTerminal.html" title="RAII raw&#45;mode terminal handler." alt="" coords="5,5,77,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_7.png" border="0" usemap="#aView" alt=""/>
+<map name="aView" id="aView">
+<area shape="rect" href="classView.html" title="Top&#45;level TUI view that manages sections and the main loop." alt="" coords="5,5,56,31"/>
 </map>
 </td></tr>
 </table>

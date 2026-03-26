@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['check_0',['check',['../classCheckbox.html#a65c8a93773d759de1fc01963d48cf62f',1,'Checkbox']]],
-  ['checkbox_1',['Checkbox',['../classCheckbox.html#a123418b89db9d4e50023c337c1ce5104',1,'Checkbox']]],
-  ['checkboxgroup_2',['CheckboxGroup',['../classCheckboxGroup.html#a0122183399e042659ec6709f71c85ecc',1,'CheckboxGroup']]]
+  ['checkbox_0',['Checkbox',['../classCheckbox.html#a706fa99ec299af35aa5a3058757b83f4',1,'Checkbox']]],
+  ['componentgroup_1',['ComponentGroup',['../classComponentGroup.html#a7bf4c9321510139ca687d17d7b330668',1,'ComponentGroup']]]
 ];

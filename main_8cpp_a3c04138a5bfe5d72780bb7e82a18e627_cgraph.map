@@ -1,15 +1,13 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,137,55,163"/>
-<area shape="rect" id="Node000002" href="$classMainView.html#a472b364592c981224b5ee10eb203a076" title=" " alt="" coords="105,23,276,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,136,61,98,80,77,101,59,111,53,113,58,104,63,83,80,65,101,40,139"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,109,55,135"/>
+<area shape="rect" id="Node000002" href="$classView.html#a461691bbc52ec6fd50c134b059cb1a80" title=" " alt="" coords="130,23,251,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="41,107,67,82,101,59,115,52,117,57,104,63,71,87,45,111"/>
 <area shape="rect" id="Node000003" href="$classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d" title="Generates the project." alt="" coords="103,73,278,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="54,139,116,117,118,122,56,144"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,115,87,109,88,114,56,120"/>
 <area shape="rect" id="Node000008" href="$namespaceSystem.html#a1b2ff6b39ccecd14ad05226a2b78a6b2" title=" " alt="" coords="122,137,259,163"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="55,148,107,148,107,153,55,153"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="56,124,107,133,106,138,55,129"/>
 <area shape="rect" id="Node000009" href="$classCLI.html#a5460726e5af00648528bc52d5817ebc5" title="Parse argc, argv." alt="" coords="150,187,231,212"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="56,157,103,173,136,183,134,188,102,178,54,162"/>
-<area shape="rect" id="Node000010" href="$classMainView.html#a789d739abd9aaf7e75628204dc8c8b26" title=" " alt="" coords="130,236,251,262"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="42,162,68,192,104,223,117,229,115,234,101,227,64,196,38,165"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="47,133,73,154,104,173,136,185,134,190,101,178,70,158,44,137"/>
 <area shape="rect" id="Node000004" href="$classCLI.html#abe59af765911693289c9d53bf7dcd2ca" title="Translates CLIOpts into a keymap." alt="" coords="358,5,470,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="247,69,277,58,325,40,346,33,347,38,327,45,279,63,249,74"/>
 <area shape="rect" id="Node000005" href="$classFileSystemWriter.html#a133e432e2d67991814c5425c92d6fbad" title="Reads a file and returns a string of its content." alt="" coords="328,55,500,80"/>

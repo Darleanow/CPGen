@@ -77,14 +77,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A toggleable checkbox component.  
+ <a href="classCheckbox.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Checkbox_8hpp_source.html">Checkbox.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Checkbox:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCheckbox__inherit__graph.png" border="0" usemap="#aCheckbox_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCheckbox_inherit__map" id="aCheckbox_inherit__map">
-<area shape="rect" title=" " alt="" coords="10,79,88,105"/>
-<area shape="rect" href="classComponent.html" title=" " alt="" coords="5,5,93,31"/>
+<area shape="rect" title="A toggleable checkbox component." alt="" coords="10,79,88,105"/>
+<area shape="rect" href="classComponent.html" title="Abstract base for all TUI components." alt="" coords="5,5,93,31"/>
 <area shape="poly" title=" " alt="" coords="52,46,52,79,46,79,46,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -93,26 +96,46 @@ Collaboration diagram for Checkbox:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCheckbox__coll__graph.png" border="0" usemap="#aCheckbox_coll__map" alt="Collaboration graph"/></div>
 <map name="aCheckbox_coll__map" id="aCheckbox_coll__map">
-<area shape="rect" title=" " alt="" coords="10,79,88,105"/>
-<area shape="rect" href="classComponent.html" title=" " alt="" coords="5,5,93,31"/>
+<area shape="rect" title="A toggleable checkbox component." alt="" coords="10,79,88,105"/>
+<area shape="rect" href="classComponent.html" title="Abstract base for all TUI components." alt="" coords="5,5,93,31"/>
 <area shape="poly" title=" " alt="" coords="52,46,52,79,46,79,46,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a123418b89db9d4e50023c337c1ce5104" id="r_a123418b89db9d4e50023c337c1ce5104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a123418b89db9d4e50023c337c1ce5104">Checkbox</a> (std::string value_name, std::function&lt; void(bool)&gt; callback)</td></tr>
-<tr class="separator:a123418b89db9d4e50023c337c1ce5104"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c8a93773d759de1fc01963d48cf62f" id="r_a65c8a93773d759de1fc01963d48cf62f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a65c8a93773d759de1fc01963d48cf62f">check</a> ()</td></tr>
-<tr class="separator:a65c8a93773d759de1fc01963d48cf62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fad78535c56b03189e8464bba8c97d1" id="r_a5fad78535c56b03189e8464bba8c97d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a5fad78535c56b03189e8464bba8c97d1">isActive</a> () const</td></tr>
-<tr class="separator:a5fad78535c56b03189e8464bba8c97d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a706fa99ec299af35aa5a3058757b83f4" id="r_a706fa99ec299af35aa5a3058757b83f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a706fa99ec299af35aa5a3058757b83f4">Checkbox</a> (std::string label, std::function&lt; void(bool)&gt; on_change)</td></tr>
+<tr class="separator:a706fa99ec299af35aa5a3058757b83f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a186f541cd644204424bc72e22d992a49" id="r_a186f541cd644204424bc72e22d992a49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a186f541cd644204424bc72e22d992a49">isChecked</a> () const</td></tr>
+<tr class="separator:a186f541cd644204424bc72e22d992a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba37c5b13b4d22314d004a74388f2737" id="r_aba37c5b13b4d22314d004a74388f2737"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#aba37c5b13b4d22314d004a74388f2737">render</a> () const override</td></tr>
+<tr class="memdesc:aba37c5b13b4d22314d004a74388f2737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the component as an ANSI string.  <br /></td></tr>
 <tr class="separator:aba37c5b13b4d22314d004a74388f2737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b38a75c3734fa8b9b8c0f80cc08f35c" id="r_a3b38a75c3734fa8b9b8c0f80cc08f35c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCheckbox.html#a3b38a75c3734fa8b9b8c0f80cc08f35c">handleInput</a> (<a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> key) override</td></tr>
+<tr class="memdesc:a3b38a75c3734fa8b9b8c0f80cc08f35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key press.  <br /></td></tr>
+<tr class="separator:a3b38a75c3734fa8b9b8c0f80cc08f35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
+<tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_classComponent" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
+<tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97afed203882996edf2a434e55b4372c inherit pub_methods_classComponent" id="r_a97afed203882996edf2a434e55b4372c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a> (bool focused)</td></tr>
+<tr class="memdesc:a97afed203882996edf2a434e55b4372c inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the focus state of this component.  <br /></td></tr>
+<tr class="separator:a97afed203882996edf2a434e55b4372c inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent" id="r_ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad8782aeeb6c0d675f65c063f3e4a0bc1">isFocused</a> () const</td></tr>
+<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this component is focused.  <br /></td></tr>
+<tr class="separator:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classComponent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
+<tr class="memitem:a11504494f0319149ff979778aa074810 inherit pro_attribs_classComponent" id="r_a11504494f0319149ff979778aa074810"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">m_is_focused</a> = false</td></tr>
+<tr class="separator:a11504494f0319149ff979778aa074810 inherit pro_attribs_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a123418b89db9d4e50023c337c1ce5104" name="a123418b89db9d4e50023c337c1ce5104"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a123418b89db9d4e50023c337c1ce5104">&#9670;&#160;</a></span>Checkbox()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A toggleable checkbox component. </p>
+<p>Displays a label with a checked/unchecked icon. Fires on_change(bool) callback when toggled via Enter. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a706fa99ec299af35aa5a3058757b83f4" name="a706fa99ec299af35aa5a3058757b83f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a706fa99ec299af35aa5a3058757b83f4">&#9670;&#160;</a></span>Checkbox()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,13 +144,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Checkbox::Checkbox </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>value_name</em>, </td>
+          <td class="paramname"><em>label</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::function&lt; void(bool)&gt;&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
+          <td class="paramname"><em>on_change</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -140,31 +163,51 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a65c8a93773d759de1fc01963d48cf62f" name="a65c8a93773d759de1fc01963d48cf62f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65c8a93773d759de1fc01963d48cf62f">&#9670;&#160;</a></span>check()</h2>
+<a id="a3b38a75c3734fa8b9b8c0f80cc08f35c" name="a3b38a75c3734fa8b9b8c0f80cc08f35c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b38a75c3734fa8b9b8c0f80cc08f35c">&#9670;&#160;</a></span>handleInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Checkbox::check </td>
+          <td class="memname">bool Checkbox::handleInput </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Handle a key press. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key event </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the key was consumed, false to bubble up </dd></dl>
+
+<p>Implements <a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">Component</a>.</p>
 
 </div>
 </div>
-<a id="a5fad78535c56b03189e8464bba8c97d1" name="a5fad78535c56b03189e8464bba8c97d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fad78535c56b03189e8464bba8c97d1">&#9670;&#160;</a></span>isActive()</h2>
+<a id="a186f541cd644204424bc72e22d992a49" name="a186f541cd644204424bc72e22d992a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186f541cd644204424bc72e22d992a49">&#9670;&#160;</a></span>isChecked()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Checkbox::isActive </td>
+          <td class="memname">bool Checkbox::isChecked </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -196,6 +239,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Render the component as an ANSI string. </p>
+<dl class="section return"><dt>Returns</dt><dd>The rendered string (may contain newlines) </dd></dl>
 
 <p>Implements <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">Component</a>.</p>
 

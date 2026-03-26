@@ -1,0 +1,5 @@
+<map id="ComponentGroup::render" name="ComponentGroup::render">
+<area shape="rect" id="Node000001" title="Render the component as an ANSI string." alt="" coords="5,5,170,31"/>
+<area shape="rect" id="Node000002" href="$namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="218,5,339,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,202,16,202,21,170,21"/>
+</map>

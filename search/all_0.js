@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['addcomponent_0',['addComponent',['../classMainView.html#a472b364592c981224b5ee10eb203a076',1,'MainView']]],
-  ['ascii_1',['Ascii',['../namespaceAscii.html',1,'']]],
-  ['ascii_2ehpp_2',['Ascii.hpp',['../Ascii_8hpp.html',1,'']]]
+  ['addchild_0',['addChild',['../classComponentGroup.html#a5bde9780f76a87df327c6f6529af5caf',1,'ComponentGroup']]],
+  ['addsection_1',['addSection',['../classView.html#a461691bbc52ec6fd50c134b059cb1a80',1,'View']]],
+  ['ascii_2',['Ascii',['../namespaceAscii.html',1,'']]],
+  ['ascii_2ehpp_3',['Ascii.hpp',['../Ascii_8hpp.html',1,'']]]
 ];

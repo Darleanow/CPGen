@@ -1,0 +1,16 @@
+<map id="include/CPGen/TUI/Components/Groups/ComponentGroup.hpp" name="include/CPGen/TUI/Components/Groups/ComponentGroup.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="161,5,373,46"/>
+<area shape="rect" id="Node000002" href="$Component_8hpp.html" title=" " alt="" coords="29,94,195,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,49,161,89,159,84,230,44"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="206,183,259,208"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="265,47,240,168,235,167,260,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="269,102,337,127"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="277,45,295,86,290,88,273,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="361,102,418,127"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="296,44,362,90,359,95,293,49"/>
+<area shape="rect" id="Node000003" href="$Defs_8hpp.html" title=" " alt="" coords="5,183,182,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,136,102,168,97,167,105,134"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="143,133,203,172,200,176,140,137"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="63,256,124,282"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,209,96,241,91,241,91,209"/>
+</map>

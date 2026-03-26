@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['name_0',['name',['../structCLIOpts.html#ac8a1ec3ededddf73ebdf849060658f3b',1,'CLIOpts']]],
-  ['neovimicon_1',['NeoVimIcon',['../namespaceAscii.html#a775e1db35936300eb603d39ca7891bc1',1,'Ascii']]]
+  ['m_5fis_5ffocused_0',['m_is_focused',['../classComponent.html#a11504494f0319149ff979778aa074810',1,'Component']]]
 ];

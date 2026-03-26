@@ -1,0 +1,5 @@
+<map id="Utils::readKey" name="Utils::readKey">
+<area shape="rect" id="Node000001" title="Read a single key from stdin (raw mode must be active)" alt="" coords="5,5,107,31"/>
+<area shape="rect" id="Node000002" href="$namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Check if stdin has data available within a timeout." alt="" coords="155,5,273,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
+</map>

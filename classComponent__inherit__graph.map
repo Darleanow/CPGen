@@ -1,7 +1,9 @@
 <map id="Component" name="Component">
-<area shape="rect" id="Node000001" title=" " alt="" coords="61,5,148,31"/>
-<area shape="rect" id="Node000002" href="$classCheckbox.html" title=" " alt="" coords="5,79,84,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,44,57,80,53,77,83,41"/>
-<area shape="rect" id="Node000003" href="$classCheckboxGroup.html" title=" " alt="" coords="108,79,221,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="126,41,156,77,152,80,122,44"/>
+<area shape="rect" id="Node000001" title="Abstract base for all TUI components." alt="" coords="125,5,212,31"/>
+<area shape="rect" id="Node000002" href="$classCheckbox.html" title="A toggleable checkbox component." alt="" coords="5,79,84,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,41,67,81,64,76,133,37"/>
+<area shape="rect" id="Node000003" href="$classComponentGroup.html" title="A generic container that holds child components." alt="" coords="107,79,230,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,46,171,79,166,79,166,46"/>
+<area shape="rect" id="Node000004" href="$classInput.html" title="A single&#45;line text input component." alt="" coords="254,79,304,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,37,262,76,259,81,198,42"/>
 </map>

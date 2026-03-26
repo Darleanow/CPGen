@@ -72,10 +72,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classComponent-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Component Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract base for all TUI components.  
+ <a href="classComponent.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Component_8hpp_source.html">Component.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -83,11 +87,13 @@ Inheritance diagram for Component:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponent__inherit__graph.png" border="0" usemap="#aComponent_inherit__map" alt="Inheritance graph"/></div>
 <map name="aComponent_inherit__map" id="aComponent_inherit__map">
-<area shape="rect" title=" " alt="" coords="61,5,148,31"/>
-<area shape="rect" href="classCheckbox.html" title=" " alt="" coords="5,79,84,105"/>
-<area shape="poly" title=" " alt="" coords="87,44,57,80,53,77,83,41"/>
-<area shape="rect" href="classCheckboxGroup.html" title=" " alt="" coords="108,79,221,105"/>
-<area shape="poly" title=" " alt="" coords="126,41,156,77,152,80,122,44"/>
+<area shape="rect" title="Abstract base for all TUI components." alt="" coords="125,5,212,31"/>
+<area shape="rect" href="classCheckbox.html" title="A toggleable checkbox component." alt="" coords="5,79,84,105"/>
+<area shape="poly" title=" " alt="" coords="136,41,67,81,64,76,133,37"/>
+<area shape="rect" href="classComponentGroup.html" title="A generic container that holds child components." alt="" coords="107,79,230,105"/>
+<area shape="poly" title=" " alt="" coords="171,46,171,79,166,79,166,46"/>
+<area shape="rect" href="classInput.html" title="A single&#45;line text input component." alt="" coords="254,79,304,105"/>
+<area shape="poly" title=" " alt="" coords="201,37,262,76,259,81,198,42"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -96,9 +102,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
 <tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56c380eec1405c24bd72898879f3dfa2" id="r_a56c380eec1405c24bd72898879f3dfa2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">render</a> () const =0</td></tr>
+<tr class="memdesc:a56c380eec1405c24bd72898879f3dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the component as an ANSI string.  <br /></td></tr>
 <tr class="separator:a56c380eec1405c24bd72898879f3dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eeb99a49126e02fc8b787ba75344a99" id="r_a5eeb99a49126e02fc8b787ba75344a99"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">handleInput</a> (<a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> key)=0</td></tr>
+<tr class="memdesc:a5eeb99a49126e02fc8b787ba75344a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key press.  <br /></td></tr>
+<tr class="separator:a5eeb99a49126e02fc8b787ba75344a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97afed203882996edf2a434e55b4372c" id="r_a97afed203882996edf2a434e55b4372c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a> (bool focused)</td></tr>
+<tr class="memdesc:a97afed203882996edf2a434e55b4372c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the focus state of this component.  <br /></td></tr>
+<tr class="separator:a97afed203882996edf2a434e55b4372c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8782aeeb6c0d675f65c063f3e4a0bc1" id="r_ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad8782aeeb6c0d675f65c063f3e4a0bc1">isFocused</a> () const</td></tr>
+<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this component is focused.  <br /></td></tr>
+<tr class="separator:ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a11504494f0319149ff979778aa074810" id="r_a11504494f0319149ff979778aa074810"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">m_is_focused</a> = false</td></tr>
+<tr class="separator:a11504494f0319149ff979778aa074810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base for all TUI components. </p>
+<p>Provides the common interface: render, handle input, and focus. Every component must implement <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2" title="Render the component as an ANSI string.">render()</a> and <a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99" title="Handle a key press.">handleInput()</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad82d7393e339c1b19cc17a0d55b5674d" name="ad82d7393e339c1b19cc17a0d55b5674d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad82d7393e339c1b19cc17a0d55b5674d">&#9670;&#160;</a></span>~Component()</h2>
 
@@ -125,6 +149,71 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5eeb99a49126e02fc8b787ba75344a99" name="a5eeb99a49126e02fc8b787ba75344a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eeb99a49126e02fc8b787ba75344a99">&#9670;&#160;</a></span>handleInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool Component::handleInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a key press. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key event </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the key was consumed, false to bubble up </dd></dl>
+
+<p>Implemented in <a class="el" href="classCheckbox.html#a3b38a75c3734fa8b9b8c0f80cc08f35c">Checkbox</a>, <a class="el" href="classInput.html#a0f7de11d5920afff71d5f1e2a08db3a9">Input</a>, and <a class="el" href="classComponentGroup.html#a86537b51456d6d266b17a746e03f8222">ComponentGroup</a>.</p>
+
+</div>
+</div>
+<a id="ad8782aeeb6c0d675f65c063f3e4a0bc1" name="ad8782aeeb6c0d675f65c063f3e4a0bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8782aeeb6c0d675f65c063f3e4a0bc1">&#9670;&#160;</a></span>isFocused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Component::isFocused </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether this component is focused. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if focused </dd></dl>
+
+</div>
+</div>
 <a id="a56c380eec1405c24bd72898879f3dfa2" name="a56c380eec1405c24bd72898879f3dfa2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56c380eec1405c24bd72898879f3dfa2">&#9670;&#160;</a></span>render()</h2>
 
@@ -148,7 +237,69 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classCheckbox.html#aba37c5b13b4d22314d004a74388f2737">Checkbox</a>, and <a class="el" href="classCheckboxGroup.html#ad2ea2834e05bed014f57a468e0d6a1ff">CheckboxGroup</a>.</p>
+<p>Render the component as an ANSI string. </p>
+<dl class="section return"><dt>Returns</dt><dd>The rendered string (may contain newlines) </dd></dl>
+
+<p>Implemented in <a class="el" href="classCheckbox.html#aba37c5b13b4d22314d004a74388f2737">Checkbox</a>, <a class="el" href="classInput.html#a12dc4ccf2107bffd8914d52fc7ae735c">Input</a>, and <a class="el" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41">ComponentGroup</a>.</p>
+
+</div>
+</div>
+<a id="a97afed203882996edf2a434e55b4372c" name="a97afed203882996edf2a434e55b4372c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97afed203882996edf2a434e55b4372c">&#9670;&#160;</a></span>setFocused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::setFocused </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>focused</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the focus state of this component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">focused</td><td>Whether this component should be focused </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classComponentGroup.html#a430f3fb6bac35604ca246abf298bd59d">ComponentGroup</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a11504494f0319149ff979778aa074810" name="a11504494f0319149ff979778aa074810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11504494f0319149ff979778aa074810">&#9670;&#160;</a></span>m_is_focused</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Component::m_is_focused = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
