@@ -4,18 +4,27 @@
 #include <functional>
 #include <string>
 
-class Checkbox : Component {
+/**
+ * @class Checkbox
+ * @brief A toggleable checkbox component
+ *
+ * Displays a label with a checked/unchecked icon.
+ * Fires on_change(bool) callback when toggled via Enter.
+ */
+class Checkbox : public Component {
 public:
-  Checkbox(std::string value_name, std::function<void(bool)> callback);
+  Checkbox(std::string label, std::function<void(bool)> on_change);
 
-  void check();
-  bool isActive() const;
+  bool isChecked() const;
 
   std::string render() const override;
+  bool handleInput(Defs::Key key) override;
 
 private:
-  std::string m_value_name;
-  bool m_is_active;
+  std::string m_label;
+  bool m_is_checked = false;
 
-  std::function<void(bool)> m_callback;
+  std::function<void(bool)> m_on_change;
+
+  void toggle();
 };

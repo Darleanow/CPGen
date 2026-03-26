@@ -1,12 +1,20 @@
 #pragma once
-#include <cstdlib>
+
+#include "CPGen/TUI/Misc/Defs.hpp"
+#include <cwchar>
 #include <string>
+#include <unordered_map>
+
+#ifndef _WIN32
+#include <poll.h>
+#include <unistd.h>
+#endif
 
 namespace Utils {
 
 namespace Colours {
 
-// Foreground (texte)
+// Foreground (text)
 inline constexpr const char *FG_BLACK = "30";
 inline constexpr const char *FG_RED = "31";
 inline constexpr const char *FG_GREEN = "32";
@@ -63,5 +71,97 @@ inline std::string esc(const char *code) {
 }
 
 } // namespace Colours
+
+/**
+ * @brief Check if stdin has data available within a timeout
+ * @param timeout_ms Timeout in milliseconds (0 = non-blocking check)
+ * @return true if data is available to read
+ */
+inline bool stdinReady(int timeout_ms) {
+#ifndef _WIN32
+  struct pollfd pfd = {STDIN_FILENO, POLLIN, 0};
+  return poll(&pfd, 1, timeout_ms) > 0;
+#else
+  (void)timeout_ms;
+  return true;
+#endif
+}
+
+/**
+ * @brief Compute the visual (display) width of a UTF-8 string,
+ *        stripping ANSI escape sequences.
+ * @param s The string potentially containing ANSI codes
+ * @return The number of terminal columns the string occupies
+ */
+inline size_t visualWidth(const std::string &s) {
+  std::string stripped;
+  stripped.reserve(s.size());
+
+  bool in_escape = false;
+  for (char c : s) {
+    if (in_escape) {
+      if (std::isalpha(c))
+        in_escape = false;
+    } else if (c == '\033') {
+      in_escape = true;
+    } else {
+      stripped += c;
+    }
+  }
+
+  std::wstring wide(stripped.size(), L'\0');
+  std::mbstowcs(wide.data(), stripped.c_str(), stripped.size());
+  wide.resize(std::wcslen(wide.c_str()));
+
+  // todo(Darleanow): Make this monstruosity multiplatform (aint have this on
+  // win)
+  // Considering using the utf8proc
+  const int w = ::wcswidth(wide.c_str(), wide.size()); // POSIX
+  return w < 0 ? wide.size() : static_cast<size_t>(w);
+}
+
+/**
+ * @brief Read a single key from stdin (raw mode must be active)
+ * @return The key as a Defs::Key variant
+ */
+inline Defs::Key readKey() {
+  char buf[3] = {};
+  read(STDIN_FILENO, buf, 1);
+
+  if (buf[0] == '\r' || buf[0] == '\n')
+    return Defs::Special::Enter;
+  if (buf[0] == 27) {
+    // Wait briefly to see if more bytes follow (escape sequence)
+    // Arrow keys etc. send ESC [ X in quick succession;
+    // a bare Escape press sends only ESC with no follow-up.
+    if (!stdinReady(50))
+      return Defs::Special::Escape; // Bare escape — return immediately
+
+    char seq[2] = {};
+    read(STDIN_FILENO, seq, 1);
+
+    if (seq[0] == '[') {
+      if (stdinReady(50)) {
+        read(STDIN_FILENO, seq + 1, 1);
+        static const std::unordered_map<char, Defs::Special> arrows = {
+            {'A', Defs::Special::Up},
+            {'B', Defs::Special::Down},
+            {'C', Defs::Special::Right},
+            {'D', Defs::Special::Left}};
+
+        if (auto it = arrows.find(seq[1]); it != arrows.end())
+          return it->second;
+      }
+    }
+
+    return Defs::Special::Escape;
+  }
+  if (buf[0] == 127 || buf[0] == 8)
+    return Defs::Special::Backspace;
+  if (buf[0] == '\t')
+    return Defs::Special::Tab;
+
+  return buf[0]; // Regular character
+}
 
 } // namespace Utils
