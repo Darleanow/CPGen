@@ -16,7 +16,12 @@ FetchContent_Declare(
   URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
 )
 
-FetchContent_MakeAvailable(googletest)
+FetchContent_Declare(
+  json
+  GIT_REPOSITORY https://github.com/nlohmann/json
+  GIT_TAG v3.12.0)
+
+FetchContent_MakeAvailable(googletest json)
 
 add_compile_options(-Wall -Wextra -Wpedantic -Wshadow -Wconversion -Werror)
 
@@ -34,8 +39,11 @@ add_library(
   src/TemplateEngine/TemplateEngine.cpp
   src/System/System.cpp
   src/TUI/Components/Basic/Checkbox.cpp
-  src/TUI/Components/Groups/CheckboxGroup.cpp
-  src/TUI/View/MainView.cpp)
+  src/TUI/Components/Basic/Input.cpp
+  src/TUI/Components/Groups/ComponentGroup.cpp
+  src/TUI/View/View.cpp)
+
+target_link_libraries(CPGenSource PRIVATE nlohmann_json::nlohmann_json)
 
 add_executable(CPGen src/main.cpp)
 

@@ -1,10 +1,12 @@
 #include "CPGen/CLI/CLI.hpp"
 #include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
 #include "CPGen/System/System.hpp"
+#include "CPGen/TUI/Components/Basic/Checkbox.hpp"
 #include "CPGen/TUI/Components/Basic/Input.hpp"
-#include "CPGen/TUI/Components/Groups/CheckboxGroup.hpp"
+#include "CPGen/TUI/Components/Groups/ComponentGroup.hpp"
 #include "CPGen/TUI/Misc/Ascii.hpp"
-#include "CPGen/TUI/View/MainView.hpp"
+#include "CPGen/TUI/View/View.hpp"
+#include <locale>
 
 #include <cstdlib>
 #include <iostream>
@@ -16,34 +18,40 @@ int main(int argc, char **argv) {
 
   if (!opts.is_tui_mode) {
     generator.generateProject();
+    return 0;
   }
 
-  std::system("clear");
+  std::setlocale(LC_ALL, "");
 
   if (!System::isFontValid()) {
     std::cout << "Fallback to basic ascii output.\n";
   }
 
-  std::system("clear");
-
-  MainView view;
   CLIOpts options;
 
-  auto group = std::make_unique<CheckboxGroup>(
-      "Testname", std::vector<std::string>({"Enable git ?", "Option 2"}),
-      std::vector<std::function<void(bool)>>(
-          {[&options](bool checked) { options.has_git = checked; },
-           [&options](bool checked) { options.name = checked ? "" : ""; }}),
-      Ascii::CppIcon);
+  // Build the UI
+  auto group =
+      std::make_unique<ComponentGroup>("Project Options", Ascii::GearIcon);
+  group->addChild(std::make_unique<Checkbox>(
+      "Enable git ?", [&options](bool checked) { options.has_git = checked; }));
+  group->addChild(
+      std::make_unique<Checkbox>("Use template ?", [&options](bool checked) {
+        options.use_template = checked;
+      }));
 
-  auto input = std::make_unique<Input>(
-      "Name", [&options](std::string value) { options.name = value; });
+  auto input =
+      std::make_unique<Input>("Project Name", [&options](std::string value) {
+        options.name = std::move(value);
+      });
 
-  view.addComponent(std::move(group));
-  view.addComponent(std::move(input));
-  view.render();
+  View view;
+  view.addSection(std::move(group));
+  view.addSection(std::move(input));
+  view.run();
 
-  std::cout << options.has_git << "\n";
+  std::cout << "Project: " << options.name << "\n";
+  std::cout << "Git: " << (options.has_git ? "yes" : "no") << "\n";
+  std::cout << "Template: " << (options.use_template ? "yes" : "no") << "\n";
 
   return 0;
 }
