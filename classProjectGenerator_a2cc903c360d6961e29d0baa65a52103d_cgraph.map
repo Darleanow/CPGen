@@ -1,6 +1,6 @@
 <map id="ProjectGenerator::generateProject" name="ProjectGenerator::generateProject">
 <area shape="rect" id="Node000001" title="Generates the project." alt="" coords="5,73,181,113"/>
-<area shape="rect" id="Node000002" href="$classCLI.html#abe59af765911693289c9d53bf7dcd2ca" title="Translates CLIOpts into a keymap." alt="" coords="260,5,373,31"/>
+<area shape="rect" id="Node000002" href="$classCLI.html#aab9c192a06a5dbdc0fb6cf7006db4989" title="Translates ProjectOptions into a keymap." alt="" coords="260,5,373,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,70,228,40,249,33,250,38,230,45,147,75"/>
 <area shape="rect" id="Node000003" href="$classFileSystemWriter.html#a133e432e2d67991814c5425c92d6fbad" title="Reads a file and returns a string of its content." alt="" coords="230,55,403,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,80,214,76,215,82,181,86"/>

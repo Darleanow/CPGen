@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tab_0',['Tab',['../namespaceDefs.html#a3ecc068d2abe5679f92c0d2f9e23fc0ca5c6ba25104401c9ee0650230fc6ba413',1,'Defs']]],
-  ['template_5fname_1',['template_name',['../structCLIOpts.html#a36ecd29d631a6b0bdb75eee282055687',1,'CLIOpts']]],
+  ['template_5fname_1',['template_name',['../structProjectOptions.html#a3bad515a0312cc44c45d19e8bcf4dba7',1,'ProjectOptions']]],
   ['templateengine_2',['TemplateEngine',['../classTemplateEngine.html',1,'']]],
   ['templateengine_2ecpp_3',['TemplateEngine.cpp',['../TemplateEngine_8cpp.html',1,'']]],
   ['templateengine_2ehpp_4',['TemplateEngine.hpp',['../TemplateEngine_8hpp.html',1,'']]],

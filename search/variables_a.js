@@ -1,7 +1,7 @@
 var searchData=
 [
   ['packagesicon_0',['PackagesIcon',['../namespaceAscii.html#a5ecbe278f532d3a553b27a36bbd472c8',1,'Ascii']]],
-  ['path_1',['path',['../structCLIOpts.html#a784cb4192462d17c9b42f03643ec16b4',1,'CLIOpts']]],
+  ['path_1',['path',['../structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca',1,'ProjectOptions']]],
   ['progressemptyleft_2',['ProgressEmptyLeft',['../namespaceAscii.html#a65d69a8635a01a552f6f67fd8f45655b',1,'Ascii']]],
   ['progressemptymid_3',['ProgressEmptyMid',['../namespaceAscii.html#acef2e14e43b5c7bdd979966a7966b398',1,'Ascii']]],
   ['progressemptyright_4',['ProgressEmptyRight',['../namespaceAscii.html#a30e52985143c794be6c1afcd77de7aab',1,'Ascii']]],

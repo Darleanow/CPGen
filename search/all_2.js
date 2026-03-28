@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['checkbox_0',['checkbox',['../classCheckbox.html#a706fa99ec299af35aa5a3058757b83f4',1,'Checkbox::Checkbox()'],['../classCheckbox.html',1,'Checkbox']]],
+  ['checkbox_0',['checkbox',['../classCheckbox.html',1,'Checkbox'],['../classCheckbox.html#a706fa99ec299af35aa5a3058757b83f4',1,'Checkbox::Checkbox()']]],
   ['checkbox_2ecpp_1',['Checkbox.cpp',['../Checkbox_8cpp.html',1,'']]],
   ['checkbox_2ehpp_2',['Checkbox.hpp',['../Checkbox_8hpp.html',1,'']]],
   ['checkboxchecked_3',['CheckboxChecked',['../namespaceAscii.html#add7e0a4eb70e0b6a54c6cd305687c233',1,'Ascii']]],
@@ -8,16 +8,13 @@ var searchData=
   ['cli_5',['CLI',['../classCLI.html',1,'']]],
   ['cli_2ecpp_6',['CLI.cpp',['../CLI_8cpp.html',1,'']]],
   ['cli_2ehpp_7',['CLI.hpp',['../CLI_8hpp.html',1,'']]],
-  ['cliopts_8',['CLIOpts',['../structCLIOpts.html',1,'']]],
-  ['cmakeicon_9',['CMakeIcon',['../namespaceAscii.html#ab9a191505cc02707f426b592b02a63df',1,'Ascii']]],
-  ['component_10',['Component',['../classComponent.html',1,'']]],
-  ['component_2ehpp_11',['Component.hpp',['../Component_8hpp.html',1,'']]],
-  ['componentgroup_12',['componentgroup',['../classComponentGroup.html',1,'ComponentGroup'],['../classComponentGroup.html#a7bf4c9321510139ca687d17d7b330668',1,'ComponentGroup::ComponentGroup()']]],
-  ['componentgroup_2ecpp_13',['ComponentGroup.cpp',['../ComponentGroup_8cpp.html',1,'']]],
-  ['componentgroup_2ehpp_14',['ComponentGroup.hpp',['../ComponentGroup_8hpp.html',1,'']]],
-  ['configurationmodel_2ecpp_15',['ConfigurationModel.cpp',['../ConfigurationModel_8cpp.html',1,'']]],
-  ['configurationmodel_2ehpp_16',['ConfigurationModel.hpp',['../ConfigurationModel_8hpp.html',1,'']]],
-  ['cpgen_17',['CPGen',['../index.html',1,'']]],
-  ['cppicon_18',['CppIcon',['../namespaceAscii.html#a17e2767aaf4d6c374a6813b4f56db03d',1,'Ascii']]],
-  ['cursor_19',['Cursor',['../namespaceAscii.html#ab2809381a8cbf0c4d80d844339e2ec04',1,'Ascii']]]
+  ['cmakeicon_8',['CMakeIcon',['../namespaceAscii.html#ab9a191505cc02707f426b592b02a63df',1,'Ascii']]],
+  ['component_9',['Component',['../classComponent.html',1,'']]],
+  ['component_2ehpp_10',['Component.hpp',['../Component_8hpp.html',1,'']]],
+  ['componentgroup_11',['componentgroup',['../classComponentGroup.html#a7bf4c9321510139ca687d17d7b330668',1,'ComponentGroup::ComponentGroup()'],['../classComponentGroup.html',1,'ComponentGroup']]],
+  ['componentgroup_2ecpp_12',['ComponentGroup.cpp',['../ComponentGroup_8cpp.html',1,'']]],
+  ['componentgroup_2ehpp_13',['ComponentGroup.hpp',['../ComponentGroup_8hpp.html',1,'']]],
+  ['cpgen_14',['CPGen',['../index.html',1,'']]],
+  ['cppicon_15',['CppIcon',['../namespaceAscii.html#a17e2767aaf4d6c374a6813b4f56db03d',1,'Ascii']]],
+  ['cursor_16',['Cursor',['../namespaceAscii.html#ab2809381a8cbf0c4d80d844339e2ec04',1,'Ascii']]]
 ];

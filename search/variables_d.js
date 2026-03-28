@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['template_5fname_0',['template_name',['../structCLIOpts.html#a36ecd29d631a6b0bdb75eee282055687',1,'CLIOpts']]]
+  ['template_5fname_0',['template_name',['../structProjectOptions.html#a3bad515a0312cc44c45d19e8bcf4dba7',1,'ProjectOptions']]]
 ];

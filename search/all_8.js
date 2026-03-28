@@ -5,7 +5,7 @@ var searchData=
   ['input_2ecpp_2',['Input.cpp',['../Input_8cpp.html',1,'']]],
   ['input_2ehpp_3',['Input.hpp',['../Input_8hpp.html',1,'']]],
   ['inverse_4',['INVERSE',['../namespaceUtils_1_1Colours.html#a6e89d2d2689a8ad580059d68681ef760',1,'Utils::Colours']]],
-  ['is_5ftui_5fmode_5',['is_tui_mode',['../structCLIOpts.html#aac0ca635be42186abc5f548f0a2cbd07',1,'CLIOpts']]],
+  ['is_5ftui_5fmode_5',['is_tui_mode',['../structProjectOptions.html#a593eb67ed750bcd3ec4c1ce907b7fa56',1,'ProjectOptions']]],
   ['ischecked_6',['isChecked',['../classCheckbox.html#a186f541cd644204424bc72e22d992a49',1,'Checkbox']]],
   ['isfocused_7',['isFocused',['../classComponent.html#ad8782aeeb6c0d675f65c063f3e4a0bc1',1,'Component']]],
   ['isfontvalid_8',['isFontValid',['../namespaceSystem.html#a1b2ff6b39ccecd14ad05226a2b78a6b2',1,'System']]],
