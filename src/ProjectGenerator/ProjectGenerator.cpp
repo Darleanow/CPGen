@@ -1,6 +1,6 @@
 #include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
 
-ProjectGenerator::ProjectGenerator(const CLIOpts &opts) : m_opts(opts) {
+ProjectGenerator::ProjectGenerator(const ProjectOptions &opts) : m_opts(opts) {
   m_template_engine = TemplateEngine();
   m_writer = FileSystemWriter();
 }

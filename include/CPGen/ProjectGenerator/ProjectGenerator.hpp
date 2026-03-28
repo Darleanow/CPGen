@@ -22,7 +22,7 @@ public:
    * Stores cli options
    * @param opts: The cli options, parsed
    */
-  ProjectGenerator(const CLIOpts &opts);
+  ProjectGenerator(const ProjectOptions &opts);
 
   /**
    * @brief Generates the project
@@ -33,5 +33,5 @@ private:
   TemplateEngine m_template_engine; /**< Template Engine, handling the
                                        replacement of the placeholders */
   FileSystemWriter m_writer;        /**< Writer, writes to files */
-  const CLIOpts &m_opts;            /**< CLIOpts, the cli options */
+  const ProjectOptions &m_opts;     /**< CLIOpts, the cli options */
 };

@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
     std::cout << "Fallback to basic ascii output.\n";
   }
 
-  CLIOpts options;
+  ProjectOptions options;
 
   // Build the UI
   auto group =

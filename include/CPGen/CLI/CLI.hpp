@@ -12,10 +12,10 @@
 #include <unordered_map>
 
 /**
- * @brief CLIOpts has all the available base options, made to be extensible
- * using config files
+ * @brief ProjectOptions has all the available base options, made to be
+ * extensible using config files
  */
-struct CLIOpts {
+struct ProjectOptions {
   /*@{*/
   bool is_tui_mode = false; /**< Use TUI mode ? */
   bool has_git = false;     /**< Init git repo ? */
@@ -44,13 +44,13 @@ public:
    * @param argv: Argument list
    * @return The options parsed
    */
-  const CLIOpts parse(const int argc, char **argv);
+  const ProjectOptions parse(const int argc, char **argv);
 
   /**
-   * @brief Translates CLIOpts into a keymap
+   * @brief Translates ProjectOptions into a keymap
    * @param opts: The previously parsed CLIOpts
    * @return Unordered map of keys and values.
    */
   static std::unordered_map<std::string, std::string>
-  parse_opts(const CLIOpts &opts);
+  parse_opts(const ProjectOptions &opts);
 };

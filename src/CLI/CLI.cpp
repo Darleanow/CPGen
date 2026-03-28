@@ -5,8 +5,8 @@
 #include <stdexcept>
 #include <unordered_map>
 
-const CLIOpts CLI::parse(const int argc, char **argv) {
-  CLIOpts opts;
+const ProjectOptions CLI::parse(const int argc, char **argv) {
+  ProjectOptions opts;
 
   for (int i = 0; i < argc; i++) {
     if (strcmp(argv[i], "-u") == 0 || strcmp(argv[i], "--tui") == 0) {
@@ -67,7 +67,7 @@ const CLIOpts CLI::parse(const int argc, char **argv) {
 }
 
 std::unordered_map<std::string, std::string>
-CLI::parse_opts(const CLIOpts &opts) {
+CLI::parse_opts(const ProjectOptions &opts) {
   std::unordered_map<std::string, std::string> mapped_args = {
       {"PROJECT_NAME", opts.name},
       {"CXX_STANDARD", "20"},
