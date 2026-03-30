@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['special_0',['Special',['../namespaceDefs.html#a3ecc068d2abe5679f92c0d2f9e23fc0c',1,'Defs']]]
+  ['cppstandard_0',['CppStandard',['../Config_8hpp.html#a87f820964be1b88a7ee10235da6b64f3',1,'Config.hpp']]]
 ];

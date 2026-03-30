@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['packagesicon_0',['PackagesIcon',['../namespaceAscii.html#a5ecbe278f532d3a553b27a36bbd472c8',1,'Ascii']]],
-  ['path_1',['path',['../structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca',1,'ProjectOptions']]],
-  ['progressemptyleft_2',['ProgressEmptyLeft',['../namespaceAscii.html#a65d69a8635a01a552f6f67fd8f45655b',1,'Ascii']]],
-  ['progressemptymid_3',['ProgressEmptyMid',['../namespaceAscii.html#acef2e14e43b5c7bdd979966a7966b398',1,'Ascii']]],
-  ['progressemptyright_4',['ProgressEmptyRight',['../namespaceAscii.html#a30e52985143c794be6c1afcd77de7aab',1,'Ascii']]],
-  ['progressfullleft_5',['ProgressFullLeft',['../namespaceAscii.html#a96451c65f623f6060db9f674c6142799',1,'Ascii']]],
-  ['progressfullmid_6',['ProgressFullMid',['../namespaceAscii.html#ac73e406d7d2e04e9c6aaf7f6249b4e1d',1,'Ascii']]],
-  ['progressfullright_7',['ProgressFullRight',['../namespaceAscii.html#a371135c7aa07b857c1e6a5c59eabe61b',1,'Ascii']]]
+  ['name_0',['name',['../structProjectOptions.html#a89493b9f4c4bcc834ef986809c801bff',1,'ProjectOptions::name'],['../structProjectConfig.html#a3abad7f1f057cd4465b3602424efcd45',1,'ProjectConfig::name'],['../structResolvedModule.html#a94ac9f00501b9fa5eef61be8e2a8adc6',1,'ResolvedModule::name'],['../structResolvedTarget.html#a168f36155355a9dbe6cdeee6d9493bb9',1,'ResolvedTarget::name']]],
+  ['neovimicon_1',['NeoVimIcon',['../namespaceAscii.html#a775e1db35936300eb603d39ca7891bc1',1,'Ascii']]]
 ];

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../namespaceAscii.html#a3e3f637d16b2b17c2e452d1cc97c13cd',1,'Ascii']]]
+  ['underline_0',['UNDERLINE',['../namespaceUtils_1_1Colours.html#a51cecf474775e59ee7e78df501a3b43c',1,'Utils::Colours']]],
+  ['url_1',['url',['../structFetchContent.html#a263526ebc7df4409c1f73616ec0d8b0d',1,'FetchContent']]],
+  ['use_5ftemplate_2',['use_template',['../structProjectOptions.html#ac94690f84957da8753fe9e605a18c594',1,'ProjectOptions']]]
 ];

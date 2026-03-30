@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['underline_0',['UNDERLINE',['../namespaceUtils_1_1Colours.html#a51cecf474775e59ee7e78df501a3b43c',1,'Utils::Colours']]],
-  ['use_5ftemplate_1',['use_template',['../structProjectOptions.html#ac94690f84957da8753fe9e605a18c594',1,'ProjectOptions']]]
+  ['target_5fname_0',['target_name',['../structTargetInjection.html#a306074a1381ba79206e6d0b8bf086b2c',1,'TargetInjection']]],
+  ['targets_1',['targets',['../structProjectConfig.html#a4c62478b0c041229a6aface12ed98905',1,'ProjectConfig::targets'],['../structResolvedProject.html#ad4d36ac9caae8fc671a7bd489963e0bd',1,'ResolvedProject::targets']]],
+  ['template_5fname_2',['template_name',['../structProjectOptions.html#afcc7d63d4fae5f1543bd879329481f46',1,'ProjectOptions']]],
+  ['tooling_3',['tooling',['../structProjectConfig.html#a58fef04743e8169313c8ef2162611f93',1,'ProjectConfig']]],
+  ['type_4',['type',['../structResolvedTarget.html#a81add4f2fd44704ab45f7976f1fc0097',1,'ResolvedTarget']]]
 ];

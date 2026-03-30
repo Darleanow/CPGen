@@ -8,10 +8,11 @@ var searchData=
   ['spinner4_5',['Spinner4',['../namespaceAscii.html#a00ffd2b52d764a76615c22f6df82f339',1,'Ascii']]],
   ['spinner5_6',['Spinner5',['../namespaceAscii.html#a2247471968964965fc681447c7d3b8f6',1,'Ascii']]],
   ['spinner6_7',['Spinner6',['../namespaceAscii.html#a53c6d56d56405038bcd337c68e6af93f',1,'Ascii']]],
-  ['stdinready_8',['stdinReady',['../namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8',1,'Utils']]],
-  ['strikethru_9',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
-  ['success_10',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
-  ['system_11',['System',['../namespaceSystem.html',1,'']]],
-  ['system_2ecpp_12',['System.cpp',['../System_8cpp.html',1,'']]],
-  ['system_2ehpp_13',['System.hpp',['../System_8hpp.html',1,'']]]
+  ['standard_8',['standard',['../structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2',1,'ProjectConfig']]],
+  ['stdinready_9',['stdinReady',['../namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8',1,'Utils']]],
+  ['strikethru_10',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
+  ['success_11',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
+  ['system_12',['System',['../namespaceSystem.html',1,'']]],
+  ['system_2ecpp_13',['System.cpp',['../System_8cpp.html',1,'']]],
+  ['system_2ehpp_14',['System.hpp',['../System_8hpp.html',1,'']]]
 ];
