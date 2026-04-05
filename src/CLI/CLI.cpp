@@ -10,22 +10,13 @@ Config CLI::parse(const int argc, char **argv) {
   ProjectConfig config;
 
   for (int i = 0; i < argc; i++) {
-    if (strcmp(argv[i], "-u") == 0 || strcmp(argv[i], "--tui") == 0) {
-      return true; // Early return, the options will be set via tui
+    if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
+      showHelp();
+      exit(0);
     }
 
-    if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--path") == 0) {
-      i++;
-
-      if (i >= argc || argv[i][0] == '-') {
-        throw std::runtime_error("Path is ill formatted, aborting.");
-      }
-
-      if (!std::filesystem::exists(argv[i])) {
-        throw std::runtime_error("Path does not exists on disk!");
-      }
-
-      config.path = argv[i];
+    if (strcmp(argv[i], "-u") == 0 || strcmp(argv[i], "--tui") == 0) {
+      return true; // Early return, the options will be set via tui
     }
 
     if (strcmp(argv[i], "-n") == 0 || strcmp(argv[i], "--name") == 0) {
@@ -43,6 +34,20 @@ Config CLI::parse(const int argc, char **argv) {
       }
 
       config.name = argv[i];
+    }
+
+    if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--path") == 0) {
+      i++;
+
+      if (i >= argc || argv[i][0] == '-') {
+        throw std::runtime_error("Path is ill formatted, aborting.");
+      }
+
+      if (!std::filesystem::exists(argv[i])) {
+        throw std::runtime_error("Path does not exists on disk!");
+      }
+
+      config.path = argv[i];
     }
 
     if (strcmp(argv[i], "-g") == 0 || strcmp(argv[i], "--git") == 0) {
@@ -87,12 +92,33 @@ Config CLI::parse(const int argc, char **argv) {
       }
     }
 
+    if (strcmp(argv[i], "-tar") == 0 || strcmp(argv[i], "--targets") == 0) {
+      i++;
+      if (i >= argc) {
+        throw std::runtime_error("No target provided.");
+      }
+
+      std::string curr;
+      std::string targets_str = argv[i];
+      std::stringstream ss(targets_str);
+      std::string target;
+
+      while (std::getline(ss, target, ',')) {
+        if (target == "test") {
+          config.targets.push_back(TargetType::Test);
+        } else if (target == "exe" || target == "executable") {
+          config.targets.push_back(TargetType::Executable);
+        } else {
+          config.targets.push_back(TargetType::Library);
+        }
+      }
+    }
+
     if (strcmp(argv[i], "-cf") == 0 || strcmp(argv[i], "--clang-format") == 0) {
       config.tooling.clang_format = true;
     }
 
-    if (strcmp(argv[i], "-cfp") == 0 ||
-        strcmp(argv[i], "--clang-format-preset") == 0) {
+    if (strcmp(argv[i], "-cfp") == 0 || strcmp(argv[i], "--cf-preset") == 0) {
       i++;
       if (i >= argc) {
         throw std::runtime_error("No preset provided!");
@@ -107,4 +133,21 @@ Config CLI::parse(const int argc, char **argv) {
   }
 
   return config;
+}
+
+void CLI::showHelp() const {
+  std::cout
+      << "CPGen - Command line options\n"
+      << "-h    --help         | Shows this help.\n"
+      << "-u    --tui          | Enable TUI mode.\n"
+      << "-n    --name         | Sets the name of the project.\n"
+      << "-p    --path         | Sets the target path of the project.\n"
+      << "-g    --git          | Enable git ?\n"
+      << "-s    --std          | Set the standard {17,20,23}.\n"
+      << "-m    --modules      | Add modules, comma separated `-m gtest, "
+         "spdlog`.\n"
+      << "-tar  --targets      | Add targets, comma separated `-tar src, "
+         "exe`.\n"
+      << "-cf   --clang-format | Enables clang format.\n"
+      << "-cfp  --cf-preset    | Specifiy the clang format preset to use.\n";
 }

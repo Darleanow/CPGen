@@ -8,8 +8,6 @@
  */
 
 #include "CPGen/Core/Config.hpp"
-#include <string>
-#include <unordered_map>
 #include <variant>
 
 using Config = std::variant<ProjectConfig, bool>;
@@ -28,11 +26,9 @@ public:
    */
   Config parse(const int argc, char **argv);
 
+private:
   /**
-   * @brief Translates ProjectOptions into a keymap
-   * @param opts: The previously parsed CLIOpts
-   * @return Unordered map of keys and values.
+   * @brief Shows all register command line args
    */
-  static std::unordered_map<std::string, std::string>
-  parse_opts(const ProjectOptions &opts);
+  void showHelp() const;
 };
