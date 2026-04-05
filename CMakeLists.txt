@@ -19,7 +19,8 @@ FetchContent_Declare(
 FetchContent_Declare(
   json
   GIT_REPOSITORY https://github.com/nlohmann/json
-  GIT_TAG v3.12.0)
+  GIT_TAG v3.12.0
+)
 
 FetchContent_MakeAvailable(googletest json)
 
@@ -34,16 +35,16 @@ endif()
 add_library(
   CPGenSource
   src/CLI/CLI.cpp
-  src/FileSystemWriter/FileSystemWriter.cpp
-  src/ProjectGenerator/ProjectGenerator.cpp
-  src/TemplateEngine/TemplateEngine.cpp
   src/System/System.cpp
+  src/Resolvers/ModuleResolver.cpp
+  src/Resolvers/ProjectResolver.cpp
   src/TUI/Components/Basic/Checkbox.cpp
   src/TUI/Components/Basic/Input.cpp
   src/TUI/Components/Groups/ComponentGroup.cpp
-  src/TUI/View/View.cpp)
+  src/TUI/View/View.cpp
+)
 
-target_link_libraries(CPGenSource PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(CPGenSource PUBLIC nlohmann_json::nlohmann_json)
 
 add_executable(CPGen src/main.cpp)
 
@@ -52,10 +53,11 @@ target_include_directories(CPGenSource
 target_link_libraries(CPGen PRIVATE CPGenSource)
 
 add_custom_command(
-  TARGET CPGen
-  POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/templates
-          ${CMAKE_BINARY_DIR}/templates)
+  TARGET CPGen POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+          ${CMAKE_SOURCE_DIR}/templates
+          $<TARGET_FILE_DIR:CPGen>/templates
+)
 
 enable_testing()
 

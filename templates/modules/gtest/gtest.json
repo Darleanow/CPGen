@@ -1,0 +1,14 @@
+{
+  "name": "gtest",
+  "fetch_content": {
+    "module_name": "googletest",
+    "url": "https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip"
+  },
+  "targets": {
+    "test": {
+      "link": ["GTest::gtest_main"],
+      "cmake_include": "GoogleTest",
+      "post_link": "gtest_discover_tests(${TARGET_NAME})"
+    }
+  }
+}

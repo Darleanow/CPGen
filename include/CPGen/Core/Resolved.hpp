@@ -19,7 +19,20 @@ struct ResolvedTarget {
   TargetType type;
   std::string name;
   std::string path;
+
+  bool operator==(const ResolvedTarget &other) const {
+    return name == other.name;
+  }
 };
+
+// Specialization here because we need to hash for no dups
+namespace std {
+template <> struct hash<ResolvedTarget> {
+  size_t operator()(const ResolvedTarget &target) const noexcept {
+    return hash<std::string>{}(target.name);
+  }
+};
+} // namespace std
 
 struct ResolvedProject {
   ProjectConfig config;

@@ -1,17 +1,17 @@
 #include "CPGen/CLI/CLI.hpp"
+#include "CPGen/Core/Config.hpp"
 #include <cstring>
 #include <filesystem>
+#include <iostream>
 #include <regex>
 #include <stdexcept>
-#include <unordered_map>
 
-const ProjectOptions CLI::parse(const int argc, char **argv) {
-  ProjectOptions opts;
+Config CLI::parse(const int argc, char **argv) {
+  ProjectConfig config;
 
   for (int i = 0; i < argc; i++) {
     if (strcmp(argv[i], "-u") == 0 || strcmp(argv[i], "--tui") == 0) {
-      opts.is_tui_mode = true;
-      return opts; // Early return, the options will be set via tui
+      return true; // Early return, the options will be set via tui
     }
 
     if (strcmp(argv[i], "-p") == 0 || strcmp(argv[i], "--path") == 0) {
@@ -25,7 +25,7 @@ const ProjectOptions CLI::parse(const int argc, char **argv) {
         throw std::runtime_error("Path does not exists on disk!");
       }
 
-      opts.path = argv[i];
+      config.path = argv[i];
     }
 
     if (strcmp(argv[i], "-n") == 0 || strcmp(argv[i], "--name") == 0) {
@@ -42,36 +42,69 @@ const ProjectOptions CLI::parse(const int argc, char **argv) {
                                  "Lower, any or no digits).");
       }
 
-      opts.name = argv[i];
+      config.name = argv[i];
     }
 
     if (strcmp(argv[i], "-g") == 0 || strcmp(argv[i], "--git") == 0) {
-      opts.has_git = true;
+      config.tooling.has_git = true;
     }
 
-    if (strcmp(argv[i], "-t") == 0 || strcmp(argv[i], "--template") == 0) {
+    if (strcmp(argv[i], "-s") == 0 || strcmp(argv[i], "--std") == 0) {
       i++;
-
       if (i >= argc) {
-        throw std::runtime_error("No template argument provided!");
+        throw std::runtime_error("No standard provided!");
       }
 
-      opts.use_template = true;
-      opts.template_name = argv[i];
+      std::regex valid_standard("/17|20|23/gm");
+      std::cmatch match;
+      if (!std::regex_search(argv[i], match, valid_standard)) {
+        throw std::range_error("Standard provided not in range (17,20,23)!");
+      }
 
-      return opts; // We use the template as args, early return.
+      if (strcmp(argv[i], "17") == 0) {
+        config.standard = CppStandard::Cpp17;
+      } else if (strcmp(argv[i], "20") == 0) {
+        config.standard = CppStandard::Cpp20;
+      } else {
+        config.standard = CppStandard::Cpp23;
+      }
+    }
+
+    if (strcmp(argv[i], "-m") == 0 || strcmp(argv[i], "--modules") == 0) {
+      // parse modules: format module --> gtest, spdlog
+      i++;
+      if (i >= argc) {
+        throw std::runtime_error("No modules provided.");
+      }
+
+      std::string curr;
+      std::string modules_str = argv[i];
+      std::stringstream ss(modules_str);
+      std::string module;
+
+      while (std::getline(ss, module, ',')) {
+        config.modules.push_back(module);
+      }
+    }
+
+    if (strcmp(argv[i], "-cf") == 0 || strcmp(argv[i], "--clang-format") == 0) {
+      config.tooling.clang_format = true;
+    }
+
+    if (strcmp(argv[i], "-cfp") == 0 ||
+        strcmp(argv[i], "--clang-format-preset") == 0) {
+      i++;
+      if (i >= argc) {
+        throw std::runtime_error("No preset provided!");
+      }
+
+      config.tooling.clang_format_preset = argv[i];
+    }
+
+    if (strcmp(argv[i], "-ct") == 0 || strcmp(argv[i], "--clang-tidy") == 0) {
+      config.tooling.clang_tidy = true;
     }
   }
 
-  return opts;
-}
-
-std::unordered_map<std::string, std::string>
-CLI::parse_opts(const ProjectOptions &opts) {
-  std::unordered_map<std::string, std::string> mapped_args = {
-      {"PROJECT_NAME", opts.name},
-      {"CXX_STANDARD", "20"},
-  };
-
-  return mapped_args;
+  return config;
 }

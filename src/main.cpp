@@ -1,24 +1,34 @@
 #include "CPGen/CLI/CLI.hpp"
-#include "CPGen/ProjectGenerator/ProjectGenerator.hpp"
+#include "CPGen/Resolvers/ProjectResolver.hpp"
 #include "CPGen/System/System.hpp"
 #include "CPGen/TUI/Components/Basic/Checkbox.hpp"
 #include "CPGen/TUI/Components/Basic/Input.hpp"
 #include "CPGen/TUI/Components/Groups/ComponentGroup.hpp"
 #include "CPGen/TUI/Misc/Ascii.hpp"
 #include "CPGen/TUI/View/View.hpp"
-#include <locale>
 
 #include <cstdlib>
 #include <iostream>
 
 int main(int argc, char **argv) {
   CLI cli;
-  auto &opts = cli.parse(argc, argv);
-  ProjectGenerator generator(opts);
+  auto opts = cli.parse(argc, argv);
 
-  if (!opts.is_tui_mode) {
-    generator.generateProject();
-    return 0;
+  auto result = std::visit(
+      [](auto opt) -> bool {
+        if constexpr (std::is_same_v<decltype(opt), ProjectConfig>) {
+          // We just need to gen project
+          return true;
+        }
+        return false;
+      },
+      opts);
+
+  if (result == true) {
+    ProjectResolver resolver;
+    auto res = resolver.resolve(std::get<ProjectConfig>(opts));
+    std::cout << res << std::endl;
+    return 0; // Program finished its execution.
   }
 
   std::setlocale(LC_ALL, "");
