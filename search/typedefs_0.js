@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_0',['Key',['../namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde',1,'Defs']]]
+  ['config_0',['Config',['../CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f',1,'CLI.hpp']]]
 ];

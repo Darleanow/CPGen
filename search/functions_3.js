@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generateproject_0',['generateProject',['../classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d',1,'ProjectGenerator']]]
+  ['from_5fjson_0',['from_json',['../PreferencesManager_8cpp.html#a2e0a18fafb71dc220945e61570383103',1,'PreferencesManager.cpp']]]
 ];

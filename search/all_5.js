@@ -18,7 +18,5 @@ var searchData=
   ['fg_5fred_15',['FG_RED',['../namespaceUtils_1_1Colours.html#a2736da8c371f39205dd2c47ea8f78116',1,'Utils::Colours']]],
   ['fg_5fwhite_16',['FG_WHITE',['../namespaceUtils_1_1Colours.html#ab164e3653a35df2e190d49f21d114998',1,'Utils::Colours']]],
   ['fg_5fyellow_17',['FG_YELLOW',['../namespaceUtils_1_1Colours.html#a3c58f30452f475166fbf59858588620c',1,'Utils::Colours']]],
-  ['filesystemwriter_18',['FileSystemWriter',['../classFileSystemWriter.html',1,'']]],
-  ['filesystemwriter_2ecpp_19',['FileSystemWriter.cpp',['../FileSystemWriter_8cpp.html',1,'']]],
-  ['filesystemwriter_2ehpp_20',['FileSystemWriter.hpp',['../FileSystemWriter_8hpp.html',1,'']]]
+  ['from_5fjson_18',['from_json',['../PreferencesManager_8cpp.html#a2e0a18fafb71dc220945e61570383103',1,'PreferencesManager.cpp']]]
 ];

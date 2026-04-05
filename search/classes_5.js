@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['targetinjection_0',['TargetInjection',['../structTargetInjection.html',1,'']]],
-  ['templateengine_1',['TemplateEngine',['../classTemplateEngine.html',1,'']]],
-  ['terminal_2',['Terminal',['../classTerminal.html',1,'']]],
-  ['toolingconfig_3',['ToolingConfig',['../structToolingConfig.html',1,'']]]
+  ['preferencesconfig_0',['PreferencesConfig',['../structPreferencesConfig.html',1,'']]],
+  ['preferencesmanager_1',['PreferencesManager',['../classPreferencesManager.html',1,'']]],
+  ['projectconfig_2',['ProjectConfig',['../structProjectConfig.html',1,'']]],
+  ['projectoptions_3',['ProjectOptions',['../structProjectOptions.html',1,'']]],
+  ['projectresolver_4',['ProjectResolver',['../classProjectResolver.html',1,'']]]
 ];

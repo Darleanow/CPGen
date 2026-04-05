@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_3d_0',['operator=',['../classTerminal.html#aa28f238eb59e5c8283409789452eea97',1,'Terminal']]]
+  ['main_0',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
+  ['moduleresolver_1',['ModuleResolver',['../classModuleResolver.html#a81df516c0a5088297d4c0fd75478633e',1,'ModuleResolver']]]
 ];

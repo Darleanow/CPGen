@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gearicon_0',['GearIcon',['../namespaceAscii.html#a028b163d922caeb4a06dac074d034d87',1,'Ascii']]],
-  ['generateproject_1',['generateProject',['../classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d',1,'ProjectGenerator']]],
+  ['getconfig_1',['getConfig',['../classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0',1,'PreferencesManager']]],
   ['giticon_2',['GitIcon',['../namespaceAscii.html#a4c43ce891b1ce5be6a74ab04ba026327',1,'Ascii']]],
   ['googleicon_3',['GoogleIcon',['../namespaceAscii.html#a0ceef3bb70ebbb3c045da2a1153c67ec',1,'Ascii']]]
 ];

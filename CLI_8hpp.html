@@ -75,28 +75,37 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">CLI.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a class="el" href="classCLI.html" title="Parse various opts.">CLI</a> Operations.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;optional&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Config_8hpp_source.html">CPGen/Core/Config.hpp</a>&quot;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for CLI.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="CLI_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2CLI_2CLI_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2CLI_2CLI_8hpp" id="ainclude_2CPGen_2CLI_2CLI_8hpp">
-<area shape="rect" title="CLI Operations." alt="" coords="31,5,214,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,72,105"/>
-<area shape="poly" title=" " alt="" coords="110,34,66,71,63,67,107,30"/>
-<area shape="rect" title=" " alt="" coords="96,79,149,105"/>
-<area shape="poly" title=" " alt="" coords="125,31,125,63,120,63,120,31"/>
-<area shape="rect" title=" " alt="" coords="173,79,283,105"/>
-<area shape="poly" title=" " alt="" coords="142,29,199,68,196,72,139,34"/>
+<area shape="rect" title="CLI Operations." alt="" coords="185,5,367,31"/>
+<area shape="rect" href="Config_8hpp.html" title=" " alt="" coords="35,79,194,105"/>
+<area shape="poly" title=" " alt="" coords="250,34,157,75,155,70,247,29"/>
+<area shape="rect" title=" " alt="" coords="195,153,248,178"/>
+<area shape="poly" title=" " alt="" coords="274,32,234,139,229,137,269,30"/>
+<area shape="rect" title=" " alt="" coords="267,79,378,105"/>
+<area shape="poly" title=" " alt="" coords="286,30,309,64,304,67,281,33"/>
+<area shape="rect" title=" " alt="" coords="402,79,462,105"/>
+<area shape="poly" title=" " alt="" coords="303,29,393,70,390,75,301,34"/>
+<area shape="rect" title=" " alt="" coords="5,153,72,178"/>
+<area shape="poly" title=" " alt="" coords="103,107,64,144,60,140,100,103"/>
+<area shape="poly" title=" " alt="" coords="134,103,192,141,189,146,131,107"/>
+<area shape="rect" title=" " alt="" coords="95,153,153,178"/>
+<area shape="poly" title=" " alt="" coords="119,105,123,137,118,138,113,105"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -104,16 +113,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="CLI_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2CLI_2CLI_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2CLI_2CLI_8hppdep" id="ainclude_2CPGen_2CLI_2CLI_8hppdep">
-<area shape="rect" title="CLI Operations." alt="" coords="162,5,344,31"/>
-<area shape="rect" href="ProjectGenerator_8hpp.html" title="Orchestrator of the write ops and template engine." alt="" coords="5,79,216,120"/>
-<area shape="poly" title=" " alt="" coords="219,41,147,81,144,76,217,36"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="206,175,301,201"/>
-<area shape="poly" title=" " alt="" coords="256,47,256,175,251,175,251,47"/>
-<area shape="rect" href="CLI_8cpp.html" title=" " alt="" coords="291,87,405,112"/>
-<area shape="poly" title=" " alt="" coords="281,39,335,84,332,88,277,43"/>
-<area shape="rect" href="ProjectGenerator_8cpp.html" title=" " alt="" coords="34,168,182,208"/>
-<area shape="poly" title=" " alt="" coords="112,135,111,167,106,167,107,135"/>
-<area shape="poly" title=" " alt="" coords="157,126,235,172,232,177,155,130"/>
+<area shape="rect" title="CLI Operations." alt="" coords="35,5,217,31"/>
+<area shape="rect" href="CLI_8cpp.html" title=" " alt="" coords="5,79,119,105"/>
+<area shape="poly" title=" " alt="" coords="107,44,75,80,71,77,103,40"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="142,79,238,105"/>
+<area shape="poly" title=" " alt="" coords="149,40,181,77,177,80,145,44"/>
 </map>
 </div>
 </div>
@@ -121,18 +125,35 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html">ProjectOptions</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structProjectOptions.html" title="ProjectOptions has all the available base options, made to be extensible using config files.">ProjectOptions</a> has all the available base options, made to be extensible using config files.  <a href="structProjectOptions.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCLI.html">CLI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse various opts.  <a href="classCLI.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a291ce1b4d2e5bb74e144a380c2bd433f" id="r_a291ce1b4d2e5bb74e144a380c2bd433f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> = std::variant&lt; <a class="el" href="structProjectConfig.html">ProjectConfig</a>, bool &gt;</td></tr>
+<tr class="separator:a291ce1b4d2e5bb74e144a380c2bd433f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classCLI.html" title="Parse various opts.">CLI</a> Operations. </p>
 <dl class="section author"><dt>Author</dt><dd>Darleanow </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.1 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a291ce1b4d2e5bb74e144a380c2bd433f" name="a291ce1b4d2e5bb74e144a380c2bd433f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291ce1b4d2e5bb74e144a380c2bd433f">&#9670;&#160;</a></span>Config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> =  std::variant&lt;<a class="el" href="structProjectConfig.html">ProjectConfig</a>, bool&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

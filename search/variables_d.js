@@ -8,5 +8,6 @@ var searchData=
   ['spinner6_5',['Spinner6',['../namespaceAscii.html#a53c6d56d56405038bcd337c68e6af93f',1,'Ascii']]],
   ['standard_6',['standard',['../structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2',1,'ProjectConfig']]],
   ['strikethru_7',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
-  ['success_8',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]]
+  ['success_8',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
+  ['support_5fmodern_5ffont_9',['support_modern_font',['../structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34',1,'PreferencesConfig']]]
 ];

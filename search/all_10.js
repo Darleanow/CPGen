@@ -9,10 +9,12 @@ var searchData=
   ['spinner5_6',['Spinner5',['../namespaceAscii.html#a2247471968964965fc681447c7d3b8f6',1,'Ascii']]],
   ['spinner6_7',['Spinner6',['../namespaceAscii.html#a53c6d56d56405038bcd337c68e6af93f',1,'Ascii']]],
   ['standard_8',['standard',['../structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2',1,'ProjectConfig']]],
-  ['stdinready_9',['stdinReady',['../namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8',1,'Utils']]],
-  ['strikethru_10',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
-  ['success_11',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
-  ['system_12',['System',['../namespaceSystem.html',1,'']]],
-  ['system_2ecpp_13',['System.cpp',['../System_8cpp.html',1,'']]],
-  ['system_2ehpp_14',['System.hpp',['../System_8hpp.html',1,'']]]
+  ['std_9',['std',['../namespacestd.html',1,'']]],
+  ['stdinready_10',['stdinReady',['../namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8',1,'Utils']]],
+  ['strikethru_11',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
+  ['success_12',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
+  ['support_5fmodern_5ffont_13',['support_modern_font',['../structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34',1,'PreferencesConfig']]],
+  ['system_14',['System',['../namespaceSystem.html',1,'']]],
+  ['system_2ecpp_15',['System.cpp',['../System_8cpp.html',1,'']]],
+  ['system_2ehpp_16',['System.hpp',['../System_8hpp.html',1,'']]]
 ];

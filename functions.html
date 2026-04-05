@@ -95,7 +95,7 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>generateProject()&#160;:&#160;<a class="el" href="classProjectGenerator.html#a2cc903c360d6961e29d0baa65a52103d">ProjectGenerator</a></li>
+<li>getConfig()&#160;:&#160;<a class="el" href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">PreferencesManager</a></li>
 </ul>
 
 
@@ -122,6 +122,7 @@ $(function() {
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>m_is_focused&#160;:&#160;<a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">Component</a></li>
 <li>module_name&#160;:&#160;<a class="el" href="structFetchContent.html#a82274d529acc75c4439c027e9755535f">FetchContent</a>, <a class="el" href="structTargetInjection.html#a0ea66c554622cf92bfbbcb1e4e43b94b">TargetInjection</a></li>
+<li>ModuleResolver()&#160;:&#160;<a class="el" href="classModuleResolver.html#a81df516c0a5088297d4c0fd75478633e">ModuleResolver</a></li>
 <li>modules&#160;:&#160;<a class="el" href="structProjectConfig.html#a12d1ce06f04ff8af5d63e1d5cb100dcb">ProjectConfig</a>, <a class="el" href="structResolvedProject.html#a5692e733d10207a4f3ffbd3b593b6035">ResolvedProject</a></li>
 <li>modules_list&#160;:&#160;<a class="el" href="structProjectOptions.html#a2588f6f14df5a0ca1ed65b7c09bcf053">ProjectOptions</a></li>
 </ul>
@@ -133,22 +134,26 @@ $(function() {
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>operator()()&#160;:&#160;<a class="el" href="structstd_1_1hash_3_01ResolvedTarget_01_4.html#a2ba935c1b89910521b59494c4297da6f">std::hash&lt; ResolvedTarget &gt;</a></li>
 <li>operator=()&#160;:&#160;<a class="el" href="classTerminal.html#aa28f238eb59e5c8283409789452eea97">Terminal</a></li>
+<li>operator==()&#160;:&#160;<a class="el" href="structResolvedTarget.html#abb1ac1ee285aa4ad7bda970a7293186f">ResolvedTarget</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>parse()&#160;:&#160;<a class="el" href="classCLI.html#a8fc85ec4716366bef7ceae56087d931c">CLI</a></li>
-<li>parse_opts()&#160;:&#160;<a class="el" href="classCLI.html#aab9c192a06a5dbdc0fb6cf7006db4989">CLI</a></li>
+<li>parse()&#160;:&#160;<a class="el" href="classCLI.html#a4b1155e1785fc2b872f54d6878361a1a">CLI</a></li>
+<li>parse_opts()&#160;:&#160;<a class="el" href="classCLI.html#a07b1961f218ddeb09d1eb99d4cdb8f16">CLI</a></li>
 <li>path&#160;:&#160;<a class="el" href="structProjectConfig.html#ac4b117db4cbb4185bad9c8c881ab0958">ProjectConfig</a>, <a class="el" href="structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca">ProjectOptions</a>, <a class="el" href="structResolvedTarget.html#a6e6465ef3171be4bf98d97a57446fad8">ResolvedTarget</a></li>
 <li>post_link&#160;:&#160;<a class="el" href="structTargetInjection.html#a4d216e0105a5fa3d61d6092d05c99fae">TargetInjection</a></li>
-<li>ProjectGenerator()&#160;:&#160;<a class="el" href="classProjectGenerator.html#ad8c0e5bfae282cd0b456663e9552aab4">ProjectGenerator</a></li>
+<li>PreferencesManager()&#160;:&#160;<a class="el" href="classPreferencesManager.html#a30c7fd28d19688d125596666fd2132fe">PreferencesManager</a></li>
+<li>ProjectResolver()&#160;:&#160;<a class="el" href="classProjectResolver.html#a7048b357a6e148ee7260e99d44894b4c">ProjectResolver</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>readFile()&#160;:&#160;<a class="el" href="classFileSystemWriter.html#a133e432e2d67991814c5425c92d6fbad">FileSystemWriter</a></li>
 <li>render()&#160;:&#160;<a class="el" href="classCheckbox.html#aba37c5b13b4d22314d004a74388f2737">Checkbox</a>, <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">Component</a>, <a class="el" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41">ComponentGroup</a>, <a class="el" href="classInput.html#a12dc4ccf2107bffd8914d52fc7ae735c">Input</a>, <a class="el" href="classTemplateEngine.html#abdfb0a1b82ace67e58ad7fbda3c100ef">TemplateEngine</a></li>
+<li>resolve()&#160;:&#160;<a class="el" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0">ProjectResolver</a></li>
+<li>resolveModule()&#160;:&#160;<a class="el" href="classModuleResolver.html#aadb78646bfafebe2485e3b5f78ceb2e0">ModuleResolver</a></li>
 <li>run()&#160;:&#160;<a class="el" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">View</a></li>
 </ul>
 
@@ -156,13 +161,14 @@ $(function() {
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>setFocused()&#160;:&#160;<a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">Component</a>, <a class="el" href="classComponentGroup.html#a430f3fb6bac35604ca246abf298bd59d">ComponentGroup</a></li>
 <li>standard&#160;:&#160;<a class="el" href="structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2">ProjectConfig</a></li>
+<li>support_modern_font&#160;:&#160;<a class="el" href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">PreferencesConfig</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
 <li>target_name&#160;:&#160;<a class="el" href="structTargetInjection.html#a306074a1381ba79206e6d0b8bf086b2c">TargetInjection</a></li>
 <li>targets&#160;:&#160;<a class="el" href="structProjectConfig.html#a4c62478b0c041229a6aface12ed98905">ProjectConfig</a>, <a class="el" href="structResolvedProject.html#ad4d36ac9caae8fc671a7bd489963e0bd">ResolvedProject</a></li>
-<li>template_name&#160;:&#160;<a class="el" href="structProjectOptions.html#afcc7d63d4fae5f1543bd879329481f46">ProjectOptions</a></li>
+<li>template_name&#160;:&#160;<a class="el" href="structProjectOptions.html#a3bad515a0312cc44c45d19e8bcf4dba7">ProjectOptions</a></li>
 <li>Terminal()&#160;:&#160;<a class="el" href="classTerminal.html#aa448509b5aa1ece53c3d86385655be0e">Terminal</a></li>
 <li>tooling&#160;:&#160;<a class="el" href="structProjectConfig.html#a58fef04743e8169313c8ef2162611f93">ProjectConfig</a></li>
 <li>type&#160;:&#160;<a class="el" href="structResolvedTarget.html#a81add4f2fd44704ab45f7976f1fc0097">ResolvedTarget</a></li>
@@ -172,11 +178,6 @@ $(function() {
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>url&#160;:&#160;<a class="el" href="structFetchContent.html#a263526ebc7df4409c1f73616ec0d8b0d">FetchContent</a></li>
 <li>use_template&#160;:&#160;<a class="el" href="structProjectOptions.html#ac94690f84957da8753fe9e605a18c594">ProjectOptions</a></li>
-</ul>
-
-
-<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>writeFile()&#160;:&#160;<a class="el" href="classFileSystemWriter.html#a4fbae671c87c4ba8140cadf37a925bbe">FileSystemWriter</a></li>
 </ul>
 
 
