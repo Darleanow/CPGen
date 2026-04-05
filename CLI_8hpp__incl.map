@@ -1,16 +1,13 @@
 <map id="include/CPGen/CLI/CLI.hpp" name="include/CPGen/CLI/CLI.hpp">
-<area shape="rect" id="Node000001" title="CLI Operations." alt="" coords="185,5,367,31"/>
-<area shape="rect" id="Node000002" href="$Config_8hpp.html" title=" " alt="" coords="35,79,194,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,34,157,75,155,70,247,29"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="195,153,248,178"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="274,32,234,139,229,137,269,30"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="267,79,378,105"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="286,30,309,64,304,67,281,33"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="402,79,462,105"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="303,29,393,70,390,75,301,34"/>
+<area shape="rect" id="Node000001" title="CLI Operations." alt="" coords="98,5,280,31"/>
+<area shape="rect" id="Node000002" href="$Config_8hpp.html" title=" " alt="" coords="43,79,202,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,33,146,69,142,66,176,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="226,79,286,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="202,29,236,66,232,69,198,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,153,72,178"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,107,64,144,60,140,100,103"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="134,103,192,141,189,146,131,107"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="95,153,153,178"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="119,105,123,137,118,138,113,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,107,66,144,63,140,107,103"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,153,149,178"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="125,105,125,137,120,137,120,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="174,153,231,178"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="138,103,180,140,176,144,134,107"/>
 </map>

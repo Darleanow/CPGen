@@ -85,27 +85,23 @@ $(document).ready(function() { init_codefold(0); });
 <a href="CLI_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Config_8hpp.html">CPGen/Core/Config.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">   13</a></span><span class="keyword">using </span><a class="code hl_typedef" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> = std::variant&lt;ProjectConfig, bool&gt;;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">   15</a></span><span class="keyword">using </span><a class="code hl_typedef" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> = std::variant&lt;ProjectConfig, bool&gt;;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classCLI.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="classCLI.html">CLI</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_typedef" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> <a class="code hl_function" href="classCLI.html#a4b1155e1785fc2b872f54d6878361a1a">parse</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">static</span> std::unordered_map&lt;std::string, std::string&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classCLI.html#a07b1961f218ddeb09d1eb99d4cdb8f16">   37</a></span>  <a class="code hl_function" href="classCLI.html#a07b1961f218ddeb09d1eb99d4cdb8f16">parse_opts</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structProjectOptions.html">ProjectOptions</a> &amp;opts);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classCLI.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classCLI.html">CLI</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_typedef" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> <a class="code hl_function" href="classCLI.html#a4b1155e1785fc2b872f54d6878361a1a">parse</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">void</span> showHelp() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 </div>
-<div class="ttc" id="aCLI_8hpp_html_a291ce1b4d2e5bb74e144a380c2bd433f"><div class="ttname"><a href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a></div><div class="ttdeci">std::variant&lt; ProjectConfig, bool &gt; Config</div><div class="ttdef"><b>Definition</b> CLI.hpp:15</div></div>
+<div class="ttc" id="aCLI_8hpp_html_a291ce1b4d2e5bb74e144a380c2bd433f"><div class="ttname"><a href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a></div><div class="ttdeci">std::variant&lt; ProjectConfig, bool &gt; Config</div><div class="ttdef"><b>Definition</b> CLI.hpp:13</div></div>
 <div class="ttc" id="aConfig_8hpp_html"><div class="ttname"><a href="Config_8hpp.html">Config.hpp</a></div></div>
-<div class="ttc" id="aclassCLI_html"><div class="ttname"><a href="classCLI.html">CLI</a></div><div class="ttdoc">Parse various opts.</div><div class="ttdef"><b>Definition</b> CLI.hpp:21</div></div>
-<div class="ttc" id="aclassCLI_html_a07b1961f218ddeb09d1eb99d4cdb8f16"><div class="ttname"><a href="classCLI.html#a07b1961f218ddeb09d1eb99d4cdb8f16">CLI::parse_opts</a></div><div class="ttdeci">static std::unordered_map&lt; std::string, std::string &gt; parse_opts(const ProjectOptions &amp;opts)</div><div class="ttdoc">Translates ProjectOptions into a keymap.</div></div>
+<div class="ttc" id="aclassCLI_html"><div class="ttname"><a href="classCLI.html">CLI</a></div><div class="ttdoc">Parse various opts.</div><div class="ttdef"><b>Definition</b> CLI.hpp:19</div></div>
 <div class="ttc" id="aclassCLI_html_a4b1155e1785fc2b872f54d6878361a1a"><div class="ttname"><a href="classCLI.html#a4b1155e1785fc2b872f54d6878361a1a">CLI::parse</a></div><div class="ttdeci">Config parse(const int argc, char **argv)</div><div class="ttdoc">Parse argc, argv.</div><div class="ttdef"><b>Definition</b> CLI.cpp:9</div></div>
-<div class="ttc" id="astructProjectOptions_html"><div class="ttname"><a href="structProjectOptions.html">ProjectOptions</a></div><div class="ttdoc">ProjectOptions has all the available base options, made to be extensible using config files.</div><div class="ttdef"><b>Definition</b> Config.hpp:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
