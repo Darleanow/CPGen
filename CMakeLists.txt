@@ -61,7 +61,11 @@ add_custom_command(
 
 enable_testing()
 
-add_executable(test_suite tests/UTCLI.cpp)
+add_executable(test_suite
+  tests/UTCLI.cpp
+  tests/UTModuleResolver.cpp
+  tests/UTProjectResolver.cpp
+)
 target_include_directories(test_suite PRIVATE include)
 
 target_link_libraries(
