@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CPGen/TUI/Misc/Defs.hpp"
+#include "Misc/Defs.hpp"
 #include <string>
 
 /**

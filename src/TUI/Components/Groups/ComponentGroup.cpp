@@ -1,6 +1,6 @@
-#include "CPGen/TUI/Components/Groups/ComponentGroup.hpp"
-#include "CPGen/TUI/Misc/Ascii.hpp"
-#include "CPGen/TUI/Misc/Utils.hpp"
+#include "Components/Groups/ComponentGroup.hpp"
+#include "Misc/Ascii.hpp"
+#include "Misc/Utils.hpp"
 #include <stdexcept>
 
 ComponentGroup::ComponentGroup(std::string title, std::string icon)

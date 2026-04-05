@@ -1,6 +1,6 @@
-#include "CPGen/TUI/Components/Basic/Input.hpp"
-#include "CPGen/TUI/Misc/Ascii.hpp"
-#include "CPGen/TUI/Misc/Utils.hpp"
+#include "Components/Basic/Input.hpp"
+#include "Misc/Ascii.hpp"
+#include "Misc/Utils.hpp"
 
 Input::Input(std::string label, std::function<void(std::string)> on_change)
     : m_label(std::move(label)), m_on_change(std::move(on_change)) {}

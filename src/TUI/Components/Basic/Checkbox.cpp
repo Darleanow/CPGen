@@ -1,6 +1,6 @@
-#include "CPGen/TUI/Components/Basic/Checkbox.hpp"
-#include "CPGen/TUI/Misc/Ascii.hpp"
-#include "CPGen/TUI/Misc/Utils.hpp"
+#include "Components/Basic/Checkbox.hpp"
+#include "Misc/Ascii.hpp"
+#include "Misc/Utils.hpp"
 
 Checkbox::Checkbox(std::string label, std::function<void(bool)> on_change)
     : m_label(std::move(label)), m_on_change(std::move(on_change)) {}

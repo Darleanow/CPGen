@@ -1,6 +1,6 @@
-#include "CPGen/TUI/View/View.hpp"
-#include "CPGen/TUI/Misc/Terminal.hpp"
-#include "CPGen/TUI/Misc/Utils.hpp"
+#include "View/View.hpp"
+#include "Misc/Terminal.hpp"
+#include "Misc/Utils.hpp"
 #include <iostream>
 
 void View::addSection(std::unique_ptr<Component> section) {

@@ -38,19 +38,28 @@ add_library(
   src/System/System.cpp
   src/Resolvers/ModuleResolver.cpp
   src/Resolvers/ProjectResolver.cpp
+
+)
+
+target_include_directories(CPGenSource
+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+add_library(
+  CPGenTUI
   src/TUI/Components/Basic/Checkbox.cpp
   src/TUI/Components/Basic/Input.cpp
   src/TUI/Components/Groups/ComponentGroup.cpp
   src/TUI/View/View.cpp
 )
 
+target_include_directories(CPGenTUI
+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/CPGen/TUI)
+
 target_link_libraries(CPGenSource PUBLIC nlohmann_json::nlohmann_json)
 
 add_executable(CPGen src/main.cpp)
 
-target_include_directories(CPGenSource
-                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(CPGen PRIVATE CPGenSource)
+target_link_libraries(CPGen PRIVATE CPGenSource CPGenTUI)
 
 add_custom_command(
   TARGET CPGen POST_BUILD

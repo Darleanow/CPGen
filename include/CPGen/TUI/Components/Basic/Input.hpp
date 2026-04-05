@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CPGen/TUI/Components/Component.hpp"
+#include "Components/Component.hpp"
 #include <functional>
 #include <string>
 
