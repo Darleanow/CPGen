@@ -77,16 +77,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Resolves module names to their fully parsed <a class="el" href="structResolvedModule.html">ResolvedModule</a> descriptors.  
+ <a href="classModuleResolver.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ModuleResolver_8hpp_source.html">ModuleResolver.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a81df516c0a5088297d4c0fd75478633e" id="r_a81df516c0a5088297d4c0fd75478633e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModuleResolver.html#a81df516c0a5088297d4c0fd75478633e">ModuleResolver</a> ()</td></tr>
+<tr class="memdesc:a81df516c0a5088297d4c0fd75478633e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <code><a class="el" href="classModuleResolver.html" title="Resolves module names to their fully parsed ResolvedModule descriptors.">ModuleResolver</a></code> and resolves template search paths.  <br /></td></tr>
 <tr class="separator:a81df516c0a5088297d4c0fd75478633e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadb78646bfafebe2485e3b5f78ceb2e0" id="r_aadb78646bfafebe2485e3b5f78ceb2e0"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structResolvedModule.html">ResolvedModule</a>, std::vector&lt; <a class="el" href="structTargetInjection.html">TargetInjection</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModuleResolver.html#aadb78646bfafebe2485e3b5f78ceb2e0">resolveModule</a> (const std::string &amp;module_name)</td></tr>
+<tr class="memdesc:aadb78646bfafebe2485e3b5f78ceb2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate and parse a module by name.  <br /></td></tr>
 <tr class="separator:aadb78646bfafebe2485e3b5f78ceb2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Resolves module names to their fully parsed <a class="el" href="structResolvedModule.html">ResolvedModule</a> descriptors. </p>
+<p>On construction the resolver builds a list of candidate template directories (see resolvePaths). Subsequent <a class="el" href="classModuleResolver.html#aadb78646bfafebe2485e3b5f78ceb2e0">resolveModule</a> calls search those directories in priority order and parse the first matching JSON file.</p>
+<h3><a class="anchor" id="autotoc_md0"></a>
+Search path priority</h3>
+<ol type="1">
+<li><code>~/</code>.config/cpgen/templates (user-local)</li>
+<li><code>/usr/local/share/cpgen/templates</code> (system-wide, local install)</li>
+<li><code>/usr/share/cpgen/templates</code> (system-wide, package manager install)</li>
+<li><code></code> &lt;executable_dir&gt;/templates (development in-tree build)</li>
+</ol>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>from the constructor if none of the candidate paths exist on the current machine. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a81df516c0a5088297d4c0fd75478633e" name="a81df516c0a5088297d4c0fd75478633e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81df516c0a5088297d4c0fd75478633e">&#9670;&#160;</a></span>ModuleResolver()</h2>
 
@@ -101,6 +123,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a <code><a class="el" href="classModuleResolver.html" title="Resolves module names to their fully parsed ResolvedModule descriptors.">ModuleResolver</a></code> and resolves template search paths. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If no valid template directory is found. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -120,6 +150,26 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Locate and parse a module by name. </p>
+<p>Searches m_resolved_paths for a file at <code></code> &lt;path&gt;/modules/&lt;module_name&gt;/&lt;module_name&gt;.json and parses it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">module_name</td><td>Identifier of the module to resolve (e.g. <code>"gtest"</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of:<ul>
+<li><a class="el" href="structResolvedModule.html">ResolvedModule</a> — parsed metadata and optional <a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> info.</li>
+<li><code>std::vector&lt;TargetInjection&gt;</code> — CMake snippets for each target the module contributes to. </li>
+</ul>
+</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the module JSON file cannot be found or opened. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

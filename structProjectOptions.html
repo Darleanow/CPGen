@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="structProjectOptions.html" title="ProjectOptions has all the available base options, made to be extensible using config files.">ProjectOptions</a> has all the available base options, made to be extensible using config files.  
+<p>Flat configuration bag used by the interactive TUI mode.  
  <a href="structProjectOptions.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Config_8hpp_source.html">Config.hpp</a>&gt;</code></p>
@@ -85,23 +85,30 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a593eb67ed750bcd3ec4c1ce907b7fa56" id="r_a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a593eb67ed750bcd3ec4c1ce907b7fa56">is_tui_mode</a> = false</td></tr>
+<tr class="memdesc:a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the application was launched in TUI mode.  <br /></td></tr>
 <tr class="separator:a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e932809309a187bb4cafc0308a979d2" id="r_a6e932809309a187bb4cafc0308a979d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a6e932809309a187bb4cafc0308a979d2">has_git</a> = false</td></tr>
+<tr class="memdesc:a6e932809309a187bb4cafc0308a979d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to initialise a Git repository.  <br /></td></tr>
 <tr class="separator:a6e932809309a187bb4cafc0308a979d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac0a6a8f1a92d3e73e2a19f9ae6808ca" id="r_aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca">path</a></td></tr>
+<tr class="memdesc:aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute path to the directory where the project will be generated.  <br /></td></tr>
 <tr class="separator:aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89493b9f4c4bcc834ef986809c801bff" id="r_a89493b9f4c4bcc834ef986809c801bff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a89493b9f4c4bcc834ef986809c801bff">name</a></td></tr>
+<tr class="memdesc:a89493b9f4c4bcc834ef986809c801bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the project (becomes the leaf directory name).  <br /></td></tr>
 <tr class="separator:a89493b9f4c4bcc834ef986809c801bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Template parameters</div></td></tr>
 <tr class="memitem:ac94690f84957da8753fe9e605a18c594" id="r_ac94690f84957da8753fe9e605a18c594"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#ac94690f84957da8753fe9e605a18c594">use_template</a> = false</td></tr>
+<tr class="memdesc:ac94690f84957da8753fe9e605a18c594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to apply a named project template.  <br /></td></tr>
 <tr class="separator:ac94690f84957da8753fe9e605a18c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bad515a0312cc44c45d19e8bcf4dba7" id="r_a3bad515a0312cc44c45d19e8bcf4dba7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a3bad515a0312cc44c45d19e8bcf4dba7">template_name</a></td></tr>
+<tr class="memdesc:a3bad515a0312cc44c45d19e8bcf4dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template identifier, valid only when <code>use_template</code> is <code>true</code>.  <br /></td></tr>
 <tr class="separator:a3bad515a0312cc44c45d19e8bcf4dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2588f6f14df5a0ca1ed65b7c09bcf053" id="r_a2588f6f14df5a0ca1ed65b7c09bcf053"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a2588f6f14df5a0ca1ed65b7c09bcf053">modules_list</a></td></tr>
+<tr class="memdesc:a2588f6f14df5a0ca1ed65b7c09bcf053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional dependency modules requested by the user.  <br /></td></tr>
 <tr class="separator:a2588f6f14df5a0ca1ed65b7c09bcf053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="structProjectOptions.html" title="ProjectOptions has all the available base options, made to be extensible using config files.">ProjectOptions</a> has all the available base options, made to be extensible using config files. </p>
+<div class="textblock"><p>Flat configuration bag used by the interactive TUI mode. </p>
+<p>Populated incrementally by the TUI widgets (<a class="el" href="classCheckbox.html" title="A toggleable checkbox component.">Checkbox</a>, <a class="el" href="classInput.html" title="A single-line text input component.">Input</a>) as the user fills in the form. This is separate from <a class="el" href="structProjectConfig.html">ProjectConfig</a>, which is the typed output of the <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> flag parser. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a6e932809309a187bb4cafc0308a979d2" name="a6e932809309a187bb4cafc0308a979d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e932809309a187bb4cafc0308a979d2">&#9670;&#160;</a></span>has_git</h2>
@@ -114,7 +121,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Init git repo ? </p>
+
+<p>Whether to initialise a Git repository. </p>
 
 </div>
 </div>
@@ -129,7 +137,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Use TUI mode ? </p>
+
+<p>Whether the application was launched in TUI mode. </p>
 
 </div>
 </div>
@@ -145,6 +154,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Additional dependency modules requested by the user. </p>
+
 </div>
 </div>
 <a id="a89493b9f4c4bcc834ef986809c801bff" name="a89493b9f4c4bcc834ef986809c801bff"></a>
@@ -158,7 +169,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The name of the project (path+name/) </p>
+
+<p>Name of the project (becomes the leaf directory name). </p>
 
 </div>
 </div>
@@ -173,7 +185,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The target project path </p>
+
+<p>Absolute path to the directory where the project will be generated. </p>
 
 </div>
 </div>
@@ -188,7 +201,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Name of the template if so </p>
+
+<p>Template identifier, valid only when <code>use_template</code> is <code>true</code>. </p>
 
 </div>
 </div>
@@ -203,7 +217,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Do we use a template ? </p>
+
+<p>Whether to apply a named project template. </p>
 
 </div>
 </div>

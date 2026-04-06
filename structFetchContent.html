@@ -77,16 +77,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Describes a CMake <a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> dependency to be downloaded at build time.  
+ <a href="structFetchContent.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Module_8hpp_source.html">Module.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a82274d529acc75c4439c027e9755535f" id="r_a82274d529acc75c4439c027e9755535f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFetchContent.html#a82274d529acc75c4439c027e9755535f">module_name</a></td></tr>
+<tr class="memdesc:a82274d529acc75c4439c027e9755535f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name passed to <code>FetchContent_Declare</code> (e.g. <code>"googletest"</code>).  <br /></td></tr>
 <tr class="separator:a82274d529acc75c4439c027e9755535f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263526ebc7df4409c1f73616ec0d8b0d" id="r_a263526ebc7df4409c1f73616ec0d8b0d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFetchContent.html#a263526ebc7df4409c1f73616ec0d8b0d">url</a></td></tr>
+<tr class="memdesc:a263526ebc7df4409c1f73616ec0d8b0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Archive URL or Git repository used for the download.  <br /></td></tr>
 <tr class="separator:a263526ebc7df4409c1f73616ec0d8b0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes a CMake <a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> dependency to be downloaded at build time. </p>
+<p>When a module declares a <a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> block in its JSON definition, it is parsed into this struct and later injected into the generated CMakeLists.txt via a <code>FetchContent_Declare</code> / <code>FetchContent_MakeAvailable</code> call pair. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a82274d529acc75c4439c027e9755535f" name="a82274d529acc75c4439c027e9755535f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82274d529acc75c4439c027e9755535f">&#9670;&#160;</a></span>module_name</h2>
 
@@ -98,6 +106,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Name passed to <code>FetchContent_Declare</code> (e.g. <code>"googletest"</code>). </p>
 
 </div>
 </div>
@@ -112,6 +122,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Archive URL or Git repository used for the download. </p>
 
 </div>
 </div>

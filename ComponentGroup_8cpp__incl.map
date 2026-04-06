@@ -1,10 +1,10 @@
 <map id="src/TUI/Components/Groups/ComponentGroup.cpp" name="src/TUI/Components/Groups/ComponentGroup.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="391,5,587,46"/>
-<area shape="rect" id="Node000002" href="$ComponentGroup_8hpp.html" title=" " alt="" coords="313,94,523,135"/>
+<area shape="rect" id="Node000002" href="$ComponentGroup_8hpp.html" title="A titled container that manages a vertical list of child components." alt="" coords="313,94,523,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,48,446,84,442,80,471,45"/>
-<area shape="rect" id="Node000003" href="$Component_8hpp.html" title=" " alt="" coords="75,183,263,208"/>
+<area shape="rect" id="Node000003" href="$Component_8hpp.html" title="Abstract base class for all TUI components." alt="" coords="75,183,263,208"/>
 <area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="391,45,323,65,290,79,258,96,236,113,217,132,186,171,182,168,213,129,233,109,255,92,287,74,322,60,390,40"/>
-<area shape="rect" id="Node000004" href="$Defs_8hpp.html" title=" " alt="" coords="70,256,174,282"/>
+<area shape="rect" id="Node000004" href="$Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="70,256,174,282"/>
 <area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="390,32,304,43,258,54,212,69,168,89,127,114,92,146,65,184,61,200,67,216,78,231,93,245,90,249,74,235,62,218,56,200,60,182,88,142,124,110,165,84,210,64,256,49,303,38,390,26"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="5,330,66,356"/>
 <area shape="poly" id="edge25_Node000001_Node000006" title=" " alt="" coords="391,37,309,45,225,57,151,74,122,85,101,96,79,118,62,144,49,173,41,204,35,265,35,314,30,314,29,265,36,203,44,171,57,141,74,114,98,92,120,80,149,69,224,52,309,40,390,31"/>
@@ -12,9 +12,9 @@
 <area shape="poly" id="edge23_Node000001_Node000007" title=" " alt="" coords="391,41,342,61,320,76,303,96,294,113,289,131,291,171,301,209,315,241,310,243,296,211,285,172,284,131,289,111,299,92,317,72,339,57,389,36"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="471,183,539,208"/>
 <area shape="poly" id="edge22_Node000001_Node000008" title=" " alt="" coords="509,45,525,67,538,93,542,114,538,135,524,170,519,168,533,134,536,114,533,95,521,70,505,48"/>
-<area shape="rect" id="Node000010" href="$Ascii_8hpp.html" title=" " alt="" coords="649,102,755,127"/>
+<area shape="rect" id="Node000010" href="$Ascii_8hpp.html" title="Unicode / Nerd Font glyph constants used throughout the TUI." alt="" coords="649,102,755,127"/>
 <area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="538,44,659,93,657,98,536,49"/>
-<area shape="rect" id="Node000011" href="$Utils_8hpp.html" title=" " alt="" coords="562,183,666,208"/>
+<area shape="rect" id="Node000011" href="$Utils_8hpp.html" title="TUI utility functions: ANSI colour helpers, input reading, and string metrics." alt="" coords="562,183,666,208"/>
 <area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="513,44,558,92,584,131,604,168,599,170,579,134,553,96,509,48"/>
 <area shape="rect" id="Node000017" title=" " alt="" coords="779,102,844,127"/>
 <area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="588,44,676,65,768,91,772,93,771,98,767,97,675,70,587,49"/>

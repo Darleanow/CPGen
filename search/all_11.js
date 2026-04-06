@@ -14,5 +14,6 @@ var searchData=
   ['test_11',['Test',['../Config_8hpp.html#a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b',1,'Config.hpp']]],
   ['tooling_12',['tooling',['../structProjectConfig.html#a58fef04743e8169313c8ef2162611f93',1,'ProjectConfig']]],
   ['toolingconfig_13',['ToolingConfig',['../structToolingConfig.html',1,'']]],
-  ['type_14',['type',['../structResolvedTarget.html#a81add4f2fd44704ab45f7976f1fc0097',1,'ResolvedTarget']]]
+  ['type_14',['type',['../structResolvedTarget.html#a81add4f2fd44704ab45f7976f1fc0097',1,'ResolvedTarget']]],
+  ['typical_20setup_15',['Typical setup',['../View_8hpp.html#autotoc_md8',1,'']]]
 ];

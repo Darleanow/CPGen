@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A generic container that holds child components.  
+<p>A container widget that groups and lays out child <a class="el" href="classComponent.html">Component</a> objects.  
  <a href="classComponentGroup.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ComponentGroup_8hpp_source.html">ComponentGroup.hpp</a>&gt;</code></p>
@@ -86,8 +86,8 @@ Inheritance diagram for ComponentGroup:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponentGroup__inherit__graph.png" border="0" usemap="#aComponentGroup_inherit__map" alt="Inheritance graph"/></div>
 <map name="aComponentGroup_inherit__map" id="aComponentGroup_inherit__map">
-<area shape="rect" title="A generic container that holds child components." alt="" coords="5,79,128,105"/>
-<area shape="rect" href="classComponent.html" title="Abstract base for all TUI components." alt="" coords="23,5,110,31"/>
+<area shape="rect" title="A container widget that groups and lays out child Component objects." alt="" coords="5,79,128,105"/>
+<area shape="rect" href="classComponent.html" title="Abstract base for all TUI widgets." alt="" coords="23,5,110,31"/>
 <area shape="poly" title=" " alt="" coords="69,46,69,79,64,79,64,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -96,8 +96,8 @@ Collaboration diagram for ComponentGroup:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponentGroup__coll__graph.png" border="0" usemap="#aComponentGroup_coll__map" alt="Collaboration graph"/></div>
 <map name="aComponentGroup_coll__map" id="aComponentGroup_coll__map">
-<area shape="rect" title="A generic container that holds child components." alt="" coords="5,79,128,105"/>
-<area shape="rect" href="classComponent.html" title="Abstract base for all TUI components." alt="" coords="23,5,110,31"/>
+<area shape="rect" title="A container widget that groups and lays out child Component objects." alt="" coords="5,79,128,105"/>
+<area shape="rect" href="classComponent.html" title="Abstract base for all TUI widgets." alt="" coords="23,5,110,31"/>
 <area shape="poly" title=" " alt="" coords="69,46,69,79,64,79,64,46"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -105,44 +105,52 @@ Collaboration diagram for ComponentGroup:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7bf4c9321510139ca687d17d7b330668" id="r_a7bf4c9321510139ca687d17d7b330668"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#a7bf4c9321510139ca687d17d7b330668">ComponentGroup</a> (std::string title, std::string icon=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7bf4c9321510139ca687d17d7b330668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classComponentGroup.html" title="A container widget that groups and lays out child Component objects.">ComponentGroup</a> with a title and an optional icon.  <br /></td></tr>
 <tr class="separator:a7bf4c9321510139ca687d17d7b330668"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bde9780f76a87df327c6f6529af5caf" id="r_a5bde9780f76a87df327c6f6529af5caf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#a5bde9780f76a87df327c6f6529af5caf">addChild</a> (std::unique_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt; child)</td></tr>
+<tr class="memdesc:a5bde9780f76a87df327c6f6529af5caf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a child component to the bottom of the group.  <br /></td></tr>
 <tr class="separator:a5bde9780f76a87df327c6f6529af5caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac26b65de2a4666e8ec4d90e58b42fb41" id="r_ac26b65de2a4666e8ec4d90e58b42fb41"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41">render</a> () const override</td></tr>
-<tr class="memdesc:ac26b65de2a4666e8ec4d90e58b42fb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the component as an ANSI string.  <br /></td></tr>
+<tr class="memdesc:ac26b65de2a4666e8ec4d90e58b42fb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the group and all its children as a multi-line ANSI string.  <br /></td></tr>
 <tr class="separator:ac26b65de2a4666e8ec4d90e58b42fb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86537b51456d6d266b17a746e03f8222" id="r_a86537b51456d6d266b17a746e03f8222"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#a86537b51456d6d266b17a746e03f8222">handleInput</a> (<a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> key) override</td></tr>
-<tr class="memdesc:a86537b51456d6d266b17a746e03f8222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key press.  <br /></td></tr>
+<tr class="memitem:a86537b51456d6d266b17a746e03f8222" id="r_a86537b51456d6d266b17a746e03f8222"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#a86537b51456d6d266b17a746e03f8222">handleInput</a> (<a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> key) override</td></tr>
+<tr class="memdesc:a86537b51456d6d266b17a746e03f8222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key event, routing it to the focused child or managing focus.  <br /></td></tr>
 <tr class="separator:a86537b51456d6d266b17a746e03f8222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a430f3fb6bac35604ca246abf298bd59d" id="r_a430f3fb6bac35604ca246abf298bd59d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponentGroup.html#a430f3fb6bac35604ca246abf298bd59d">setFocused</a> (bool focused) override</td></tr>
-<tr class="memdesc:a430f3fb6bac35604ca246abf298bd59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the focus state of this component.  <br /></td></tr>
+<tr class="memdesc:a430f3fb6bac35604ca246abf298bd59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagate focus state changes to the currently focused child.  <br /></td></tr>
 <tr class="separator:a430f3fb6bac35604ca246abf298bd59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classComponent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
 <tr class="memitem:a404098a91640552f9d0284d08b53def4 inherit pub_methods_classComponent" id="r_a404098a91640552f9d0284d08b53def4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a404098a91640552f9d0284d08b53def4">Component</a> ()=default</td></tr>
 <tr class="separator:a404098a91640552f9d0284d08b53def4 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_classComponent" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
+<tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor — components are always owned via base-class pointer.  <br /></td></tr>
 <tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed2d7eb6cd97620b65456788dcdb4b4c inherit pub_methods_classComponent" id="r_aed2d7eb6cd97620b65456788dcdb4b4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#aed2d7eb6cd97620b65456788dcdb4b4c">Component</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aed2d7eb6cd97620b65456788dcdb4b4c inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-copyable (unique ownership).  <br /></td></tr>
 <tr class="separator:aed2d7eb6cd97620b65456788dcdb4b4c inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae152806e92e166c5794ba9cd7a1263bd inherit pub_methods_classComponent" id="r_ae152806e92e166c5794ba9cd7a1263bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ae152806e92e166c5794ba9cd7a1263bd">operator=</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ae152806e92e166c5794ba9cd7a1263bd inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-copyable (unique ownership).  <br /></td></tr>
 <tr class="separator:ae152806e92e166c5794ba9cd7a1263bd inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1739e84d9766c32e06dfc163b121f0c9 inherit pub_methods_classComponent" id="r_a1739e84d9766c32e06dfc163b121f0c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a1739e84d9766c32e06dfc163b121f0c9">Component</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a1739e84d9766c32e06dfc163b121f0c9 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-movable.  <br /></td></tr>
 <tr class="separator:a1739e84d9766c32e06dfc163b121f0c9 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b62f108ab594697b90d228b345d9d5 inherit pub_methods_classComponent" id="r_a84b62f108ab594697b90d228b345d9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a84b62f108ab594697b90d228b345d9d5">operator=</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a84b62f108ab594697b90d228b345d9d5 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-movable.  <br /></td></tr>
 <tr class="separator:a84b62f108ab594697b90d228b345d9d5 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent" id="r_ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad8782aeeb6c0d675f65c063f3e4a0bc1">isFocused</a> () const</td></tr>
-<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this component is focused.  <br /></td></tr>
+<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this component currently has keyboard focus.  <br /></td></tr>
 <tr class="separator:ad8782aeeb6c0d675f65c063f3e4a0bc1 inherit pub_methods_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classComponent"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classComponent')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classComponent.html">Component</a></td></tr>
 <tr class="memitem:a11504494f0319149ff979778aa074810 inherit pro_attribs_classComponent" id="r_a11504494f0319149ff979778aa074810"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">m_is_focused</a> = false</td></tr>
+<tr class="memdesc:a11504494f0319149ff979778aa074810 inherit pro_attribs_classComponent"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current focus state, managed by <a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a>.  <br /></td></tr>
 <tr class="separator:a11504494f0319149ff979778aa074810 inherit pro_attribs_classComponent"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A generic container that holds child components. </p>
-<p>Renders a titled box with an optional icon, containing any number of child Components. Manages internal focus navigation (Up/Down) and delegates input to the focused child. </p>
+<div class="textblock"><p>A container widget that groups and lays out child <a class="el" href="classComponent.html">Component</a> objects. </p>
+<p>Renders itself as a fixed-width bordered box with a title (and optional icon) in the top border. Child components are stacked vertically inside the box. The group tracks an internal focus index and routes <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa">Defs::Special::Up</a> / <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53">Defs::Special::Down</a> to cycle focus between children; all other keys are forwarded to the currently focused child. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7bf4c9321510139ca687d17d7b330668" name="a7bf4c9321510139ca687d17d7b330668"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7bf4c9321510139ca687d17d7b330668">&#9670;&#160;</a></span>ComponentGroup()</h2>
@@ -178,6 +186,15 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a <a class="el" href="classComponentGroup.html" title="A container widget that groups and lays out child Component objects.">ComponentGroup</a> with a title and an optional icon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Displayed in the top border of the group box. </td></tr>
+    <tr><td class="paramname">icon</td><td>Optional Nerd Font / Unicode glyph prepended to the title. Defaults to an empty string (no icon). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -197,6 +214,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Append a child component to the bottom of the group. </p>
+<p>Ownership is transferred to the group. The first child added automatically receives focus when the group itself gains focus.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">child</td><td>The component to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a86537b51456d6d266b17a746e03f8222" name="a86537b51456d6d266b17a746e03f8222"></a>
@@ -211,7 +237,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">bool ComponentGroup::handleInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -223,14 +249,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handle a key press. </p>
+<p>Handle a key event, routing it to the focused child or managing focus. </p>
+<ul>
+<li><a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa">Defs::Special::Up</a> / <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53">Defs::Special::Down</a> → move internal focus.</li>
+<li>Any other key → forwarded to the focused child's <code>handleInput</code>.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>The key event </td></tr>
+    <tr><td class="paramname">key</td><td>The key to process. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the key was consumed, false to bubble up </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the key was consumed (either by focus movement or by a child). </dd></dl>
 
 <p>Implements <a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">Component</a>.</p>
 
@@ -259,8 +289,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Render the component as an ANSI string. </p>
-<dl class="section return"><dt>Returns</dt><dd>The rendered string (may contain newlines) </dd></dl>
+<p>Render the group and all its children as a multi-line ANSI string. </p>
+<dl class="section return"><dt>Returns</dt><dd>Box border + one rendered child per line, all padded to the fixed width. </dd></dl>
 
 <p>Implements <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">Component</a>.</p>
 <div class="dynheader">
@@ -268,12 +298,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponentGroup_ac26b65de2a4666e8ec4d90e58b42fb41_cgraph.png" border="0" usemap="#aclassComponentGroup_ac26b65de2a4666e8ec4d90e58b42fb41_cgraph" alt=""/></div>
 <map name="aclassComponentGroup_ac26b65de2a4666e8ec4d90e58b42fb41_cgraph" id="aclassComponentGroup_ac26b65de2a4666e8ec4d90e58b42fb41_cgraph">
-<area shape="rect" title="Render the component as an ANSI string." alt="" coords="5,31,170,56"/>
-<area shape="rect" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad" title=" " alt="" coords="218,5,343,31"/>
+<area shape="rect" title="Render the group and all its children as a multi&#45;line ANSI string." alt="" coords="5,31,170,56"/>
+<area shape="rect" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad" title="Build a complete ANSI SGR escape sequence from a code string." alt="" coords="218,5,343,31"/>
 <area shape="poly" title=" " alt="" coords="170,30,202,26,202,31,170,35"/>
-<area shape="rect" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="220,55,341,80"/>
+<area shape="rect" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) column width of a UTF&#45;8 string." alt="" coords="220,55,341,80"/>
 <area shape="poly" title=" " alt="" coords="170,51,205,55,204,61,170,56"/>
-<area shape="rect" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4" title="Strip ANSI escape sequences from a string." alt="" coords="391,55,496,80"/>
+<area shape="rect" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4" title="Remove all ANSI escape sequences from a string." alt="" coords="391,55,496,80"/>
 <area shape="poly" title=" " alt="" coords="341,65,375,65,375,70,341,70"/>
 </map>
 </div>
@@ -304,10 +334,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the focus state of this component. </p>
+<p>Propagate focus state changes to the currently focused child. </p>
+<p>When the group gains focus, the child at m_focused_index is also focused. When focus is removed from the group, all children are unfocused.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">focused</td><td>Whether this component should be focused </td></tr>
+    <tr><td class="paramname">focused</td><td><code>true</code> to grant focus, <code>false</code> to remove it. </td></tr>
   </table>
   </dd>
 </dl>

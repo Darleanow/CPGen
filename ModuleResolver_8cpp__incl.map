@@ -1,8 +1,8 @@
 <map id="src/Resolvers/ModuleResolver.cpp" name="src/Resolvers/ModuleResolver.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="671,5,893,31"/>
-<area shape="rect" id="Node000002" href="$ModuleResolver_8hpp.html" title=" " alt="" coords="423,79,669,105"/>
+<area shape="rect" id="Node000002" href="$ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="423,79,669,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="743,34,601,77,600,71,741,29"/>
-<area shape="rect" id="Node000003" href="$Resolved_8hpp.html" title=" " alt="" coords="176,153,353,178"/>
+<area shape="rect" id="Node000003" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="176,153,353,178"/>
 <area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="670,31,500,51,423,65,368,81,323,110,287,143,283,139,319,106,366,77,422,60,499,46,670,26"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="303,300,357,326"/>
 <area shape="poly" id="edge20_Node000001_Node000007" title=" " alt="" coords="671,27,595,33,520,44,455,60,430,70,413,81,396,100,386,119,381,138,380,158,379,202,375,226,367,253,348,288,344,286,362,251,370,225,374,201,374,158,376,137,381,117,391,97,409,77,428,65,453,55,519,39,595,28,670,22"/>
@@ -25,9 +25,9 @@
 <area shape="poly" id="edge13_Node000002_Node000008" title=" " alt="" coords="543,106,527,153,513,224,505,285,499,284,508,223,522,152,538,104"/>
 <area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="553,104,568,137,563,139,548,106"/>
 <area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="574,103,665,144,663,148,572,108"/>
-<area shape="rect" id="Node000004" href="$Config_8hpp.html" title=" " alt="" coords="5,226,164,252"/>
+<area shape="rect" id="Node000004" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="5,226,164,252"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="235,181,130,223,128,218,233,176"/>
-<area shape="rect" id="Node000009" href="$Module_8hpp.html" title=" " alt="" coords="188,226,352,252"/>
+<area shape="rect" id="Node000009" href="$Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="188,226,352,252"/>
 <area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="268,178,270,211,265,211,263,179"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="10,300,71,326"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="80,254,58,288,54,285,75,251"/>

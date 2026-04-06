@@ -77,20 +77,29 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Groups all optional tooling flags that can be enabled for a project.  
+ <a href="structToolingConfig.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Config_8hpp_source.html">Config.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:adbf3ccebbab5cd44c7cf899ca3c9d654" id="r_adbf3ccebbab5cd44c7cf899ca3c9d654"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html#adbf3ccebbab5cd44c7cf899ca3c9d654">has_git</a> = false</td></tr>
+<tr class="memdesc:adbf3ccebbab5cd44c7cf899ca3c9d654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a Git repository in the project root.  <br /></td></tr>
 <tr class="separator:adbf3ccebbab5cd44c7cf899ca3c9d654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5108b8bc43a0b34f83c1fce0a0874001" id="r_a5108b8bc43a0b34f83c1fce0a0874001"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html#a5108b8bc43a0b34f83c1fce0a0874001">clang_tidy</a> = false</td></tr>
+<tr class="memdesc:a5108b8bc43a0b34f83c1fce0a0874001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a <code></code>.clang-tidy configuration file.  <br /></td></tr>
 <tr class="separator:a5108b8bc43a0b34f83c1fce0a0874001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04eacb5dfd0d6a3cf663617a11ad10b9" id="r_a04eacb5dfd0d6a3cf663617a11ad10b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html#a04eacb5dfd0d6a3cf663617a11ad10b9">clang_format</a> = false</td></tr>
+<tr class="memdesc:a04eacb5dfd0d6a3cf663617a11ad10b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a <code></code>.clang-format configuration file.  <br /></td></tr>
+<tr class="separator:a04eacb5dfd0d6a3cf663617a11ad10b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4560cb264da05f49d99b0cc8776a410" id="r_ae4560cb264da05f49d99b0cc8776a410"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html#ae4560cb264da05f49d99b0cc8776a410">clang_format_preset</a></td></tr>
 <tr class="separator:ae4560cb264da05f49d99b0cc8776a410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04eacb5dfd0d6a3cf663617a11ad10b9" id="r_a04eacb5dfd0d6a3cf663617a11ad10b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html#a04eacb5dfd0d6a3cf663617a11ad10b9">clang_format</a> = false</td></tr>
-<tr class="separator:a04eacb5dfd0d6a3cf663617a11ad10b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Groups all optional tooling flags that can be enabled for a project. </p>
+<p>Each field corresponds to a <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> flag (e.g. <code>--git</code>, <code>--clang-format</code>). </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a04eacb5dfd0d6a3cf663617a11ad10b9" name="a04eacb5dfd0d6a3cf663617a11ad10b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a04eacb5dfd0d6a3cf663617a11ad10b9">&#9670;&#160;</a></span>clang_format</h2>
 
@@ -102,6 +111,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate a <code></code>.clang-format configuration file. </p>
 
 </div>
 </div>
@@ -116,6 +127,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Clang-format style preset (e.g. <code>"Google"</code>, <code>"LLVM"</code>). Present only when <code>clang_format</code> is <code>true</code> and a preset was supplied. </p>
 
 </div>
 </div>
@@ -131,6 +143,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generate a <code></code>.clang-tidy configuration file. </p>
+
 </div>
 </div>
 <a id="adbf3ccebbab5cd44c7cf899ca3c9d654" name="adbf3ccebbab5cd44c7cf899ca3c9d654"></a>
@@ -144,6 +158,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialise a Git repository in the project root. </p>
 
 </div>
 </div>

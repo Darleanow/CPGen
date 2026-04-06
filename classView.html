@@ -77,7 +77,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Top-level TUI view that manages sections and the main loop.  
+<p>Root TUI manager: renders sections, routes input, and runs the event loop.  
  <a href="classView.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="View_8hpp_source.html">View.hpp</a>&gt;</code></p>
@@ -85,13 +85,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a461691bbc52ec6fd50c134b059cb1a80" id="r_a461691bbc52ec6fd50c134b059cb1a80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a> (std::unique_ptr&lt; <a class="el" href="classComponent.html">Component</a> &gt; section)</td></tr>
+<tr class="memdesc:a461691bbc52ec6fd50c134b059cb1a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a top-level section to the view.  <br /></td></tr>
 <tr class="separator:a461691bbc52ec6fd50c134b059cb1a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d5c1bd4892e269e1a6a2f3021154e4a" id="r_a6d5c1bd4892e269e1a6a2f3021154e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a> ()</td></tr>
+<tr class="memdesc:a6d5c1bd4892e269e1a6a2f3021154e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the blocking TUI event loop.  <br /></td></tr>
 <tr class="separator:a6d5c1bd4892e269e1a6a2f3021154e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Top-level TUI view that manages sections and the main loop. </p>
-<p>Holds a flat list of top-level components (sections), manages focus between them, and runs the input loop. Escape exits the loop and restores the terminal. </p>
+<div class="textblock"><p>Root TUI manager: renders sections, routes input, and runs the event loop. </p>
+<p>The <a class="el" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a> method constructs a <a class="el" href="classTerminal.html">Terminal</a> (entering raw mode), then loops reading keys from stdin via <a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">Utils::readKey</a>. Each key is first offered to the currently focused section; if not consumed, <a class="el" href="classView.html">View</a> handles <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413">Defs::Special::Tab</a> to move focus between sections and <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224">Defs::Special::Escape</a> to exit the loop.</p>
+<p>After every input event the entire screen is redrawn via redraw. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a461691bbc52ec6fd50c134b059cb1a80" name="a461691bbc52ec6fd50c134b059cb1a80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a461691bbc52ec6fd50c134b059cb1a80">&#9670;&#160;</a></span>addSection()</h2>
@@ -108,12 +111,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Append a top-level section to the view. </p>
+<p>Ownership is transferred. The first section added automatically receives focus when <a class="el" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a> starts.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">section</td><td>A component to display as a top-level section. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classView_a461691bbc52ec6fd50c134b059cb1a80_icgraph.png" border="0" usemap="#aclassView_a461691bbc52ec6fd50c134b059cb1a80_icgraph" alt=""/></div>
 <map name="aclassView_a461691bbc52ec6fd50c134b059cb1a80_icgraph" id="aclassView_a461691bbc52ec6fd50c134b059cb1a80_icgraph">
-<area shape="rect" title=" " alt="" coords="103,5,224,31"/>
+<area shape="rect" title="Append a top&#45;level section to the view." alt="" coords="103,5,224,31"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
@@ -135,17 +147,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start the blocking TUI event loop. </p>
+<ol type="1">
+<li>Enters terminal raw mode via <a class="el" href="classTerminal.html">Terminal</a>.</li>
+<li>Grants focus to the first section and redraws.</li>
+<li>Reads keys in a loop, routing them to the focused section or handling Tab / Escape at the view level.</li>
+<li>Exits (and restores the terminal) when <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224">Defs::Special::Escape</a> is pressed.</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>This method blocks until the user exits the TUI. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classView_a6d5c1bd4892e269e1a6a2f3021154e4a_cgraph.png" border="0" usemap="#aclassView_a6d5c1bd4892e269e1a6a2f3021154e4a_cgraph" alt=""/></div>
 <map name="aclassView_a6d5c1bd4892e269e1a6a2f3021154e4a_cgraph" id="aclassView_a6d5c1bd4892e269e1a6a2f3021154e4a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,80,31"/>
-<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single key from stdin (raw mode must be active)" alt="" coords="128,5,229,31"/>
+<area shape="rect" title="Start the blocking TUI event loop." alt="" coords="5,5,80,31"/>
+<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="128,5,229,31"/>
 <area shape="poly" title=" " alt="" coords="80,16,112,16,112,21,80,21"/>
-<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Handle an ESC byte already read from stdin." alt="" coords="277,5,434,31"/>
+<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="277,5,434,31"/>
 <area shape="poly" title=" " alt="" coords="229,16,261,16,261,21,229,21"/>
-<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Check if stdin has data available within a timeout." alt="" coords="482,5,601,31"/>
+<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Poll stdin for available data within a timeout." alt="" coords="482,5,601,31"/>
 <area shape="poly" title=" " alt="" coords="435,16,467,16,467,21,435,21"/>
 </map>
 </div>

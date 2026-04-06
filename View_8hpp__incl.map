@@ -1,12 +1,12 @@
 <map id="include/CPGen/TUI/View/View.hpp" name="include/CPGen/TUI/View/View.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="196,5,363,46"/>
-<area shape="rect" id="Node000002" href="$Component_8hpp.html" title=" " alt="" coords="33,94,222,120"/>
+<area shape="rect" id="Node000001" title="Top&#45;level TUI view that owns all sections and drives the main event loop." alt="" coords="196,5,363,46"/>
+<area shape="rect" id="Node000002" href="$Component_8hpp.html" title="Abstract base class for all TUI components." alt="" coords="33,94,222,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,49,166,89,163,84,240,44"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="246,94,313,120"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="282,46,282,78,277,78,277,46"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="338,94,395,120"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="303,44,343,81,340,85,299,48"/>
-<area shape="rect" id="Node000003" href="$Defs_8hpp.html" title=" " alt="" coords="25,168,129,193"/>
+<area shape="rect" id="Node000003" href="$Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="25,168,129,193"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,121,96,156,92,153,117,118"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="153,168,206,193"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="138,118,164,153,160,157,134,121"/>

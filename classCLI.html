@@ -77,19 +77,46 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Parses command-line arguments into a project configuration.  
+<p>Stateful command-line parser that converts <code>argv</code> into a <a class="el" href="CLI_8hpp.html#a0d8785f1f5499688f53bc72e6900460d">Config</a>.  
  <a href="classCLI.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CLI_8hpp_source.html">CLI.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a10b1d98f68dd032ea0cff6b2879282d6" id="r_a10b1d98f68dd032ea0cff6b2879282d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">parse</a> (int argc, char **argv)</td></tr>
+<tr class="memitem:a10b1d98f68dd032ea0cff6b2879282d6" id="r_a10b1d98f68dd032ea0cff6b2879282d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="CLI_8hpp.html#a0d8785f1f5499688f53bc72e6900460d">Config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">parse</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a10b1d98f68dd032ea0cff6b2879282d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse command-line arguments into a typed configuration.  <br /></td></tr>
 <tr class="separator:a10b1d98f68dd032ea0cff6b2879282d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Parses command-line arguments into a project configuration. </p>
-<p>Usage: <a class="el" href="classCLI.html" title="Parses command-line arguments into a project configuration.">CLI</a> cli; auto config = cli.parse(argc, argv); </p>
+<div class="textblock"><p>Stateful command-line parser that converts <code>argv</code> into a <a class="el" href="CLI_8hpp.html#a0d8785f1f5499688f53bc72e6900460d">Config</a>. </p>
+<p>Each <a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">parse</a> call resets the internal <a class="el" href="structProjectConfig.html">ProjectConfig</a> accumulator, so a single <code><a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a></code> instance can safely be reused across multiple test invocations.</p>
+<p>Supported flags: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Short   </th><th class="markdownTableHeadNone">Long   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-h</code>   </td><td class="markdownTableBodyNone"><code>--help</code>   </td><td class="markdownTableBodyNone">Print usage and exit.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-u</code>   </td><td class="markdownTableBodyNone"><code>--tui</code>   </td><td class="markdownTableBodyNone">Return <code>true</code> to trigger TUI mode.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-n</code>   </td><td class="markdownTableBodyNone"><code>--name</code>   </td><td class="markdownTableBodyNone">Project name (must match <code>^\w</code> +$).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-p</code>   </td><td class="markdownTableBodyNone"><code>--path</code>   </td><td class="markdownTableBodyNone">Target directory (must exist on disk).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-s</code>   </td><td class="markdownTableBodyNone"><code>--std</code>   </td><td class="markdownTableBodyNone">C++ standard: <code>17</code>, <code>20</code>, or <code>23</code>.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-m</code>   </td><td class="markdownTableBodyNone"><code>--modules</code>   </td><td class="markdownTableBodyNone">Comma-separated dependency modules.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-tar</code>   </td><td class="markdownTableBodyNone"><code>--targets</code>   </td><td class="markdownTableBodyNone">Comma-separated target types.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-g</code>   </td><td class="markdownTableBodyNone"><code>--git</code>   </td><td class="markdownTableBodyNone">Enable Git initialisation.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-cf</code>   </td><td class="markdownTableBodyNone"><code>--clang-format</code>   </td><td class="markdownTableBodyNone">Enable clang-format file generation.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-cfp</code>   </td><td class="markdownTableBodyNone"><code>--cf-preset</code>   </td><td class="markdownTableBodyNone">clang-format style preset name.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-ct</code>   </td><td class="markdownTableBodyNone"><code>--clang-tidy</code>   </td><td class="markdownTableBodyNone">Enable clang-tidy file generation.   </td></tr>
+</table>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a10b1d98f68dd032ea0cff6b2879282d6" name="a10b1d98f68dd032ea0cff6b2879282d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a10b1d98f68dd032ea0cff6b2879282d6">&#9670;&#160;</a></span>parse()</h2>
@@ -98,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="CLI_8hpp.html#a291ce1b4d2e5bb74e144a380c2bd433f">Config</a> CLI::parse </td>
+          <td class="memname"><a class="el" href="CLI_8hpp.html#a0d8785f1f5499688f53bc72e6900460d">Config</a> CLI::parse </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -116,12 +143,30 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Parse command-line arguments into a typed configuration. </p>
+<p>Iterates over <code>argv</code> entries in order and dispatches each recognised flag to the appropriate private helper. Unknown flags are silently skipped.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Number of argument strings in <code>argv</code>. </td></tr>
+    <tr><td class="paramname">argv</td><td>Null-terminated array of argument strings (standard C <code>main</code> signature). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structProjectConfig.html">ProjectConfig</a> if project flags were parsed, or <code>true</code> if <code>--tui</code> was requested. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>When a required flag argument is missing, the path does not exist, or the name does not match the required pattern. </td></tr>
+    <tr><td class="paramname">std::range_error</td><td>When the C++ standard value is not 17, 20, or 23. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCLI_a10b1d98f68dd032ea0cff6b2879282d6_icgraph.png" border="0" usemap="#aclassCLI_a10b1d98f68dd032ea0cff6b2879282d6_icgraph" alt=""/></div>
 <map name="aclassCLI_a10b1d98f68dd032ea0cff6b2879282d6_icgraph" id="aclassCLI_a10b1d98f68dd032ea0cff6b2879282d6_icgraph">
-<area shape="rect" title=" " alt="" coords="103,5,183,31"/>
+<area shape="rect" title="Parse command&#45;line arguments into a typed configuration." alt="" coords="103,5,183,31"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

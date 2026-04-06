@@ -83,34 +83,34 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="PreferencesManager_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="structPreferencesConfig.html">    5</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> {</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">    6</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">support_modern_font</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>};</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structPreferencesConfig.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">   21</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">support_modern_font</a> = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
 </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classPreferencesManager.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classPreferencesManager.html">PreferencesManager</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <a class="code hl_class" href="classPreferencesManager.html">PreferencesManager</a>(std::optional&lt;std::filesystem::path&gt;);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> &amp;<a class="code hl_function" href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">getConfig</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  std::filesystem::path m_config_path{<span class="stringliteral">&quot;~/.config/CPGen/config.json&quot;</span>};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> m_preferences;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">void</span> readConfig();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classPreferencesManager.html">   39</a></span><span class="keyword">class </span><a class="code hl_class" href="classPreferencesManager.html">PreferencesManager</a> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classPreferencesManager.html">PreferencesManager</a>(std::optional&lt;std::filesystem::path&gt; config_path);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  [[nodiscard]] <span class="keyword">const</span> <a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> &amp;<a class="code hl_function" href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">getConfig</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  std::filesystem::path m_config_path{<span class="stringliteral">&quot;~/.config/CPGen/config.json&quot;</span>}; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_struct" href="structPreferencesConfig.html">PreferencesConfig</a> m_preferences; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> readConfig();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 </div>
-<div class="ttc" id="aclassPreferencesManager_html"><div class="ttname"><a href="classPreferencesManager.html">PreferencesManager</a></div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:9</div></div>
-<div class="ttc" id="aclassPreferencesManager_html_a8ad10c0487f39084d28d1141cab4d3b0"><div class="ttname"><a href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">PreferencesManager::getConfig</a></div><div class="ttdeci">const PreferencesConfig &amp; getConfig() const</div><div class="ttdef"><b>Definition</b> PreferencesManager.cpp:18</div></div>
-<div class="ttc" id="astructPreferencesConfig_html"><div class="ttname"><a href="structPreferencesConfig.html">PreferencesConfig</a></div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:5</div></div>
-<div class="ttc" id="astructPreferencesConfig_html_ab633b4e5f51c10fc09418449846def34"><div class="ttname"><a href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">PreferencesConfig::support_modern_font</a></div><div class="ttdeci">bool support_modern_font</div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:6</div></div>
+<div class="ttc" id="aclassPreferencesManager_html"><div class="ttname"><a href="classPreferencesManager.html">PreferencesManager</a></div><div class="ttdoc">Loads and exposes user preferences from a JSON file.</div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:39</div></div>
+<div class="ttc" id="aclassPreferencesManager_html_a8ad10c0487f39084d28d1141cab4d3b0"><div class="ttname"><a href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">PreferencesManager::getConfig</a></div><div class="ttdeci">const PreferencesConfig &amp; getConfig() const</div><div class="ttdoc">Return the currently loaded preferences.</div><div class="ttdef"><b>Definition</b> PreferencesManager.cpp:18</div></div>
+<div class="ttc" id="astructPreferencesConfig_html"><div class="ttname"><a href="structPreferencesConfig.html">PreferencesConfig</a></div><div class="ttdoc">Holds all user-configurable application preferences.</div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:20</div></div>
+<div class="ttc" id="astructPreferencesConfig_html_ab633b4e5f51c10fc09418449846def34"><div class="ttname"><a href="structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34">PreferencesConfig::support_modern_font</a></div><div class="ttdeci">bool support_modern_font</div><div class="ttdoc">Whether the terminal font supports Nerd Font / Unicode glyphs.</div><div class="ttdef"><b>Definition</b> PreferencesManager.hpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

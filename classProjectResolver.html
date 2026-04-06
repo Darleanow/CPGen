@@ -77,16 +77,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Converts a <a class="el" href="structProjectConfig.html">ProjectConfig</a> into a fully resolved <a class="el" href="structResolvedProject.html">ResolvedProject</a>.  
+ <a href="classProjectResolver.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ProjectResolver_8hpp_source.html">ProjectResolver.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7048b357a6e148ee7260e99d44894b4c" id="r_a7048b357a6e148ee7260e99d44894b4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectResolver.html#a7048b357a6e148ee7260e99d44894b4c">ProjectResolver</a> ()</td></tr>
+<tr class="memdesc:a7048b357a6e148ee7260e99d44894b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <code><a class="el" href="classProjectResolver.html" title="Converts a ProjectConfig into a fully resolved ResolvedProject.">ProjectResolver</a></code> with a default <a class="el" href="classModuleResolver.html">ModuleResolver</a>.  <br /></td></tr>
 <tr class="separator:a7048b357a6e148ee7260e99d44894b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06860a32898338ba63bf33b4e32d5fa0" id="r_a06860a32898338ba63bf33b4e32d5fa0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structResolvedProject.html">ResolvedProject</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0">resolve</a> (const <a class="el" href="structProjectConfig.html">ProjectConfig</a> &amp;config)</td></tr>
+<tr class="memdesc:a06860a32898338ba63bf33b4e32d5fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the full resolution pipeline for <code>config</code>.  <br /></td></tr>
 <tr class="separator:a06860a32898338ba63bf33b4e32d5fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Converts a <a class="el" href="structProjectConfig.html">ProjectConfig</a> into a fully resolved <a class="el" href="structResolvedProject.html">ResolvedProject</a>. </p>
+<p>Internally owns a <a class="el" href="classModuleResolver.html">ModuleResolver</a> and delegates per-module lookups to it. Target deduplication is handled via <code>std::unordered_set&lt;ResolvedTarget&gt;</code> (uses the name-based hash/equality defined in <a class="el" href="Resolved_8hpp.html">Resolved.hpp</a>). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7048b357a6e148ee7260e99d44894b4c" name="a7048b357a6e148ee7260e99d44894b4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7048b357a6e148ee7260e99d44894b4c">&#9670;&#160;</a></span>ProjectResolver()</h2>
 
@@ -101,6 +109,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a <code><a class="el" href="classProjectResolver.html" title="Converts a ProjectConfig into a fully resolved ResolvedProject.">ProjectResolver</a></code> with a default <a class="el" href="classModuleResolver.html">ModuleResolver</a>. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If the underlying <a class="el" href="classModuleResolver.html">ModuleResolver</a> cannot find any template search path. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -120,12 +136,32 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Run the full resolution pipeline for <code>config</code>. </p>
+<p>For each module name in <code>config.modules:</code> </p><ol type="1">
+<li>Calls <a class="el" href="classModuleResolver.html#aadb78646bfafebe2485e3b5f78ceb2e0">ModuleResolver::resolveModule</a> to parse the module's JSON.</li>
+<li>Calls buildTarget for each <a class="el" href="structTargetInjection.html">TargetInjection</a> the module produces.</li>
+<li>Inserts deduplicated targets into the result.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Parsed project configuration from the <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> or TUI. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structResolvedProject.html">ResolvedProject</a> containing the original config, all resolved modules, deduplicated targets, and raw injections. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>If any requested module cannot be found. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classProjectResolver_a06860a32898338ba63bf33b4e32d5fa0_icgraph.png" border="0" usemap="#aclassProjectResolver_a06860a32898338ba63bf33b4e32d5fa0_icgraph" alt=""/></div>
 <map name="aclassProjectResolver_a06860a32898338ba63bf33b4e32d5fa0_icgraph" id="aclassProjectResolver_a06860a32898338ba63bf33b4e32d5fa0_icgraph">
-<area shape="rect" title=" " alt="" coords="103,5,264,31"/>
+<area shape="rect" title="Run the full resolution pipeline for config." alt="" coords="103,5,264,31"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>

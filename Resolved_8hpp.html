@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">Resolved.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Output types produced by the resolver pipeline.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Config_8hpp_source.html">CPGen/Core/Config.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Module_8hpp_source.html">CPGen/Core/Module.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -87,10 +90,10 @@ Include dependency graph for Resolved.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Resolved_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2Core_2Resolved_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2Core_2Resolved_8hpp" id="ainclude_2CPGen_2Core_2Resolved_8hpp">
-<area shape="rect" title=" " alt="" coords="146,5,285,46"/>
-<area shape="rect" href="Config_8hpp.html" title=" " alt="" coords="44,94,203,120"/>
+<area shape="rect" title="Output types produced by the resolver pipeline." alt="" coords="146,5,285,46"/>
+<area shape="rect" href="Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="44,94,203,120"/>
 <area shape="poly" title=" " alt="" coords="194,48,151,86,147,82,191,44"/>
-<area shape="rect" href="Module_8hpp.html" title=" " alt="" coords="227,94,391,120"/>
+<area shape="rect" href="Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="227,94,391,120"/>
 <area shape="poly" title=" " alt="" coords="240,44,284,82,281,86,237,48"/>
 <area shape="rect" title=" " alt="" coords="5,168,66,193"/>
 <area shape="poly" title=" " alt="" coords="110,122,64,160,60,156,107,118"/>
@@ -108,10 +111,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Resolved_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2Core_2Resolved_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2Core_2Resolved_8hppdep" id="ainclude_2CPGen_2Core_2Resolved_8hppdep">
-<area shape="rect" title=" " alt="" coords="224,5,363,46"/>
-<area shape="rect" href="ModuleResolver_8hpp.html" title=" " alt="" coords="135,94,305,135"/>
+<area shape="rect" title="Output types produced by the resolver pipeline." alt="" coords="224,5,363,46"/>
+<area shape="rect" href="ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="135,94,305,135"/>
 <area shape="poly" title=" " alt="" coords="269,60,238,95,234,92,265,56"/>
-<area shape="rect" href="ProjectResolver_8hpp.html" title=" " alt="" coords="5,183,176,223"/>
+<area shape="rect" href="ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="5,183,176,223"/>
 <area shape="poly" title=" " alt="" coords="210,46,164,66,143,79,125,96,111,116,102,139,94,183,89,182,97,138,106,114,120,92,140,75,161,61,208,41"/>
 <area shape="rect" href="ProjectResolver_8cpp.html" title=" " alt="" coords="133,271,355,297"/>
 <area shape="poly" title=" " alt="" coords="354,51,413,83,467,125,486,149,498,173,499,199,486,225,464,241,429,255,343,273,342,268,428,249,461,237,482,222,493,198,493,175,482,151,463,129,410,88,351,55"/>
@@ -131,22 +134,31 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html">TargetInjection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the CMake snippets that a module contributes to a target.  <a href="structTargetInjection.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedModule.html">ResolvedModule</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A dependency module after its JSON definition has been parsed.  <a href="structResolvedModule.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedTarget.html">ResolvedTarget</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A build target after module injections have been applied.  <a href="structResolvedTarget.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_01ResolvedTarget_01_4.html">std::hash&lt; ResolvedTarget &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedProject.html">ResolvedProject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggregated output of the full resolver pipeline.  <a href="structResolvedProject.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacestd" id="r_namespacestd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="memdesc:namespacestd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>std::hash</code> specialisation for <a class="el" href="structResolvedTarget.html">ResolvedTarget</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Output types produced by the resolver pipeline. </p>
+<p>After <a class="el" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0">ProjectResolver::resolve</a> processes a <a class="el" href="structProjectConfig.html">ProjectConfig</a>, every dependency module has been looked up on disk, its <a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> block parsed, and all CMake injections collected. The resulting <a class="el" href="structResolvedProject.html">ResolvedProject</a> aggregates all of these artefacts and is passed downstream to the generators.</p>
+<dl class="section author"><dt>Author</dt><dd>Darleanow </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

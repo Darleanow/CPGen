@@ -76,11 +76,13 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Utils.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>TUI utility functions: ANSI colour helpers, input reading, and string metrics.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Defs_8hpp_source.html">Misc/Defs.hpp</a>&quot;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cwchar&gt;</code><br />
@@ -93,8 +95,8 @@ Include dependency graph for Utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Utils_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp" id="ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp">
-<area shape="rect" title=" " alt="" coords="258,5,424,46"/>
-<area shape="rect" href="Defs_8hpp.html" title=" " alt="" coords="25,94,129,120"/>
+<area shape="rect" title="TUI utility functions: ANSI colour helpers, input reading, and string metrics." alt="" coords="258,5,424,46"/>
+<area shape="rect" href="Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="25,94,129,120"/>
 <area shape="poly" title=" " alt="" coords="276,49,133,92,132,86,274,44"/>
 <area shape="rect" title=" " alt="" coords="154,94,203,120"/>
 <area shape="poly" title=" " alt="" coords="301,49,218,89,216,84,299,44"/>
@@ -119,7 +121,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Utils_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2TUI_2Misc_2Utils_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2TUI_2Misc_2Utils_8hppdep" id="ainclude_2CPGen_2TUI_2Misc_2Utils_8hppdep">
-<area shape="rect" title=" " alt="" coords="257,5,423,46"/>
+<area shape="rect" title="TUI utility functions: ANSI colour helpers, input reading, and string metrics." alt="" coords="257,5,423,46"/>
 <area shape="rect" href="Checkbox_8cpp.html" title=" " alt="" coords="5,94,149,135"/>
 <area shape="poly" title=" " alt="" coords="266,54,138,96,136,91,265,49"/>
 <area shape="rect" href="Input_8cpp.html" title=" " alt="" coords="173,94,315,135"/>
@@ -136,116 +138,177 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceUtils" id="r_namespaceUtils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html">Utils</a></td></tr>
+<tr class="memdesc:namespaceUtils"><td class="mdescLeft">&#160;</td><td class="mdescRight">TUI utility functions and constants. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceUtils_1_1Colours" id="r_namespaceUtils_1_1Colours"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html">Utils::Colours</a></td></tr>
+<tr class="memdesc:namespaceUtils_1_1Colours"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI SGR (Select Graphic Rendition) code constants and escape sequence builder. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a94f2cb8fcdfea304bdd90a7c1cbc33ad" id="r_a94f2cb8fcdfea304bdd90a7c1cbc33ad"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad">Utils::Colours::esc</a> (const char *code)</td></tr>
+<tr class="memdesc:a94f2cb8fcdfea304bdd90a7c1cbc33ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a complete ANSI SGR escape sequence from a code string.  <br /></td></tr>
 <tr class="separator:a94f2cb8fcdfea304bdd90a7c1cbc33ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ccb7875edc2112494812ef0c880ccf8" id="r_a5ccb7875edc2112494812ef0c880ccf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8">Utils::stdinReady</a> (int timeout_ms)</td></tr>
-<tr class="memdesc:a5ccb7875edc2112494812ef0c880ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if stdin has data available within a timeout.  <br /></td></tr>
+<tr class="memdesc:a5ccb7875edc2112494812ef0c880ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll stdin for available data within a timeout.  <br /></td></tr>
 <tr class="separator:a5ccb7875edc2112494812ef0c880ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f5da471140a2a273b54aad42aa372b4" id="r_a7f5da471140a2a273b54aad42aa372b4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4">Utils::stripAnsi</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a7f5da471140a2a273b54aad42aa372b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip ANSI escape sequences from a string.  <br /></td></tr>
+<tr class="memdesc:a7f5da471140a2a273b54aad42aa372b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all ANSI escape sequences from a string.  <br /></td></tr>
 <tr class="separator:a7f5da471140a2a273b54aad42aa372b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d60863499279dccf5b5682c4b6bc7dd" id="r_a4d60863499279dccf5b5682c4b6bc7dd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd">Utils::visualWidth</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a4d60863499279dccf5b5682c4b6bc7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the visual (display) width of a UTF-8 string, stripping ANSI escape sequences.  <br /></td></tr>
+<tr class="memdesc:a4d60863499279dccf5b5682c4b6bc7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the visual (display) column width of a UTF-8 string.  <br /></td></tr>
 <tr class="separator:a4d60863499279dccf5b5682c4b6bc7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67c5f45c462b8443665db940dbc91bf" id="r_ad67c5f45c462b8443665db940dbc91bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">Utils::handleEscapeKey</a> ()</td></tr>
-<tr class="memdesc:ad67c5f45c462b8443665db940dbc91bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an ESC byte already read from stdin.  <br /></td></tr>
+<tr class="memitem:ad67c5f45c462b8443665db940dbc91bf" id="r_ad67c5f45c462b8443665db940dbc91bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">Utils::handleEscapeKey</a> ()</td></tr>
+<tr class="memdesc:ad67c5f45c462b8443665db940dbc91bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode an escape sequence whose leading <code>ESC</code> byte has already been consumed.  <br /></td></tr>
 <tr class="separator:ad67c5f45c462b8443665db940dbc91bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78b617d54555683fc48a2b9f73f4429" id="r_ab78b617d54555683fc48a2b9f73f4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">Utils::readKey</a> ()</td></tr>
-<tr class="memdesc:ab78b617d54555683fc48a2b9f73f4429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single key from stdin (raw mode must be active)  <br /></td></tr>
+<tr class="memitem:ab78b617d54555683fc48a2b9f73f4429" id="r_ab78b617d54555683fc48a2b9f73f4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">Utils::readKey</a> ()</td></tr>
+<tr class="memdesc:ab78b617d54555683fc48a2b9f73f4429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single keypress from stdin (terminal must be in raw mode).  <br /></td></tr>
 <tr class="separator:ab78b617d54555683fc48a2b9f73f4429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Standard foreground colours</div></td></tr>
 <tr class="memitem:a9912b6bfe3ae5ff95d0dbf13babb4402" id="r_a9912b6bfe3ae5ff95d0dbf13babb4402"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a9912b6bfe3ae5ff95d0dbf13babb4402">Utils::Colours::FG_BLACK</a> = &quot;30&quot;</td></tr>
+<tr class="memdesc:a9912b6bfe3ae5ff95d0dbf13babb4402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Black foreground.  <br /></td></tr>
 <tr class="separator:a9912b6bfe3ae5ff95d0dbf13babb4402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2736da8c371f39205dd2c47ea8f78116" id="r_a2736da8c371f39205dd2c47ea8f78116"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a2736da8c371f39205dd2c47ea8f78116">Utils::Colours::FG_RED</a> = &quot;31&quot;</td></tr>
+<tr class="memdesc:a2736da8c371f39205dd2c47ea8f78116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red foreground.  <br /></td></tr>
 <tr class="separator:a2736da8c371f39205dd2c47ea8f78116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60aeb2289a1c90b87c8175616cd33e3c" id="r_a60aeb2289a1c90b87c8175616cd33e3c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a60aeb2289a1c90b87c8175616cd33e3c">Utils::Colours::FG_GREEN</a> = &quot;32&quot;</td></tr>
+<tr class="memdesc:a60aeb2289a1c90b87c8175616cd33e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green foreground.  <br /></td></tr>
 <tr class="separator:a60aeb2289a1c90b87c8175616cd33e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c58f30452f475166fbf59858588620c" id="r_a3c58f30452f475166fbf59858588620c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a3c58f30452f475166fbf59858588620c">Utils::Colours::FG_YELLOW</a> = &quot;33&quot;</td></tr>
+<tr class="memdesc:a3c58f30452f475166fbf59858588620c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow foreground.  <br /></td></tr>
 <tr class="separator:a3c58f30452f475166fbf59858588620c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb1bf9ae76a7c44972231bd2b4ee888" id="r_a2cb1bf9ae76a7c44972231bd2b4ee888"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a2cb1bf9ae76a7c44972231bd2b4ee888">Utils::Colours::FG_BLUE</a> = &quot;34&quot;</td></tr>
+<tr class="memdesc:a2cb1bf9ae76a7c44972231bd2b4ee888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue foreground.  <br /></td></tr>
 <tr class="separator:a2cb1bf9ae76a7c44972231bd2b4ee888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3220b6f9b0a5708068472c068d7c51f" id="r_ae3220b6f9b0a5708068472c068d7c51f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ae3220b6f9b0a5708068472c068d7c51f">Utils::Colours::FG_MAGENTA</a> = &quot;35&quot;</td></tr>
+<tr class="memdesc:ae3220b6f9b0a5708068472c068d7c51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magenta foreground.  <br /></td></tr>
 <tr class="separator:ae3220b6f9b0a5708068472c068d7c51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a016c5875c07a237ed33e86074a5732fc" id="r_a016c5875c07a237ed33e86074a5732fc"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a016c5875c07a237ed33e86074a5732fc">Utils::Colours::FG_CYAN</a> = &quot;36&quot;</td></tr>
+<tr class="memdesc:a016c5875c07a237ed33e86074a5732fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan foreground.  <br /></td></tr>
 <tr class="separator:a016c5875c07a237ed33e86074a5732fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab164e3653a35df2e190d49f21d114998" id="r_ab164e3653a35df2e190d49f21d114998"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ab164e3653a35df2e190d49f21d114998">Utils::Colours::FG_WHITE</a> = &quot;37&quot;</td></tr>
+<tr class="memdesc:ab164e3653a35df2e190d49f21d114998"><td class="mdescLeft">&#160;</td><td class="mdescRight">White foreground.  <br /></td></tr>
 <tr class="separator:ab164e3653a35df2e190d49f21d114998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Bright / light foreground colours</div></td></tr>
 <tr class="memitem:a89f7a614be4a60c84ff8bbed63fd306e" id="r_a89f7a614be4a60c84ff8bbed63fd306e"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a89f7a614be4a60c84ff8bbed63fd306e">Utils::Colours::FG_BBLACK</a> = &quot;90&quot;</td></tr>
+<tr class="memdesc:a89f7a614be4a60c84ff8bbed63fd306e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright black (dark grey) foreground.  <br /></td></tr>
 <tr class="separator:a89f7a614be4a60c84ff8bbed63fd306e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e89896f2832bf2503325e5b1c74ba44" id="r_a8e89896f2832bf2503325e5b1c74ba44"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a8e89896f2832bf2503325e5b1c74ba44">Utils::Colours::FG_BRED</a> = &quot;91&quot;</td></tr>
+<tr class="memdesc:a8e89896f2832bf2503325e5b1c74ba44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright red foreground.  <br /></td></tr>
 <tr class="separator:a8e89896f2832bf2503325e5b1c74ba44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c8e45fdc1cca2ef1df2668690e85065" id="r_a5c8e45fdc1cca2ef1df2668690e85065"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a5c8e45fdc1cca2ef1df2668690e85065">Utils::Colours::FG_BGREEN</a> = &quot;92&quot;</td></tr>
+<tr class="memdesc:a5c8e45fdc1cca2ef1df2668690e85065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright green foreground.  <br /></td></tr>
 <tr class="separator:a5c8e45fdc1cca2ef1df2668690e85065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a083d1317d7ad92faf20d97b7c53d8d09" id="r_a083d1317d7ad92faf20d97b7c53d8d09"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a083d1317d7ad92faf20d97b7c53d8d09">Utils::Colours::FG_BYELLOW</a> = &quot;93&quot;</td></tr>
+<tr class="memdesc:a083d1317d7ad92faf20d97b7c53d8d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright yellow foreground.  <br /></td></tr>
 <tr class="separator:a083d1317d7ad92faf20d97b7c53d8d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4346b626962f5b2278880c59c31adbd" id="r_ac4346b626962f5b2278880c59c31adbd"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ac4346b626962f5b2278880c59c31adbd">Utils::Colours::FG_BBLUE</a> = &quot;94&quot;</td></tr>
+<tr class="memdesc:ac4346b626962f5b2278880c59c31adbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright blue foreground.  <br /></td></tr>
 <tr class="separator:ac4346b626962f5b2278880c59c31adbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fa9755b8888ea4c6ee1ba838c93bef1" id="r_a1fa9755b8888ea4c6ee1ba838c93bef1"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a1fa9755b8888ea4c6ee1ba838c93bef1">Utils::Colours::FG_BMAGENTA</a> = &quot;95&quot;</td></tr>
+<tr class="memdesc:a1fa9755b8888ea4c6ee1ba838c93bef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright magenta foreground.  <br /></td></tr>
 <tr class="separator:a1fa9755b8888ea4c6ee1ba838c93bef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bde67a3dd5799cb3c2cecb4068b6913" id="r_a8bde67a3dd5799cb3c2cecb4068b6913"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a8bde67a3dd5799cb3c2cecb4068b6913">Utils::Colours::FG_BCYAN</a> = &quot;96&quot;</td></tr>
+<tr class="memdesc:a8bde67a3dd5799cb3c2cecb4068b6913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright cyan foreground.  <br /></td></tr>
 <tr class="separator:a8bde67a3dd5799cb3c2cecb4068b6913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa383f14aa90ff99052f627d0b868f61d" id="r_aa383f14aa90ff99052f627d0b868f61d"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#aa383f14aa90ff99052f627d0b868f61d">Utils::Colours::FG_BWHITE</a> = &quot;97&quot;</td></tr>
+<tr class="memdesc:aa383f14aa90ff99052f627d0b868f61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright white foreground.  <br /></td></tr>
 <tr class="separator:aa383f14aa90ff99052f627d0b868f61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Standard background colours</div></td></tr>
 <tr class="memitem:a42294855c10834f23474b106d398cc55" id="r_a42294855c10834f23474b106d398cc55"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a42294855c10834f23474b106d398cc55">Utils::Colours::BG_BLACK</a> = &quot;40&quot;</td></tr>
+<tr class="memdesc:a42294855c10834f23474b106d398cc55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Black background.  <br /></td></tr>
 <tr class="separator:a42294855c10834f23474b106d398cc55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635264c0e31fe3b4e14ac40e5630d365" id="r_a635264c0e31fe3b4e14ac40e5630d365"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a635264c0e31fe3b4e14ac40e5630d365">Utils::Colours::BG_RED</a> = &quot;41&quot;</td></tr>
+<tr class="memdesc:a635264c0e31fe3b4e14ac40e5630d365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red background.  <br /></td></tr>
 <tr class="separator:a635264c0e31fe3b4e14ac40e5630d365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e87031fca19e0e35c703fbf3fe0efa" id="r_aa8e87031fca19e0e35c703fbf3fe0efa"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#aa8e87031fca19e0e35c703fbf3fe0efa">Utils::Colours::BG_GREEN</a> = &quot;42&quot;</td></tr>
+<tr class="memdesc:aa8e87031fca19e0e35c703fbf3fe0efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green background.  <br /></td></tr>
 <tr class="separator:aa8e87031fca19e0e35c703fbf3fe0efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae95b6b2b4fc608b3a467dad49b61afc0" id="r_ae95b6b2b4fc608b3a467dad49b61afc0"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ae95b6b2b4fc608b3a467dad49b61afc0">Utils::Colours::BG_YELLOW</a> = &quot;43&quot;</td></tr>
+<tr class="memdesc:ae95b6b2b4fc608b3a467dad49b61afc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow background.  <br /></td></tr>
 <tr class="separator:ae95b6b2b4fc608b3a467dad49b61afc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cc632e542deca791dc33ebda65818d5" id="r_a8cc632e542deca791dc33ebda65818d5"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a8cc632e542deca791dc33ebda65818d5">Utils::Colours::BG_BLUE</a> = &quot;44&quot;</td></tr>
+<tr class="memdesc:a8cc632e542deca791dc33ebda65818d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blue background.  <br /></td></tr>
 <tr class="separator:a8cc632e542deca791dc33ebda65818d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0582ba8e73f6cd2a9d96e4be0db1ab45" id="r_a0582ba8e73f6cd2a9d96e4be0db1ab45"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a0582ba8e73f6cd2a9d96e4be0db1ab45">Utils::Colours::BG_MAGENTA</a> = &quot;45&quot;</td></tr>
+<tr class="memdesc:a0582ba8e73f6cd2a9d96e4be0db1ab45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Magenta background.  <br /></td></tr>
 <tr class="separator:a0582ba8e73f6cd2a9d96e4be0db1ab45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a582443151053211704fe0fcdb54d3650" id="r_a582443151053211704fe0fcdb54d3650"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a582443151053211704fe0fcdb54d3650">Utils::Colours::BG_CYAN</a> = &quot;46&quot;</td></tr>
+<tr class="memdesc:a582443151053211704fe0fcdb54d3650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cyan background.  <br /></td></tr>
 <tr class="separator:a582443151053211704fe0fcdb54d3650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a702bce3aa32c6269c24985984653bf25" id="r_a702bce3aa32c6269c24985984653bf25"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a702bce3aa32c6269c24985984653bf25">Utils::Colours::BG_WHITE</a> = &quot;47&quot;</td></tr>
+<tr class="memdesc:a702bce3aa32c6269c24985984653bf25"><td class="mdescLeft">&#160;</td><td class="mdescRight">White background.  <br /></td></tr>
 <tr class="separator:a702bce3aa32c6269c24985984653bf25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Bright / light background colours</div></td></tr>
 <tr class="memitem:a5b4b9ac838776fd0bfafebf98062f2fa" id="r_a5b4b9ac838776fd0bfafebf98062f2fa"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a5b4b9ac838776fd0bfafebf98062f2fa">Utils::Colours::BG_BBLACK</a> = &quot;100&quot;</td></tr>
+<tr class="memdesc:a5b4b9ac838776fd0bfafebf98062f2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright black background.  <br /></td></tr>
 <tr class="separator:a5b4b9ac838776fd0bfafebf98062f2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c7055469858df60bd3c774624d3b687" id="r_a3c7055469858df60bd3c774624d3b687"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a3c7055469858df60bd3c774624d3b687">Utils::Colours::BG_BRED</a> = &quot;101&quot;</td></tr>
+<tr class="memdesc:a3c7055469858df60bd3c774624d3b687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright red background.  <br /></td></tr>
 <tr class="separator:a3c7055469858df60bd3c774624d3b687"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaacd3c45779971639f45200c1bf2553c" id="r_aaacd3c45779971639f45200c1bf2553c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#aaacd3c45779971639f45200c1bf2553c">Utils::Colours::BG_BGREEN</a> = &quot;102&quot;</td></tr>
+<tr class="memdesc:aaacd3c45779971639f45200c1bf2553c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright green background.  <br /></td></tr>
 <tr class="separator:aaacd3c45779971639f45200c1bf2553c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a83dd10531cc2a556b7cbb2cf9ee81b" id="r_a1a83dd10531cc2a556b7cbb2cf9ee81b"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a1a83dd10531cc2a556b7cbb2cf9ee81b">Utils::Colours::BG_BYELLOW</a> = &quot;103&quot;</td></tr>
+<tr class="memdesc:a1a83dd10531cc2a556b7cbb2cf9ee81b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright yellow background.  <br /></td></tr>
 <tr class="separator:a1a83dd10531cc2a556b7cbb2cf9ee81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a898a5bcb652e154c59bd397ddee67b" id="r_a2a898a5bcb652e154c59bd397ddee67b"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a2a898a5bcb652e154c59bd397ddee67b">Utils::Colours::BG_BBLUE</a> = &quot;104&quot;</td></tr>
+<tr class="memdesc:a2a898a5bcb652e154c59bd397ddee67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright blue background.  <br /></td></tr>
 <tr class="separator:a2a898a5bcb652e154c59bd397ddee67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae9fb35a92a3560e63530bd3dcd0529b" id="r_aae9fb35a92a3560e63530bd3dcd0529b"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#aae9fb35a92a3560e63530bd3dcd0529b">Utils::Colours::BG_BMAGENTA</a> = &quot;105&quot;</td></tr>
+<tr class="memdesc:aae9fb35a92a3560e63530bd3dcd0529b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright magenta background.  <br /></td></tr>
 <tr class="separator:aae9fb35a92a3560e63530bd3dcd0529b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab72e478d0af07709791ff15c0a8ceb9e" id="r_ab72e478d0af07709791ff15c0a8ceb9e"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ab72e478d0af07709791ff15c0a8ceb9e">Utils::Colours::BG_BCYAN</a> = &quot;106&quot;</td></tr>
+<tr class="memdesc:ab72e478d0af07709791ff15c0a8ceb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright cyan background.  <br /></td></tr>
 <tr class="separator:ab72e478d0af07709791ff15c0a8ceb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4da27ecffd080a30e32b6ba0c85c5fc3" id="r_a4da27ecffd080a30e32b6ba0c85c5fc3"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a4da27ecffd080a30e32b6ba0c85c5fc3">Utils::Colours::BG_BWHITE</a> = &quot;107&quot;</td></tr>
+<tr class="memdesc:a4da27ecffd080a30e32b6ba0c85c5fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bright white background.  <br /></td></tr>
 <tr class="separator:a4da27ecffd080a30e32b6ba0c85c5fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Text style modifiers</div></td></tr>
 <tr class="memitem:adbf10210810086b942d25a6bd401d61b" id="r_adbf10210810086b942d25a6bd401d61b"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#adbf10210810086b942d25a6bd401d61b">Utils::Colours::RESET</a> = &quot;0&quot;</td></tr>
+<tr class="memdesc:adbf10210810086b942d25a6bd401d61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all attributes.  <br /></td></tr>
 <tr class="separator:adbf10210810086b942d25a6bd401d61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade849f1ef666a794f8e3adef8a06353f" id="r_ade849f1ef666a794f8e3adef8a06353f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#ade849f1ef666a794f8e3adef8a06353f">Utils::Colours::BOLD</a> = &quot;1&quot;</td></tr>
+<tr class="memdesc:ade849f1ef666a794f8e3adef8a06353f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bold / increased intensity.  <br /></td></tr>
 <tr class="separator:ade849f1ef666a794f8e3adef8a06353f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92d78f537187865cf26f85aa0d66fb45" id="r_a92d78f537187865cf26f85aa0d66fb45"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a92d78f537187865cf26f85aa0d66fb45">Utils::Colours::DIM</a> = &quot;2&quot;</td></tr>
+<tr class="memdesc:a92d78f537187865cf26f85aa0d66fb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dim / decreased intensity.  <br /></td></tr>
 <tr class="separator:a92d78f537187865cf26f85aa0d66fb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b0e2a0b4e6c2cf07b8349c0a49ffb3c" id="r_a9b0e2a0b4e6c2cf07b8349c0a49ffb3c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a9b0e2a0b4e6c2cf07b8349c0a49ffb3c">Utils::Colours::ITALIC</a> = &quot;3&quot;</td></tr>
+<tr class="memdesc:a9b0e2a0b4e6c2cf07b8349c0a49ffb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Italic.  <br /></td></tr>
 <tr class="separator:a9b0e2a0b4e6c2cf07b8349c0a49ffb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51cecf474775e59ee7e78df501a3b43c" id="r_a51cecf474775e59ee7e78df501a3b43c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a51cecf474775e59ee7e78df501a3b43c">Utils::Colours::UNDERLINE</a> = &quot;4&quot;</td></tr>
+<tr class="memdesc:a51cecf474775e59ee7e78df501a3b43c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Underline.  <br /></td></tr>
 <tr class="separator:a51cecf474775e59ee7e78df501a3b43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe440170929d450cac21b45935fafd88" id="r_afe440170929d450cac21b45935fafd88"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#afe440170929d450cac21b45935fafd88">Utils::Colours::BLINK</a> = &quot;5&quot;</td></tr>
+<tr class="memdesc:afe440170929d450cac21b45935fafd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slow blink.  <br /></td></tr>
 <tr class="separator:afe440170929d450cac21b45935fafd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e89d2d2689a8ad580059d68681ef760" id="r_a6e89d2d2689a8ad580059d68681ef760"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a6e89d2d2689a8ad580059d68681ef760">Utils::Colours::INVERSE</a> = &quot;7&quot;</td></tr>
+<tr class="memdesc:a6e89d2d2689a8ad580059d68681ef760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverse video (swap FG/BG).  <br /></td></tr>
 <tr class="separator:a6e89d2d2689a8ad580059d68681ef760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a485b5a9ea0a15116f3ff060f0c4d6a0c" id="r_a485b5a9ea0a15116f3ff060f0c4d6a0c"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#a485b5a9ea0a15116f3ff060f0c4d6a0c">Utils::Colours::HIDDEN</a> = &quot;8&quot;</td></tr>
+<tr class="memdesc:a485b5a9ea0a15116f3ff060f0c4d6a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conceal / invisible.  <br /></td></tr>
 <tr class="separator:a485b5a9ea0a15116f3ff060f0c4d6a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8c01c890f9b4fd555ad55a36669d28f" id="r_aa8c01c890f9b4fd555ad55a36669d28f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f">Utils::Colours::STRIKETHRU</a> = &quot;9&quot;</td></tr>
+<tr class="memdesc:aa8c01c890f9b4fd555ad55a36669d28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strikethrough.  <br /></td></tr>
 <tr class="separator:aa8c01c890f9b4fd555ad55a36669d28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>TUI utility functions: ANSI colour helpers, input reading, and string metrics. </p>
+<dl class="section author"><dt>Author</dt><dd>Darleanow</dd></dl>
+<p>All functions in this file are <code>inline</code> and live in header-only namespaces so they can be included by any TUI translation unit without ODR issues.</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Colour usage</h3>
+<p>Build an ANSI escape sequence with <a class="el" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad">Utils::Colours::esc</a> and combine it with <a class="el" href="namespaceUtils_1_1Colours.html#adbf10210810086b942d25a6bd401d61b">Utils::Colours::RESET</a> to restore the default style: </p><div class="fragment"><div class="line">std::string s = <a class="code hl_function" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad">Utils::Colours::esc</a>(<a class="code hl_variable" href="namespaceUtils_1_1Colours.html#a60aeb2289a1c90b87c8175616cd33e3c">Utils::Colours::FG_GREEN</a>)</div>
+<div class="line">              + <span class="stringliteral">&quot;hello&quot;</span></div>
+<div class="line">              + <a class="code hl_function" href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad">Utils::Colours::esc</a>(<a class="code hl_variable" href="namespaceUtils_1_1Colours.html#adbf10210810086b942d25a6bd401d61b">Utils::Colours::RESET</a>);</div>
+<div class="ttc" id="anamespaceUtils_1_1Colours_html_a60aeb2289a1c90b87c8175616cd33e3c"><div class="ttname"><a href="namespaceUtils_1_1Colours.html#a60aeb2289a1c90b87c8175616cd33e3c">Utils::Colours::FG_GREEN</a></div><div class="ttdeci">constexpr const char * FG_GREEN</div><div class="ttdoc">Green foreground.</div><div class="ttdef"><b>Definition</b> Utils.hpp:51</div></div>
+<div class="ttc" id="anamespaceUtils_1_1Colours_html_a94f2cb8fcdfea304bdd90a7c1cbc33ad"><div class="ttname"><a href="namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad">Utils::Colours::esc</a></div><div class="ttdeci">std::string esc(const char *code)</div><div class="ttdoc">Build a complete ANSI SGR escape sequence from a code string.</div><div class="ttdef"><b>Definition</b> Utils.hpp:117</div></div>
+<div class="ttc" id="anamespaceUtils_1_1Colours_html_adbf10210810086b942d25a6bd401d61b"><div class="ttname"><a href="namespaceUtils_1_1Colours.html#adbf10210810086b942d25a6bd401d61b">Utils::Colours::RESET</a></div><div class="ttdeci">constexpr const char * RESET</div><div class="ttdoc">Reset all attributes.</div><div class="ttdef"><b>Definition</b> Utils.hpp:97</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

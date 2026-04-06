@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">ModuleResolver.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Looks up module JSON definitions on the filesystem and parses them.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Resolved_8hpp_source.html">CPGen/Core/Resolved.hpp</a>&quot;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;nlohmann/json.hpp&gt;</code><br />
@@ -89,8 +92,8 @@ Include dependency graph for ModuleResolver.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ModuleResolver_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2Resolvers_2ModuleResolver_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2Resolvers_2ModuleResolver_8hpp" id="ainclude_2CPGen_2Resolvers_2ModuleResolver_8hpp">
-<area shape="rect" title=" " alt="" coords="355,5,526,46"/>
-<area shape="rect" href="Resolved_8hpp.html" title=" " alt="" coords="176,94,353,120"/>
+<area shape="rect" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="355,5,526,46"/>
+<area shape="rect" href="Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="176,94,353,120"/>
 <area shape="poly" title=" " alt="" coords="398,49,306,90,304,85,395,44"/>
 <area shape="rect" title=" " alt="" coords="243,241,297,267"/>
 <area shape="poly" title=" " alt="" coords="436,47,404,127,384,167,367,195,340,219,312,236,309,232,337,214,362,192,380,165,399,124,431,45"/>
@@ -100,9 +103,9 @@ Include dependency graph for ModuleResolver.hpp:</div>
 <area shape="poly" title=" " alt="" coords="462,45,497,81,493,84,458,48"/>
 <area shape="rect" title=" " alt="" coords="581,94,711,120"/>
 <area shape="poly" title=" " alt="" coords="493,44,601,86,599,91,491,49"/>
-<area shape="rect" href="Config_8hpp.html" title=" " alt="" coords="5,168,164,193"/>
+<area shape="rect" href="Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="5,168,164,193"/>
 <area shape="poly" title=" " alt="" coords="235,123,130,164,128,159,233,118"/>
-<area shape="rect" href="Module_8hpp.html" title=" " alt="" coords="188,168,352,193"/>
+<area shape="rect" href="Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="188,168,352,193"/>
 <area shape="poly" title=" " alt="" coords="268,120,270,152,265,152,263,120"/>
 <area shape="rect" title=" " alt="" coords="10,241,71,267"/>
 <area shape="poly" title=" " alt="" coords="80,195,58,229,54,226,75,192"/>
@@ -118,8 +121,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ModuleResolver_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2Resolvers_2ModuleResolver_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2Resolvers_2ModuleResolver_8hppdep" id="ainclude_2CPGen_2Resolvers_2ModuleResolver_8hppdep">
-<area shape="rect" title=" " alt="" coords="154,5,324,46"/>
-<area shape="rect" href="ProjectResolver_8hpp.html" title=" " alt="" coords="154,94,324,135"/>
+<area shape="rect" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="154,5,324,46"/>
+<area shape="rect" href="ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="154,94,324,135"/>
 <area shape="poly" title=" " alt="" coords="241,62,241,94,236,94,236,62"/>
 <area shape="rect" href="ProjectResolver_8cpp.html" title=" " alt="" coords="5,183,227,208"/>
 <area shape="poly" title=" " alt="" coords="186,56,163,74,144,96,132,118,125,142,119,183,114,182,119,141,127,116,139,92,159,70,183,52"/>
@@ -136,9 +139,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classModuleResolver.html">ModuleResolver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves module names to their fully parsed <a class="el" href="structResolvedModule.html">ResolvedModule</a> descriptors.  <a href="classModuleResolver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Looks up module JSON definitions on the filesystem and parses them. </p>
+<dl class="section author"><dt>Author</dt><dd>Darleanow</dd></dl>
+<p>Module definitions are JSON files stored under a <code>templates/modules/</code> &lt;name&gt;/ directory. The resolver searches a prioritised list of candidate directories (system-wide, user-local, and next to the running executable for development) until it finds the requested module. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

@@ -1,6 +1,6 @@
 <map id="include/CPGen/Resolvers/ModuleResolver.hpp" name="include/CPGen/Resolvers/ModuleResolver.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="355,5,526,46"/>
-<area shape="rect" id="Node000002" href="$Resolved_8hpp.html" title=" " alt="" coords="176,94,353,120"/>
+<area shape="rect" id="Node000001" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="355,5,526,46"/>
+<area shape="rect" id="Node000002" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="176,94,353,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="398,49,306,90,304,85,395,44"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="243,241,297,267"/>
 <area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="436,47,404,127,384,167,367,195,340,219,312,236,309,232,337,214,362,192,380,165,399,124,431,45"/>
@@ -10,9 +10,9 @@
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="462,45,497,81,493,84,458,48"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="581,94,711,120"/>
 <area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="493,44,601,86,599,91,491,49"/>
-<area shape="rect" id="Node000003" href="$Config_8hpp.html" title=" " alt="" coords="5,168,164,193"/>
+<area shape="rect" id="Node000003" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="5,168,164,193"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,123,130,164,128,159,233,118"/>
-<area shape="rect" id="Node000008" href="$Module_8hpp.html" title=" " alt="" coords="188,168,352,193"/>
+<area shape="rect" id="Node000008" href="$Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="188,168,352,193"/>
 <area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="268,120,270,152,265,152,263,120"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="10,241,71,267"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,195,58,229,54,226,75,192"/>

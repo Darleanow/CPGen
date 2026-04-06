@@ -78,7 +78,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract base for all TUI components.  
+<p>Abstract base for all TUI widgets.  
  <a href="classComponent.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Component_8hpp_source.html">Component.hpp</a>&gt;</code></p>
@@ -87,10 +87,10 @@ Inheritance diagram for Component:</div>
 <div class="dyncontent">
 <div class="center"><img src="classComponent__inherit__graph.png" border="0" usemap="#aComponent_inherit__map" alt="Inheritance graph"/></div>
 <map name="aComponent_inherit__map" id="aComponent_inherit__map">
-<area shape="rect" title="Abstract base for all TUI components." alt="" coords="125,5,212,31"/>
+<area shape="rect" title="Abstract base for all TUI widgets." alt="" coords="125,5,212,31"/>
 <area shape="rect" href="classCheckbox.html" title="A toggleable checkbox component." alt="" coords="5,79,84,105"/>
 <area shape="poly" title=" " alt="" coords="136,41,67,81,64,76,133,37"/>
-<area shape="rect" href="classComponentGroup.html" title="A generic container that holds child components." alt="" coords="107,79,230,105"/>
+<area shape="rect" href="classComponentGroup.html" title="A container widget that groups and lays out child Component objects." alt="" coords="107,79,230,105"/>
 <area shape="poly" title=" " alt="" coords="171,46,171,79,166,79,166,46"/>
 <area shape="rect" href="classInput.html" title="A single&#45;line text input component." alt="" coords="254,79,304,105"/>
 <area shape="poly" title=" " alt="" coords="201,37,262,76,259,81,198,42"/>
@@ -102,36 +102,49 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a404098a91640552f9d0284d08b53def4" id="r_a404098a91640552f9d0284d08b53def4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a404098a91640552f9d0284d08b53def4">Component</a> ()=default</td></tr>
 <tr class="separator:a404098a91640552f9d0284d08b53def4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
+<tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor — components are always owned via base-class pointer.  <br /></td></tr>
 <tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed2d7eb6cd97620b65456788dcdb4b4c" id="r_aed2d7eb6cd97620b65456788dcdb4b4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#aed2d7eb6cd97620b65456788dcdb4b4c">Component</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="memdesc:aed2d7eb6cd97620b65456788dcdb4b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-copyable (unique ownership).  <br /></td></tr>
 <tr class="separator:aed2d7eb6cd97620b65456788dcdb4b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae152806e92e166c5794ba9cd7a1263bd" id="r_ae152806e92e166c5794ba9cd7a1263bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ae152806e92e166c5794ba9cd7a1263bd">operator=</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ae152806e92e166c5794ba9cd7a1263bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-copyable (unique ownership).  <br /></td></tr>
 <tr class="separator:ae152806e92e166c5794ba9cd7a1263bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1739e84d9766c32e06dfc163b121f0c9" id="r_a1739e84d9766c32e06dfc163b121f0c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a1739e84d9766c32e06dfc163b121f0c9">Component</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a1739e84d9766c32e06dfc163b121f0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-movable.  <br /></td></tr>
 <tr class="separator:a1739e84d9766c32e06dfc163b121f0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b62f108ab594697b90d228b345d9d5" id="r_a84b62f108ab594697b90d228b345d9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a84b62f108ab594697b90d228b345d9d5">operator=</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a84b62f108ab594697b90d228b345d9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-movable.  <br /></td></tr>
 <tr class="separator:a84b62f108ab594697b90d228b345d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56c380eec1405c24bd72898879f3dfa2" id="r_a56c380eec1405c24bd72898879f3dfa2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">render</a> () const =0</td></tr>
-<tr class="memdesc:a56c380eec1405c24bd72898879f3dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the component as an ANSI string.  <br /></td></tr>
+<tr class="memdesc:a56c380eec1405c24bd72898879f3dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produce the full ANSI-formatted rendering of this component.  <br /></td></tr>
 <tr class="separator:a56c380eec1405c24bd72898879f3dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eeb99a49126e02fc8b787ba75344a99" id="r_a5eeb99a49126e02fc8b787ba75344a99"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">handleInput</a> (<a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> key)=0</td></tr>
-<tr class="memdesc:a5eeb99a49126e02fc8b787ba75344a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key press.  <br /></td></tr>
+<tr class="memitem:a5eeb99a49126e02fc8b787ba75344a99" id="r_a5eeb99a49126e02fc8b787ba75344a99"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">handleInput</a> (<a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> key)=0</td></tr>
+<tr class="memdesc:a5eeb99a49126e02fc8b787ba75344a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a single key event.  <br /></td></tr>
 <tr class="separator:a5eeb99a49126e02fc8b787ba75344a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97afed203882996edf2a434e55b4372c" id="r_a97afed203882996edf2a434e55b4372c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a> (bool focused)</td></tr>
-<tr class="memdesc:a97afed203882996edf2a434e55b4372c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the focus state of this component.  <br /></td></tr>
+<tr class="memdesc:a97afed203882996edf2a434e55b4372c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the focus state of this component.  <br /></td></tr>
 <tr class="separator:a97afed203882996edf2a434e55b4372c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8782aeeb6c0d675f65c063f3e4a0bc1" id="r_ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad8782aeeb6c0d675f65c063f3e4a0bc1">isFocused</a> () const</td></tr>
-<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this component is focused.  <br /></td></tr>
+<tr class="memdesc:ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this component currently has keyboard focus.  <br /></td></tr>
 <tr class="separator:ad8782aeeb6c0d675f65c063f3e4a0bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a11504494f0319149ff979778aa074810" id="r_a11504494f0319149ff979778aa074810"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">m_is_focused</a> = false</td></tr>
+<tr class="memdesc:a11504494f0319149ff979778aa074810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current focus state, managed by <a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a>.  <br /></td></tr>
 <tr class="separator:a11504494f0319149ff979778aa074810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Abstract base for all TUI components. </p>
-<p>Provides the common interface: render, handle input, and focus. Every component must implement <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2" title="Render the component as an ANSI string.">render()</a> and <a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99" title="Handle a key press.">handleInput()</a>. </p>
+<div class="textblock"><p>Abstract base for all TUI widgets. </p>
+<p>Defines the minimal interface that the <a class="el" href="classView.html">View</a> and <a class="el" href="classComponentGroup.html">ComponentGroup</a> containers depend on to render and route input events.</p>
+<p>Subclasses must implement:</p><ul>
+<li><a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">render()</a> — return the full ANSI-formatted string representation.</li>
+<li><a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99">handleInput()</a> — process one keypress and return whether it was consumed.</li>
+</ul>
+<p>Subclasses may override:</p><ul>
+<li><a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused()</a> — react to focus changes (e.g. repaint with a different colour). </li>
+</ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a404098a91640552f9d0284d08b53def4" name="a404098a91640552f9d0284d08b53def4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a404098a91640552f9d0284d08b53def4">&#9670;&#160;</a></span>Component() <span class="overload">[1/3]</span></h2>
@@ -181,6 +194,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Virtual destructor — components are always owned via base-class pointer. </p>
+
 </div>
 </div>
 <a id="aed2d7eb6cd97620b65456788dcdb4b4c" name="aed2d7eb6cd97620b65456788dcdb4b4c"></a>
@@ -206,6 +221,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Non-copyable (unique ownership). </p>
 
 </div>
 </div>
@@ -233,6 +250,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Non-movable. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -248,7 +267,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual bool Component::handleInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
@@ -260,14 +279,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handle a key press. </p>
+<p>Process a single key event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>The key event </td></tr>
+    <tr><td class="paramname">key</td><td>The key decoded by <a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">Utils::readKey</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the key was consumed, false to bubble up </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the component consumed the key (no further propagation is needed), <code>false</code> if the event should bubble up to the parent. </dd></dl>
 
 <p>Implemented in <a class="el" href="classCheckbox.html#a3b38a75c3734fa8b9b8c0f80cc08f35c">Checkbox</a>, <a class="el" href="classInput.html#a0f7de11d5920afff71d5f1e2a08db3a9">Input</a>, and <a class="el" href="classComponentGroup.html#a86537b51456d6d266b17a746e03f8222">ComponentGroup</a>.</p>
 
@@ -296,8 +315,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check whether this component is focused. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if focused </dd></dl>
+<p>Return whether this component currently has keyboard focus. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if focused. </dd></dl>
 
 </div>
 </div>
@@ -325,6 +344,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Non-movable. </p>
+
 </div>
 </div>
 <a id="ae152806e92e166c5794ba9cd7a1263bd" name="ae152806e92e166c5794ba9cd7a1263bd"></a>
@@ -351,6 +372,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Non-copyable (unique ownership). </p>
+
 </div>
 </div>
 <a id="a56c380eec1405c24bd72898879f3dfa2" name="a56c380eec1405c24bd72898879f3dfa2"></a>
@@ -376,8 +399,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Render the component as an ANSI string. </p>
-<dl class="section return"><dt>Returns</dt><dd>The rendered string (may contain newlines) </dd></dl>
+<p>Produce the full ANSI-formatted rendering of this component. </p>
+<p>The returned string may contain newlines and ANSI escape codes. Callers should not assume a specific line count.</p>
+<dl class="section return"><dt>Returns</dt><dd>String suitable for direct output to a terminal. </dd></dl>
 
 <p>Implemented in <a class="el" href="classCheckbox.html#aba37c5b13b4d22314d004a74388f2737">Checkbox</a>, <a class="el" href="classInput.html#a12dc4ccf2107bffd8914d52fc7ae735c">Input</a>, and <a class="el" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41">ComponentGroup</a>.</p>
 
@@ -407,10 +431,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set the focus state of this component. </p>
+<p>Change the focus state of this component. </p>
+<p>The default implementation sets <a class="el" href="classComponent.html#a11504494f0319149ff979778aa074810">m_is_focused</a> and is sufficient for most leaf components. Containers such as <a class="el" href="classComponentGroup.html">ComponentGroup</a> override this to also update their currently focused child.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">focused</td><td>Whether this component should be focused </td></tr>
+    <tr><td class="paramname">focused</td><td><code>true</code> to grant focus, <code>false</code> to remove it. </td></tr>
   </table>
   </dd>
 </dl>
@@ -439,6 +464,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Current focus state, managed by <a class="el" href="classComponent.html#a97afed203882996edf2a434e55b4372c">setFocused</a>. </p>
 
 </div>
 </div>

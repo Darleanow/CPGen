@@ -77,14 +77,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Fully parsed project configuration produced by <a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">CLI::parse</a>.  
+ <a href="structProjectConfig.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Config_8hpp_source.html">Config.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ProjectConfig:</div>
 <div class="dyncontent">
 <div class="center"><img src="structProjectConfig__coll__graph.png" border="0" usemap="#aProjectConfig_coll__map" alt="Collaboration graph"/></div>
 <map name="aProjectConfig_coll__map" id="aProjectConfig_coll__map">
-<area shape="rect" title=" " alt="" coords="6,94,104,120"/>
-<area shape="rect" href="structToolingConfig.html" title=" " alt="" coords="5,5,105,31"/>
+<area shape="rect" title="Fully parsed project configuration produced by CLI::parse." alt="" coords="6,94,104,120"/>
+<area shape="rect" href="structToolingConfig.html" title="Groups all optional tooling flags that can be enabled for a project." alt="" coords="5,5,105,31"/>
 <area shape="poly" title=" " alt="" coords="58,47,58,94,52,94,52,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -92,19 +95,28 @@ Collaboration diagram for ProjectConfig:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac4b117db4cbb4185bad9c8c881ab0958" id="r_ac4b117db4cbb4185bad9c8c881ab0958"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#ac4b117db4cbb4185bad9c8c881ab0958">path</a></td></tr>
+<tr class="memdesc:ac4b117db4cbb4185bad9c8c881ab0958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute path to the generation directory.  <br /></td></tr>
 <tr class="separator:ac4b117db4cbb4185bad9c8c881ab0958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3abad7f1f057cd4465b3602424efcd45" id="r_a3abad7f1f057cd4465b3602424efcd45"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#a3abad7f1f057cd4465b3602424efcd45">name</a></td></tr>
+<tr class="memdesc:a3abad7f1f057cd4465b3602424efcd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project name (used as the CMake project name and directory).  <br /></td></tr>
 <tr class="separator:a3abad7f1f057cd4465b3602424efcd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad36ae5df76846010005c2d040af67fd2" id="r_ad36ae5df76846010005c2d040af67fd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78">CppStandard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2">standard</a> = <a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706">CppStandard::Cpp20</a></td></tr>
+<tr class="memdesc:ad36ae5df76846010005c2d040af67fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ language standard. Defaults to C++20.  <br /></td></tr>
 <tr class="separator:ad36ae5df76846010005c2d040af67fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12d1ce06f04ff8af5d63e1d5cb100dcb" id="r_a12d1ce06f04ff8af5d63e1d5cb100dcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#a12d1ce06f04ff8af5d63e1d5cb100dcb">modules</a></td></tr>
+<tr class="memdesc:a12d1ce06f04ff8af5d63e1d5cb100dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dependency module identifiers (e.g. <code>"gtest"</code>, <code>"spdlog"</code>).  <br /></td></tr>
 <tr class="separator:a12d1ce06f04ff8af5d63e1d5cb100dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c62478b0c041229a6aface12ed98905" id="r_a4c62478b0c041229a6aface12ed98905"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="Config_8hpp.html#a4e4c42aa458fc2aa8b741301aab17ead">TargetType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#a4c62478b0c041229a6aface12ed98905">targets</a></td></tr>
+<tr class="memdesc:a4c62478b0c041229a6aface12ed98905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build target kinds to generate.  <br /></td></tr>
 <tr class="separator:a4c62478b0c041229a6aface12ed98905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58fef04743e8169313c8ef2162611f93" id="r_a58fef04743e8169313c8ef2162611f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structToolingConfig.html">ToolingConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html#a58fef04743e8169313c8ef2162611f93">tooling</a></td></tr>
+<tr class="memdesc:a58fef04743e8169313c8ef2162611f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional tooling configuration.  <br /></td></tr>
 <tr class="separator:a58fef04743e8169313c8ef2162611f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Fully parsed project configuration produced by <a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">CLI::parse</a>. </p>
+<p>This struct is the primary input to <a class="el" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0">ProjectResolver::resolve</a> and drives the entire code-generation pipeline. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a12d1ce06f04ff8af5d63e1d5cb100dcb" name="a12d1ce06f04ff8af5d63e1d5cb100dcb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12d1ce06f04ff8af5d63e1d5cb100dcb">&#9670;&#160;</a></span>modules</h2>
 
@@ -116,6 +128,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Dependency module identifiers (e.g. <code>"gtest"</code>, <code>"spdlog"</code>). </p>
 
 </div>
 </div>
@@ -131,6 +145,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Project name (used as the CMake project name and directory). </p>
+
 </div>
 </div>
 <a id="ac4b117db4cbb4185bad9c8c881ab0958" name="ac4b117db4cbb4185bad9c8c881ab0958"></a>
@@ -144,6 +160,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Absolute path to the generation directory. </p>
 
 </div>
 </div>
@@ -159,6 +177,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>C++ language standard. Defaults to C++20. </p>
+
 </div>
 </div>
 <a id="a4c62478b0c041229a6aface12ed98905" name="a4c62478b0c041229a6aface12ed98905"></a>
@@ -173,6 +193,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Build target kinds to generate. </p>
+
 </div>
 </div>
 <a id="a58fef04743e8169313c8ef2162611f93" name="a58fef04743e8169313c8ef2162611f93"></a>
@@ -186,6 +208,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Optional tooling configuration. </p>
 
 </div>
 </div>

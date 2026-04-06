@@ -18,5 +18,9 @@ var searchData=
   ['fg_5fred_15',['FG_RED',['../namespaceUtils_1_1Colours.html#a2736da8c371f39205dd2c47ea8f78116',1,'Utils::Colours']]],
   ['fg_5fwhite_16',['FG_WHITE',['../namespaceUtils_1_1Colours.html#ab164e3653a35df2e190d49f21d114998',1,'Utils::Colours']]],
   ['fg_5fyellow_17',['FG_YELLOW',['../namespaceUtils_1_1Colours.html#a3c58f30452f475166fbf59858588620c',1,'Utils::Colours']]],
-  ['from_5fjson_18',['from_json',['../PreferencesManager_8cpp.html#a2e0a18fafb71dc220945e61570383103',1,'PreferencesManager.cpp']]]
+  ['file_20format_18',['Configuration file format',['../classPreferencesManager.html#autotoc_md1',1,'']]],
+  ['focused_20unchecked_19',['Rendering example (focused, unchecked)',['../classCheckbox.html#autotoc_md2',1,'']]],
+  ['focused_20value_20cpgen_20',['Rendering example (focused, value = &quot;CPGen&quot;)',['../classInput.html#autotoc_md4',1,'']]],
+  ['format_21',['Configuration file format',['../classPreferencesManager.html#autotoc_md1',1,'']]],
+  ['from_5fjson_22',['from_json',['../PreferencesManager_8cpp.html#a2e0a18fafb71dc220945e61570383103',1,'PreferencesManager.cpp']]]
 ];

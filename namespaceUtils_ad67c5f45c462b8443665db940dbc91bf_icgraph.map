@@ -1,7 +1,7 @@
 <map id="Utils::handleEscapeKey" name="Utils::handleEscapeKey">
-<area shape="rect" id="Node000001" title="Handle an ESC byte already read from stdin." alt="" coords="277,5,434,31"/>
-<area shape="rect" id="Node000002" href="$namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single key from stdin (raw mode must be active)" alt="" coords="128,5,229,31"/>
+<area shape="rect" id="Node000001" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="277,5,434,31"/>
+<area shape="rect" id="Node000002" href="$namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="128,5,229,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,21,229,21,229,16,262,16"/>
-<area shape="rect" id="Node000003" href="$classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title=" " alt="" coords="5,5,80,31"/>
+<area shape="rect" id="Node000003" href="$classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title="Start the blocking TUI event loop." alt="" coords="5,5,80,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,21,80,21,80,16,112,16"/>
 </map>

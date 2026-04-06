@@ -77,21 +77,37 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Loads and exposes user preferences from a JSON file.  
+ <a href="classPreferencesManager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="PreferencesManager_8hpp_source.html">PreferencesManager.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a30c7fd28d19688d125596666fd2132fe" id="r_a30c7fd28d19688d125596666fd2132fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPreferencesManager.html#a30c7fd28d19688d125596666fd2132fe">PreferencesManager</a> (std::optional&lt; std::filesystem::path &gt;)</td></tr>
-<tr class="separator:a30c7fd28d19688d125596666fd2132fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb088d55dec108e393e7f435e6c3ce5e" id="r_afb088d55dec108e393e7f435e6c3ce5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPreferencesManager.html#afb088d55dec108e393e7f435e6c3ce5e">PreferencesManager</a> (std::optional&lt; std::filesystem::path &gt; config_path)</td></tr>
+<tr class="memdesc:afb088d55dec108e393e7f435e6c3ce5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <code><a class="el" href="classPreferencesManager.html" title="Loads and exposes user preferences from a JSON file.">PreferencesManager</a></code>, optionally overriding the config path.  <br /></td></tr>
+<tr class="separator:afb088d55dec108e393e7f435e6c3ce5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad10c0487f39084d28d1141cab4d3b0" id="r_a8ad10c0487f39084d28d1141cab4d3b0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structPreferencesConfig.html">PreferencesConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">getConfig</a> () const</td></tr>
+<tr class="memdesc:a8ad10c0487f39084d28d1141cab4d3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the currently loaded preferences.  <br /></td></tr>
 <tr class="separator:a8ad10c0487f39084d28d1141cab4d3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a30c7fd28d19688d125596666fd2132fe" name="a30c7fd28d19688d125596666fd2132fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c7fd28d19688d125596666fd2132fe">&#9670;&#160;</a></span>PreferencesManager()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Loads and exposes user preferences from a JSON file. </p>
+<p>Accepts an optional custom configuration path. When no path is provided the default <code>~/</code>.config/CPGen/config.json is used. The configuration is lazily available via <a class="el" href="classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0">getConfig</a>; call <code>readConfig()</code> internally to populate it.</p>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Configuration file format</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;SupportModernFont&quot;: true</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afb088d55dec108e393e7f435e6c3ce5e" name="afb088d55dec108e393e7f435e6c3ce5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb088d55dec108e393e7f435e6c3ce5e">&#9670;&#160;</a></span>PreferencesManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">PreferencesManager::PreferencesManager </td>
@@ -101,7 +117,20 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
+
+<p>Construct a <code><a class="el" href="classPreferencesManager.html" title="Loads and exposes user preferences from a JSON file.">PreferencesManager</a></code>, optionally overriding the config path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config_path</td><td>Custom path to the JSON preferences file. When empty (<code>std::nullopt</code>) the default path <code>~/</code>.config/CPGen/config.json is used. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -120,6 +149,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Return the currently loaded preferences. </p>
+<dl class="section return"><dt>Returns</dt><dd>A const reference to the internal <a class="el" href="structPreferencesConfig.html">PreferencesConfig</a>. Returns default-initialised values if the config has not been read yet. </dd></dl>
 
 </div>
 </div>

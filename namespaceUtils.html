@@ -76,31 +76,37 @@ $(function() {
   <div class="headertitle"><div class="title">Utils Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>TUI utility functions and constants.  
+<a href="namespaceUtils.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceUtils_1_1Colours" id="r_namespaceUtils_1_1Colours"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Colours.html">Colours</a></td></tr>
+<tr class="memdesc:namespaceUtils_1_1Colours"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI SGR (Select Graphic Rendition) code constants and escape sequence builder. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5ccb7875edc2112494812ef0c880ccf8" id="r_a5ccb7875edc2112494812ef0c880ccf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8">stdinReady</a> (int timeout_ms)</td></tr>
-<tr class="memdesc:a5ccb7875edc2112494812ef0c880ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if stdin has data available within a timeout.  <br /></td></tr>
+<tr class="memdesc:a5ccb7875edc2112494812ef0c880ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poll stdin for available data within a timeout.  <br /></td></tr>
 <tr class="separator:a5ccb7875edc2112494812ef0c880ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f5da471140a2a273b54aad42aa372b4" id="r_a7f5da471140a2a273b54aad42aa372b4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4">stripAnsi</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a7f5da471140a2a273b54aad42aa372b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip ANSI escape sequences from a string.  <br /></td></tr>
+<tr class="memdesc:a7f5da471140a2a273b54aad42aa372b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all ANSI escape sequences from a string.  <br /></td></tr>
 <tr class="separator:a7f5da471140a2a273b54aad42aa372b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d60863499279dccf5b5682c4b6bc7dd" id="r_a4d60863499279dccf5b5682c4b6bc7dd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd">visualWidth</a> (const std::string &amp;s)</td></tr>
-<tr class="memdesc:a4d60863499279dccf5b5682c4b6bc7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the visual (display) width of a UTF-8 string, stripping ANSI escape sequences.  <br /></td></tr>
+<tr class="memdesc:a4d60863499279dccf5b5682c4b6bc7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the visual (display) column width of a UTF-8 string.  <br /></td></tr>
 <tr class="separator:a4d60863499279dccf5b5682c4b6bc7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad67c5f45c462b8443665db940dbc91bf" id="r_ad67c5f45c462b8443665db940dbc91bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">handleEscapeKey</a> ()</td></tr>
-<tr class="memdesc:ad67c5f45c462b8443665db940dbc91bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an ESC byte already read from stdin.  <br /></td></tr>
+<tr class="memitem:ad67c5f45c462b8443665db940dbc91bf" id="r_ad67c5f45c462b8443665db940dbc91bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">handleEscapeKey</a> ()</td></tr>
+<tr class="memdesc:ad67c5f45c462b8443665db940dbc91bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode an escape sequence whose leading <code>ESC</code> byte has already been consumed.  <br /></td></tr>
 <tr class="separator:ad67c5f45c462b8443665db940dbc91bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78b617d54555683fc48a2b9f73f4429" id="r_ab78b617d54555683fc48a2b9f73f4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">readKey</a> ()</td></tr>
-<tr class="memdesc:ab78b617d54555683fc48a2b9f73f4429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single key from stdin (raw mode must be active)  <br /></td></tr>
+<tr class="memitem:ab78b617d54555683fc48a2b9f73f4429" id="r_ab78b617d54555683fc48a2b9f73f4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">readKey</a> ()</td></tr>
+<tr class="memdesc:ab78b617d54555683fc48a2b9f73f4429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single keypress from stdin (terminal must be in raw mode).  <br /></td></tr>
 <tr class="separator:ab78b617d54555683fc48a2b9f73f4429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>TUI utility functions and constants. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ad67c5f45c462b8443665db940dbc91bf" name="ad67c5f45c462b8443665db940dbc91bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad67c5f45c462b8443665db940dbc91bf">&#9670;&#160;</a></span>handleEscapeKey()</h2>
 
@@ -111,7 +117,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> Utils::handleEscapeKey </td>
+          <td class="memname"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> Utils::handleEscapeKey </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -124,15 +130,16 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Handle an ESC byte already read from stdin. </p>
-<dl class="section return"><dt>Returns</dt><dd>The key decoded from the escape sequence </dd></dl>
+<p>Decode an escape sequence whose leading <code>ESC</code> byte has already been consumed. </p>
+<p>Polls stdin for the next byte (50 ms timeout). If it reads <code>'</code>[' it polls again for the final letter and maps it to an arrow key via a static lookup table. Any unrecognised sequence or timeout returns <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224">Defs::Special::Escape</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>The decoded <a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> — one of <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa">Defs::Special::Up</a>, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53">Defs::Special::Down</a>, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a945d5e233cf7d6240f6b783b36a374ff">Defs::Special::Left</a>, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a92b09c7c48c520c3c55e497875da437c">Defs::Special::Right</a>, or <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224">Defs::Special::Escape</a>. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_ad67c5f45c462b8443665db940dbc91bf_cgraph.png" border="0" usemap="#anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_cgraph" alt=""/></div>
 <map name="anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_cgraph" id="anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_cgraph">
-<area shape="rect" title="Handle an ESC byte already read from stdin." alt="" coords="5,5,163,31"/>
-<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Check if stdin has data available within a timeout." alt="" coords="211,5,329,31"/>
+<area shape="rect" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="5,5,163,31"/>
+<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Poll stdin for available data within a timeout." alt="" coords="211,5,329,31"/>
 <area shape="poly" title=" " alt="" coords="163,16,195,16,195,21,163,21"/>
 </map>
 </div>
@@ -141,10 +148,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_ad67c5f45c462b8443665db940dbc91bf_icgraph.png" border="0" usemap="#anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_icgraph" alt=""/></div>
 <map name="anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_icgraph" id="anamespaceUtils_ad67c5f45c462b8443665db940dbc91bf_icgraph">
-<area shape="rect" title="Handle an ESC byte already read from stdin." alt="" coords="277,5,434,31"/>
-<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single key from stdin (raw mode must be active)" alt="" coords="128,5,229,31"/>
+<area shape="rect" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="277,5,434,31"/>
+<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="128,5,229,31"/>
 <area shape="poly" title=" " alt="" coords="262,21,229,21,229,16,262,16"/>
-<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title=" " alt="" coords="5,5,80,31"/>
+<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title="Start the blocking TUI event loop." alt="" coords="5,5,80,31"/>
 <area shape="poly" title=" " alt="" coords="112,21,80,21,80,16,112,16"/>
 </map>
 </div>
@@ -161,7 +168,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> Utils::readKey </td>
+          <td class="memname"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> Utils::readKey </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -174,17 +181,25 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Read a single key from stdin (raw mode must be active) </p>
-<dl class="section return"><dt>Returns</dt><dd>The key as a <a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> variant </dd></dl>
+<p>Read a single keypress from stdin (terminal must be in raw mode). </p>
+<p>Reads one byte and maps it to the appropriate <a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> variant:</p><ul>
+<li><code>\r</code> / <code>\n</code> → <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58af1851d5600eae616ee802a31ac74701b">Defs::Special::Enter</a></li>
+<li><code>0x1B</code> (ESC) → delegates to <a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">handleEscapeKey</a></li>
+<li><code>0x7F</code> / <code>0x08</code> → <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58acd7d13ceea728b08555f7c818cfb13ef">Defs::Special::Backspace</a></li>
+<li><code>\t</code> → <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413">Defs::Special::Tab</a></li>
+<li>Any other byte → <code>char</code> variant</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>The decoded <a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Requires an active <a class="el" href="classTerminal.html">Terminal</a> instance (raw mode + cursor hidden). The return value of the underlying <code>read(2)</code> call is intentionally discarded; errors are left to the caller's event loop to detect via subsequent <code>stdinReady</code> checks. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_ab78b617d54555683fc48a2b9f73f4429_cgraph.png" border="0" usemap="#anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_cgraph" alt=""/></div>
 <map name="anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_cgraph" id="anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_cgraph">
-<area shape="rect" title="Read a single key from stdin (raw mode must be active)" alt="" coords="5,5,107,31"/>
-<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Handle an ESC byte already read from stdin." alt="" coords="155,5,312,31"/>
+<area shape="rect" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="5,5,107,31"/>
+<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="155,5,312,31"/>
 <area shape="poly" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
-<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Check if stdin has data available within a timeout." alt="" coords="360,5,478,31"/>
+<area shape="rect" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8" title="Poll stdin for available data within a timeout." alt="" coords="360,5,478,31"/>
 <area shape="poly" title=" " alt="" coords="312,16,344,16,344,21,312,21"/>
 </map>
 </div>
@@ -193,8 +208,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_ab78b617d54555683fc48a2b9f73f4429_icgraph.png" border="0" usemap="#anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_icgraph" alt=""/></div>
 <map name="anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_icgraph" id="anamespaceUtils_ab78b617d54555683fc48a2b9f73f4429_icgraph">
-<area shape="rect" title="Read a single key from stdin (raw mode must be active)" alt="" coords="128,5,229,31"/>
-<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title=" " alt="" coords="5,5,80,31"/>
+<area shape="rect" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="128,5,229,31"/>
+<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title="Start the blocking TUI event loop." alt="" coords="5,5,80,31"/>
 <area shape="poly" title=" " alt="" coords="112,21,80,21,80,16,112,16"/>
 </map>
 </div>
@@ -225,25 +240,26 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Check if stdin has data available within a timeout. </p>
+<p>Poll stdin for available data within a timeout. </p>
+<p>Uses <code>poll(2)</code> on POSIX to avoid blocking indefinitely when checking for the second byte of a multi-byte escape sequence. Always returns <code>true</code> on Windows (where <code>poll</code> is not readily available).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">timeout_ms</td><td>Timeout in milliseconds (0 = non-blocking check) </td></tr>
+    <tr><td class="paramname">timeout_ms</td><td>Maximum wait time in milliseconds. Pass <code>0</code> for a non-blocking check. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if data is available to read </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if at least one byte is ready to read from <code>STDIN_FILENO</code>. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_a5ccb7875edc2112494812ef0c880ccf8_icgraph.png" border="0" usemap="#anamespaceUtils_a5ccb7875edc2112494812ef0c880ccf8_icgraph" alt=""/></div>
 <map name="anamespaceUtils_a5ccb7875edc2112494812ef0c880ccf8_icgraph" id="anamespaceUtils_a5ccb7875edc2112494812ef0c880ccf8_icgraph">
-<area shape="rect" title="Check if stdin has data available within a timeout." alt="" coords="482,5,601,31"/>
-<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Handle an ESC byte already read from stdin." alt="" coords="277,5,434,31"/>
+<area shape="rect" title="Poll stdin for available data within a timeout." alt="" coords="482,5,601,31"/>
+<area shape="rect" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf" title="Decode an escape sequence whose leading ESC byte has already been consumed." alt="" coords="277,5,434,31"/>
 <area shape="poly" title=" " alt="" coords="467,21,435,21,435,16,467,16"/>
-<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single key from stdin (raw mode must be active)" alt="" coords="128,5,229,31"/>
+<area shape="rect" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single keypress from stdin (terminal must be in raw mode)." alt="" coords="128,5,229,31"/>
 <area shape="poly" title=" " alt="" coords="262,21,229,21,229,16,262,16"/>
-<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title=" " alt="" coords="5,5,80,31"/>
+<area shape="rect" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a" title="Start the blocking TUI event loop." alt="" coords="5,5,80,31"/>
 <area shape="poly" title=" " alt="" coords="112,21,80,21,80,16,112,16"/>
 </map>
 </div>
@@ -274,23 +290,24 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Strip ANSI escape sequences from a string. </p>
+<p>Remove all ANSI escape sequences from a string. </p>
+<p>Scans <code>s</code> character-by-character and discards everything between an <code>ESC</code> (<code>0x1B</code>) and the subsequent alphabetic terminator.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>The string potentially containing ANSI codes </td></tr>
+    <tr><td class="paramname">s</td><td>A string that may contain <code>ESC</code>[…m ANSI colour/style codes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Plain text with all escape sequences removed </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The plain-text content of <code>s</code> with all escape sequences stripped. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_a7f5da471140a2a273b54aad42aa372b4_icgraph.png" border="0" usemap="#anamespaceUtils_a7f5da471140a2a273b54aad42aa372b4_icgraph" alt=""/></div>
 <map name="anamespaceUtils_a7f5da471140a2a273b54aad42aa372b4_icgraph" id="anamespaceUtils_a7f5da471140a2a273b54aad42aa372b4_icgraph">
-<area shape="rect" title="Strip ANSI escape sequences from a string." alt="" coords="387,5,492,31"/>
-<area shape="rect" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="218,5,339,31"/>
+<area shape="rect" title="Remove all ANSI escape sequences from a string." alt="" coords="387,5,492,31"/>
+<area shape="rect" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) column width of a UTF&#45;8 string." alt="" coords="218,5,339,31"/>
 <area shape="poly" title=" " alt="" coords="371,21,339,21,339,16,371,16"/>
-<area shape="rect" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41" title="Render the component as an ANSI string." alt="" coords="5,5,170,31"/>
+<area shape="rect" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41" title="Render the group and all its children as a multi&#45;line ANSI string." alt="" coords="5,5,170,31"/>
 <area shape="poly" title=" " alt="" coords="202,21,170,21,170,16,202,16"/>
 </map>
 </div>
@@ -321,21 +338,23 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Compute the visual (display) width of a UTF-8 string, stripping ANSI escape sequences. </p>
+<p>Compute the visual (display) column width of a UTF-8 string. </p>
+<p>Strips ANSI escape codes first, then converts the result to a wide-character string and calls POSIX <code>wcswidth(3)</code> to obtain the number of terminal columns the string occupies (accounting for double-width CJK characters, zero-width combining marks, etc.).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>The string potentially containing ANSI codes </td></tr>
+    <tr><td class="paramname">s</td><td>A UTF-8 string, possibly containing ANSI escape sequences. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of terminal columns the string occupies </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of terminal columns the visible content of <code>s</code> occupies. Falls back to the character count if <code>wcswidth</code> returns a negative value (e.g. when the string contains non-printable wide characters).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Currently POSIX-only. A cross-platform alternative using utf8proc is planned (see the TODO comment in the implementation). </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_cgraph.png" border="0" usemap="#anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_cgraph" alt=""/></div>
 <map name="anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_cgraph" id="anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_cgraph">
-<area shape="rect" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="5,5,127,31"/>
-<area shape="rect" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4" title="Strip ANSI escape sequences from a string." alt="" coords="175,5,280,31"/>
+<area shape="rect" title="Compute the visual (display) column width of a UTF&#45;8 string." alt="" coords="5,5,127,31"/>
+<area shape="rect" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4" title="Remove all ANSI escape sequences from a string." alt="" coords="175,5,280,31"/>
 <area shape="poly" title=" " alt="" coords="127,16,159,16,159,21,127,21"/>
 </map>
 </div>
@@ -344,8 +363,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_icgraph.png" border="0" usemap="#anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_icgraph" alt=""/></div>
 <map name="anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_icgraph" id="anamespaceUtils_a4d60863499279dccf5b5682c4b6bc7dd_icgraph">
-<area shape="rect" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="218,5,339,31"/>
-<area shape="rect" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41" title="Render the component as an ANSI string." alt="" coords="5,5,170,31"/>
+<area shape="rect" title="Compute the visual (display) column width of a UTF&#45;8 string." alt="" coords="218,5,339,31"/>
+<area shape="rect" href="classComponentGroup.html#ac26b65de2a4666e8ec4d90e58b42fb41" title="Render the group and all its children as a multi&#45;line ANSI string." alt="" coords="5,5,170,31"/>
 <area shape="poly" title=" " alt="" coords="202,21,170,21,170,16,202,16"/>
 </map>
 </div>

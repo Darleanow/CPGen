@@ -1,6 +1,6 @@
 <map id="include/CPGen/Resolvers/ModuleResolver.hpp" name="include/CPGen/Resolvers/ModuleResolver.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="154,5,324,46"/>
-<area shape="rect" id="Node000002" href="$ProjectResolver_8hpp.html" title=" " alt="" coords="154,94,324,135"/>
+<area shape="rect" id="Node000001" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="154,5,324,46"/>
+<area shape="rect" id="Node000002" href="$ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="154,94,324,135"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,62,241,94,236,94,236,62"/>
 <area shape="rect" id="Node000003" href="$ProjectResolver_8cpp.html" title=" " alt="" coords="5,183,227,208"/>
 <area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="186,56,163,74,144,96,132,118,125,142,119,183,114,182,119,141,127,116,139,92,159,70,183,52"/>

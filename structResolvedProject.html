@@ -77,16 +77,19 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Aggregated output of the full resolver pipeline.  
+ <a href="structResolvedProject.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Resolved_8hpp_source.html">Resolved.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ResolvedProject:</div>
 <div class="dyncontent">
 <div class="center"><img src="structResolvedProject__coll__graph.png" border="0" usemap="#aResolvedProject_coll__map" alt="Collaboration graph"/></div>
 <map name="aResolvedProject_coll__map" id="aResolvedProject_coll__map">
-<area shape="rect" title=" " alt="" coords="5,183,122,208"/>
-<area shape="rect" href="structProjectConfig.html" title=" " alt="" coords="14,94,113,120"/>
+<area shape="rect" title="Aggregated output of the full resolver pipeline." alt="" coords="5,183,122,208"/>
+<area shape="rect" href="structProjectConfig.html" title="Fully parsed project configuration produced by CLI::parse." alt="" coords="14,94,113,120"/>
 <area shape="poly" title=" " alt="" coords="66,135,66,182,61,182,61,135"/>
-<area shape="rect" href="structToolingConfig.html" title=" " alt="" coords="14,5,113,31"/>
+<area shape="rect" href="structToolingConfig.html" title="Groups all optional tooling flags that can be enabled for a project." alt="" coords="14,5,113,31"/>
 <area shape="poly" title=" " alt="" coords="66,47,66,94,61,94,61,47"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -94,15 +97,22 @@ Collaboration diagram for ResolvedProject:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a579d33e76ff017269a66f11140111bbd" id="r_a579d33e76ff017269a66f11140111bbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structProjectConfig.html">ProjectConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedProject.html#a579d33e76ff017269a66f11140111bbd">config</a></td></tr>
+<tr class="memdesc:a579d33e76ff017269a66f11140111bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The original configuration that was resolved.  <br /></td></tr>
 <tr class="separator:a579d33e76ff017269a66f11140111bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4d36ac9caae8fc671a7bd489963e0bd" id="r_ad4d36ac9caae8fc671a7bd489963e0bd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structResolvedTarget.html">ResolvedTarget</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedProject.html#ad4d36ac9caae8fc671a7bd489963e0bd">targets</a></td></tr>
+<tr class="memdesc:ad4d36ac9caae8fc671a7bd489963e0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduplicated list of build targets to generate.  <br /></td></tr>
 <tr class="separator:ad4d36ac9caae8fc671a7bd489963e0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5692e733d10207a4f3ffbd3b593b6035" id="r_a5692e733d10207a4f3ffbd3b593b6035"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structResolvedModule.html">ResolvedModule</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedProject.html#a5692e733d10207a4f3ffbd3b593b6035">modules</a></td></tr>
+<tr class="memdesc:a5692e733d10207a4f3ffbd3b593b6035"><td class="mdescLeft">&#160;</td><td class="mdescRight">All resolved dependency modules.  <br /></td></tr>
 <tr class="separator:a5692e733d10207a4f3ffbd3b593b6035"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af01603162187dbbd582d1e11c6ea41e8" id="r_af01603162187dbbd582d1e11c6ea41e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTargetInjection.html">TargetInjection</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedProject.html#af01603162187dbbd582d1e11c6ea41e8">injections</a></td></tr>
+<tr class="memdesc:af01603162187dbbd582d1e11c6ea41e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">All CMake snippets collected from every module.  <br /></td></tr>
 <tr class="separator:af01603162187dbbd582d1e11c6ea41e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Aggregated output of the full resolver pipeline. </p>
+<p>Returned by <a class="el" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0">ProjectResolver::resolve</a> and consumed by the CMake and C++ file generators to produce the final project structure on disk. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a579d33e76ff017269a66f11140111bbd" name="a579d33e76ff017269a66f11140111bbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a579d33e76ff017269a66f11140111bbd">&#9670;&#160;</a></span>config</h2>
 
@@ -114,6 +124,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The original configuration that was resolved. </p>
 
 </div>
 </div>
@@ -129,6 +141,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>All CMake snippets collected from every module. </p>
+
 </div>
 </div>
 <a id="a5692e733d10207a4f3ffbd3b593b6035" name="a5692e733d10207a4f3ffbd3b593b6035"></a>
@@ -143,6 +157,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>All resolved dependency modules. </p>
+
 </div>
 </div>
 <a id="ad4d36ac9caae8fc671a7bd489963e0bd" name="ad4d36ac9caae8fc671a7bd489963e0bd"></a>
@@ -156,6 +172,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Deduplicated list of build targets to generate. </p>
 
 </div>
 </div>

@@ -77,16 +77,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A dependency module after its JSON definition has been parsed.  
+ <a href="structResolvedModule.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Resolved_8hpp_source.html">Resolved.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a94ac9f00501b9fa5eef61be8e2a8adc6" id="r_a94ac9f00501b9fa5eef61be8e2a8adc6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedModule.html#a94ac9f00501b9fa5eef61be8e2a8adc6">name</a></td></tr>
+<tr class="memdesc:a94ac9f00501b9fa5eef61be8e2a8adc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canonical module name as declared in its JSON file.  <br /></td></tr>
 <tr class="separator:a94ac9f00501b9fa5eef61be8e2a8adc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabf11bff479c7c3b24a496a3077de8ff" id="r_aabf11bff479c7c3b24a496a3077de8ff"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structFetchContent.html">FetchContent</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structResolvedModule.html#aabf11bff479c7c3b24a496a3077de8ff">fetch_content</a></td></tr>
 <tr class="separator:aabf11bff479c7c3b24a496a3077de8ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A dependency module after its JSON definition has been parsed. </p>
+<p>Produced by <a class="el" href="classModuleResolver.html#aadb78646bfafebe2485e3b5f78ceb2e0">ModuleResolver::resolveModule</a> for each requested module name. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="aabf11bff479c7c3b24a496a3077de8ff" name="aabf11bff479c7c3b24a496a3077de8ff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabf11bff479c7c3b24a496a3077de8ff">&#9670;&#160;</a></span>fetch_content</h2>
 
@@ -98,6 +105,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a> descriptor, present when the module ships its own source (downloaded at CMake configure time). </p>
 
 </div>
 </div>
@@ -112,6 +120,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Canonical module name as declared in its JSON file. </p>
 
 </div>
 </div>

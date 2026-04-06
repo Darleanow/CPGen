@@ -1,6 +1,6 @@
 <map id="include/CPGen/CLI/CLI.hpp" name="include/CPGen/CLI/CLI.hpp">
-<area shape="rect" id="Node000001" title="CLI Operations." alt="" coords="140,5,323,31"/>
-<area shape="rect" id="Node000002" href="$Config_8hpp.html" title=" " alt="" coords="86,79,244,105"/>
+<area shape="rect" id="Node000001" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="140,5,323,31"/>
+<area shape="rect" id="Node000002" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="86,79,244,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,33,188,69,185,66,219,29"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="268,79,328,105"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="244,29,278,66,275,69,241,33"/>

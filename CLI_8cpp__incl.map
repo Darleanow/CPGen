@@ -1,8 +1,8 @@
 <map id="src/CLI/CLI.cpp" name="src/CLI/CLI.cpp">
 <area shape="rect" id="Node000001" title=" " alt="" coords="471,5,584,31"/>
-<area shape="rect" id="Node000002" href="$CLI_8hpp.html" title="CLI Operations." alt="" coords="155,79,292,105"/>
+<area shape="rect" id="Node000002" href="$CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="155,79,292,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="476,34,291,78,289,72,475,29"/>
-<area shape="rect" id="Node000003" href="$Config_8hpp.html" title=" " alt="" coords="44,153,203,178"/>
+<area shape="rect" id="Node000003" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="44,153,203,178"/>
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="470,23,385,28,288,37,200,55,167,67,144,81,135,93,129,107,125,138,119,137,124,106,130,90,140,77,164,62,199,49,287,32,385,22,470,18"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="284,226,337,252"/>
 <area shape="poly" id="edge16_Node000001_Node000006" title=" " alt="" coords="471,28,411,46,382,61,357,81,337,111,323,146,316,181,313,211,308,211,311,180,318,145,332,109,354,77,379,56,409,41,470,23"/>

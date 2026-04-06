@@ -1,5 +1,5 @@
 <map id="include/CPGen/TUI/Misc/Terminal.hpp" name="include/CPGen/TUI/Misc/Terminal.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="142,5,308,46"/>
+<area shape="rect" id="Node000001" title="RAII wrapper that manages terminal raw mode for the TUI." alt="" coords="142,5,308,46"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,94,80,120"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,49,86,90,83,85,178,44"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="104,94,170,120"/>

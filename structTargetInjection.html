@@ -77,22 +77,33 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Describes the CMake snippets that a module contributes to a target.  
+ <a href="structTargetInjection.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Resolved_8hpp_source.html">Resolved.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a306074a1381ba79206e6d0b8bf086b2c" id="r_a306074a1381ba79206e6d0b8bf086b2c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html#a306074a1381ba79206e6d0b8bf086b2c">target_name</a></td></tr>
+<tr class="memdesc:a306074a1381ba79206e6d0b8bf086b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the CMake target that receives this injection.  <br /></td></tr>
 <tr class="separator:a306074a1381ba79206e6d0b8bf086b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ea66c554622cf92bfbbcb1e4e43b94b" id="r_a0ea66c554622cf92bfbbcb1e4e43b94b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html#a0ea66c554622cf92bfbbcb1e4e43b94b">module_name</a></td></tr>
+<tr class="memdesc:a0ea66c554622cf92bfbbcb1e4e43b94b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of the module that produced this injection.  <br /></td></tr>
 <tr class="separator:a0ea66c554622cf92bfbbcb1e4e43b94b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9936d1d85f7381392bcd1daac85a44c" id="r_ac9936d1d85f7381392bcd1daac85a44c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html#ac9936d1d85f7381392bcd1daac85a44c">link</a></td></tr>
+<tr class="memdesc:ac9936d1d85f7381392bcd1daac85a44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libraries to pass to <code>target_link_libraries</code>.  <br /></td></tr>
 <tr class="separator:ac9936d1d85f7381392bcd1daac85a44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ceca86a3f786d0c1d0892f4c039b40" id="r_a88ceca86a3f786d0c1d0892f4c039b40"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html#a88ceca86a3f786d0c1d0892f4c039b40">cmake_include</a></td></tr>
+<tr class="memdesc:a88ceca86a3f786d0c1d0892f4c039b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional CMake module to <code>include()</code> (e.g. <code>"GoogleTest"</code>).  <br /></td></tr>
 <tr class="separator:a88ceca86a3f786d0c1d0892f4c039b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d216e0105a5fa3d61d6092d05c99fae" id="r_a4d216e0105a5fa3d61d6092d05c99fae"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTargetInjection.html#a4d216e0105a5fa3d61d6092d05c99fae">post_link</a></td></tr>
+<tr class="memdesc:a4d216e0105a5fa3d61d6092d05c99fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional command appended after <code>target_link_libraries</code> (e.g. <code>"gtest_discover_tests(${TARGET_NAME})"</code>).  <br /></td></tr>
 <tr class="separator:a4d216e0105a5fa3d61d6092d05c99fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes the CMake snippets that a module contributes to a target. </p>
+<p>Each module can inject link libraries, an optional <code>include()</code> directive, and an optional post-link command (e.g. <code>gtest_discover_tests</code>) into one or more named targets. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a88ceca86a3f786d0c1d0892f4c039b40" name="a88ceca86a3f786d0c1d0892f4c039b40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88ceca86a3f786d0c1d0892f4c039b40">&#9670;&#160;</a></span>cmake_include</h2>
 
@@ -104,6 +115,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Optional CMake module to <code>include()</code> (e.g. <code>"GoogleTest"</code>). </p>
 
 </div>
 </div>
@@ -119,6 +132,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Libraries to pass to <code>target_link_libraries</code>. </p>
+
 </div>
 </div>
 <a id="a0ea66c554622cf92bfbbcb1e4e43b94b" name="a0ea66c554622cf92bfbbcb1e4e43b94b"></a>
@@ -132,6 +147,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Identifier of the module that produced this injection. </p>
 
 </div>
 </div>
@@ -147,6 +164,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Optional command appended after <code>target_link_libraries</code> (e.g. <code>"gtest_discover_tests(${TARGET_NAME})"</code>). </p>
+
 </div>
 </div>
 <a id="a306074a1381ba79206e6d0b8bf086b2c" name="a306074a1381ba79206e6d0b8bf086b2c"></a>
@@ -160,6 +179,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Name of the CMake target that receives this injection. </p>
 
 </div>
 </div>

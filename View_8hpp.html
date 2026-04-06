@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">View.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Top-level TUI view that owns all sections and drives the main event loop.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="Component_8hpp_source.html">Components/Component.hpp</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -87,14 +90,14 @@ Include dependency graph for View.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="View_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2TUI_2View_2View_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2TUI_2View_2View_8hpp" id="ainclude_2CPGen_2TUI_2View_2View_8hpp">
-<area shape="rect" title=" " alt="" coords="196,5,363,46"/>
-<area shape="rect" href="Component_8hpp.html" title=" " alt="" coords="33,94,222,120"/>
+<area shape="rect" title="Top&#45;level TUI view that owns all sections and drives the main event loop." alt="" coords="196,5,363,46"/>
+<area shape="rect" href="Component_8hpp.html" title="Abstract base class for all TUI components." alt="" coords="33,94,222,120"/>
 <area shape="poly" title=" " alt="" coords="243,49,166,89,163,84,240,44"/>
 <area shape="rect" title=" " alt="" coords="246,94,313,120"/>
 <area shape="poly" title=" " alt="" coords="282,46,282,78,277,78,277,46"/>
 <area shape="rect" title=" " alt="" coords="338,94,395,120"/>
 <area shape="poly" title=" " alt="" coords="303,44,343,81,340,85,299,48"/>
-<area shape="rect" href="Defs_8hpp.html" title=" " alt="" coords="25,168,129,193"/>
+<area shape="rect" href="Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="25,168,129,193"/>
 <area shape="poly" title=" " alt="" coords="121,121,96,156,92,153,117,118"/>
 <area shape="rect" title=" " alt="" coords="153,168,206,193"/>
 <area shape="poly" title=" " alt="" coords="138,118,164,153,160,157,134,121"/>
@@ -109,7 +112,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="View_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2TUI_2View_2View_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2TUI_2View_2View_8hppdep" id="ainclude_2CPGen_2TUI_2View_2View_8hppdep">
-<area shape="rect" title=" " alt="" coords="74,5,241,46"/>
+<area shape="rect" title="Top&#45;level TUI view that owns all sections and drives the main event loop." alt="" coords="74,5,241,46"/>
 <area shape="rect" href="View_8cpp.html" title=" " alt="" coords="5,94,161,120"/>
 <area shape="poly" title=" " alt="" coords="131,59,96,95,93,92,127,56"/>
 <area shape="rect" href="main_8cpp.html" title=" " alt="" coords="185,94,280,120"/>
@@ -122,10 +125,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html">View</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top-level TUI view that manages sections and the main loop.  <a href="classView.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root TUI manager: renders sections, routes input, and runs the event loop.  <a href="classView.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Top-level TUI view that owns all sections and drives the main event loop. </p>
+<dl class="section author"><dt>Author</dt><dd>Darleanow</dd></dl>
+<p><a class="el" href="classView.html">View</a> is the root of the component tree. It holds a flat list of top-level components (called <em>sections</em> — typically <a class="el" href="classComponentGroup.html">ComponentGroup</a> or <a class="el" href="classInput.html">Input</a> instances), manages focus between them with <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413">Defs::Special::Tab</a>, and runs the blocking input loop.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Typical setup</h3>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classView.html">View</a> view;</div>
+<div class="line">view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;ComponentGroup&gt;(<span class="stringliteral">&quot;Settings&quot;</span>, <a class="code hl_variable" href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a>));</div>
+<div class="line">view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;Input&gt;(<span class="stringliteral">&quot;Project Name&quot;</span>, callback));</div>
+<div class="line">view.<a class="code hl_function" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a>(); <span class="comment">// blocks until the user presses Escape</span></div>
+<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdoc">Root TUI manager: renders sections, routes input, and runs the event loop.</div><div class="ttdef"><b>Definition</b> View.hpp:37</div></div>
+<div class="ttc" id="aclassView_html_a461691bbc52ec6fd50c134b059cb1a80"><div class="ttname"><a href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">View::addSection</a></div><div class="ttdeci">void addSection(std::unique_ptr&lt; Component &gt; section)</div><div class="ttdoc">Append a top-level section to the view.</div><div class="ttdef"><b>Definition</b> View.cpp:12</div></div>
+<div class="ttc" id="aclassView_html_a6d5c1bd4892e269e1a6a2f3021154e4a"><div class="ttname"><a href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">View::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Start the blocking TUI event loop.</div><div class="ttdef"><b>Definition</b> View.cpp:38</div></div>
+<div class="ttc" id="anamespaceAscii_html_a7c6f6550c836f5afdd213bdef52306c6"><div class="ttname"><a href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a></div><div class="ttdeci">constexpr const char * GEAR_ICON</div><div class="ttdoc">Settings / configuration icon.</div><div class="ttdef"><b>Definition</b> Ascii.hpp:50</div></div>
+</div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

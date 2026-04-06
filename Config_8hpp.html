@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">Config.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Project configuration types produced by the <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> and consumed by the resolvers.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
@@ -89,7 +92,7 @@ Include dependency graph for Config.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Config_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2Core_2Config_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2Core_2Config_8hpp" id="ainclude_2CPGen_2Core_2Config_8hpp">
-<area shape="rect" title=" " alt="" coords="95,5,235,46"/>
+<area shape="rect" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="95,5,235,46"/>
 <area shape="rect" title=" " alt="" coords="5,94,66,120"/>
 <area shape="poly" title=" " alt="" coords="134,49,70,88,67,83,131,44"/>
 <area shape="rect" title=" " alt="" coords="90,94,157,120"/>
@@ -105,22 +108,22 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Config_8hpp__dep__incl.png" border="0" usemap="#ainclude_2CPGen_2Core_2Config_8hppdep" alt=""/></div>
 <map name="ainclude_2CPGen_2Core_2Config_8hppdep" id="ainclude_2CPGen_2Core_2Config_8hppdep">
-<area shape="rect" title=" " alt="" coords="220,5,360,46"/>
-<area shape="rect" href="CLI_8hpp.html" title="CLI Operations." alt="" coords="46,102,228,127"/>
+<area shape="rect" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="220,5,360,46"/>
+<area shape="rect" href="CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="46,102,228,127"/>
 <area shape="poly" title=" " alt="" coords="243,56,159,103,157,99,241,52"/>
 <area shape="rect" href="CLI_8cpp.html" title=" " alt="" coords="5,190,119,216"/>
 <area shape="poly" title=" " alt="" coords="205,41,103,62,61,78,36,96,30,106,28,118,32,144,43,169,55,188,51,191,38,171,27,145,23,118,25,105,32,92,59,73,102,57,204,35"/>
 <area shape="rect" href="main_8cpp.html" title=" " alt="" coords="212,360,307,386"/>
 <area shape="poly" title=" " alt="" coords="290,62,263,360,258,359,284,62"/>
-<area shape="rect" href="Resolved_8hpp.html" title=" " alt="" coords="435,94,574,135"/>
+<area shape="rect" href="Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="435,94,574,135"/>
 <area shape="poly" title=" " alt="" coords="354,50,457,91,455,96,352,55"/>
-<area shape="rect" href="ProjectResolver_8hpp.html" title=" " alt="" coords="297,271,467,312"/>
+<area shape="rect" href="ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="297,271,467,312"/>
 <area shape="poly" title=" " alt="" coords="304,60,378,270,373,272,299,61"/>
 <area shape="rect" href="ProjectResolver_8cpp.html" title=" " alt="" coords="542,360,763,386"/>
 <area shape="poly" title=" " alt="" coords="376,36,478,57,534,72,587,92,664,128,694,150,730,181,766,212,796,242,806,258,811,275,809,293,799,313,784,331,766,344,725,362,723,357,763,339,780,327,794,311,804,292,805,275,801,260,792,245,763,216,727,185,691,154,661,132,585,96,532,77,477,62,375,41"/>
 <area shape="poly" title=" " alt="" coords="118,141,74,192,70,188,114,137"/>
 <area shape="poly" title=" " alt="" coords="151,140,256,359,251,361,147,142"/>
-<area shape="rect" href="ModuleResolver_8hpp.html" title=" " alt="" coords="420,183,590,223"/>
+<area shape="rect" href="ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="420,183,590,223"/>
 <area shape="poly" title=" " alt="" coords="507,150,507,182,502,182,502,150"/>
 <area shape="poly" title=" " alt="" coords="452,145,429,163,410,184,398,206,391,229,385,271,380,270,386,228,393,203,405,181,425,159,449,141"/>
 <area shape="poly" title=" " alt="" coords="590,136,641,156,693,185,741,222,761,245,778,270,785,292,778,313,764,330,746,344,708,362,706,357,744,339,760,326,773,311,780,292,773,273,757,248,737,226,690,189,639,161,588,141"/>
@@ -139,11 +142,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html">ProjectOptions</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structProjectOptions.html" title="ProjectOptions has all the available base options, made to be extensible using config files.">ProjectOptions</a> has all the available base options, made to be extensible using config files.  <a href="structProjectOptions.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flat configuration bag used by the interactive TUI mode.  <a href="structProjectOptions.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structToolingConfig.html">ToolingConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Groups all optional tooling flags that can be enabled for a project.  <a href="structToolingConfig.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectConfig.html">ProjectConfig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fully parsed project configuration produced by <a class="el" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6">CLI::parse</a>.  <a href="structProjectConfig.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -152,14 +157,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="Config_8hpp.html#a4e4c42aa458fc2aa8b741301aab17eada38492e6b60e40c59a376e2151778e2c7">Executable</a>
 , <a class="el" href="Config_8hpp.html#a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b">Test</a>
  }</td></tr>
+<tr class="memdesc:a4e4c42aa458fc2aa8b741301aab17ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes the CMake target kind to generate for a build target.  <a href="Config_8hpp.html#a4e4c42aa458fc2aa8b741301aab17ead">More...</a><br /></td></tr>
 <tr class="separator:a4e4c42aa458fc2aa8b741301aab17ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1297b726338364953bd43998be0cfc78" id="r_a1297b726338364953bd43998be0cfc78"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78">CppStandard</a> : std::uint8_t { <a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78a8491a119aa343387ef493b97ee4aa3cd">Cpp17</a>
 , <a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706">Cpp20</a>
 , <a class="el" href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78a2018534533e86696517616e4e4d7a959">Cpp23</a>
  }</td></tr>
+<tr class="memdesc:a1297b726338364953bd43998be0cfc78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the C++ language standard to pass to the compiler.  <a href="Config_8hpp.html#a1297b726338364953bd43998be0cfc78">More...</a><br /></td></tr>
 <tr class="separator:a1297b726338364953bd43998be0cfc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Project configuration types produced by the <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> and consumed by the resolvers. </p>
+<dl class="section author"><dt>Author</dt><dd>Darleanow </dd></dl>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a1297b726338364953bd43998be0cfc78" name="a1297b726338364953bd43998be0cfc78"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1297b726338364953bd43998be0cfc78">&#9670;&#160;</a></span>CppStandard</h2>
 
@@ -179,10 +189,15 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Selects the C++ language standard to pass to the compiler. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a8491a119aa343387ef493b97ee4aa3cd" name="a1297b726338364953bd43998be0cfc78a8491a119aa343387ef493b97ee4aa3cd"></a>Cpp17&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706" name="a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706"></a>Cpp20&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a2018534533e86696517616e4e4d7a959" name="a1297b726338364953bd43998be0cfc78a2018534533e86696517616e4e4d7a959"></a>Cpp23&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a8491a119aa343387ef493b97ee4aa3cd" name="a1297b726338364953bd43998be0cfc78a8491a119aa343387ef493b97ee4aa3cd"></a>Cpp17&#160;</td><td class="fielddoc"><p>ISO C++17 (<code>-std=c++17</code> / <code>CMAKE_CXX_STANDARD</code> 17). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706" name="a1297b726338364953bd43998be0cfc78a6158e610883ad77109010b1da97ae706"></a>Cpp20&#160;</td><td class="fielddoc"><p>ISO C++20 (<code>-std=c++20</code> / <code>CMAKE_CXX_STANDARD</code> 20). Default. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a1297b726338364953bd43998be0cfc78a2018534533e86696517616e4e4d7a959" name="a1297b726338364953bd43998be0cfc78a2018534533e86696517616e4e4d7a959"></a>Cpp23&#160;</td><td class="fielddoc"><p>ISO C++23 (<code>-std=c++23</code> / <code>CMAKE_CXX_STANDARD</code> 23). </p>
+</td></tr>
 </table>
 
 </div>
@@ -206,10 +221,15 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Describes the CMake target kind to generate for a build target. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada4d70254b3a8e2bc38b6147fa6ee813be" name="a4e4c42aa458fc2aa8b741301aab17eada4d70254b3a8e2bc38b6147fa6ee813be"></a>Library&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada38492e6b60e40c59a376e2151778e2c7" name="a4e4c42aa458fc2aa8b741301aab17eada38492e6b60e40c59a376e2151778e2c7"></a>Executable&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b" name="a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b"></a>Test&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada4d70254b3a8e2bc38b6147fa6ee813be" name="a4e4c42aa458fc2aa8b741301aab17eada4d70254b3a8e2bc38b6147fa6ee813be"></a>Library&#160;</td><td class="fielddoc"><p>A static or shared library target (<code>add_library</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada38492e6b60e40c59a376e2151778e2c7" name="a4e4c42aa458fc2aa8b741301aab17eada38492e6b60e40c59a376e2151778e2c7"></a>Executable&#160;</td><td class="fielddoc"><p>A standalone executable target (<code>add_executable</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b" name="a4e4c42aa458fc2aa8b741301aab17eada0cbc6611f5540bd0809a388dc95a615b"></a>Test&#160;</td><td class="fielddoc"><p>A test executable wired into CTest via a testing framework. </p>
+</td></tr>
 </table>
 
 </div>

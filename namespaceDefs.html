@@ -76,11 +76,15 @@ $(function() {
   <div class="headertitle"><div class="title">Defs Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Core type definitions shared across all TUI components.  
+<a href="namespaceDefs.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:af2e8ab82263670dbd08da02023fc8fde" id="r_af2e8ab82263670dbd08da02023fc8fde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Key</a> = std::variant&lt; char, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">Special</a> &gt;</td></tr>
-<tr class="separator:af2e8ab82263670dbd08da02023fc8fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2430cf7dd339eb62eb4654979749befa" id="r_a2430cf7dd339eb62eb4654979749befa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Key</a> = std::variant&lt; char, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">Special</a> &gt;</td></tr>
+<tr class="memdesc:a2430cf7dd339eb62eb4654979749befa"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single keypress from stdin, represented as either a printable character or a <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">Special</a> control key.  <br /></td></tr>
+<tr class="separator:a2430cf7dd339eb62eb4654979749befa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -96,20 +100,26 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413">Tab</a>
 <br />
  }</td></tr>
+<tr class="memdesc:a07f58228903ba86df37d2a44d72acd58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-printable / control keys recognised by the input reader.  <a href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">More...</a><br /></td></tr>
 <tr class="separator:a07f58228903ba86df37d2a44d72acd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="af2e8ab82263670dbd08da02023fc8fde" name="af2e8ab82263670dbd08da02023fc8fde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2e8ab82263670dbd08da02023fc8fde">&#9670;&#160;</a></span>Key</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Core type definitions shared across all TUI components. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2430cf7dd339eb62eb4654979749befa" name="a2430cf7dd339eb62eb4654979749befa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2430cf7dd339eb62eb4654979749befa">&#9670;&#160;</a></span>Key</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a> = typedef std::variant&lt;char, <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">Special</a>&gt;</td>
+          <td class="memname"><a class="el" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>A single keypress from stdin, represented as either a printable character or a <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58">Special</a> control key. </p>
+<p>Components receive a <code>Key</code> value from <code><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429" title="Read a single keypress from stdin (terminal must be in raw mode).">Utils::readKey()</a></code> and pattern-match it with <code>std::holds_alternative</code> / <code>std::get</code> to implement their input logic. </p>
 
 </div>
 </div>
@@ -133,15 +143,26 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Non-printable / control keys recognised by the input reader. </p>
+<p>The underlying type is <code>std::uint8_t</code> to keep the enum as compact as possible (see the <code>performance-enum-size</code> guideline). </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58af1851d5600eae616ee802a31ac74701b" name="a07f58228903ba86df37d2a44d72acd58af1851d5600eae616ee802a31ac74701b"></a>Enter&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa" name="a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa"></a>Up&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53" name="a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53"></a>Down&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a945d5e233cf7d6240f6b783b36a374ff" name="a07f58228903ba86df37d2a44d72acd58a945d5e233cf7d6240f6b783b36a374ff"></a>Left&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a92b09c7c48c520c3c55e497875da437c" name="a07f58228903ba86df37d2a44d72acd58a92b09c7c48c520c3c55e497875da437c"></a>Right&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224" name="a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224"></a>Escape&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58acd7d13ceea728b08555f7c818cfb13ef" name="a07f58228903ba86df37d2a44d72acd58acd7d13ceea728b08555f7c818cfb13ef"></a>Backspace&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413" name="a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413"></a>Tab&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58af1851d5600eae616ee802a31ac74701b" name="a07f58228903ba86df37d2a44d72acd58af1851d5600eae616ee802a31ac74701b"></a>Enter&#160;</td><td class="fielddoc"><p>Return / Enter key (<code>\r</code> or <code>\n</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa" name="a07f58228903ba86df37d2a44d72acd58a258f49887ef8d14ac268c92b02503aaa"></a>Up&#160;</td><td class="fielddoc"><p>Up arrow (<code>ESC</code> [ A). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53" name="a07f58228903ba86df37d2a44d72acd58a08a38277b0309070706f6652eeae9a53"></a>Down&#160;</td><td class="fielddoc"><p>Down arrow (<code>ESC</code> [ B). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a945d5e233cf7d6240f6b783b36a374ff" name="a07f58228903ba86df37d2a44d72acd58a945d5e233cf7d6240f6b783b36a374ff"></a>Left&#160;</td><td class="fielddoc"><p>Left arrow (<code>ESC</code> [ C). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a92b09c7c48c520c3c55e497875da437c" name="a07f58228903ba86df37d2a44d72acd58a92b09c7c48c520c3c55e497875da437c"></a>Right&#160;</td><td class="fielddoc"><p>Right arrow (<code>ESC</code> [ D). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224" name="a07f58228903ba86df37d2a44d72acd58a013ec032d3460d4be4431c6ab1f8f224"></a>Escape&#160;</td><td class="fielddoc"><p>Escape key or unrecognised escape sequence. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58acd7d13ceea728b08555f7c818cfb13ef" name="a07f58228903ba86df37d2a44d72acd58acd7d13ceea728b08555f7c818cfb13ef"></a>Backspace&#160;</td><td class="fielddoc"><p>Backspace (<code>0x7F</code>) or Delete (<code>0x08</code>). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413" name="a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413"></a>Tab&#160;</td><td class="fielddoc"><p>Horizontal tab (<code>\t</code>). </p>
+</td></tr>
 </table>
 
 </div>

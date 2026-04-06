@@ -75,13 +75,19 @@ $(function() {
   <div class="headertitle"><div class="title">System Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utilities that query or interact with the host operating system.  
+<a href="namespaceSystem.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1b2ff6b39ccecd14ad05226a2b78a6b2" id="r_a1b2ff6b39ccecd14ad05226a2b78a6b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSystem.html#a1b2ff6b39ccecd14ad05226a2b78a6b2">isFontValid</a> ()</td></tr>
+<tr class="memdesc:a1b2ff6b39ccecd14ad05226a2b78a6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interactively check whether the terminal font supports Nerd Font glyphs.  <br /></td></tr>
 <tr class="separator:a1b2ff6b39ccecd14ad05226a2b78a6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utilities that query or interact with the host operating system. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1b2ff6b39ccecd14ad05226a2b78a6b2" name="a1b2ff6b39ccecd14ad05226a2b78a6b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b2ff6b39ccecd14ad05226a2b78a6b2">&#9670;&#160;</a></span>isFontValid()</h2>
 
@@ -96,12 +102,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Interactively check whether the terminal font supports Nerd Font glyphs. </p>
+<p>Renders a pair of checkbox glyphs to <code>stdout</code> and prompts the user to confirm whether they render correctly. This is used at startup to decide whether the TUI should use Unicode icons or fall back to plain ASCII.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the user confirmed the glyphs look correct (<code>y</code> / <code>Y</code>), <code>false</code> otherwise.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function reads from <code>std::cin</code> and is therefore not testable without stdin redirection. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceSystem_a1b2ff6b39ccecd14ad05226a2b78a6b2_icgraph.png" border="0" usemap="#anamespaceSystem_a1b2ff6b39ccecd14ad05226a2b78a6b2_icgraph" alt=""/></div>
 <map name="anamespaceSystem_a1b2ff6b39ccecd14ad05226a2b78a6b2_icgraph" id="anamespaceSystem_a1b2ff6b39ccecd14ad05226a2b78a6b2_icgraph">
-<area shape="rect" title=" " alt="" coords="103,5,239,31"/>
+<area shape="rect" title="Interactively check whether the terminal font supports Nerd Font glyphs." alt="" coords="103,5,239,31"/>
 <area shape="rect" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
