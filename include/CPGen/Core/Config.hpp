@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <optional>
 #include <string>
 #include <vector>
@@ -29,8 +30,8 @@ struct ProjectOptions {
   /*@}*/
 };
 
-enum class TargetType { Library, Executable, Test };
-enum class CppStandard { Cpp17, Cpp20, Cpp23 };
+enum class TargetType : std::uint8_t { Library, Executable, Test };
+enum class CppStandard : std::uint8_t { Cpp17, Cpp20, Cpp23 };
 
 struct ToolingConfig {
   bool has_git = false;
@@ -42,7 +43,7 @@ struct ToolingConfig {
 struct ProjectConfig {
   std::string path;
   std::string name;
-  CppStandard standard;
+  CppStandard standard = CppStandard::Cpp20;
   std::vector<std::string> modules;
   std::vector<TargetType> targets;
   ToolingConfig tooling;
