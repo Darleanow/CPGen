@@ -14,21 +14,27 @@ using Config = std::variant<ProjectConfig, bool>;
 
 /**
  * @class CLI
- * @brief Parse various opts
+ * @brief Parses command-line arguments into a project configuration.
+ *
+ * Usage:
+ *   CLI cli;
+ *   auto config = cli.parse(argc, argv);
  */
 class CLI {
 public:
-  /**
-   * @brief Parse argc, argv
-   * @param argc: Argument count
-   * @param argv: Argument list
-   * @return The options parsed
-   */
-  Config parse(const int argc, char **argv);
+  Config parse(int argc, char **argv);
 
 private:
-  /**
-   * @brief Shows all register command line args
-   */
-  void showHelp() const;
+  void parseName(int argc, char **argv, int &i);
+  void parsePath(int argc, char **argv, int &i);
+  void parseStandard(int argc, char **argv, int &i);
+  void parseModules(int argc, char **argv, int &i);
+  void parseTargets(int argc, char **argv, int &i);
+  void parseClangFormatPreset(int argc, char **argv, int &i);
+  void parseProjectFlag(int argc, char **argv, int &i);
+  void parseToolingFlag(int argc, char **argv, int &i);
+
+  static void showHelp();
+
+  ProjectConfig m_config;
 };
