@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['spinner1_0',['Spinner1',['../namespaceAscii.html#a74dd215d7c9f29b4d7d507ebbccb711e',1,'Ascii']]],
-  ['spinner2_1',['Spinner2',['../namespaceAscii.html#a18e80cd63a151bf9529d728d8a387a3c',1,'Ascii']]],
-  ['spinner3_2',['Spinner3',['../namespaceAscii.html#a5c739e61430ac5dc12846d7c3eeb8e29',1,'Ascii']]],
-  ['spinner4_3',['Spinner4',['../namespaceAscii.html#a00ffd2b52d764a76615c22f6df82f339',1,'Ascii']]],
-  ['spinner5_4',['Spinner5',['../namespaceAscii.html#a2247471968964965fc681447c7d3b8f6',1,'Ascii']]],
-  ['spinner6_5',['Spinner6',['../namespaceAscii.html#a53c6d56d56405038bcd337c68e6af93f',1,'Ascii']]],
+  ['spinner_5f1_0',['SPINNER_1',['../namespaceAscii.html#aae83f60f9cd7b4fe33bacd84c66959bf',1,'Ascii']]],
+  ['spinner_5f2_1',['SPINNER_2',['../namespaceAscii.html#ada728e9c69503d2763672f58df7ecaf9',1,'Ascii']]],
+  ['spinner_5f3_2',['SPINNER_3',['../namespaceAscii.html#a1d17130b9ba47c5aa335d3eaf187bf71',1,'Ascii']]],
+  ['spinner_5f4_3',['SPINNER_4',['../namespaceAscii.html#aa2a421f53616d31c2c09b6dbe1ad2540',1,'Ascii']]],
+  ['spinner_5f5_4',['SPINNER_5',['../namespaceAscii.html#a3dbd3f1b3ce407e83f52d3287fcac2e0',1,'Ascii']]],
+  ['spinner_5f6_5',['SPINNER_6',['../namespaceAscii.html#a7f81c8522d8f50567d711ed575adba46',1,'Ascii']]],
   ['standard_6',['standard',['../structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2',1,'ProjectConfig']]],
   ['strikethru_7',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
-  ['success_8',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
+  ['success_8',['SUCCESS',['../namespaceAscii.html#a9acf8d9db48078cab7cc22f1bd54aaa2',1,'Ascii']]],
   ['support_5fmodern_5ffont_9',['support_modern_font',['../structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34',1,'PreferencesConfig']]]
 ];

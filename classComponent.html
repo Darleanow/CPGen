@@ -99,8 +99,18 @@ Inheritance diagram for Component:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a404098a91640552f9d0284d08b53def4" id="r_a404098a91640552f9d0284d08b53def4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a404098a91640552f9d0284d08b53def4">Component</a> ()=default</td></tr>
+<tr class="separator:a404098a91640552f9d0284d08b53def4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a> ()=default</td></tr>
 <tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2d7eb6cd97620b65456788dcdb4b4c" id="r_aed2d7eb6cd97620b65456788dcdb4b4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#aed2d7eb6cd97620b65456788dcdb4b4c">Component</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="separator:aed2d7eb6cd97620b65456788dcdb4b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae152806e92e166c5794ba9cd7a1263bd" id="r_ae152806e92e166c5794ba9cd7a1263bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#ae152806e92e166c5794ba9cd7a1263bd">operator=</a> (const <a class="el" href="classComponent.html">Component</a> &amp;)=delete</td></tr>
+<tr class="separator:ae152806e92e166c5794ba9cd7a1263bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1739e84d9766c32e06dfc163b121f0c9" id="r_a1739e84d9766c32e06dfc163b121f0c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a1739e84d9766c32e06dfc163b121f0c9">Component</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a1739e84d9766c32e06dfc163b121f0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b62f108ab594697b90d228b345d9d5" id="r_a84b62f108ab594697b90d228b345d9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classComponent.html">Component</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a84b62f108ab594697b90d228b345d9d5">operator=</a> (<a class="el" href="classComponent.html">Component</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a84b62f108ab594697b90d228b345d9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56c380eec1405c24bd72898879f3dfa2" id="r_a56c380eec1405c24bd72898879f3dfa2"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2">render</a> () const =0</td></tr>
 <tr class="memdesc:a56c380eec1405c24bd72898879f3dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the component as an ANSI string.  <br /></td></tr>
 <tr class="separator:a56c380eec1405c24bd72898879f3dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +133,31 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Abstract base for all TUI components. </p>
 <p>Provides the common interface: render, handle input, and focus. Every component must implement <a class="el" href="classComponent.html#a56c380eec1405c24bd72898879f3dfa2" title="Render the component as an ANSI string.">render()</a> and <a class="el" href="classComponent.html#a5eeb99a49126e02fc8b787ba75344a99" title="Handle a key press.">handleInput()</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a404098a91640552f9d0284d08b53def4" name="a404098a91640552f9d0284d08b53def4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404098a91640552f9d0284d08b53def4">&#9670;&#160;</a></span>Component() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component::Component </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad82d7393e339c1b19cc17a0d55b5674d" name="ad82d7393e339c1b19cc17a0d55b5674d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad82d7393e339c1b19cc17a0d55b5674d">&#9670;&#160;</a></span>~Component()</h2>
 
@@ -142,6 +177,58 @@ Protected Attributes</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed2d7eb6cd97620b65456788dcdb4b4c" name="aed2d7eb6cd97620b65456788dcdb4b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2d7eb6cd97620b65456788dcdb4b4c">&#9670;&#160;</a></span>Component() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component::Component </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classComponent.html">Component</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1739e84d9766c32e06dfc163b121f0c9" name="a1739e84d9766c32e06dfc163b121f0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1739e84d9766c32e06dfc163b121f0c9">&#9670;&#160;</a></span>Component() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component::Component </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classComponent.html">Component</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -211,6 +298,58 @@ Protected Attributes</h2></td></tr>
 
 <p>Check whether this component is focused. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if focused </dd></dl>
+
+</div>
+</div>
+<a id="a84b62f108ab594697b90d228b345d9d5" name="a84b62f108ab594697b90d228b345d9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b62f108ab594697b90d228b345d9d5">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classComponent.html">Component</a> &amp; Component::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classComponent.html">Component</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae152806e92e166c5794ba9cd7a1263bd" name="ae152806e92e166c5794ba9cd7a1263bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae152806e92e166c5794ba9cd7a1263bd">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classComponent.html">Component</a> &amp; Component::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classComponent.html">Component</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

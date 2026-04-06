@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['info_0',['Info',['../namespaceAscii.html#a66844f1d08f7cce1ca76d58256450691',1,'Ascii']]],
+  ['info_0',['INFO',['../namespaceAscii.html#a0a94b6c8977755368974c2fec56ddf03',1,'Ascii']]],
   ['injections_1',['injections',['../structResolvedProject.html#af01603162187dbbd582d1e11c6ea41e8',1,'ResolvedProject']]],
   ['input_2',['input',['../classInput.html',1,'Input'],['../classInput.html#a333a068c3e8ab5959077fa947e51907e',1,'Input::Input()']]],
   ['input_2ecpp_3',['Input.cpp',['../Input_8cpp.html',1,'']]],

@@ -1,20 +1,21 @@
 var searchData=
 [
   ['setfocused_0',['setfocused',['../classComponent.html#a97afed203882996edf2a434e55b4372c',1,'Component::setFocused()'],['../classComponentGroup.html#a430f3fb6bac35604ca246abf298bd59d',1,'ComponentGroup::setFocused()']]],
-  ['special_1',['Special',['../namespaceDefs.html#a3ecc068d2abe5679f92c0d2f9e23fc0c',1,'Defs']]],
-  ['spinner1_2',['Spinner1',['../namespaceAscii.html#a74dd215d7c9f29b4d7d507ebbccb711e',1,'Ascii']]],
-  ['spinner2_3',['Spinner2',['../namespaceAscii.html#a18e80cd63a151bf9529d728d8a387a3c',1,'Ascii']]],
-  ['spinner3_4',['Spinner3',['../namespaceAscii.html#a5c739e61430ac5dc12846d7c3eeb8e29',1,'Ascii']]],
-  ['spinner4_5',['Spinner4',['../namespaceAscii.html#a00ffd2b52d764a76615c22f6df82f339',1,'Ascii']]],
-  ['spinner5_6',['Spinner5',['../namespaceAscii.html#a2247471968964965fc681447c7d3b8f6',1,'Ascii']]],
-  ['spinner6_7',['Spinner6',['../namespaceAscii.html#a53c6d56d56405038bcd337c68e6af93f',1,'Ascii']]],
+  ['special_1',['Special',['../namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58',1,'Defs']]],
+  ['spinner_5f1_2',['SPINNER_1',['../namespaceAscii.html#aae83f60f9cd7b4fe33bacd84c66959bf',1,'Ascii']]],
+  ['spinner_5f2_3',['SPINNER_2',['../namespaceAscii.html#ada728e9c69503d2763672f58df7ecaf9',1,'Ascii']]],
+  ['spinner_5f3_4',['SPINNER_3',['../namespaceAscii.html#a1d17130b9ba47c5aa335d3eaf187bf71',1,'Ascii']]],
+  ['spinner_5f4_5',['SPINNER_4',['../namespaceAscii.html#aa2a421f53616d31c2c09b6dbe1ad2540',1,'Ascii']]],
+  ['spinner_5f5_6',['SPINNER_5',['../namespaceAscii.html#a3dbd3f1b3ce407e83f52d3287fcac2e0',1,'Ascii']]],
+  ['spinner_5f6_7',['SPINNER_6',['../namespaceAscii.html#a7f81c8522d8f50567d711ed575adba46',1,'Ascii']]],
   ['standard_8',['standard',['../structProjectConfig.html#ad36ae5df76846010005c2d040af67fd2',1,'ProjectConfig']]],
   ['std_9',['std',['../namespacestd.html',1,'']]],
   ['stdinready_10',['stdinReady',['../namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8',1,'Utils']]],
   ['strikethru_11',['STRIKETHRU',['../namespaceUtils_1_1Colours.html#aa8c01c890f9b4fd555ad55a36669d28f',1,'Utils::Colours']]],
-  ['success_12',['Success',['../namespaceAscii.html#adcd108433562ed54e8a4fd113dc01d7f',1,'Ascii']]],
-  ['support_5fmodern_5ffont_13',['support_modern_font',['../structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34',1,'PreferencesConfig']]],
-  ['system_14',['System',['../namespaceSystem.html',1,'']]],
-  ['system_2ecpp_15',['System.cpp',['../System_8cpp.html',1,'']]],
-  ['system_2ehpp_16',['System.hpp',['../System_8hpp.html',1,'']]]
+  ['stripansi_12',['stripAnsi',['../namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4',1,'Utils']]],
+  ['success_13',['SUCCESS',['../namespaceAscii.html#a9acf8d9db48078cab7cc22f1bd54aaa2',1,'Ascii']]],
+  ['support_5fmodern_5ffont_14',['support_modern_font',['../structPreferencesConfig.html#ab633b4e5f51c10fc09418449846def34',1,'PreferencesConfig']]],
+  ['system_15',['System',['../namespaceSystem.html',1,'']]],
+  ['system_2ecpp_16',['System.cpp',['../System_8cpp.html',1,'']]],
+  ['system_2ehpp_17',['System.hpp',['../System_8hpp.html',1,'']]]
 ];

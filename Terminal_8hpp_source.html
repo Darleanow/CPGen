@@ -101,19 +101,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classTerminal.html#aa448509b5aa1ece53c3d86385655be0e">   24</a></span>  <a class="code hl_function" href="classTerminal.html#aa448509b5aa1ece53c3d86385655be0e">Terminal</a>() {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    tcgetattr(STDIN_FILENO, &amp;m_original);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    (void)tcgetattr(STDIN_FILENO, &amp;m_original);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    s_original = m_original;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">struct </span>termios raw = m_original;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    raw.c_lflag &amp;= <span class="keyword">static_cast&lt;</span>tcflag_t<span class="keyword">&gt;</span>(~(ICANON | ECHO));</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;raw);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    raw.c_lflag &amp;= ~(<span class="keyword">static_cast&lt;</span>tcflag_t<span class="keyword">&gt;</span>(ICANON) | <span class="keyword">static_cast&lt;</span>tcflag_t<span class="keyword">&gt;</span>(ECHO));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    (void)tcsetattr(STDIN_FILENO, TCSANOW, &amp;raw);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::fputs(<span class="stringliteral">&quot;\033[?25l&quot;</span>, stdout); <span class="comment">// Hide cursor</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::fflush(stdout);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    (void)std::fputs(<span class="stringliteral">&quot;\033[?25l&quot;</span>, stdout); <span class="comment">// Hide cursor</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    (void)std::fflush(stdout);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Hook signals so Ctrl+C / kill always restores the terminal</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::signal(SIGINT, signalHandler);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    std::signal(SIGTERM, signalHandler);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    (void)std::signal(SIGINT, signalHandler);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    (void)std::signal(SIGTERM, signalHandler);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
@@ -121,30 +121,34 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classTerminal.html#ae6ac83fa20a0268102ecefd5a30aaacf">   43</a></span>  <a class="code hl_function" href="classTerminal.html#ae6ac83fa20a0268102ecefd5a30aaacf">Terminal</a>(<span class="keyword">const</span> <a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classTerminal.html#aa28f238eb59e5c8283409789452eea97">   44</a></span>  <a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;<a class="code hl_function" href="classTerminal.html#aa28f238eb59e5c8283409789452eea97">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> restore() {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    tcsetattr(STDIN_FILENO, TCSANOW, &amp;s_original);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::fputs(<span class="stringliteral">&quot;\033[?25h&quot;</span>, stdout); <span class="comment">// Show cursor</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    std::fflush(stdout);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> signalHandler(<span class="keywordtype">int</span> <span class="comment">/*sig*/</span>) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    restore();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::_Exit(130); <span class="comment">// 128 + SIGINT(2), standard convention</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#ifndef _WIN32</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">struct </span>termios m_original{};</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">struct </span>termios s_original{};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classTerminal.html#ab6a31bdbf61f2fd3ee6433affbf67f52">   45</a></span>  <a class="code hl_function" href="classTerminal.html#ab6a31bdbf61f2fd3ee6433affbf67f52">Terminal</a>(<a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classTerminal.html#a7b0070f504bfa542b411e1d081f356a0">   46</a></span>  <a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;<a class="code hl_function" href="classTerminal.html#a7b0070f504bfa542b411e1d081f356a0">operator=</a>(<a class="code hl_class" href="classTerminal.html">Terminal</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> restore() {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    (void)tcsetattr(STDIN_FILENO, TCSANOW, &amp;s_original);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    (void)std::fputs(<span class="stringliteral">&quot;\033[?25h&quot;</span>, stdout); <span class="comment">// Show cursor</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    (void)std::fflush(stdout);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> signalHandler(<span class="keywordtype">int</span> <span class="comment">/*sig*/</span>) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    restore();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::_Exit(130); <span class="comment">// 128 + SIGINT(2), standard convention</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">struct </span>termios m_original{};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">struct </span>termios s_original{};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
 </div>
 <div class="ttc" id="aclassTerminal_html"><div class="ttname"><a href="classTerminal.html">Terminal</a></div><div class="ttdoc">RAII raw-mode terminal handler.</div><div class="ttdef"><b>Definition</b> Terminal.hpp:22</div></div>
+<div class="ttc" id="aclassTerminal_html_a7b0070f504bfa542b411e1d081f356a0"><div class="ttname"><a href="classTerminal.html#a7b0070f504bfa542b411e1d081f356a0">Terminal::operator=</a></div><div class="ttdeci">Terminal &amp; operator=(Terminal &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassTerminal_html_aa28f238eb59e5c8283409789452eea97"><div class="ttname"><a href="classTerminal.html#aa28f238eb59e5c8283409789452eea97">Terminal::operator=</a></div><div class="ttdeci">Terminal &amp; operator=(const Terminal &amp;)=delete</div></div>
 <div class="ttc" id="aclassTerminal_html_aa448509b5aa1ece53c3d86385655be0e"><div class="ttname"><a href="classTerminal.html#aa448509b5aa1ece53c3d86385655be0e">Terminal::Terminal</a></div><div class="ttdeci">Terminal()</div><div class="ttdef"><b>Definition</b> Terminal.hpp:24</div></div>
+<div class="ttc" id="aclassTerminal_html_ab6a31bdbf61f2fd3ee6433affbf67f52"><div class="ttname"><a href="classTerminal.html#ab6a31bdbf61f2fd3ee6433affbf67f52">Terminal::Terminal</a></div><div class="ttdeci">Terminal(Terminal &amp;&amp;)=delete</div></div>
 <div class="ttc" id="aclassTerminal_html_add5a7d4dd45b68af9a0afb1cc845af2f"><div class="ttname"><a href="classTerminal.html#add5a7d4dd45b68af9a0afb1cc845af2f">Terminal::~Terminal</a></div><div class="ttdeci">~Terminal()</div><div class="ttdef"><b>Definition</b> Terminal.hpp:41</div></div>
 <div class="ttc" id="aclassTerminal_html_ae6ac83fa20a0268102ecefd5a30aaacf"><div class="ttname"><a href="classTerminal.html#ae6ac83fa20a0268102ecefd5a30aaacf">Terminal::Terminal</a></div><div class="ttdeci">Terminal(const Terminal &amp;)=delete</div></div>
 </div><!-- fragment --></div><!-- contents -->

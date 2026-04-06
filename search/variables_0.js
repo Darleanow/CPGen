@@ -18,10 +18,10 @@ var searchData=
   ['bg_5fyellow_15',['BG_YELLOW',['../namespaceUtils_1_1Colours.html#ae95b6b2b4fc608b3a467dad49b61afc0',1,'Utils::Colours']]],
   ['blink_16',['BLINK',['../namespaceUtils_1_1Colours.html#afe440170929d450cac21b45935fafd88',1,'Utils::Colours']]],
   ['bold_17',['BOLD',['../namespaceUtils_1_1Colours.html#ade849f1ef666a794f8e3adef8a06353f',1,'Utils::Colours']]],
-  ['boxcornerbottomleft_18',['BoxCornerBottomLeft',['../namespaceAscii.html#a0a605c0a122666ef16c683a08b29d422',1,'Ascii']]],
-  ['boxcornerbottomright_19',['BoxCornerBottomRight',['../namespaceAscii.html#a622045a4c09e410aaa89b1d8fce21b94',1,'Ascii']]],
-  ['boxcornertopleft_20',['BoxCornerTopLeft',['../namespaceAscii.html#a812aed8991f8b61c3a78be9da024e4fa',1,'Ascii']]],
-  ['boxcornertopright_21',['BoxCornerTopRight',['../namespaceAscii.html#a18b8548d68f6dc2c7e046feea06b3542',1,'Ascii']]],
-  ['boxhorizontal_22',['BoxHorizontal',['../namespaceAscii.html#a0697f2e6d28122fbc30d645472491441',1,'Ascii']]],
-  ['boxvertical_23',['BoxVertical',['../namespaceAscii.html#a80b47c0f2fad535cd0247d64a3e5eecb',1,'Ascii']]]
+  ['box_5fcorner_5fbottom_5fleft_18',['BOX_CORNER_BOTTOM_LEFT',['../namespaceAscii.html#af59c7a17b207f0a9d0b0e290034e1410',1,'Ascii']]],
+  ['box_5fcorner_5fbottom_5fright_19',['BOX_CORNER_BOTTOM_RIGHT',['../namespaceAscii.html#a57c7926d62d0c24c7231da88921739a9',1,'Ascii']]],
+  ['box_5fcorner_5ftop_5fleft_20',['BOX_CORNER_TOP_LEFT',['../namespaceAscii.html#a6ed98dc180accaad3d742aeaa717ee13',1,'Ascii']]],
+  ['box_5fcorner_5ftop_5fright_21',['BOX_CORNER_TOP_RIGHT',['../namespaceAscii.html#ad2c4dce50115370d326222335f0a8cb2',1,'Ascii']]],
+  ['box_5fhorizontal_22',['BOX_HORIZONTAL',['../namespaceAscii.html#adeb1a6aea76748ae667591d186dd6d78',1,'Ascii']]],
+  ['box_5fvertical_23',['BOX_VERTICAL',['../namespaceAscii.html#a3503b93eea33897d8ef9b59346319d71',1,'Ascii']]]
 ];

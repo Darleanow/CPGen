@@ -1,11 +1,12 @@
 <map id="include/CPGen/Resolvers/ModuleResolver.hpp" name="include/CPGen/Resolvers/ModuleResolver.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="231,5,401,46"/>
-<area shape="rect" id="Node000002" href="$ProjectResolver_8hpp.html" title=" " alt="" coords="122,94,292,135"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,58,233,96,230,91,278,54"/>
-<area shape="rect" id="Node000005" href="$ModuleResolver_8cpp.html" title=" " alt="" coords="316,102,538,127"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="355,54,413,99,410,103,351,58"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="154,5,324,46"/>
+<area shape="rect" id="Node000002" href="$ProjectResolver_8hpp.html" title=" " alt="" coords="154,94,324,135"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,62,241,94,236,94,236,62"/>
 <area shape="rect" id="Node000003" href="$ProjectResolver_8cpp.html" title=" " alt="" coords="5,183,227,208"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,147,132,184,128,180,171,143"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="186,56,163,74,144,96,132,118,125,142,119,183,114,182,119,141,127,116,139,92,159,70,183,52"/>
+<area shape="rect" id="Node000005" href="$ModuleResolver_8cpp.html" title=" " alt="" coords="348,102,570,127"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="304,50,429,99,427,103,302,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,145,136,184,133,180,194,141"/>
 <area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="251,183,346,208"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="243,143,286,180,283,184,239,147"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="265,146,292,180,287,184,261,149"/>
 </map>

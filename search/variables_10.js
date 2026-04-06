@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warning_0',['Warning',['../namespaceAscii.html#a3e3f637d16b2b17c2e452d1cc97c13cd',1,'Ascii']]]
+  ['warning_0',['WARNING',['../namespaceAscii.html#a0ef89237f147067e685dc150628e5ee0',1,'Ascii']]]
 ];

@@ -1,5 +1,9 @@
 <map id="ComponentGroup::render" name="ComponentGroup::render">
-<area shape="rect" id="Node000001" title="Render the component as an ANSI string." alt="" coords="5,5,170,31"/>
-<area shape="rect" id="Node000002" href="$namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="218,5,339,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,202,16,202,21,170,21"/>
+<area shape="rect" id="Node000001" title="Render the component as an ANSI string." alt="" coords="5,31,170,56"/>
+<area shape="rect" id="Node000002" href="$namespaceUtils_1_1Colours.html#a94f2cb8fcdfea304bdd90a7c1cbc33ad" title=" " alt="" coords="218,5,343,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,30,202,26,202,31,170,35"/>
+<area shape="rect" id="Node000003" href="$namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd" title="Compute the visual (display) width of a UTF&#45;8 string, stripping ANSI escape sequences." alt="" coords="220,55,341,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,51,205,55,204,61,170,56"/>
+<area shape="rect" id="Node000004" href="$namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4" title="Strip ANSI escape sequences from a string." alt="" coords="391,55,496,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="341,65,375,65,375,70,341,70"/>
 </map>

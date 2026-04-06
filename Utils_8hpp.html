@@ -82,6 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Defs_8hpp_source.html">Misc/Defs.hpp</a>&quot;</code><br />
+<code>#include &lt;array&gt;</code><br />
 <code>#include &lt;cwchar&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
@@ -92,21 +93,25 @@ Include dependency graph for Utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Utils_8hpp__incl.png" border="0" usemap="#ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp" alt=""/></div>
 <map name="ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp" id="ainclude_2CPGen_2TUI_2Misc_2Utils_8hpp">
-<area shape="rect" title=" " alt="" coords="217,5,383,46"/>
-<area shape="rect" href="Defs_8hpp.html" title=" " alt="" coords="5,94,110,120"/>
-<area shape="poly" title=" " alt="" coords="240,49,110,91,109,86,239,44"/>
-<area shape="rect" title=" " alt="" coords="134,94,197,120"/>
-<area shape="poly" title=" " alt="" coords="268,49,201,88,198,83,265,44"/>
-<area shape="rect" title=" " alt="" coords="222,94,275,120"/>
-<area shape="poly" title=" " alt="" coords="290,48,267,82,262,79,285,45"/>
-<area shape="rect" title=" " alt="" coords="298,94,409,120"/>
-<area shape="poly" title=" " alt="" coords="316,45,339,80,335,83,311,48"/>
-<area shape="rect" title=" " alt="" coords="433,94,485,120"/>
-<area shape="poly" title=" " alt="" coords="341,44,422,84,420,89,339,49"/>
-<area shape="rect" title=" " alt="" coords="508,94,575,120"/>
-<area shape="poly" title=" " alt="" coords="361,44,494,87,493,92,360,49"/>
-<area shape="rect" title=" " alt="" coords="27,168,88,193"/>
-<area shape="poly" title=" " alt="" coords="60,120,60,152,55,152,55,120"/>
+<area shape="rect" title=" " alt="" coords="258,5,424,46"/>
+<area shape="rect" href="Defs_8hpp.html" title=" " alt="" coords="25,94,129,120"/>
+<area shape="poly" title=" " alt="" coords="276,49,133,92,132,86,274,44"/>
+<area shape="rect" title=" " alt="" coords="154,94,203,120"/>
+<area shape="poly" title=" " alt="" coords="301,49,218,89,216,84,299,44"/>
+<area shape="rect" title=" " alt="" coords="227,94,290,120"/>
+<area shape="poly" title=" " alt="" coords="322,48,284,85,280,81,319,44"/>
+<area shape="rect" title=" " alt="" coords="314,94,368,120"/>
+<area shape="poly" title=" " alt="" coords="344,46,344,78,338,78,338,46"/>
+<area shape="rect" title=" " alt="" coords="391,94,501,120"/>
+<area shape="poly" title=" " alt="" coords="368,44,419,82,416,86,365,49"/>
+<area shape="rect" title=" " alt="" coords="526,94,577,120"/>
+<area shape="poly" title=" " alt="" coords="394,44,512,88,511,93,393,49"/>
+<area shape="rect" title=" " alt="" coords="601,94,667,120"/>
+<area shape="poly" title=" " alt="" coords="415,44,587,90,586,95,413,49"/>
+<area shape="rect" title=" " alt="" coords="5,168,66,193"/>
+<area shape="poly" title=" " alt="" coords="72,121,52,156,48,153,68,119"/>
+<area shape="rect" title=" " alt="" coords="89,168,150,193"/>
+<area shape="poly" title=" " alt="" coords="86,119,107,153,102,156,82,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -142,9 +147,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a5ccb7875edc2112494812ef0c880ccf8" id="r_a5ccb7875edc2112494812ef0c880ccf8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5ccb7875edc2112494812ef0c880ccf8">Utils::stdinReady</a> (int timeout_ms)</td></tr>
 <tr class="memdesc:a5ccb7875edc2112494812ef0c880ccf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if stdin has data available within a timeout.  <br /></td></tr>
 <tr class="separator:a5ccb7875edc2112494812ef0c880ccf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5da471140a2a273b54aad42aa372b4" id="r_a7f5da471140a2a273b54aad42aa372b4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a7f5da471140a2a273b54aad42aa372b4">Utils::stripAnsi</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a7f5da471140a2a273b54aad42aa372b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip ANSI escape sequences from a string.  <br /></td></tr>
+<tr class="separator:a7f5da471140a2a273b54aad42aa372b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d60863499279dccf5b5682c4b6bc7dd" id="r_a4d60863499279dccf5b5682c4b6bc7dd"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a4d60863499279dccf5b5682c4b6bc7dd">Utils::visualWidth</a> (const std::string &amp;s)</td></tr>
 <tr class="memdesc:a4d60863499279dccf5b5682c4b6bc7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the visual (display) width of a UTF-8 string, stripping ANSI escape sequences.  <br /></td></tr>
 <tr class="separator:a4d60863499279dccf5b5682c4b6bc7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad67c5f45c462b8443665db940dbc91bf" id="r_ad67c5f45c462b8443665db940dbc91bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ad67c5f45c462b8443665db940dbc91bf">Utils::handleEscapeKey</a> ()</td></tr>
+<tr class="memdesc:ad67c5f45c462b8443665db940dbc91bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an ESC byte already read from stdin.  <br /></td></tr>
+<tr class="separator:ad67c5f45c462b8443665db940dbc91bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab78b617d54555683fc48a2b9f73f4429" id="r_ab78b617d54555683fc48a2b9f73f4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDefs.html#af2e8ab82263670dbd08da02023fc8fde">Defs::Key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab78b617d54555683fc48a2b9f73f4429">Utils::readKey</a> ()</td></tr>
 <tr class="memdesc:ab78b617d54555683fc48a2b9f73f4429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a single key from stdin (raw mode must be active)  <br /></td></tr>
 <tr class="separator:ab78b617d54555683fc48a2b9f73f4429"><td class="memSeparator" colspan="2">&#160;</td></tr>
