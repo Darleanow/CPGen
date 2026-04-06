@@ -7,9 +7,13 @@
 class ProjectResolver {
 public:
   ProjectResolver();
+
   ResolvedProject resolve(const ProjectConfig &config);
 
 private:
+  static ResolvedTarget buildTarget(const TargetInjection &injection,
+                                    const ProjectConfig &config);
+
   std::unique_ptr<ModuleResolver> m_module_resolver;
 };
 
@@ -24,9 +28,11 @@ inline std::ostream &operator<<(
   os << "\nBegin dump of modules: \n";
 
   for (const auto &mod : proj.modules) {
-    os << "Name: " << mod.name
-       << "\nFetchContent name: " << mod.fetch_content->module_name
-       << "\nFetchContent URL:" << mod.fetch_content->url;
+    os << "Name: " << mod.name;
+    if (mod.fetch_content.has_value()) {
+      os << "\nFetchContent name: " << mod.fetch_content->module_name
+         << "\nFetchContent URL:" << mod.fetch_content->url;
+    }
   }
   os << "\nBegin dump of deduced targets: \n";
   for (const auto &target : proj.targets) {

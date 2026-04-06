@@ -1,4 +1,9 @@
 #include "CPGen/Resolvers/ProjectResolver.hpp"
+#include "CPGen/Core/Config.hpp"
+#include "CPGen/Core/Resolved.hpp"
+#include "CPGen/Resolvers/ModuleResolver.hpp"
+#include <memory>
+#include <string>
 #include <unordered_set>
 
 ProjectResolver::ProjectResolver()
@@ -6,39 +11,39 @@ ProjectResolver::ProjectResolver()
 
 ResolvedProject ProjectResolver::resolve(const ProjectConfig &config) {
   ResolvedProject project;
-
-  std::unordered_set<ResolvedTarget> targets;
-
   project.config = config;
 
+  std::unordered_set<ResolvedTarget> seen;
+
   for (const auto &module_name : config.modules) {
-    auto resolved = m_module_resolver.get()->resolveModule(module_name);
-    project.modules.push_back(resolved.first);
-    for (const auto &injection : resolved.second) {
-      // Manually build target here for now, later on we will accept
-      // customization on targets and then we will build a target resolver.
-      ResolvedTarget target;
-      target.name = injection.target_name;
+    auto [module, injections] = m_module_resolver->resolveModule(module_name);
+    project.modules.push_back(module);
 
-      if (injection.target_name == "test") {
-        target.type = TargetType::Test;
-        target.path =
-            std::filesystem::path(config.path + config.name + "/tests");
-      } else if (injection.target_name == "library") {
-        target.type = TargetType::Library;
-        target.path = std::filesystem::path(config.path + config.name + "/src");
-      } else {
-        target.type = TargetType::Executable;
-        target.path = std::filesystem::path(config.path + config.name + "/src");
+    for (const auto &injection : injections) {
+      if (seen.insert(buildTarget(injection, config)).second) {
+        project.targets.push_back(buildTarget(injection, config));
       }
-
-      targets.insert(target);
     }
   }
 
-  for (const auto &target : targets) {
-    project.targets.push_back(target);
+  return project;
+}
+
+ResolvedTarget ProjectResolver::buildTarget(const TargetInjection &injection,
+                                            const ProjectConfig &config) {
+  ResolvedTarget target;
+  target.name = injection.target_name;
+
+  if (injection.target_name == "test") {
+    target.type = TargetType::Test;
+    target.path = config.path + config.name + "/tests";
+  } else if (injection.target_name == "library") {
+    target.type = TargetType::Library;
+    target.path = config.path + config.name + "/src";
+  } else {
+    target.type = TargetType::Executable;
+    target.path = config.path + config.name + "/src";
   }
 
-  return project;
+  return target;
 }
