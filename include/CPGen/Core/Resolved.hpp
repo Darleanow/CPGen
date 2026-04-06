@@ -16,7 +16,7 @@ struct ResolvedModule {
 };
 
 struct ResolvedTarget {
-  TargetType type;
+  TargetType type = TargetType::Executable;
   std::string name;
   std::string path;
 
