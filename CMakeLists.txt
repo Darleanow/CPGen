@@ -29,7 +29,9 @@ add_compile_options(-Wall -Wextra -Wpedantic -Wshadow -Wconversion -Werror)
 # Clang-tidy
 find_program(CLANG_TIDY_EXE NAMES clang-tidy)
 if(CLANG_TIDY_EXE)
-  set(CMAKE_CXX_CLANG_TIDY ${CLANG_TIDY_EXE})
+  set(CMAKE_CXX_CLANG_TIDY
+    ${CLANG_TIDY_EXE}
+    "--header-filter=${CMAKE_SOURCE_DIR}/(include|src)/.*")
 endif()
 
 add_library(
