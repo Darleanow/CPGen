@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Misc/Defs.hpp"
+#include <array>
 #include <cwchar>
 #include <string>
 #include <unordered_map>
@@ -88,29 +89,41 @@ inline bool stdinReady(int timeout_ms) {
 }
 
 /**
+ * @brief Strip ANSI escape sequences from a string
+ * @param s The string potentially containing ANSI codes
+ * @return Plain text with all escape sequences removed
+ */
+inline std::string stripAnsi(const std::string &s) {
+  std::string result;
+  result.reserve(s.size());
+  bool in_escape = false;
+  for (const char c : s) {
+    if (in_escape && std::isalpha(c) != 0) {
+      in_escape = false;
+      continue;
+    }
+    if (in_escape) {
+      continue;
+    }
+    if (c == '\033') {
+      in_escape = true;
+      continue;
+    }
+    result += c;
+  }
+  return result;
+}
+
+/**
  * @brief Compute the visual (display) width of a UTF-8 string,
  *        stripping ANSI escape sequences.
  * @param s The string potentially containing ANSI codes
  * @return The number of terminal columns the string occupies
  */
 inline size_t visualWidth(const std::string &s) {
-  std::string stripped;
-  stripped.reserve(s.size());
-
-  bool in_escape = false;
-  for (char c : s) {
-    if (in_escape) {
-      if (std::isalpha(c))
-        in_escape = false;
-    } else if (c == '\033') {
-      in_escape = true;
-    } else {
-      stripped += c;
-    }
-  }
-
+  const std::string stripped = stripAnsi(s);
   std::wstring wide(stripped.size(), L'\0');
-  std::mbstowcs(wide.data(), stripped.c_str(), stripped.size());
+  (void)std::mbstowcs(wide.data(), stripped.c_str(), stripped.size());
   wide.resize(std::wcslen(wide.c_str()));
 
   // todo(Darleanow): Make this monstruosity multiplatform (aint have this on
@@ -121,47 +134,62 @@ inline size_t visualWidth(const std::string &s) {
 }
 
 /**
+ * @brief Handle an ESC byte already read from stdin
+ * @return The key decoded from the escape sequence
+ */
+inline Defs::Key handleEscapeKey() {
+  if (!stdinReady(/*timeout_ms=*/50)) {
+    return Defs::Special::Escape;
+  }
+
+  std::array<char, 2> seq = {};
+  (void)read(STDIN_FILENO, seq.data(), 1);
+
+  if (seq[0] != '[') {
+    return Defs::Special::Escape;
+  }
+
+  if (!stdinReady(/*timeout_ms=*/50)) {
+    return Defs::Special::Escape;
+  }
+
+  (void)read(STDIN_FILENO, seq.data() + 1, 1);
+
+  static const std::unordered_map<char, Defs::Special> ARROWS = {
+      {'A', Defs::Special::Up},
+      {'B', Defs::Special::Down},
+      {'C', Defs::Special::Right},
+      {'D', Defs::Special::Left}};
+
+  if (auto it = ARROWS.find(seq[1]); it != ARROWS.end()) {
+    return it->second;
+  }
+
+  return Defs::Special::Escape;
+}
+
+/**
  * @brief Read a single key from stdin (raw mode must be active)
  * @return The key as a Defs::Key variant
  */
 inline Defs::Key readKey() {
-  char buf[3] = {};
-  read(STDIN_FILENO, buf, 1);
+  std::array<char, 3> buf = {};
+  (void)read(STDIN_FILENO, buf.data(), 1);
 
-  if (buf[0] == '\r' || buf[0] == '\n')
+  if (buf[0] == '\r' || buf[0] == '\n') {
     return Defs::Special::Enter;
-  if (buf[0] == 27) {
-    // Wait briefly to see if more bytes follow (escape sequence)
-    // Arrow keys etc. send ESC [ X in quick succession;
-    // a bare Escape press sends only ESC with no follow-up.
-    if (!stdinReady(50))
-      return Defs::Special::Escape; // Bare escape — return immediately
-
-    char seq[2] = {};
-    read(STDIN_FILENO, seq, 1);
-
-    if (seq[0] == '[') {
-      if (stdinReady(50)) {
-        read(STDIN_FILENO, seq + 1, 1);
-        static const std::unordered_map<char, Defs::Special> arrows = {
-            {'A', Defs::Special::Up},
-            {'B', Defs::Special::Down},
-            {'C', Defs::Special::Right},
-            {'D', Defs::Special::Left}};
-
-        if (auto it = arrows.find(seq[1]); it != arrows.end())
-          return it->second;
-      }
-    }
-
-    return Defs::Special::Escape;
   }
-  if (buf[0] == 127 || buf[0] == 8)
+  if (buf[0] == 27) {
+    return handleEscapeKey();
+  }
+  if (buf[0] == 127 || buf[0] == 8) {
     return Defs::Special::Backspace;
-  if (buf[0] == '\t')
+  }
+  if (buf[0] == '\t') {
     return Defs::Special::Tab;
+  }
 
-  return buf[0]; // Regular character
+  return buf[0];
 }
 
 } // namespace Utils

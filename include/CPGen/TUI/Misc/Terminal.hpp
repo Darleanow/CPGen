@@ -23,33 +23,35 @@ class Terminal {
 public:
   Terminal() {
 #ifndef _WIN32
-    tcgetattr(STDIN_FILENO, &m_original);
+    (void)tcgetattr(STDIN_FILENO, &m_original);
     s_original = m_original;
 
     struct termios raw = m_original;
-    raw.c_lflag &= static_cast<tcflag_t>(~(ICANON | ECHO));
-    tcsetattr(STDIN_FILENO, TCSANOW, &raw);
+    raw.c_lflag &= ~(static_cast<tcflag_t>(ICANON) | static_cast<tcflag_t>(ECHO));
+    (void)tcsetattr(STDIN_FILENO, TCSANOW, &raw);
 #endif
-    std::fputs("\033[?25l", stdout); // Hide cursor
-    std::fflush(stdout);
+    (void)std::fputs("\033[?25l", stdout); // Hide cursor
+    (void)std::fflush(stdout);
 
     // Hook signals so Ctrl+C / kill always restores the terminal
-    std::signal(SIGINT, signalHandler);
-    std::signal(SIGTERM, signalHandler);
+    (void)std::signal(SIGINT, signalHandler);
+    (void)std::signal(SIGTERM, signalHandler);
   }
 
   ~Terminal() { restore(); }
 
   Terminal(const Terminal &) = delete;
   Terminal &operator=(const Terminal &) = delete;
+  Terminal(Terminal &&) = delete;
+  Terminal &operator=(Terminal &&) = delete;
 
 private:
   static void restore() {
 #ifndef _WIN32
-    tcsetattr(STDIN_FILENO, TCSANOW, &s_original);
+    (void)tcsetattr(STDIN_FILENO, TCSANOW, &s_original);
 #endif
-    std::fputs("\033[?25h", stdout); // Show cursor
-    std::fflush(stdout);
+    (void)std::fputs("\033[?25h", stdout); // Show cursor
+    (void)std::fflush(stdout);
   }
 
   static void signalHandler(int /*sig*/) {
