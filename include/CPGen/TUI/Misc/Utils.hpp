@@ -143,7 +143,7 @@ inline Defs::Key handleEscapeKey() {
   }
 
   std::array<char, 2> seq = {};
-  (void)read(STDIN_FILENO, seq.data(), 1);
+  [[maybe_unused]] const auto seq0 = read(STDIN_FILENO, seq.data(), 1); // because implem of read changes with optimization level
 
   if (seq[0] != '[') {
     return Defs::Special::Escape;
@@ -153,7 +153,7 @@ inline Defs::Key handleEscapeKey() {
     return Defs::Special::Escape;
   }
 
-  (void)read(STDIN_FILENO, seq.data() + 1, 1);
+  [[maybe_unused]] const auto seq1 = read(STDIN_FILENO, seq.data() + 1, 1); // because implem of read changes with optimization level
 
   static const std::unordered_map<char, Defs::Special> ARROWS = {
       {'A', Defs::Special::Up},
@@ -174,7 +174,7 @@ inline Defs::Key handleEscapeKey() {
  */
 inline Defs::Key readKey() {
   std::array<char, 3> buf = {};
-  (void)read(STDIN_FILENO, buf.data(), 1);
+  [[maybe_unused]] const auto buf0 = read(STDIN_FILENO, buf.data(), 1);
 
   if (buf[0] == '\r' || buf[0] == '\n') {
     return Defs::Special::Enter;
