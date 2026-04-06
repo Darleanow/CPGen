@@ -2,7 +2,8 @@
 
 /**
  * @file Config.hpp
- * @brief Project configuration types produced by the CLI and consumed by the resolvers.
+ * @brief Project configuration types produced by the CLI and consumed by the
+ * resolvers.
  * @author Darleanow
  */
 
@@ -20,16 +21,21 @@
  * typed output of the CLI flag parser.
  */
 struct ProjectOptions {
-  bool is_tui_mode = false; ///< Whether the application was launched in TUI mode.
-  bool has_git     = false; ///< Whether to initialise a Git repository.
+  bool is_tui_mode =
+      false;            ///< Whether the application was launched in TUI mode.
+  bool has_git = false; ///< Whether to initialise a Git repository.
 
-  std::string path; ///< Absolute path to the directory where the project will be generated.
+  std::string path; ///< Absolute path to the directory where the project will
+                    ///< be generated.
   std::string name; ///< Name of the project (becomes the leaf directory name).
 
-  bool use_template = false;                     ///< Whether to apply a named project template.
-  std::optional<std::string> template_name;      ///< Template identifier, valid only when @c use_template is @c true.
+  bool use_template = false; ///< Whether to apply a named project template.
+  std::optional<std::string>
+      template_name; ///< Template identifier, valid only when @c use_template
+                     ///< is @c true.
 
-  std::vector<std::string> modules_list; ///< Additional dependency modules requested by the user.
+  std::vector<std::string>
+      modules_list; ///< Additional dependency modules requested by the user.
 };
 
 /**
@@ -59,9 +65,10 @@ enum class CppStandard : std::uint8_t {
  * Each field corresponds to a CLI flag (e.g. @c --git, @c --clang-format).
  */
 struct ToolingConfig {
-  bool has_git       = false; ///< Initialise a Git repository in the project root.
-  bool clang_tidy    = false; ///< Generate a @c .clang-tidy configuration file.
-  bool clang_format  = false; ///< Generate a @c .clang-format configuration file.
+  bool has_git = false;    ///< Initialise a Git repository in the project root.
+  bool clang_tidy = false; ///< Generate a @c .clang-tidy configuration file.
+  bool clang_format =
+      false; ///< Generate a @c .clang-format configuration file.
 
   /// Clang-format style preset (e.g. @c "Google", @c "LLVM").
   /// Present only when @c clang_format is @c true and a preset was supplied.
@@ -76,10 +83,13 @@ struct ToolingConfig {
  * the entire code-generation pipeline.
  */
 struct ProjectConfig {
-  std::string path;                    ///< Absolute path to the generation directory.
-  std::string name;                    ///< Project name (used as the CMake project name and directory).
-  CppStandard standard = CppStandard::Cpp20; ///< C++ language standard. Defaults to C++20.
-  std::vector<std::string>  modules;   ///< Dependency module identifiers (e.g. @c "gtest", @c "spdlog").
-  std::vector<TargetType>   targets;   ///< Build target kinds to generate.
-  ToolingConfig             tooling;   ///< Optional tooling configuration.
+  std::string path; ///< Absolute path to the generation directory.
+  std::string
+      name; ///< Project name (used as the CMake project name and directory).
+  CppStandard standard =
+      CppStandard::Cpp20; ///< C++ language standard. Defaults to C++20.
+  std::vector<std::string> modules; ///< Dependency module identifiers (e.g. @c
+                                    ///< "gtest", @c "spdlog").
+  std::vector<TargetType> targets;  ///< Build target kinds to generate.
+  ToolingConfig tooling;            ///< Optional tooling configuration.
 };

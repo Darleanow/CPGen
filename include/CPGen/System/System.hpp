@@ -13,7 +13,8 @@
 namespace System {
 
 /**
- * @brief Interactively check whether the terminal font supports Nerd Font glyphs.
+ * @brief Interactively check whether the terminal font supports Nerd Font
+ * glyphs.
  *
  * Renders a pair of checkbox glyphs to @c stdout and prompts the user to
  * confirm whether they render correctly.  This is used at startup to decide

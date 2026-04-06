@@ -28,24 +28,28 @@
  *
  * Subclasses must implement:
  * - @ref render() — return the full ANSI-formatted string representation.
- * - @ref handleInput() — process one keypress and return whether it was consumed.
+ * - @ref handleInput() — process one keypress and return whether it was
+ * consumed.
  *
  * Subclasses may override:
- * - @ref setFocused() — react to focus changes (e.g. repaint with a different colour).
+ * - @ref setFocused() — react to focus changes (e.g. repaint with a different
+ * colour).
  */
 class Component {
 public:
   Component() = default;
 
   /**
-   * @brief Virtual destructor — components are always owned via base-class pointer.
+   * @brief Virtual destructor — components are always owned via base-class
+   * pointer.
    */
   virtual ~Component() = default;
 
-  Component(const Component &)            = delete; ///< Non-copyable (unique ownership).
-  Component &operator=(const Component &) = delete; ///< Non-copyable (unique ownership).
-  Component(Component &&)                 = delete; ///< Non-movable.
-  Component &operator=(Component &&)      = delete; ///< Non-movable.
+  Component(const Component &) = delete; ///< Non-copyable (unique ownership).
+  Component &
+  operator=(const Component &) = delete; ///< Non-copyable (unique ownership).
+  Component(Component &&) = delete;      ///< Non-movable.
+  Component &operator=(Component &&) = delete; ///< Non-movable.
 
   /**
    * @brief Produce the full ANSI-formatted rendering of this component.
@@ -84,5 +88,6 @@ public:
   [[nodiscard]] bool isFocused() const { return m_is_focused; }
 
 protected:
-  bool m_is_focused = false; ///< Current focus state, managed by @ref setFocused.
+  bool m_is_focused =
+      false; ///< Current focus state, managed by @ref setFocused.
 };

@@ -32,8 +32,8 @@
  * ### Lifecycle
  * | Event              | Action                                         |
  * |--------------------|------------------------------------------------|
- * | Construction       | Save @c termios, enable raw mode, hide cursor, install signal handlers. |
- * | Destruction        | Restore @c termios, show cursor.               |
+ * | Construction       | Save @c termios, enable raw mode, hide cursor, install
+ * signal handlers. | | Destruction        | Restore @c termios, show cursor. |
  * | @c SIGINT/SIGTERM  | Restore terminal, call @c std::_Exit(130).     |
  *
  * @warning Only one @c Terminal instance should be alive at a time; the signal
@@ -57,14 +57,15 @@ public:
     s_original = m_original;
 
     struct termios raw = m_original;
-    raw.c_lflag &= ~(static_cast<tcflag_t>(ICANON) | static_cast<tcflag_t>(ECHO));
+    raw.c_lflag &=
+        ~(static_cast<tcflag_t>(ICANON) | static_cast<tcflag_t>(ECHO));
     (void)tcsetattr(STDIN_FILENO, TCSANOW, &raw);
 #endif
     (void)std::fputs("\033[?25l", stdout); // Hide cursor
     (void)std::fflush(stdout);
 
     // Hook signals so Ctrl+C / kill always restores the terminal
-    (void)std::signal(SIGINT,  signalHandler);
+    (void)std::signal(SIGINT, signalHandler);
     (void)std::signal(SIGTERM, signalHandler);
   }
 
@@ -73,10 +74,10 @@ public:
    */
   ~Terminal() { restore(); }
 
-  Terminal(const Terminal &)            = delete; ///< Non-copyable.
+  Terminal(const Terminal &) = delete;            ///< Non-copyable.
   Terminal &operator=(const Terminal &) = delete; ///< Non-copyable.
-  Terminal(Terminal &&)                 = delete; ///< Non-movable.
-  Terminal &operator=(Terminal &&)      = delete; ///< Non-movable.
+  Terminal(Terminal &&) = delete;                 ///< Non-movable.
+  Terminal &operator=(Terminal &&) = delete;      ///< Non-movable.
 
 private:
   /**
@@ -100,7 +101,8 @@ private:
    * Restores the terminal and exits with code 130 (the POSIX convention for
    * "terminated by SIGINT": 128 + signal number).
    *
-   * @param sig The signal number (unused; the same action is taken for all hooked signals).
+   * @param sig The signal number (unused; the same action is taken for all
+   * hooked signals).
    */
   static void signalHandler(int /*sig*/) {
     restore();
@@ -108,7 +110,9 @@ private:
   }
 
 #ifndef _WIN32
-  struct termios m_original{};            ///< Per-instance copy of the original @c termios (used on destruction).
-  static inline struct termios s_original{}; ///< Static copy shared with the signal handler.
+  struct termios m_original{}; ///< Per-instance copy of the original @c termios
+                               ///< (used on destruction).
+  static inline struct termios
+      s_original{}; ///< Static copy shared with the signal handler.
 #endif
 };

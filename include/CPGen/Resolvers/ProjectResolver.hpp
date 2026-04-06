@@ -6,9 +6,9 @@
  * @author Darleanow
  *
  * Given a @ref ProjectConfig (produced by the CLI or TUI), @ref ProjectResolver
- * asks @ref ModuleResolver to resolve each requested dependency module, collects
- * all @ref TargetInjection objects, deduplicates the resulting build targets, and
- * returns a @ref ResolvedProject ready for the generators.
+ * asks @ref ModuleResolver to resolve each requested dependency module,
+ * collects all @ref TargetInjection objects, deduplicates the resulting build
+ * targets, and returns a @ref ResolvedProject ready for the generators.
  */
 
 #include "CPGen/Core/Config.hpp"
@@ -19,7 +19,8 @@
 
 /**
  * @class ProjectResolver
- * @brief Converts a @ref ProjectConfig into a fully resolved @ref ResolvedProject.
+ * @brief Converts a @ref ProjectConfig into a fully resolved @ref
+ * ResolvedProject.
  *
  * Internally owns a @ref ModuleResolver and delegates per-module lookups to it.
  * Target deduplication is handled via @c std::unordered_set<ResolvedTarget>
@@ -29,8 +30,8 @@ class ProjectResolver {
 public:
   /**
    * @brief Construct a @c ProjectResolver with a default @ref ModuleResolver.
-   * @throws std::runtime_error If the underlying @ref ModuleResolver cannot find
-   *         any template search path.
+   * @throws std::runtime_error If the underlying @ref ModuleResolver cannot
+   * find any template search path.
    */
   ProjectResolver();
 
@@ -39,7 +40,8 @@ public:
    *
    * For each module name in @c config.modules:
    * 1. Calls @ref ModuleResolver::resolveModule to parse the module's JSON.
-   * 2. Calls @ref buildTarget for each @ref TargetInjection the module produces.
+   * 2. Calls @ref buildTarget for each @ref TargetInjection the module
+   * produces.
    * 3. Inserts deduplicated targets into the result.
    *
    * @param config Parsed project configuration from the CLI or TUI.
@@ -51,20 +53,23 @@ public:
 
 private:
   /**
-   * @brief Build a single @ref ResolvedTarget from an injection and the project config.
+   * @brief Build a single @ref ResolvedTarget from an injection and the project
+   * config.
    *
    * Determines the target type and source path based on the injection's
    * @c target_name (@c "test" → @ref TargetType::Test, @c "library" →
    * @ref TargetType::Library, everything else → @ref TargetType::Executable).
    *
    * @param injection The injection descriptor produced by @ref ModuleResolver.
-   * @param config    The originating project configuration (used for path construction).
+   * @param config    The originating project configuration (used for path
+   * construction).
    * @return A fully populated @ref ResolvedTarget.
    */
   static ResolvedTarget buildTarget(const TargetInjection &injection,
                                     const ProjectConfig &config);
 
-  std::unique_ptr<ModuleResolver> m_module_resolver; ///< Owned module resolver instance.
+  std::unique_ptr<ModuleResolver>
+      m_module_resolver; ///< Owned module resolver instance.
 };
 
 /**

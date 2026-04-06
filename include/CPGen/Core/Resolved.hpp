@@ -24,14 +24,18 @@
  * or more named targets.
  */
 struct TargetInjection {
-  std::string target_name;   ///< Name of the CMake target that receives this injection.
-  std::string module_name;   ///< Identifier of the module that produced this injection.
-  std::vector<std::string> link; ///< Libraries to pass to @c target_link_libraries.
+  std::string
+      target_name; ///< Name of the CMake target that receives this injection.
+  std::string
+      module_name; ///< Identifier of the module that produced this injection.
+  std::vector<std::string>
+      link; ///< Libraries to pass to @c target_link_libraries.
 
   /// Optional CMake module to @c include() (e.g. @c "GoogleTest").
   std::optional<std::string> cmake_include;
 
-  /// Optional command appended after @c target_link_libraries (e.g. @c "gtest_discover_tests(${TARGET_NAME})").
+  /// Optional command appended after @c target_link_libraries (e.g. @c
+  /// "gtest_discover_tests(${TARGET_NAME})").
   std::optional<std::string> post_link;
 };
 
@@ -39,7 +43,8 @@ struct TargetInjection {
  * @struct ResolvedModule
  * @brief A dependency module after its JSON definition has been parsed.
  *
- * Produced by @ref ModuleResolver::resolveModule for each requested module name.
+ * Produced by @ref ModuleResolver::resolveModule for each requested module
+ * name.
  */
 struct ResolvedModule {
   std::string name; ///< Canonical module name as declared in its JSON file.
@@ -57,9 +62,9 @@ struct ResolvedModule {
  * purposes) when their @c name fields match, regardless of @c type or @c path.
  */
 struct ResolvedTarget {
-  TargetType  type = TargetType::Executable; ///< CMake target kind.
-  std::string name;                          ///< Target name used in CMake (e.g. @c "test").
-  std::string path;                          ///< Relative source directory for this target.
+  TargetType type = TargetType::Executable; ///< CMake target kind.
+  std::string name; ///< Target name used in CMake (e.g. @c "test").
+  std::string path; ///< Relative source directory for this target.
 
   /**
    * @brief Equality based solely on the target name.
@@ -74,12 +79,11 @@ struct ResolvedTarget {
 /**
  * @brief @c std::hash specialisation for @ref ResolvedTarget.
  *
- * Enables use of @c ResolvedTarget in @c std::unordered_set / @c std::unordered_map
- * for target deduplication in @ref ProjectResolver::resolve.
+ * Enables use of @c ResolvedTarget in @c std::unordered_set / @c
+ * std::unordered_map for target deduplication in @ref ProjectResolver::resolve.
  */
 namespace std {
-template <>
-struct hash<ResolvedTarget> {
+template <> struct hash<ResolvedTarget> {
   /**
    * @brief Computes a hash based on the target name.
    * @param target The target to hash.
@@ -99,8 +103,10 @@ struct hash<ResolvedTarget> {
  * C++ file generators to produce the final project structure on disk.
  */
 struct ResolvedProject {
-  ProjectConfig                config;     ///< The original configuration that was resolved.
-  std::vector<ResolvedTarget>  targets;    ///< Deduplicated list of build targets to generate.
-  std::vector<ResolvedModule>  modules;    ///< All resolved dependency modules.
-  std::vector<TargetInjection> injections; ///< All CMake snippets collected from every module.
+  ProjectConfig config; ///< The original configuration that was resolved.
+  std::vector<ResolvedTarget>
+      targets; ///< Deduplicated list of build targets to generate.
+  std::vector<ResolvedModule> modules; ///< All resolved dependency modules.
+  std::vector<TargetInjection>
+      injections; ///< All CMake snippets collected from every module.
 };

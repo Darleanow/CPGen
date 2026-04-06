@@ -56,7 +56,8 @@ public:
   bool handleInput(Defs::Key key) override;
 
 private:
-  std::string m_label;                              ///< Label displayed in the top border.
-  std::string m_value;                              ///< Current text entered by the user.
-  std::function<void(std::string)> m_on_change;     ///< Callback fired after every edit.
+  std::string m_label; ///< Label displayed in the top border.
+  std::string m_value; ///< Current text entered by the user.
+  std::function<void(std::string)>
+      m_on_change; ///< Callback fired after every edit.
 };

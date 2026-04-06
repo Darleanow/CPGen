@@ -35,11 +35,12 @@ enum class Special : std::uint8_t {
 
 /**
  * @typedef Key
- * @brief A single keypress from stdin, represented as either a printable character
- *        or a @ref Special control key.
+ * @brief A single keypress from stdin, represented as either a printable
+ * character or a @ref Special control key.
  *
  * Components receive a @c Key value from @c Utils::readKey() and pattern-match
- * it with @c std::holds_alternative / @c std::get to implement their input logic.
+ * it with @c std::holds_alternative / @c std::get to implement their input
+ * logic.
  */
 using Key = std::variant<char, Special>;
 

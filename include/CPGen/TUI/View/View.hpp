@@ -2,20 +2,21 @@
 
 /**
  * @file View.hpp
- * @brief Top-level TUI view that owns all sections and drives the main event loop.
+ * @brief Top-level TUI view that owns all sections and drives the main event
+ * loop.
  * @author Darleanow
  *
  * @ref View is the root of the component tree.  It holds a flat list of
  * top-level components (called *sections* — typically @ref ComponentGroup or
- * @ref Input instances), manages focus between them with @ref Defs::Special::Tab,
- * and runs the blocking input loop.
+ * @ref Input instances), manages focus between them with @ref
+ * Defs::Special::Tab, and runs the blocking input loop.
  *
  * ### Typical setup
  * @code
  *   View view;
- *   view.addSection(std::make_unique<ComponentGroup>("Settings", Ascii::GEAR_ICON));
- *   view.addSection(std::make_unique<Input>("Project Name", callback));
- *   view.run(); // blocks until the user presses Escape
+ *   view.addSection(std::make_unique<ComponentGroup>("Settings",
+ * Ascii::GEAR_ICON)); view.addSection(std::make_unique<Input>("Project Name",
+ * callback)); view.run(); // blocks until the user presses Escape
  * @endcode
  */
 
@@ -25,12 +26,14 @@
 
 /**
  * @class View
- * @brief Root TUI manager: renders sections, routes input, and runs the event loop.
+ * @brief Root TUI manager: renders sections, routes input, and runs the event
+ * loop.
  *
- * The @ref run method constructs a @ref Terminal (entering raw mode), then loops
- * reading keys from stdin via @ref Utils::readKey.  Each key is first offered to
- * the currently focused section; if not consumed, @ref View handles @ref Defs::Special::Tab
- * to move focus between sections and @ref Defs::Special::Escape to exit the loop.
+ * The @ref run method constructs a @ref Terminal (entering raw mode), then
+ * loops reading keys from stdin via @ref Utils::readKey.  Each key is first
+ * offered to the currently focused section; if not consumed, @ref View handles
+ * @ref Defs::Special::Tab to move focus between sections and @ref
+ * Defs::Special::Escape to exit the loop.
  *
  * After every input event the entire screen is redrawn via @ref redraw.
  */
@@ -53,7 +56,8 @@ public:
    * 2. Grants focus to the first section and redraws.
    * 3. Reads keys in a loop, routing them to the focused section or handling
    *    Tab / Escape at the view level.
-   * 4. Exits (and restores the terminal) when @ref Defs::Special::Escape is pressed.
+   * 4. Exits (and restores the terminal) when @ref Defs::Special::Escape is
+   * pressed.
    *
    * @note This method blocks until the user exits the TUI.
    */
@@ -75,7 +79,10 @@ private:
    */
   void moveFocus(int dir);
 
-  std::vector<std::unique_ptr<Component>> m_sections;  ///< Owned top-level sections, rendered in order.
-  size_t m_focused_index = 0;                          ///< Index of the section that currently has keyboard focus.
-  bool   m_running       = false;                      ///< Event loop control flag; set to @c false to exit @ref run.
+  std::vector<std::unique_ptr<Component>>
+      m_sections; ///< Owned top-level sections, rendered in order.
+  size_t m_focused_index =
+      0; ///< Index of the section that currently has keyboard focus.
+  bool m_running =
+      false; ///< Event loop control flag; set to @c false to exit @ref run.
 };

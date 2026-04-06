@@ -2,14 +2,16 @@
 
 /**
  * @file Utils.hpp
- * @brief TUI utility functions: ANSI colour helpers, input reading, and string metrics.
+ * @brief TUI utility functions: ANSI colour helpers, input reading, and string
+ * metrics.
  * @author Darleanow
  *
- * All functions in this file are @c inline and live in header-only namespaces so
- * they can be included by any TUI translation unit without ODR issues.
+ * All functions in this file are @c inline and live in header-only namespaces
+ * so they can be included by any TUI translation unit without ODR issues.
  *
  * ### Colour usage
- * Build an ANSI escape sequence with @ref Utils::Colours::esc and combine it with
+ * Build an ANSI escape sequence with @ref Utils::Colours::esc and combine it
+ * with
  * @ref Utils::Colours::RESET to restore the default style:
  * @code
  *   std::string s = Utils::Colours::esc(Utils::Colours::FG_GREEN)
@@ -37,7 +39,8 @@ namespace Utils {
 
 /**
  * @namespace Utils::Colours
- * @brief ANSI SGR (Select Graphic Rendition) code constants and escape sequence builder.
+ * @brief ANSI SGR (Select Graphic Rendition) code constants and escape sequence
+ * builder.
  *
  * Each constant is the numeric SGR parameter string (without the surrounding
  * @c ESC[…m).  Pass them to @ref esc to get a ready-to-print escape sequence.
@@ -46,62 +49,64 @@ namespace Colours {
 
 /// @name Standard foreground colours
 /// @{
-inline constexpr const char *FG_BLACK   = "30"; ///< Black foreground.
-inline constexpr const char *FG_RED     = "31"; ///< Red foreground.
-inline constexpr const char *FG_GREEN   = "32"; ///< Green foreground.
-inline constexpr const char *FG_YELLOW  = "33"; ///< Yellow foreground.
-inline constexpr const char *FG_BLUE    = "34"; ///< Blue foreground.
+inline constexpr const char *FG_BLACK = "30";   ///< Black foreground.
+inline constexpr const char *FG_RED = "31";     ///< Red foreground.
+inline constexpr const char *FG_GREEN = "32";   ///< Green foreground.
+inline constexpr const char *FG_YELLOW = "33";  ///< Yellow foreground.
+inline constexpr const char *FG_BLUE = "34";    ///< Blue foreground.
 inline constexpr const char *FG_MAGENTA = "35"; ///< Magenta foreground.
-inline constexpr const char *FG_CYAN    = "36"; ///< Cyan foreground.
-inline constexpr const char *FG_WHITE   = "37"; ///< White foreground.
+inline constexpr const char *FG_CYAN = "36";    ///< Cyan foreground.
+inline constexpr const char *FG_WHITE = "37";   ///< White foreground.
 /// @}
 
 /// @name Bright / light foreground colours
 /// @{
-inline constexpr const char *FG_BBLACK   = "90"; ///< Bright black (dark grey) foreground.
-inline constexpr const char *FG_BRED     = "91"; ///< Bright red foreground.
-inline constexpr const char *FG_BGREEN   = "92"; ///< Bright green foreground.
-inline constexpr const char *FG_BYELLOW  = "93"; ///< Bright yellow foreground.
-inline constexpr const char *FG_BBLUE    = "94"; ///< Bright blue foreground.
+inline constexpr const char *FG_BBLACK =
+    "90"; ///< Bright black (dark grey) foreground.
+inline constexpr const char *FG_BRED = "91";     ///< Bright red foreground.
+inline constexpr const char *FG_BGREEN = "92";   ///< Bright green foreground.
+inline constexpr const char *FG_BYELLOW = "93";  ///< Bright yellow foreground.
+inline constexpr const char *FG_BBLUE = "94";    ///< Bright blue foreground.
 inline constexpr const char *FG_BMAGENTA = "95"; ///< Bright magenta foreground.
-inline constexpr const char *FG_BCYAN    = "96"; ///< Bright cyan foreground.
-inline constexpr const char *FG_BWHITE   = "97"; ///< Bright white foreground.
+inline constexpr const char *FG_BCYAN = "96";    ///< Bright cyan foreground.
+inline constexpr const char *FG_BWHITE = "97";   ///< Bright white foreground.
 /// @}
 
 /// @name Standard background colours
 /// @{
-inline constexpr const char *BG_BLACK   = "40"; ///< Black background.
-inline constexpr const char *BG_RED     = "41"; ///< Red background.
-inline constexpr const char *BG_GREEN   = "42"; ///< Green background.
-inline constexpr const char *BG_YELLOW  = "43"; ///< Yellow background.
-inline constexpr const char *BG_BLUE    = "44"; ///< Blue background.
+inline constexpr const char *BG_BLACK = "40";   ///< Black background.
+inline constexpr const char *BG_RED = "41";     ///< Red background.
+inline constexpr const char *BG_GREEN = "42";   ///< Green background.
+inline constexpr const char *BG_YELLOW = "43";  ///< Yellow background.
+inline constexpr const char *BG_BLUE = "44";    ///< Blue background.
 inline constexpr const char *BG_MAGENTA = "45"; ///< Magenta background.
-inline constexpr const char *BG_CYAN    = "46"; ///< Cyan background.
-inline constexpr const char *BG_WHITE   = "47"; ///< White background.
+inline constexpr const char *BG_CYAN = "46";    ///< Cyan background.
+inline constexpr const char *BG_WHITE = "47";   ///< White background.
 /// @}
 
 /// @name Bright / light background colours
 /// @{
-inline constexpr const char *BG_BBLACK   = "100"; ///< Bright black background.
-inline constexpr const char *BG_BRED     = "101"; ///< Bright red background.
-inline constexpr const char *BG_BGREEN   = "102"; ///< Bright green background.
-inline constexpr const char *BG_BYELLOW  = "103"; ///< Bright yellow background.
-inline constexpr const char *BG_BBLUE    = "104"; ///< Bright blue background.
-inline constexpr const char *BG_BMAGENTA = "105"; ///< Bright magenta background.
-inline constexpr const char *BG_BCYAN    = "106"; ///< Bright cyan background.
-inline constexpr const char *BG_BWHITE   = "107"; ///< Bright white background.
+inline constexpr const char *BG_BBLACK = "100";  ///< Bright black background.
+inline constexpr const char *BG_BRED = "101";    ///< Bright red background.
+inline constexpr const char *BG_BGREEN = "102";  ///< Bright green background.
+inline constexpr const char *BG_BYELLOW = "103"; ///< Bright yellow background.
+inline constexpr const char *BG_BBLUE = "104";   ///< Bright blue background.
+inline constexpr const char *BG_BMAGENTA =
+    "105";                                      ///< Bright magenta background.
+inline constexpr const char *BG_BCYAN = "106";  ///< Bright cyan background.
+inline constexpr const char *BG_BWHITE = "107"; ///< Bright white background.
 /// @}
 
 /// @name Text style modifiers
 /// @{
-inline constexpr const char *RESET      = "0"; ///< Reset all attributes.
-inline constexpr const char *BOLD       = "1"; ///< Bold / increased intensity.
-inline constexpr const char *DIM        = "2"; ///< Dim / decreased intensity.
-inline constexpr const char *ITALIC     = "3"; ///< Italic.
-inline constexpr const char *UNDERLINE  = "4"; ///< Underline.
-inline constexpr const char *BLINK      = "5"; ///< Slow blink.
-inline constexpr const char *INVERSE    = "7"; ///< Reverse video (swap FG/BG).
-inline constexpr const char *HIDDEN     = "8"; ///< Conceal / invisible.
+inline constexpr const char *RESET = "0";      ///< Reset all attributes.
+inline constexpr const char *BOLD = "1";       ///< Bold / increased intensity.
+inline constexpr const char *DIM = "2";        ///< Dim / decreased intensity.
+inline constexpr const char *ITALIC = "3";     ///< Italic.
+inline constexpr const char *UNDERLINE = "4";  ///< Underline.
+inline constexpr const char *BLINK = "5";      ///< Slow blink.
+inline constexpr const char *INVERSE = "7";    ///< Reverse video (swap FG/BG).
+inline constexpr const char *HIDDEN = "8";     ///< Conceal / invisible.
 inline constexpr const char *STRIKETHRU = "9"; ///< Strikethrough.
 /// @}
 
@@ -175,9 +180,9 @@ inline std::string stripAnsi(const std::string &s) {
  * @brief Compute the visual (display) column width of a UTF-8 string.
  *
  * Strips ANSI escape codes first, then converts the result to a wide-character
- * string and calls POSIX @c wcswidth(3) to obtain the number of terminal columns
- * the string occupies (accounting for double-width CJK characters, zero-width
- * combining marks, etc.).
+ * string and calls POSIX @c wcswidth(3) to obtain the number of terminal
+ * columns the string occupies (accounting for double-width CJK characters,
+ * zero-width combining marks, etc.).
  *
  * @param s A UTF-8 string, possibly containing ANSI escape sequences.
  * @return Number of terminal columns the visible content of @p s occupies.
@@ -193,18 +198,20 @@ inline size_t visualWidth(const std::string &s) {
   (void)std::mbstowcs(wide.data(), stripped.c_str(), stripped.size());
   wide.resize(std::wcslen(wide.c_str()));
 
-  // todo(Darleanow): Make this monstruosity multiplatform (aint have this on win)
-  // Considering using the utf8proc
+  // todo(Darleanow): Make this monstruosity multiplatform (aint have this on
+  // win) Considering using the utf8proc
   const int w = ::wcswidth(wide.c_str(), wide.size()); // POSIX
   return w < 0 ? wide.size() : static_cast<size_t>(w);
 }
 
 /**
- * @brief Decode an escape sequence whose leading @c ESC byte has already been consumed.
+ * @brief Decode an escape sequence whose leading @c ESC byte has already been
+ * consumed.
  *
  * Polls stdin for the next byte (50 ms timeout).  If it reads @c '[' it polls
- * again for the final letter and maps it to an arrow key via a static lookup table.
- * Any unrecognised sequence or timeout returns @ref Defs::Special::Escape.
+ * again for the final letter and maps it to an arrow key via a static lookup
+ * table. Any unrecognised sequence or timeout returns @ref
+ * Defs::Special::Escape.
  *
  * @return The decoded @ref Defs::Key — one of @ref Defs::Special::Up,
  *         @ref Defs::Special::Down, @ref Defs::Special::Left,

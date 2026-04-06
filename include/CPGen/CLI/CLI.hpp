@@ -2,7 +2,8 @@
 
 /**
  * @file CLI.hpp
- * @brief Command-line argument parser that produces a typed project configuration.
+ * @brief Command-line argument parser that produces a typed project
+ * configuration.
  * @author Darleanow
  * @version 1.0.1
  *
@@ -63,12 +64,14 @@ public:
    * to the appropriate private helper.  Unknown flags are silently skipped.
    *
    * @param argc Number of argument strings in @p argv.
-   * @param argv Null-terminated array of argument strings (standard C @c main signature).
+   * @param argv Null-terminated array of argument strings (standard C @c main
+   * signature).
    * @return A @ref ProjectConfig if project flags were parsed, or @c true if
    *         @c --tui was requested.
-   * @throws std::runtime_error When a required flag argument is missing, the path
-   *         does not exist, or the name does not match the required pattern.
-   * @throws std::range_error   When the C++ standard value is not 17, 20, or 23.
+   * @throws std::runtime_error When a required flag argument is missing, the
+   * path does not exist, or the name does not match the required pattern.
+   * @throws std::range_error   When the C++ standard value is not 17, 20,
+   * or 23.
    */
   Config parse(int argc, char **argv);
 
@@ -88,7 +91,8 @@ private:
    * @param argc Total argument count.
    * @param argv Argument array.
    * @param i    Current index; incremented to consume the flag's value.
-   * @throws std::runtime_error If no value follows the flag, the value starts with
+   * @throws std::runtime_error If no value follows the flag, the value starts
+   * with
    *         @c '-', or the path does not exist on the filesystem.
    */
   void parsePath(int argc, char **argv, int &i);
@@ -99,7 +103,8 @@ private:
    * @param argv Argument array.
    * @param i    Current index; incremented to consume the flag's value.
    * @throws std::runtime_error If no value follows the flag.
-   * @throws std::range_error   If the value is not @c "17", @c "20", or @c "23".
+   * @throws std::range_error   If the value is not @c "17", @c "20", or @c
+   * "23".
    */
   void parseStandard(int argc, char **argv, int &i);
 
@@ -118,7 +123,8 @@ private:
    * @brief Parse the @c -tar / @c --targets flag and advance @p i.
    *
    * Recognises @c "exe" / @c "executable" → @ref TargetType::Executable,
-   * @c "test" → @ref TargetType::Test, and anything else → @ref TargetType::Library.
+   * @c "test" → @ref TargetType::Test, and anything else → @ref
+   * TargetType::Library.
    * @param argc Total argument count.
    * @param argv Argument array.
    * @param i    Current index; incremented to consume the flag's value.
@@ -136,18 +142,22 @@ private:
   void parseClangFormatPreset(int argc, char **argv, int &i);
 
   /**
-   * @brief Dispatch project-related flags (@c -n, @c -p, @c -s, @c -m, @c -tar) for index @p i.
+   * @brief Dispatch project-related flags (@c -n, @c -p, @c -s, @c -m, @c -tar)
+   * for index @p i.
    * @param argc Total argument count.
    * @param argv Argument array.
-   * @param i    Current index (not advanced here; individual helpers advance it).
+   * @param i    Current index (not advanced here; individual helpers advance
+   * it).
    */
   void parseProjectFlag(int argc, char **argv, int &i);
 
   /**
-   * @brief Dispatch tooling flags (@c -g, @c -cf, @c -cfp, @c -ct) for index @p i.
+   * @brief Dispatch tooling flags (@c -g, @c -cf, @c -cfp, @c -ct) for index @p
+   * i.
    * @param argc Total argument count.
    * @param argv Argument array.
-   * @param i    Current index (not advanced here; individual helpers advance it).
+   * @param i    Current index (not advanced here; individual helpers advance
+   * it).
    */
   void parseToolingFlag(int argc, char **argv, int &i);
 
@@ -156,5 +166,6 @@ private:
    */
   static void showHelp();
 
-  ProjectConfig m_config; ///< Accumulates parsed values across helper calls within a single @ref parse invocation.
+  ProjectConfig m_config; ///< Accumulates parsed values across helper calls
+                          ///< within a single @ref parse invocation.
 };

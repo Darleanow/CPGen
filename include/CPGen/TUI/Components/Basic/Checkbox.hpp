@@ -69,7 +69,7 @@ private:
    */
   void toggle();
 
-  std::string m_label;                        ///< Display label shown next to the glyph.
-  bool        m_is_checked = false;           ///< Current toggle state.
-  std::function<void(bool)> m_on_change;      ///< Callback fired on every toggle.
+  std::string m_label;       ///< Display label shown next to the glyph.
+  bool m_is_checked = false; ///< Current toggle state.
+  std::function<void(bool)> m_on_change; ///< Callback fired on every toggle.
 };
