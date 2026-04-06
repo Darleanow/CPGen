@@ -2,85 +2,116 @@
 #include "CPGen/Core/Config.hpp"
 #include <gtest/gtest.h>
 #include <stdexcept>
+#include <string>
 #include <variant>
+#include <vector>
+
+namespace {
+
+/**
+ * @brief Owns a set of mutable argument strings and exposes argc/argv for CLI::parse.
+ *
+ * Avoids const_cast by storing each argument as a std::string and handing out
+ * char* pointers via std::string::data() (non-const since C++17).
+ */
+class Args {
+public:
+  explicit Args(std::initializer_list<const char *> list) {
+    for (const char *arg : list) {
+      m_strings.emplace_back(arg);
+    }
+    refresh();
+  }
+
+  void push(const char *s) { m_strings.emplace_back(s); refresh(); }
+  void pop()               { m_strings.pop_back();       refresh(); }
+
+  int    argc()       { return static_cast<int>(m_ptrs.size()); }
+  char **argv()       { return m_ptrs.data(); }
+
+private:
+  void refresh() {
+    m_ptrs.clear();
+    for (auto &s : m_strings) {
+      m_ptrs.push_back(s.data());
+    }
+  }
+
+  std::vector<std::string> m_strings;
+  std::vector<char *>      m_ptrs;
+};
+
+} // namespace
 
 TEST(UTCLI, PathValidationTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-p"); // No arg for path
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-p"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--path"); // No arg for path
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--path");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.push_back((char *)"-/path"); // Ill formatted path
-  EXPECT_THROW(cli.parse(2, arr.data()), std::runtime_error);
+  args.push("-/path");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"/home"); // Valid path
-  EXPECT_NO_THROW(cli.parse(2, arr.data()));
+  args.pop(); args.push("/home");
+  EXPECT_NO_THROW(cli.parse(args.argc(), args.argv()));
 
-  arr.pop_back();
-  arr.push_back((char *)"/non_existing_weird/path123");
-  EXPECT_THROW(cli.parse(2, arr.data()), std::runtime_error);
+  args.pop(); args.push("/non_existing_weird/path123");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 }
 
 TEST(UTCLI, PathValueTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"--path", (char *)"/home"};
-    auto result = cli.parse(2, arr.data());
+    Args args{"--path", "/home"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).path, "/home");
   }
 
   {
-    std::vector<char *> arr = {(char *)"-p", (char *)"/tmp"};
-    auto result = cli.parse(2, arr.data());
+    Args args{"-p", "/tmp"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).path, "/tmp");
   }
 }
 
 TEST(UTCLI, NameValidationTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-n"); // No arg for name
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-n"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--name"); // No arg for name
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--name");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.push_back((char *)"-"); // Invalid arg for name
-  EXPECT_THROW(cli.parse(2, arr.data()), std::runtime_error);
+  args.push("-");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"TestValid_Name");
-  EXPECT_NO_THROW(cli.parse(2, arr.data()));
+  args.pop(); args.push("TestValid_Name");
+  EXPECT_NO_THROW(cli.parse(args.argc(), args.argv()));
 
-  arr.pop_back();
-  arr.push_back((char *)"InvalidName-");
-  EXPECT_THROW(cli.parse(2, arr.data()), std::runtime_error);
+  args.pop(); args.push("InvalidName-");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 }
 
 TEST(UTCLI, NameValueTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"--name", (char *)"MyProject"};
-    auto result = cli.parse(2, arr.data());
+    Args args{"--name", "MyProject"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).name, "MyProject");
   }
 
   {
-    std::vector<char *> arr = {(char *)"-n", (char *)"Project_123"};
-    auto result = cli.parse(2, arr.data());
+    Args args{"-n", "Project_123"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).name, "Project_123");
   }
@@ -90,15 +121,15 @@ TEST(UTCLI, TuiModeTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"-u"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"-u"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<bool>(result));
     EXPECT_TRUE(std::get<bool>(result));
   }
 
   {
-    std::vector<char *> arr = {(char *)"--tui"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"--tui"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<bool>(result));
     EXPECT_TRUE(std::get<bool>(result));
   }
@@ -108,67 +139,62 @@ TEST(UTCLI, GitFlagTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"-g"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"-g"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.has_git);
   }
 
   {
-    std::vector<char *> arr = {(char *)"--git"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"--git"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.has_git);
   }
 
   {
-    std::vector<char *> arr;
-    auto result = cli.parse(0, arr.data());
+    Args args{};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_FALSE(std::get<ProjectConfig>(result).tooling.has_git);
   }
 }
 
 TEST(UTCLI, StandardFlagTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-s"); // No arg for standard
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-s"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--std"); // No arg for standard
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--std");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.push_back((char *)"99"); // Out of range
-  EXPECT_THROW(cli.parse(2, arr.data()), std::runtime_error);
+  args.push("99");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"20"); // Valid standard
-  EXPECT_NO_THROW(cli.parse(2, arr.data()));
+  args.pop(); args.push("20");
+  EXPECT_NO_THROW(cli.parse(args.argc(), args.argv()));
 
-  auto result = cli.parse(2, arr.data());
+  auto result = cli.parse(args.argc(), args.argv());
   ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
   EXPECT_EQ(std::get<ProjectConfig>(result).standard, CppStandard::Cpp20);
 }
 
 TEST(UTCLI, ModulesFlagTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-m"); // No arg for modules
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-m"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--modules"); // No arg for modules
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--modules");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.push_back((char *)"gtest"); // Single module
-  EXPECT_NO_THROW(cli.parse(2, arr.data()));
+  args.push("gtest");
+  EXPECT_NO_THROW(cli.parse(args.argc(), args.argv()));
 
   {
-    std::vector<char *> single = {(char *)"-m", (char *)"gtest"};
-    auto result = cli.parse(2, single.data());
+    Args single{"-m", "gtest"};
+    auto result = cli.parse(single.argc(), single.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     const auto &config = std::get<ProjectConfig>(result);
     ASSERT_EQ(config.modules.size(), 1U);
@@ -176,8 +202,8 @@ TEST(UTCLI, ModulesFlagTests) {
   }
 
   {
-    std::vector<char *> multi = {(char *)"-m", (char *)"gtest,spdlog"};
-    auto result = cli.parse(2, multi.data());
+    Args multi{"-m", "gtest,spdlog"};
+    auto result = cli.parse(multi.argc(), multi.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     const auto &config = std::get<ProjectConfig>(result);
     ASSERT_EQ(config.modules.size(), 2U);
@@ -187,48 +213,46 @@ TEST(UTCLI, ModulesFlagTests) {
 }
 
 TEST(UTCLI, TargetsFlagTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-tar"); // No arg for targets
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-tar"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--targets"); // No arg for targets
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--targets");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
   {
-    std::vector<char *> t = {(char *)"-tar", (char *)"test"};
-    auto result = cli.parse(2, t.data());
+    Args t{"-tar", "test"};
+    auto result = cli.parse(t.argc(), t.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     ASSERT_EQ(std::get<ProjectConfig>(result).targets.size(), 1U);
     EXPECT_EQ(std::get<ProjectConfig>(result).targets[0], TargetType::Test);
   }
 
   {
-    std::vector<char *> t = {(char *)"-tar", (char *)"exe"};
-    auto result = cli.parse(2, t.data());
+    Args t{"-tar", "exe"};
+    auto result = cli.parse(t.argc(), t.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).targets[0], TargetType::Executable);
   }
 
   {
-    std::vector<char *> t = {(char *)"--targets", (char *)"executable"};
-    auto result = cli.parse(2, t.data());
+    Args t{"--targets", "executable"};
+    auto result = cli.parse(t.argc(), t.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).targets[0], TargetType::Executable);
   }
 
   {
-    std::vector<char *> t = {(char *)"-tar", (char *)"lib"};
-    auto result = cli.parse(2, t.data());
+    Args t{"-tar", "lib"};
+    auto result = cli.parse(t.argc(), t.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_EQ(std::get<ProjectConfig>(result).targets[0], TargetType::Library);
   }
 
   {
-    std::vector<char *> t = {(char *)"-tar", (char *)"exe,test"};
-    auto result = cli.parse(2, t.data());
+    Args t{"-tar", "exe,test"};
+    auto result = cli.parse(t.argc(), t.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     const auto &config = std::get<ProjectConfig>(result);
     ASSERT_EQ(config.targets.size(), 2U);
@@ -241,68 +265,68 @@ TEST(UTCLI, ClangFormatFlagTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"-cf"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"-cf"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.clang_format);
   }
 
   {
-    std::vector<char *> arr = {(char *)"--clang-format"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"--clang-format"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.clang_format);
   }
 
   {
-    std::vector<char *> arr;
-    auto result = cli.parse(0, arr.data());
+    Args args{};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_FALSE(std::get<ProjectConfig>(result).tooling.clang_format);
   }
 }
 
 TEST(UTCLI, ClangFormatPresetTests) {
-  std::vector<char *> arr;
   CLI cli;
 
-  arr.push_back((char *)"-cfp"); // No arg for preset
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  Args args{"-cfp"};
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.pop_back();
-  arr.push_back((char *)"--cf-preset"); // No arg for preset
-  EXPECT_THROW(cli.parse(1, arr.data()), std::runtime_error);
+  args.pop(); args.push("--cf-preset");
+  EXPECT_THROW(cli.parse(args.argc(), args.argv()), std::runtime_error);
 
-  arr.push_back((char *)"Google"); // Valid preset
-  EXPECT_NO_THROW(cli.parse(2, arr.data()));
+  args.push("Google");
+  EXPECT_NO_THROW(cli.parse(args.argc(), args.argv()));
 
-  auto result = cli.parse(2, arr.data());
+  auto result = cli.parse(args.argc(), args.argv());
   ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
   const auto &config = std::get<ProjectConfig>(result);
   ASSERT_TRUE(config.tooling.clang_format_preset.has_value());
-  EXPECT_EQ(config.tooling.clang_format_preset.value(), "Google");
+  if (config.tooling.clang_format_preset.has_value()) {
+    EXPECT_EQ(*config.tooling.clang_format_preset, "Google");
+  }
 }
 
 TEST(UTCLI, ClangTidyFlagTests) {
   CLI cli;
 
   {
-    std::vector<char *> arr = {(char *)"-ct"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"-ct"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.clang_tidy);
   }
 
   {
-    std::vector<char *> arr = {(char *)"--clang-tidy"};
-    auto result = cli.parse(1, arr.data());
+    Args args{"--clang-tidy"};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_TRUE(std::get<ProjectConfig>(result).tooling.clang_tidy);
   }
 
   {
-    std::vector<char *> arr;
-    auto result = cli.parse(0, arr.data());
+    Args args{};
+    auto result = cli.parse(args.argc(), args.argv());
     ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
     EXPECT_FALSE(std::get<ProjectConfig>(result).tooling.clang_tidy);
   }
@@ -310,8 +334,8 @@ TEST(UTCLI, ClangTidyFlagTests) {
 
 TEST(UTCLI, EmptyArgsTest) {
   CLI cli;
-  std::vector<char *> arr;
-  auto result = cli.parse(0, arr.data());
+  Args args{};
+  auto result = cli.parse(args.argc(), args.argv());
   ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
   const auto &config = std::get<ProjectConfig>(result);
   EXPECT_TRUE(config.name.empty());
@@ -326,15 +350,9 @@ TEST(UTCLI, EmptyArgsTest) {
 
 TEST(UTCLI, CombinedFlagsTests) {
   CLI cli;
-  std::vector<char *> arr = {
-      (char *)"-n",  (char *)"MyProject",
-      (char *)"-p",  (char *)"/tmp",
-      (char *)"-g",
-      (char *)"-cf",
-      (char *)"-ct",
-  };
+  Args args{"-n", "MyProject", "-p", "/tmp", "-g", "-cf", "-ct"};
 
-  auto result = cli.parse(7, arr.data());
+  auto result = cli.parse(args.argc(), args.argv());
   ASSERT_TRUE(std::holds_alternative<ProjectConfig>(result));
   const auto &config = std::get<ProjectConfig>(result);
   EXPECT_EQ(config.name, "MyProject");

@@ -1,6 +1,7 @@
 #include "CPGen/Resolvers/ProjectResolver.hpp"
 #include "CPGen/Core/Config.hpp"
 #include <gtest/gtest.h>
+#include <stdexcept>
 
 TEST(UTProjectResolver, EmptyModulesProducesNoTargets) {
   ProjectResolver resolver;

@@ -1,11 +1,11 @@
 #include "CPGen/Resolvers/ModuleResolver.hpp"
-#include "CPGen/Core/Resolved.hpp"
 #include <gtest/gtest.h>
 #include <stdexcept>
 
 TEST(UTModuleResolver, UnknownModuleThrows) {
   ModuleResolver resolver;
-  EXPECT_THROW(resolver.resolveModule("nonexistent_module_xyz"), std::runtime_error);
+  EXPECT_THROW(resolver.resolveModule("nonexistent_module_xyz"),
+               std::runtime_error);
 }
 
 TEST(UTModuleResolver, GtestModuleResolvesName) {
@@ -18,8 +18,10 @@ TEST(UTModuleResolver, GtestModuleHasFetchContent) {
   ModuleResolver resolver;
   auto [module, injections] = resolver.resolveModule("gtest");
   ASSERT_TRUE(module.fetch_content.has_value());
-  EXPECT_EQ(module.fetch_content->module_name, "googletest");
-  EXPECT_FALSE(module.fetch_content->url.empty());
+  if (module.fetch_content.has_value()) {
+    EXPECT_EQ(module.fetch_content->module_name, "googletest");
+    EXPECT_FALSE(module.fetch_content->url.empty());
+  }
 }
 
 TEST(UTModuleResolver, GtestModuleProducesInjections) {
