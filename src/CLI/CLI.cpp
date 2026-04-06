@@ -16,7 +16,7 @@ Config CLI::parse(int argc, char **argv) {
     const std::string flag = argv[i];
     if (flag == "-h" || flag == "--help") {
       showHelp();
-      std::_Exit(0);
+      std::exit(0); // NOLINT
     }
     if (flag == "-u" || flag == "--tui") {
       return true;
