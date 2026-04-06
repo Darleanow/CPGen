@@ -15,9 +15,9 @@ class Checkbox : public Component {
 public:
   Checkbox(std::string label, std::function<void(bool)> on_change);
 
-  bool isChecked() const;
+  [[nodiscard]] bool isChecked() const;
 
-  std::string render() const override;
+  [[nodiscard]] std::string render() const override;
   bool handleInput(Defs::Key key) override;
 
 private:

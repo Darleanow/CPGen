@@ -1,6 +1,11 @@
 #include "Components/Basic/Checkbox.hpp"
 #include "Misc/Ascii.hpp"
+#include "Misc/Defs.hpp"
 #include "Misc/Utils.hpp"
+#include <functional>
+#include <string>
+#include <utility>
+#include <variant>
 
 Checkbox::Checkbox(std::string label, std::function<void(bool)> on_change)
     : m_label(std::move(label)), m_on_change(std::move(on_change)) {}
@@ -13,33 +18,27 @@ void Checkbox::toggle() {
 bool Checkbox::isChecked() const { return m_is_checked; }
 
 std::string Checkbox::render() const {
-  using namespace Utils;
   std::string out;
 
   if (m_is_focused) {
-    out += Colours::esc(Colours::BG_WHITE);
-    out += Colours::esc(Colours::FG_BLACK);
-    out += Colours::esc(Colours::BOLD);
+    out += Utils::Colours::esc(Utils::Colours::BG_WHITE);
+    out += Utils::Colours::esc(Utils::Colours::FG_BLACK);
+    out += Utils::Colours::esc(Utils::Colours::BOLD);
   }
 
-  out += (m_is_checked ? Ascii::CheckboxChecked : Ascii::CheckboxUnchecked);
+  out += (m_is_checked ? Ascii::CHECKBOX_CHECKED : Ascii::CHECKBOX_UNCHECKED);
   out += " " + m_label;
-  out += Colours::esc(Colours::RESET);
+  out += Utils::Colours::esc(Utils::Colours::RESET);
 
   return out;
 }
 
 bool Checkbox::handleInput(Defs::Key key) {
-  return std::visit(
-      [this](auto k) -> bool {
-        using T = decltype(k);
-        if constexpr (std::is_same_v<T, Defs::Special>) {
-          if (k == Defs::Special::Enter) {
-            toggle();
-            return true;
-          }
-        }
-        return false;
-      },
-      key);
+  if (std::holds_alternative<Defs::Special>(key)) {
+    if (std::get<Defs::Special>(key) == Defs::Special::Enter) {
+      toggle();
+      return true;
+    }
+  }
+  return false;
 }

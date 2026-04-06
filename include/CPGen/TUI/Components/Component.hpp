@@ -12,13 +12,19 @@
  */
 class Component {
 public:
+  Component() = default;
   virtual ~Component() = default;
+
+  Component(const Component &) = delete;
+  Component &operator=(const Component &) = delete;
+  Component(Component &&) = delete;
+  Component &operator=(Component &&) = delete;
 
   /**
    * @brief Render the component as an ANSI string
    * @return The rendered string (may contain newlines)
    */
-  virtual std::string render() const = 0;
+  [[nodiscard]] virtual std::string render() const = 0;
 
   /**
    * @brief Handle a key press
@@ -37,7 +43,7 @@ public:
    * @brief Check whether this component is focused
    * @return true if focused
    */
-  bool isFocused() const { return m_is_focused; }
+  [[nodiscard]] bool isFocused() const { return m_is_focused; }
 
 protected:
   bool m_is_focused = false;

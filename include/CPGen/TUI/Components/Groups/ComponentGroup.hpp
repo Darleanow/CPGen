@@ -15,11 +15,11 @@
  */
 class ComponentGroup : public Component {
 public:
-  ComponentGroup(std::string title, std::string icon = "");
+  explicit ComponentGroup(std::string title, std::string icon = "");
 
   void addChild(std::unique_ptr<Component> child);
 
-  std::string render() const override;
+  [[nodiscard]] std::string render() const override;
   bool handleInput(Defs::Key key) override;
 
   void setFocused(bool focused) override;

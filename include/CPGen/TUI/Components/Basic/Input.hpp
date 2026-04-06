@@ -16,7 +16,7 @@ class Input : public Component {
 public:
   Input(std::string label, std::function<void(std::string)> on_change);
 
-  std::string render() const override;
+  [[nodiscard]] std::string render() const override;
   bool handleInput(Defs::Key key) override;
 
 private:

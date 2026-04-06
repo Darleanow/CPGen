@@ -1,7 +1,13 @@
 #include "Components/Groups/ComponentGroup.hpp"
+#include "Components/Component.hpp"
 #include "Misc/Ascii.hpp"
+#include "Misc/Defs.hpp"
 #include "Misc/Utils.hpp"
-#include <stdexcept>
+#include <cstddef>
+#include <memory>
+#include <string>
+#include <utility>
+#include <variant>
 
 ComponentGroup::ComponentGroup(std::string title, std::string icon)
     : m_title(std::move(title)), m_icon(std::move(icon)) {}
@@ -13,127 +19,109 @@ void ComponentGroup::addChild(std::unique_ptr<Component> child) {
 void ComponentGroup::setFocused(bool focused) {
   m_is_focused = focused;
 
-  if (m_children.empty())
+  if (m_children.empty()) {
     return;
+  }
 
   if (focused) {
-    m_children.at(m_focused_index)->setFocused(true);
+    m_children.at(m_focused_index)->setFocused(/*focused=*/true);
   } else {
     for (auto &child : m_children) {
-      child->setFocused(false);
+      child->setFocused(/*focused=*/false);
     }
   }
 }
 
 bool ComponentGroup::moveFocus(int dir) {
-  if (m_children.empty())
+  if (m_children.empty()) {
     return false;
+  }
 
   auto next = static_cast<int>(m_focused_index) + dir;
 
-  if (next < 0 || next >= static_cast<int>(m_children.size()))
+  if (next < 0 || next >= static_cast<int>(m_children.size())) {
     return false;
+  }
 
-  m_children.at(m_focused_index)->setFocused(false);
+  m_children.at(m_focused_index)->setFocused(/*focused=*/false);
   m_focused_index = static_cast<size_t>(next);
-  m_children.at(m_focused_index)->setFocused(true);
+  m_children.at(m_focused_index)->setFocused(/*focused=*/true);
 
   return true;
 }
 
 std::string ComponentGroup::render() const {
-  using namespace Utils;
+  constexpr size_t WIDTH = 30;
 
-  constexpr size_t width = 30;
+  const std::string clr = m_is_focused
+                              ? Utils::Colours::esc(Utils::Colours::FG_CYAN)
+                              : Utils::Colours::esc(Utils::Colours::DIM);
+
   std::string out;
-
-  // Header colour
+  out += clr;
   if (m_is_focused) {
-    out += Colours::esc(Colours::FG_CYAN);
-    out += Colours::esc(Colours::BOLD);
-  } else {
-    out += Colours::esc(Colours::DIM);
+    out += Utils::Colours::esc(Utils::Colours::BOLD);
   }
 
-  // Top border with title
-  out += Ascii::BoxCornerTopLeft;
-  out += Ascii::BoxHorizontal;
+  out += Ascii::BOX_CORNER_TOP_LEFT;
+  out += Ascii::BOX_HORIZONTAL;
   if (!m_icon.empty()) {
     out += m_icon + " ";
   }
   out += m_title;
-  out += Ascii::BoxHorizontal;
-  for (size_t i = 0; i < width - (m_title.size() +
-                                  std::string(Ascii::BoxHorizontal).size() + 1);
+  out += Ascii::BOX_HORIZONTAL;
+  for (size_t i = 0;
+       i < WIDTH - (m_title.size() +
+                    std::string(Ascii::BOX_HORIZONTAL).size() + 1);
        i++) {
-    out += Ascii::BoxHorizontal;
+    out += Ascii::BOX_HORIZONTAL;
   }
-  out += Ascii::BoxCornerTopRight;
-  out += Colours::esc(Colours::RESET) + "\n";
+  out += Ascii::BOX_CORNER_TOP_RIGHT;
+  out += Utils::Colours::esc(Utils::Colours::RESET) + "\n";
 
-  // Children
   for (const auto &child : m_children) {
-    if (m_is_focused) {
-      out += Colours::esc(Colours::FG_CYAN);
-    } else {
-      out += Colours::esc(Colours::DIM);
-    }
-    out += Ascii::BoxVertical;
-    out += Colours::esc(Colours::RESET);
+    out += clr;
+    out += Ascii::BOX_VERTICAL;
+    out += Utils::Colours::esc(Utils::Colours::RESET);
     auto render_str = child->render();
     out += render_str;
-    auto vis_w = Utils::visualWidth(render_str);
-    if (vis_w < width) {
-      for (size_t i = 0; i < width - vis_w; i++) {
-        out += ' ';
-      }
+    const auto vis_w = Utils::visualWidth(render_str);
+    if (vis_w < WIDTH) {
+      out += std::string(WIDTH - vis_w, ' ');
     }
-    if (m_is_focused) {
-      out += Colours::esc(Colours::FG_CYAN);
-    } else {
-      out += Colours::esc(Colours::DIM);
-    }
-    out += Ascii::BoxVertical;
-    out += Colours::esc(Colours::RESET);
+    out += clr;
+    out += Ascii::BOX_VERTICAL;
+    out += Utils::Colours::esc(Utils::Colours::RESET);
     out += "\n";
   }
 
-  // Bottom border
-  if (m_is_focused) {
-    out += Colours::esc(Colours::FG_CYAN);
-  } else {
-    out += Colours::esc(Colours::DIM);
+  out += clr;
+  out += Ascii::BOX_CORNER_BOTTOM_LEFT;
+  for (size_t i = 0; i < WIDTH; i++) {
+    out += Ascii::BOX_HORIZONTAL;
   }
-  out += Ascii::BoxCornerBottomLeft;
-
-  for (size_t i = 0; i < width; i++) {
-    out += Ascii::BoxHorizontal;
-  }
-  out += Ascii::BoxCornerBottomRight;
-  out += Colours::esc(Colours::RESET) + "\n";
+  out += Ascii::BOX_CORNER_BOTTOM_RIGHT;
+  out += Utils::Colours::esc(Utils::Colours::RESET) + "\n";
 
   return out;
 }
 
 bool ComponentGroup::handleInput(Defs::Key key) {
-  if (m_children.empty())
+  if (m_children.empty()) {
     return false;
-
-  // First let the focused child try to handle it
-  if (m_children.at(m_focused_index)->handleInput(key))
+  }
+  if (m_children.at(m_focused_index)->handleInput(key)) {
     return true;
-
-  // Child didn't consume it — try navigation
-  return std::visit(
-      [this](auto k) -> bool {
-        using T = decltype(k);
-        if constexpr (std::is_same_v<T, Defs::Special>) {
-          if (k == Defs::Special::Down)
-            return moveFocus(1);
-          if (k == Defs::Special::Up)
-            return moveFocus(-1);
-        }
-        return false;
-      },
-      key);
+  }
+  if (!std::holds_alternative<Defs::Special>(key)) {
+    return false;
+  }
+  const auto special = std::get<Defs::Special>(key);
+  if (special == Defs::Special::Down) {
+    return moveFocus(/*dir=*/1);
+  }
+  if (special == Defs::Special::Up) {
+    return moveFocus(/*dir=*/-1);
+  }
+  return false;
 }
