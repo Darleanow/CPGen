@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['search_20path_20priority_0',['Search path priority',['../classModuleResolver.html#autotoc_md0',1,'']]],
+  ['search_20path_20priority_0',['Search path priority',['../classModuleResolver.html#autotoc_md1',1,'']]],
   ['setfocused_1',['setfocused',['../classComponent.html#a97afed203882996edf2a434e55b4372c',1,'Component::setFocused()'],['../classComponentGroup.html#a430f3fb6bac35604ca246abf298bd59d',1,'ComponentGroup::setFocused()']]],
-  ['setup_2',['Typical setup',['../View_8hpp.html#autotoc_md8',1,'']]],
+  ['setup_2',['Typical setup',['../View_8hpp.html#autotoc_md9',1,'']]],
   ['special_3',['Special',['../namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58',1,'Defs']]],
   ['spinner_5f1_4',['SPINNER_1',['../namespaceAscii.html#aae83f60f9cd7b4fe33bacd84c66959bf',1,'Ascii']]],
   ['spinner_5f2_5',['SPINNER_2',['../namespaceAscii.html#ada728e9c69503d2763672f58df7ecaf9',1,'Ascii']]],

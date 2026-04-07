@@ -98,17 +98,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classInput.html#a0f7de11d5920afff71d5f1e2a08db3a9">handleInput</a>(<a class="code hl_typedef" href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a> key) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::string m_label;                              </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  std::string m_value;                              </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  std::function&lt;void(std::string)&gt; m_on_change;     </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  std::string m_label; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  std::string m_value; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  std::function&lt;void(std::string)&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      m_on_change; </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
 <div class="ttc" id="aComponent_8hpp_html"><div class="ttname"><a href="Component_8hpp.html">Component.hpp</a></div><div class="ttdoc">Abstract base class for all TUI components.</div></div>
-<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">Abstract base for all TUI widgets.</div><div class="ttdef"><b>Definition</b> Component.hpp:36</div></div>
+<div class="ttc" id="aclassComponent_html"><div class="ttname"><a href="classComponent.html">Component</a></div><div class="ttdoc">Abstract base for all TUI widgets.</div><div class="ttdef"><b>Definition</b> Component.hpp:38</div></div>
 <div class="ttc" id="aclassInput_html"><div class="ttname"><a href="classInput.html">Input</a></div><div class="ttdoc">A single-line text input component.</div><div class="ttdef"><b>Definition</b> Input.hpp:30</div></div>
 <div class="ttc" id="aclassInput_html_a0f7de11d5920afff71d5f1e2a08db3a9"><div class="ttname"><a href="classInput.html#a0f7de11d5920afff71d5f1e2a08db3a9">Input::handleInput</a></div><div class="ttdeci">bool handleInput(Defs::Key key) override</div><div class="ttdoc">Handle a key event.</div><div class="ttdef"><b>Definition</b> Input.cpp:74</div></div>
 <div class="ttc" id="aclassInput_html_a12dc4ccf2107bffd8914d52fc7ae735c"><div class="ttname"><a href="classInput.html#a12dc4ccf2107bffd8914d52fc7ae735c">Input::render</a></div><div class="ttdeci">std::string render() const override</div><div class="ttdoc">Render the input box as a multi-line ANSI string.</div><div class="ttdef"><b>Definition</b> Input.cpp:14</div></div>
-<div class="ttc" id="anamespaceDefs_html_a2430cf7dd339eb62eb4654979749befa"><div class="ttname"><a href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a></div><div class="ttdeci">std::variant&lt; char, Special &gt; Key</div><div class="ttdoc">A single keypress from stdin, represented as either a printable character or a Special control key.</div><div class="ttdef"><b>Definition</b> Defs.hpp:44</div></div>
+<div class="ttc" id="anamespaceDefs_html_a2430cf7dd339eb62eb4654979749befa"><div class="ttname"><a href="namespaceDefs.html#a2430cf7dd339eb62eb4654979749befa">Defs::Key</a></div><div class="ttdeci">std::variant&lt; char, Special &gt; Key</div><div class="ttdoc">A single keypress from stdin, represented as either a printable character or a Special control key.</div><div class="ttdef"><b>Definition</b> Defs.hpp:45</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

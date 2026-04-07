@@ -1,7 +1,19 @@
 var searchData=
 [
   ['gear_5ficon_0',['GEAR_ICON',['../namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6',1,'Ascii']]],
-  ['getconfig_1',['getConfig',['../classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0',1,'PreferencesManager']]],
-  ['git_5ficon_2',['GIT_ICON',['../namespaceAscii.html#a0be7524d5135054e28d544507f4338d6',1,'Ascii']]],
-  ['google_5ficon_3',['GOOGLE_ICON',['../namespaceAscii.html#a78cbfb839709520817af2c16cbeafc0c',1,'Ascii']]]
+  ['getclangtidytooling_1',['getClangTidyTooling',['../classCMakeProvider.html#ada546361677453f72818556e50445169',1,'CMakeProvider']]],
+  ['getcompileoptions_2',['getCompileOptions',['../classCMakeProvider.html#aec846f6d338aef98c1c3ef0f2350ccd3',1,'CMakeProvider']]],
+  ['getconfig_3',['getConfig',['../classPreferencesManager.html#a8ad10c0487f39084d28d1141cab4d3b0',1,'PreferencesManager']]],
+  ['getdeclaremodule_4',['getDeclareModule',['../classCMakeProvider.html#a84236b3c16c84df247ab558759245fc2',1,'CMakeProvider']]],
+  ['getenabletests_5',['getEnableTests',['../classCMakeProvider.html#ad9f523934f3fe34f3bcfb85f8ef29e5c',1,'CMakeProvider']]],
+  ['getincludedirectories_6',['getIncludeDirectories',['../classCMakeProvider.html#a400ff5feb1963a4d72da5d0fd11c98bf',1,'CMakeProvider']]],
+  ['getincludefetchcontent_7',['getIncludeFetchContent',['../classCMakeProvider.html#a7574f96e0a41d1166bacf0df21a14906',1,'CMakeProvider']]],
+  ['getmakeavailable_8',['getMakeAvailable',['../classCMakeProvider.html#a85c78e505f779097bb8995ba14dc29e2',1,'CMakeProvider']]],
+  ['getminimumrequired_9',['getMinimumRequired',['../classCMakeProvider.html#a6b80e61759b3f259fd794347dd726a70',1,'CMakeProvider']]],
+  ['getprojectheader_10',['getProjectHeader',['../classCMakeProvider.html#a3eccac19e24c2f2edbd66791032c20b4',1,'CMakeProvider']]],
+  ['getstandard_11',['getStandard',['../classCMakeProvider.html#a0158e0ae746a1d2e779ade51c538646e',1,'CMakeProvider']]],
+  ['gettargetdeclaration_12',['getTargetDeclaration',['../classCMakeProvider.html#a63633b520c646e9e722650792a3ed4df',1,'CMakeProvider']]],
+  ['gettargetlink_13',['getTargetLink',['../classCMakeProvider.html#aabfe4d763f91e7cd23c505cc16c6b8f2',1,'CMakeProvider']]],
+  ['git_5ficon_14',['GIT_ICON',['../namespaceAscii.html#a0be7524d5135054e28d544507f4338d6',1,'Ascii']]],
+  ['google_5ficon_15',['GOOGLE_ICON',['../namespaceAscii.html#a78cbfb839709520817af2c16cbeafc0c',1,'Ascii']]]
 ];

@@ -106,18 +106,15 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RAII raw-mode terminal handler. </p>
-<h3><a class="anchor" id="autotoc_md6"></a>
+<h3><a class="anchor" id="autotoc_md7"></a>
 Lifecycle</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Event   </th><th class="markdownTableHeadNone">Action    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Construction   </td><td class="markdownTableBodyNone">Save <code>termios</code>, enable raw mode, hide cursor, install signal handlers.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Destruction   </td><td class="markdownTableBodyNone">Restore <code>termios</code>, show cursor.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>SIGINT/SIGTERM</code>   </td><td class="markdownTableBodyNone">Restore terminal, call <code>std::_Exit(130)</code>.   </td></tr>
+<td class="markdownTableBodyNone">Construction   </td><td class="markdownTableBodyNone">Save <code>termios</code>, enable raw mode, hide cursor, install   </td></tr>
 </table>
+<p>signal handlers. | | Destruction | Restore <code>termios</code>, show cursor. | | <code>SIGINT/SIGTERM</code> | Restore terminal, call <code>std::_Exit(130)</code>. |</p>
 <dl class="section warning"><dt>Warning</dt><dd>Only one <code><a class="el" href="classTerminal.html" title="RAII raw-mode terminal handler.">Terminal</a></code> instance should be alive at a time; the signal handler uses a static copy of the original <code>termios</code> structure.</dd></dl>
 <p>The class is non-copyable and non-movable to prevent double-restore bugs. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>

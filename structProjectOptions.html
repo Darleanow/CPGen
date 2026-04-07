@@ -84,14 +84,13 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a593eb67ed750bcd3ec4c1ce907b7fa56" id="r_a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a593eb67ed750bcd3ec4c1ce907b7fa56">is_tui_mode</a> = false</td></tr>
+<tr class="memitem:a593eb67ed750bcd3ec4c1ce907b7fa56" id="r_a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a593eb67ed750bcd3ec4c1ce907b7fa56">is_tui_mode</a></td></tr>
 <tr class="memdesc:a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the application was launched in TUI mode.  <br /></td></tr>
 <tr class="separator:a593eb67ed750bcd3ec4c1ce907b7fa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e932809309a187bb4cafc0308a979d2" id="r_a6e932809309a187bb4cafc0308a979d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a6e932809309a187bb4cafc0308a979d2">has_git</a> = false</td></tr>
 <tr class="memdesc:a6e932809309a187bb4cafc0308a979d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to initialise a Git repository.  <br /></td></tr>
 <tr class="separator:a6e932809309a187bb4cafc0308a979d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac0a6a8f1a92d3e73e2a19f9ae6808ca" id="r_aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca">path</a></td></tr>
-<tr class="memdesc:aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute path to the directory where the project will be generated.  <br /></td></tr>
 <tr class="separator:aac0a6a8f1a92d3e73e2a19f9ae6808ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89493b9f4c4bcc834ef986809c801bff" id="r_a89493b9f4c4bcc834ef986809c801bff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a89493b9f4c4bcc834ef986809c801bff">name</a></td></tr>
 <tr class="memdesc:a89493b9f4c4bcc834ef986809c801bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the project (becomes the leaf directory name).  <br /></td></tr>
@@ -100,7 +99,6 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:ac94690f84957da8753fe9e605a18c594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to apply a named project template.  <br /></td></tr>
 <tr class="separator:ac94690f84957da8753fe9e605a18c594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bad515a0312cc44c45d19e8bcf4dba7" id="r_a3bad515a0312cc44c45d19e8bcf4dba7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a3bad515a0312cc44c45d19e8bcf4dba7">template_name</a></td></tr>
-<tr class="memdesc:a3bad515a0312cc44c45d19e8bcf4dba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template identifier, valid only when <code>use_template</code> is <code>true</code>.  <br /></td></tr>
 <tr class="separator:a3bad515a0312cc44c45d19e8bcf4dba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2588f6f14df5a0ca1ed65b7c09bcf053" id="r_a2588f6f14df5a0ca1ed65b7c09bcf053"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProjectOptions.html#a2588f6f14df5a0ca1ed65b7c09bcf053">modules_list</a></td></tr>
 <tr class="memdesc:a2588f6f14df5a0ca1ed65b7c09bcf053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional dependency modules requested by the user.  <br /></td></tr>
@@ -133,11 +131,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ProjectOptions::is_tui_mode = false</td>
+          <td class="memname">bool ProjectOptions::is_tui_mode</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="keyword">false</span></div>
+</div><!-- fragment -->
 <p>Whether the application was launched in TUI mode. </p>
 
 </div>
@@ -185,7 +185,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Absolute path to the directory where the project will be generated. </p>
 
 </div>
@@ -201,7 +200,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Template identifier, valid only when <code>use_template</code> is <code>true</code>. </p>
 
 </div>

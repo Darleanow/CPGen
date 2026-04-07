@@ -132,16 +132,16 @@ Classes</h2></td></tr>
 <div class="textblock"><p>Top-level TUI view that owns all sections and drives the main event loop. </p>
 <dl class="section author"><dt>Author</dt><dd>Darleanow</dd></dl>
 <p><a class="el" href="classView.html">View</a> is the root of the component tree. It holds a flat list of top-level components (called <em>sections</em> — typically <a class="el" href="classComponentGroup.html">ComponentGroup</a> or <a class="el" href="classInput.html">Input</a> instances), manages focus between them with <a class="el" href="namespaceDefs.html#a07f58228903ba86df37d2a44d72acd58a5c6ba25104401c9ee0650230fc6ba413">Defs::Special::Tab</a>, and runs the blocking input loop.</p>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md9"></a>
 Typical setup</h3>
-<div class="fragment"><div class="line"><a class="code hl_class" href="classView.html">View</a> view;</div>
-<div class="line">view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;ComponentGroup&gt;(<span class="stringliteral">&quot;Settings&quot;</span>, <a class="code hl_variable" href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a>));</div>
-<div class="line">view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;Input&gt;(<span class="stringliteral">&quot;Project Name&quot;</span>, callback));</div>
-<div class="line">view.<a class="code hl_function" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a>(); <span class="comment">// blocks until the user presses Escape</span></div>
-<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdoc">Root TUI manager: renders sections, routes input, and runs the event loop.</div><div class="ttdef"><b>Definition</b> View.hpp:37</div></div>
+<div class="fragment"><div class="line">  <a class="code hl_class" href="classView.html">View</a> view;</div>
+<div class="line">  view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;ComponentGroup&gt;(<span class="stringliteral">&quot;Settings&quot;</span>,</div>
+<div class="line"><a class="code hl_variable" href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a>)); view.<a class="code hl_function" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">addSection</a>(std::make_unique&lt;Input&gt;(<span class="stringliteral">&quot;Project Name&quot;</span>,</div>
+<div class="line">callback)); view.<a class="code hl_function" href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">run</a>(); <span class="comment">// blocks until the user presses Escape</span></div>
+<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdoc">Root TUI manager: renders sections, routes input, and runs the event loop.</div><div class="ttdef"><b>Definition</b> View.hpp:40</div></div>
 <div class="ttc" id="aclassView_html_a461691bbc52ec6fd50c134b059cb1a80"><div class="ttname"><a href="classView.html#a461691bbc52ec6fd50c134b059cb1a80">View::addSection</a></div><div class="ttdeci">void addSection(std::unique_ptr&lt; Component &gt; section)</div><div class="ttdoc">Append a top-level section to the view.</div><div class="ttdef"><b>Definition</b> View.cpp:12</div></div>
 <div class="ttc" id="aclassView_html_a6d5c1bd4892e269e1a6a2f3021154e4a"><div class="ttname"><a href="classView.html#a6d5c1bd4892e269e1a6a2f3021154e4a">View::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Start the blocking TUI event loop.</div><div class="ttdef"><b>Definition</b> View.cpp:38</div></div>
-<div class="ttc" id="anamespaceAscii_html_a7c6f6550c836f5afdd213bdef52306c6"><div class="ttname"><a href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a></div><div class="ttdeci">constexpr const char * GEAR_ICON</div><div class="ttdoc">Settings / configuration icon.</div><div class="ttdef"><b>Definition</b> Ascii.hpp:50</div></div>
+<div class="ttc" id="anamespaceAscii_html_a7c6f6550c836f5afdd213bdef52306c6"><div class="ttname"><a href="namespaceAscii.html#a7c6f6550c836f5afdd213bdef52306c6">Ascii::GEAR_ICON</a></div><div class="ttdeci">constexpr const char * GEAR_ICON</div><div class="ttdoc">Settings / configuration icon.</div><div class="ttdef"><b>Definition</b> Ascii.hpp:60</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -144,7 +144,7 @@ Classes</h2></td></tr>
 <div class="textblock"><p>Abstract base class for all TUI components. </p>
 <dl class="section author"><dt>Author</dt><dd>Darleanow</dd></dl>
 <p>Every interactive element displayed by the TUI (checkboxes, text inputs, groups, …) inherits from <a class="el" href="classComponent.html">Component</a> and implements the three virtual methods: render, handleInput, and optionally setFocused.</p>
-<h3><a class="anchor" id="autotoc_md5"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Ownership model</h3>
 <p>Components are exclusively owned via <code>std::unique_ptr</code>. The non-copyable, non-movable constraint enforced by the deleted special members reflects this: once a component is constructed and transferred to its owner (e.g. a <a class="el" href="classComponentGroup.html">ComponentGroup</a> or <a class="el" href="classView.html">View</a>), it must not be copied or moved. </p>
 </div></div><!-- contents -->
