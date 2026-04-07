@@ -40,7 +40,7 @@ add_library(
   src/System/System.cpp
   src/Resolvers/ModuleResolver.cpp
   src/Resolvers/ProjectResolver.cpp
-
+  src/Providers/CMakeProvider.cpp
 )
 
 target_include_directories(CPGenSource
@@ -76,13 +76,11 @@ add_executable(test_suite
   tests/UTCLI.cpp
   tests/UTModuleResolver.cpp
   tests/UTProjectResolver.cpp
+  tests/UTCMakeProvider.cpp
 )
 target_include_directories(test_suite PRIVATE include)
 
-target_link_libraries(
-  test_suite
-  PRIVATE GTest::gtest_main
-  PRIVATE CPGenSource)
+target_link_libraries(test_suite PRIVATE GTest::gtest_main CPGenSource)
 
 include(GoogleTest)
 gtest_discover_tests(test_suite)
