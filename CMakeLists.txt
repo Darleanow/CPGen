@@ -59,9 +59,15 @@ target_include_directories(CPGenTUI
 
 target_link_libraries(CPGenSource PUBLIC nlohmann_json::nlohmann_json)
 
+# Debug symbols for project code only — dependencies compile without -g
+foreach(target IN ITEMS CPGenSource CPGenTUI)
+  target_compile_options(${target} PRIVATE -g)
+endforeach()
+
 add_executable(CPGen src/main.cpp)
 
 target_link_libraries(CPGen PRIVATE CPGenSource CPGenTUI)
+target_compile_options(CPGen PRIVATE -g)
 
 add_custom_command(
   TARGET CPGen POST_BUILD
@@ -81,6 +87,7 @@ add_executable(test_suite
 target_include_directories(test_suite PRIVATE include)
 
 target_link_libraries(test_suite PRIVATE GTest::gtest_main CPGenSource)
+target_compile_options(test_suite PRIVATE -g)
 
 include(GoogleTest)
 gtest_discover_tests(test_suite)
