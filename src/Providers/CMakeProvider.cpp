@@ -40,7 +40,8 @@ std::string CMakeProvider::getDeclareModule(const FetchContent &fetch_content) {
 std::string
 CMakeProvider::getMakeAvailable(const std::vector<std::string> &modules) {
   if (modules.empty()) {
-    throw std::invalid_argument("getMakeAvailable: modules list must not be empty");
+    throw std::invalid_argument(
+        "getMakeAvailable: modules list must not be empty");
   }
 
   std::string mods;
@@ -71,7 +72,8 @@ std::string CMakeProvider::getTargetDeclaration(
     const std::string &target_name,
     const std::vector<std::filesystem::path> &files) {
   if (files.empty()) {
-    throw std::invalid_argument("getTargetDeclaration: files list must not be empty");
+    throw std::invalid_argument(
+        "getTargetDeclaration: files list must not be empty");
   }
 
   const std::string base_instruction =
@@ -81,7 +83,8 @@ std::string CMakeProvider::getTargetDeclaration(
   for (const auto &file : files) {
     auto filestr = file.string();
     const auto pos = filestr.find(project_name);
-    file_list += (pos != std::string::npos ? filestr.substr(pos) : filestr) + "\n  ";
+    file_list +=
+        (pos != std::string::npos ? filestr.substr(pos) : filestr) + "\n  ";
   }
   file_list.resize(file_list.size() - 2);
 

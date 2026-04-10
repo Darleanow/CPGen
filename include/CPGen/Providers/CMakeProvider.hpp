@@ -2,7 +2,8 @@
 
 /**
  * @file CMakeProvider.hpp
- * @brief Factory of CMake script snippet strings used by the generator pipeline.
+ * @brief Factory of CMake script snippet strings used by the generator
+ * pipeline.
  * @author Darleanow
  *
  * @ref CMakeProvider is a pure static factory: every method returns a
@@ -56,7 +57,8 @@ public:
   [[nodiscard]] static std::string getMinimumRequired(float version);
 
   /**
-   * @brief Generate a @c project() block with a fixed @c VERSION and @c CXX language.
+   * @brief Generate a @c project() block with a fixed @c VERSION and @c CXX
+   * language.
    *
    * @param name CMake project name (used verbatim).
    * @return Multi-line @c project() declaration string.
@@ -64,7 +66,8 @@ public:
   [[nodiscard]] static std::string getProjectHeader(const std::string &name);
 
   /**
-   * @brief Generate @c CMAKE_CXX_STANDARD and @c CMAKE_CXX_STANDARD_REQUIRED settings.
+   * @brief Generate @c CMAKE_CXX_STANDARD and @c CMAKE_CXX_STANDARD_REQUIRED
+   * settings.
    *
    * @param standard The C++ standard to use.
    * @return Two-line @c set() block.
@@ -93,7 +96,8 @@ public:
   getDeclareModule(const FetchContent &fetch_content);
 
   /**
-   * @brief Generate a @c FetchContent_MakeAvailable() call for a list of modules.
+   * @brief Generate a @c FetchContent_MakeAvailable() call for a list of
+   * modules.
    *
    * Module names are space-separated on a single indented line.
    *
@@ -101,7 +105,7 @@ public:
    * @return Multi-line @c FetchContent_MakeAvailable() string.
    * @pre @p modules must not be empty.
    */
-  static std::string
+  [[nodiscard]] static std::string
   getMakeAvailable(const std::vector<std::string> &modules);
 
   /**
@@ -139,13 +143,14 @@ public:
    * @return Multi-line @c add_executable() / @c add_library() string.
    * @pre @p files must not be empty.
    */
-  static std::string
+  [[nodiscard]] static std::string
   getTargetDeclaration(const std::string &project_name, TargetType type,
                        const std::string &target_name,
                        const std::vector<std::filesystem::path> &files);
 
   /**
-   * @brief Generate a @c target_include_directories() call with @c PUBLIC scope.
+   * @brief Generate a @c target_include_directories() call with @c PUBLIC
+   * scope.
    *
    * Always points at @c ${CMAKE_CURRENT_SOURCE_DIR}/include.
    *
@@ -161,13 +166,14 @@ public:
    * Libraries are space-separated on a single line.
    *
    * @param target_name The CMake target to link.
-   * @param libs        Non-empty list of library names / CMake targets to link against.
+   * @param libs        Non-empty list of library names / CMake targets to link
+   * against.
    * @return @c target_link_libraries() string.
    * @pre @p libs must not be empty.
    *
    * @todo Add per-library scope configuration (PUBLIC / PRIVATE / INTERFACE).
    */
-  static std::string
+  [[nodiscard]] static std::string
   getTargetLink(const std::string &target_name,
                 const std::vector<std::string> &libs);
 
