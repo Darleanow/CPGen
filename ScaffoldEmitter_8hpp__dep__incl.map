@@ -1,0 +1,7 @@
+<map id="include/CPGen/Pipeline/ScaffoldEmitter.hpp" name="include/CPGen/Pipeline/ScaffoldEmitter.hpp">
+<area shape="rect" id="Node000001" title="Emitter that produces the project&#39;s directory scaffold and starter source files." alt="" coords="116,5,274,46"/>
+<area shape="rect" id="Node000002" href="$ScaffoldEmitter_8cpp.html" title="Implements the project scaffold emitter." alt="" coords="5,94,211,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,59,123,95,120,91,160,55"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title=" " alt="" coords="235,94,330,120"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,54,271,91,267,95,226,58"/>
+</map>

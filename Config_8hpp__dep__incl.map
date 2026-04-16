@@ -1,33 +1,52 @@
 <map id="include/CPGen/Core/Config.hpp" name="include/CPGen/Core/Config.hpp">
-<area shape="rect" id="Node000001" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="364,5,504,46"/>
-<area shape="rect" id="Node000002" href="$CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="55,102,237,127"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,54,187,103,186,98,353,48"/>
-<area shape="rect" id="Node000003" href="$CLI_8cpp.html" title=" " alt="" coords="5,190,119,216"/>
-<area shape="poly" id="edge17_Node000001_Node000003" title=" " alt="" coords="349,32,264,38,172,49,94,68,65,81,45,96,39,106,36,118,38,144,47,168,57,189,52,191,42,171,33,145,31,117,34,104,41,92,62,76,92,63,172,44,263,32,349,27"/>
-<area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="202,360,298,386"/>
-<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="411,60,345,152,309,211,278,272,262,320,254,360,249,359,257,319,273,270,304,208,340,149,406,57"/>
-<area shape="rect" id="Node000005" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="451,94,590,135"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="466,55,503,92,499,95,462,59"/>
-<area shape="rect" id="Node000007" href="$ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="288,271,458,312"/>
-<area shape="poly" id="edge16_Node000001_Node000007" title=" " alt="" coords="427,62,397,183,379,271,374,270,391,182,422,60"/>
-<area shape="rect" id="Node000008" href="$ProjectResolver_8cpp.html" title=" " alt="" coords="533,360,754,386"/>
-<area shape="poly" id="edge19_Node000001_Node000008" title=" " alt="" coords="519,49,595,80,636,102,675,127,713,156,745,190,772,228,791,270,797,292,796,302,791,313,776,330,758,344,718,362,715,357,755,339,772,327,786,311,791,301,792,293,786,272,768,230,741,193,709,160,672,131,633,106,593,85,517,54"/>
-<area shape="rect" id="Node000010" href="$CMakeProvider_8hpp.html" title="Factory of CMake script snippet strings used by the generator pipeline." alt="" coords="880,94,1047,135"/>
-<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="520,37,861,91,880,95,879,100,860,97,519,42"/>
-<area shape="rect" id="Node000011" href="$CMakeProvider_8cpp.html" title=" " alt="" coords="929,190,1144,216"/>
-<area shape="poly" id="edge18_Node000001_Node000011" title=" " alt="" coords="520,27,668,34,837,47,983,66,1034,78,1061,92,1069,104,1072,117,1069,144,1059,170,1047,191,1043,188,1054,168,1064,143,1067,117,1064,106,1058,96,1032,83,982,71,837,52,667,40,519,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,140,75,192,72,188,122,137"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,141,248,359,243,361,154,143"/>
-<area shape="rect" id="Node000006" href="$ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="436,183,606,223"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="523,150,523,182,518,182,518,150"/>
-<area shape="poly" id="edge11_Node000005_Node000007" title=" " alt="" coords="472,145,447,163,425,184,398,229,381,272,376,270,393,227,421,181,444,159,468,141"/>
-<area shape="poly" id="edge13_Node000005_Node000008" title=" " alt="" coords="600,138,646,159,693,188,736,225,754,246,768,270,775,292,768,313,754,330,737,344,699,362,697,357,734,339,751,326,764,311,770,292,764,272,749,249,732,228,690,192,644,164,598,143"/>
-<area shape="rect" id="Node000009" href="$ModuleResolver_8cpp.html" title=" " alt="" coords="532,279,755,305"/>
-<area shape="poly" id="edge12_Node000005_Node000009" title=" " alt="" coords="576,141,600,159,620,181,633,206,641,233,646,278,641,279,635,234,628,208,616,184,597,163,573,145"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="475,234,407,273,405,269,473,229"/>
-<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="514,239,512,276,516,294,523,311,536,326,552,339,590,357,588,362,550,344,532,330,518,313,511,295,507,276,509,239"/>
-<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="562,230,628,276,625,281,559,235"/>
-<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="331,323,270,362,267,357,328,318"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="456,314,602,357,601,362,454,319"/>
-<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="992,145,1029,188,1025,192,988,148"/>
+<area shape="rect" id="Node000001" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="274,5,413,46"/>
+<area shape="rect" id="Node000002" href="$CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="125,102,307,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,57,235,103,232,99,301,53"/>
+<area shape="rect" id="Node000003" href="$CLI_8cpp.html" title=" " alt="" coords="75,190,188,216"/>
+<area shape="poly" id="edge30_Node000001_Node000003" title=" " alt="" coords="259,43,171,65,136,80,115,96,107,118,109,144,117,169,127,188,122,191,112,171,103,145,101,118,111,92,134,75,170,60,258,38"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title=" " alt="" coords="229,360,325,386"/>
+<area shape="poly" id="edge32_Node000001_Node000004" title=" " alt="" coords="340,62,282,360,277,359,334,61"/>
+<area shape="rect" id="Node000005" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="878,94,1017,135"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="429,36,878,100,877,106,428,42"/>
+<area shape="rect" id="Node000007" href="$CMakeEmitter_8hpp.html" title="Emitter that produces a complete CMakeLists.txt for a generated project." alt="" coords="29,271,187,312"/>
+<area shape="poly" id="edge28_Node000001_Node000007" title=" " alt="" coords="259,34,218,41,176,53,136,71,100,96,74,124,60,153,57,184,65,222,77,248,92,269,88,272,72,250,60,224,52,185,54,151,69,121,97,92,133,66,175,48,217,36,258,29"/>
+<area shape="rect" id="Node000016" href="$ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="1159,271,1329,312"/>
+<area shape="poly" id="edge29_Node000001_Node000016" title=" " alt="" coords="429,29,747,51,911,69,978,80,1030,91,1085,106,1128,120,1166,142,1207,181,1222,203,1233,227,1244,270,1239,272,1228,228,1217,205,1203,184,1163,147,1126,125,1083,111,1028,97,977,85,910,75,746,57,428,34"/>
+<area shape="rect" id="Node000017" href="$ProjectResolver_8cpp.html" title=" " alt="" coords="1194,360,1416,386"/>
+<area shape="poly" id="edge31_Node000001_Node000017" title=" " alt="" coords="429,28,785,50,972,68,1049,79,1107,91,1197,116,1235,129,1269,145,1298,165,1324,192,1346,226,1364,271,1368,292,1363,313,1346,341,1324,361,1320,358,1341,337,1359,311,1363,292,1358,272,1341,229,1320,195,1295,169,1266,149,1233,134,1195,121,1106,97,1048,85,971,74,784,55,429,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="195,140,145,192,141,188,191,137"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="223,142,261,311,276,359,270,361,256,313,218,143"/>
+<area shape="rect" id="Node000006" href="$Emitter_8hpp.html" title="Base interface for all pipeline emitters." alt="" coords="497,183,655,223"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="864,138,656,186,654,181,863,133"/>
+<area shape="rect" id="Node000009" href="$GenerationPipeline_8hpp.html" title="Orchestrates emitters and writes the generated project to disk." alt="" coords="679,271,838,312"/>
+<area shape="poly" id="edge18_Node000005_Node000009" title=" " alt="" coords="917,147,781,273,778,269,914,143"/>
+<area shape="rect" id="Node000015" href="$ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="985,183,1156,223"/>
+<area shape="poly" id="edge19_Node000005_Node000015" title=" " alt="" coords="989,142,1044,180,1041,184,986,146"/>
+<area shape="poly" id="edge25_Node000005_Node000016" title=" " alt="" coords="1034,125,1103,146,1137,161,1169,181,1192,201,1211,225,1237,270,1233,272,1207,228,1188,205,1166,185,1135,166,1101,151,1032,131"/>
+<area shape="poly" id="edge27_Node000005_Node000017" title=" " alt="" coords="1033,117,1114,129,1158,141,1202,156,1244,176,1283,201,1317,232,1343,270,1349,295,1343,321,1330,344,1317,361,1313,358,1326,341,1338,319,1343,295,1339,272,1313,236,1280,205,1242,180,1200,161,1156,146,1113,135,1032,122"/>
+<area shape="rect" id="Node000018" href="$ModuleResolver_8cpp.html" title=" " alt="" coords="862,279,1084,305"/>
+<area shape="poly" id="edge26_Node000005_Node000018" title=" " alt="" coords="955,149,974,278,969,279,950,150"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="482,224,188,278,187,273,481,219"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="632,228,718,268,716,273,630,233"/>
+<area shape="rect" id="Node000011" href="$ScaffoldEmitter_8hpp.html" title="Emitter that produces the project&#39;s directory scaffold and starter source files." alt="" coords="314,271,472,312"/>
+<area shape="poly" id="edge12_Node000006_Node000011" title=" " alt="" coords="522,233,435,273,433,268,520,228"/>
+<area shape="rect" id="Node000013" href="$ToolingEmitter_8hpp.html" title="Emitter that produces tooling configuration files (.clang&#45;format, .clang&#45;tidy)." alt="" coords="497,271,655,312"/>
+<area shape="poly" id="edge15_Node000006_Node000013" title=" " alt="" coords="578,239,578,271,573,271,573,239"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="165,316,252,357,250,362,162,321"/>
+<area shape="rect" id="Node000008" href="$CMakeEmitter_8cpp.html" title="Implements the CMake build&#45;file emitter." alt="" coords="5,360,205,386"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="109,328,108,359,103,359,104,328"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="664,315,499,339,337,363,325,365,324,360,337,357,498,334,663,310"/>
+<area shape="rect" id="Node000010" href="$GenerationPipeline_8cpp.html" title="Implements the generation pipeline orchestrator." alt="" coords="803,360,1029,386"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="813,317,893,357,890,362,810,322"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="353,323,296,362,293,357,350,319"/>
+<area shape="rect" id="Node000012" href="$ScaffoldEmitter_8cpp.html" title="Implements the project scaffold emitter." alt="" coords="349,360,554,386"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="419,323,445,358,440,361,414,326"/>
+<area shape="poly" id="edge17_Node000013_Node000004" title=" " alt="" coords="487,319,324,362,323,357,486,314"/>
+<area shape="rect" id="Node000014" href="$ToolingEmitter_8cpp.html" title="Implements the tooling configuration emitter." alt="" coords="578,360,779,386"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="615,319,664,357,661,362,611,324"/>
+<area shape="poly" id="edge20_Node000015_Node000016" title=" " alt="" coords="1124,228,1206,269,1203,273,1122,233"/>
+<area shape="poly" id="edge24_Node000015_Node000017" title=" " alt="" coords="1089,236,1114,274,1148,310,1198,339,1250,357,1249,362,1196,344,1145,314,1110,278,1084,238"/>
+<area shape="poly" id="edge23_Node000015_Node000018" title=" " alt="" coords="1039,236,988,281,985,277,1035,232"/>
+<area shape="poly" id="edge22_Node000016_Node000004" title=" " alt="" coords="1143,309,1096,315,883,330,716,335,550,342,337,363,325,364,324,359,337,357,549,336,716,329,882,324,1095,309,1143,304"/>
+<area shape="poly" id="edge21_Node000016_Node000017" title=" " alt="" coords="1270,323,1298,358,1293,361,1266,326"/>
 </map>

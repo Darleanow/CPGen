@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['view_0',['View',['../classView.html',1,'']]]
+  ['projectconfig_0',['ProjectConfig',['../structProjectConfig.html',1,'']]],
+  ['projectresolver_1',['ProjectResolver',['../classProjectResolver.html',1,'']]]
 ];

@@ -81,12 +81,7 @@ $(function() {
 <area shape="rect" href="classCLI.html" title="Stateful command&#45;line parser that converts argv into a Config." alt="" coords="5,5,48,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aCMakeProvider" alt=""/>
-<map name="aCMakeProvider" id="aCMakeProvider">
-<area shape="rect" href="classCMakeProvider.html" title="Static factory that generates individual CMake script snippets." alt="" coords="5,5,116,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aComponent" alt=""/>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aComponent" alt=""/>
 <map name="aComponent" id="aComponent">
 <area shape="rect" href="classComponent.html" title="Abstract base for all TUI widgets." alt="" coords="5,55,93,80"/>
 <area shape="rect" href="classCheckbox.html" title="A toggleable checkbox component." alt="" coords="163,5,241,31"/>
@@ -97,24 +92,35 @@ $(function() {
 <area shape="poly" title=" " alt="" coords="106,83,177,106,176,111,105,88"/>
 </map>
 </td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aEmitter" alt=""/>
+<map name="aEmitter" id="aEmitter">
+<area shape="rect" href="classEmitter.html" title="Abstract base class for pipeline emitters." alt="" coords="5,55,68,80"/>
+<area shape="rect" href="classCMakeEmitter.html" title="Generates a fully assembled CMakeLists.txt from a ResolvedProject." alt="" coords="119,5,222,31"/>
+<area shape="poly" title=" " alt="" coords="81,48,132,29,134,34,83,53"/>
+<area shape="rect" href="classScaffoldEmitter.html" title="Generates starter source files for a new C++ project." alt="" coords="116,55,225,80"/>
+<area shape="poly" title=" " alt="" coords="84,65,115,65,115,70,84,70"/>
+<area shape="rect" href="classToolingEmitter.html" title="Copies tooling configuration files from templates/features/ into the generated project." alt="" coords="118,104,223,130"/>
+<area shape="poly" title=" " alt="" coords="83,82,134,101,132,106,81,87"/>
+</map>
+</td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#aFetchContent" alt=""/>
 <map name="aFetchContent" id="aFetchContent">
 <area shape="rect" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time." alt="" coords="5,5,105,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aModuleResolver" alt=""/>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aGenerationPipeline" alt=""/>
+<map name="aGenerationPipeline" id="aGenerationPipeline">
+<area shape="rect" href="classGenerationPipeline.html" title="Runs all registered emitters and materialises the project on disk." alt="" coords="5,5,136,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aModuleResolver" alt=""/>
 <map name="aModuleResolver" id="aModuleResolver">
 <area shape="rect" href="classModuleResolver.html" title="Resolves module names to their fully parsed ResolvedModule descriptors." alt="" coords="5,5,120,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_5.png" border="0" usemap="#aPreferencesConfig" alt=""/>
-<map name="aPreferencesConfig" id="aPreferencesConfig">
-<area shape="rect" href="structPreferencesConfig.html" title="Holds all user&#45;configurable application preferences." alt="" coords="5,5,133,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aPreferencesManager" alt=""/>
-<map name="aPreferencesManager" id="aPreferencesManager">
-<area shape="rect" href="classPreferencesManager.html" title="Loads and exposes user preferences from a JSON file." alt="" coords="5,5,147,31"/>
+<tr><td><img src="inherit_graph_6.png" border="0" usemap="#aOutputFile" alt=""/>
+<map name="aOutputFile" id="aOutputFile">
+<area shape="rect" href="structOutputFile.html" title="Represents a single file to be written during project generation." alt="" coords="5,5,87,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_7.png" border="0" usemap="#aProjectConfig" alt=""/>
@@ -122,57 +128,47 @@ $(function() {
 <area shape="rect" href="structProjectConfig.html" title="Fully parsed project configuration produced by CLI::parse." alt="" coords="5,5,104,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aProjectOptions" alt=""/>
-<map name="aProjectOptions" id="aProjectOptions">
-<area shape="rect" href="structProjectOptions.html" title="Flat configuration bag used by the interactive TUI mode." alt="" coords="5,5,113,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aProjectResolver" alt=""/>
+<tr><td><img src="inherit_graph_8.png" border="0" usemap="#aProjectResolver" alt=""/>
 <map name="aProjectResolver" id="aProjectResolver">
 <area shape="rect" href="classProjectResolver.html" title="Converts a ProjectConfig into a fully resolved ResolvedProject." alt="" coords="5,5,119,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aResolvedModule" alt=""/>
+<tr><td><img src="inherit_graph_9.png" border="0" usemap="#aResolvedModule" alt=""/>
 <map name="aResolvedModule" id="aResolvedModule">
 <area shape="rect" href="structResolvedModule.html" title="A dependency module after its JSON definition has been parsed." alt="" coords="5,5,123,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aResolvedProject" alt=""/>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aResolvedProject" alt=""/>
 <map name="aResolvedProject" id="aResolvedProject">
 <area shape="rect" href="structResolvedProject.html" title="Aggregated output of the full resolver pipeline." alt="" coords="5,5,122,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aResolvedTarget" alt=""/>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aResolvedTarget" alt=""/>
 <map name="aResolvedTarget" id="aResolvedTarget">
 <area shape="rect" href="structResolvedTarget.html" title="A build target after module injections have been applied." alt="" coords="5,5,118,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" usemap="#astd_1_1hash_3_01ResolvedTarget_01_4" alt=""/>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#astd_1_1hash_3_01ResolvedTarget_01_4" alt=""/>
 <map name="astd_1_1hash_3_01ResolvedTarget_01_4" id="astd_1_1hash_3_01ResolvedTarget_01_4">
 <area shape="rect" href="structstd_1_1hash_3_01ResolvedTarget_01_4.html" title=" " alt="" coords="5,5,192,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" usemap="#aTargetInjection" alt=""/>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#aTargetInjection" alt=""/>
 <map name="aTargetInjection" id="aTargetInjection">
 <area shape="rect" href="structTargetInjection.html" title="Describes the CMake snippets that a module contributes to a target." alt="" coords="5,5,113,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" usemap="#aTemplateEngine" alt=""/>
-<map name="aTemplateEngine" id="aTemplateEngine">
-<area shape="rect" href="classTemplateEngine.html" title=" " alt="" coords="5,5,120,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" usemap="#aTerminal" alt=""/>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#aTerminal" alt=""/>
 <map name="aTerminal" id="aTerminal">
 <area shape="rect" href="classTerminal.html" title="RAII raw&#45;mode terminal handler." alt="" coords="5,5,77,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_17.png" border="0" usemap="#aToolingConfig" alt=""/>
+<tr><td><img src="inherit_graph_15.png" border="0" usemap="#aToolingConfig" alt=""/>
 <map name="aToolingConfig" id="aToolingConfig">
 <area shape="rect" href="structToolingConfig.html" title="Groups all optional tooling flags that can be enabled for a project." alt="" coords="5,5,105,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" usemap="#aView" alt=""/>
+<tr><td><img src="inherit_graph_16.png" border="0" usemap="#aView" alt=""/>
 <map name="aView" id="aView">
 <area shape="rect" href="classView.html" title="Root TUI manager: renders sections, routes input, and runs the event loop." alt="" coords="5,5,56,31"/>
 </map>

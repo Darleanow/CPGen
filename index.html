@@ -74,7 +74,115 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_readme"></a> <a href="https://github.com/Darleanow/cpgen/actions/workflows/UT.yml"><img src="https://github.com/Darleanow/cpgen/actions/workflows/UT.yml/badge.svg?branch=main" alt="Unit Tests" style="pointer-events: none;" class="inline"/></a></p>
-<p>C++ project generator. Built to be extensible with your own configs. </p>
+<p>A modern C++ project generator. Scaffold production-ready CMake projects with modules, tooling, and tests — from the <a class="el" href="classCLI.html" title="Stateful command-line parser that converts argv into a Config.">CLI</a> or an interactive TUI.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Features</h1>
+<ul>
+<li><b>Full CMake generation</b> — <code>CMakeLists.txt</code> with modern best practices (<a class="el" href="structFetchContent.html" title="Describes a CMake FetchContent dependency to be downloaded at build time.">FetchContent</a>, compile options, clang-tidy integration)</li>
+<li><b>Module system</b> — extensible JSON-based module definitions that inject dependencies, link targets, and test discovery</li>
+<li><b>Tooling support</b> — <code>.clang-tidy</code>, <code>.clang-format</code> (with preset support), <code>.gitignore</code></li>
+<li><b>Interactive TUI</b> — terminal UI with checkboxes and text inputs for project configuration</li>
+<li><b>Scaffold</b> — generates <code><a class="el" href="main_8cpp.html">src/main.cpp</a></code>, <code>tests/test_main.cpp</code>, <code>README.md</code> out of the box</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Installation</h1>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Build from source</h2>
+<div class="fragment"><div class="line">git clone https://github.com/Darleanow/cpgen.git</div>
+<div class="line">cd cpgen</div>
+<div class="line">cmake -B build -G Ninja</div>
+<div class="line">ninja -C build</div>
+</div><!-- fragment --><p>The binary is at <code>build/CPGen</code>. Templates are auto-copied next to the executable.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Usage</h1>
+<h2><a class="anchor" id="autotoc_md15"></a>
+CLI mode</h2>
+<div class="fragment"><div class="line"># Minimal — generate a project with defaults (C++20, no modules)</div>
+<div class="line">CPGen -n MyProject -p /tmp</div>
+<div class="line"> </div>
+<div class="line"># Full example — C++23, gtest + spdlog, git, clang-tidy, clang-format with Google style</div>
+<div class="line">CPGen -n MyProject -p /tmp -s 23 -m gtest,spdlog -g -ct -cf -cfp Google</div>
+<div class="line"> </div>
+<div class="line"># Generate with test and executable targets</div>
+<div class="line">CPGen -n MyProject -p /tmp -m gtest -tar exe,test</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md16"></a>
+TUI mode</h2>
+<div class="fragment"><div class="line">CPGen -u</div>
+</div><!-- fragment --><p>Launches an interactive terminal interface where you can configure the project name, output path, and tooling options before generating.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+All flags</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Short   </th><th class="markdownTableHeadNone">Long   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-h</code>   </td><td class="markdownTableBodyNone"><code>--help</code>   </td><td class="markdownTableBodyNone">Show help and exit    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-u</code>   </td><td class="markdownTableBodyNone"><code>--tui</code>   </td><td class="markdownTableBodyNone">Launch interactive TUI mode    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-n</code>   </td><td class="markdownTableBodyNone"><code>--name</code>   </td><td class="markdownTableBodyNone">Project name (must match <code>^\w+$</code>)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-p</code>   </td><td class="markdownTableBodyNone"><code>--path</code>   </td><td class="markdownTableBodyNone">Output directory (must exist on disk)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-s</code>   </td><td class="markdownTableBodyNone"><code>--std</code>   </td><td class="markdownTableBodyNone">C++ standard: <code>17</code>, <code>20</code>, or <code>23</code> (default: 20)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-m</code>   </td><td class="markdownTableBodyNone"><code>--modules</code>   </td><td class="markdownTableBodyNone">Comma-separated modules: <code>-m gtest,spdlog</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-tar</code>   </td><td class="markdownTableBodyNone"><code>--targets</code>   </td><td class="markdownTableBodyNone">Comma-separated target types: <code>-tar exe,test,lib</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-g</code>   </td><td class="markdownTableBodyNone"><code>--git</code>   </td><td class="markdownTableBodyNone">Initialize a <code>.gitignore</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-cf</code>   </td><td class="markdownTableBodyNone"><code>--clang-format</code>   </td><td class="markdownTableBodyNone">Generate <code>.clang-format</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-cfp</code>   </td><td class="markdownTableBodyNone"><code>--cf-preset</code>   </td><td class="markdownTableBodyNone">Clang-format style preset (e.g. <code>Google</code>, <code>LLVM</code>)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-ct</code>   </td><td class="markdownTableBodyNone"><code>--clang-tidy</code>   </td><td class="markdownTableBodyNone">Generate <code>.clang-tidy</code> and CMake integration   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Available Modules</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Module   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Target    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>gtest</code>   </td><td class="markdownTableBodyNone">Google Test framework   </td><td class="markdownTableBodyNone"><code>test</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>catch2</code>   </td><td class="markdownTableBodyNone">Catch2 v3 test framework   </td><td class="markdownTableBodyNone"><code>test</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>spdlog</code>   </td><td class="markdownTableBodyNone">Fast C++ logging library   </td><td class="markdownTableBodyNone"><code>main</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>fmt</code>   </td><td class="markdownTableBodyNone">Modern formatting library   </td><td class="markdownTableBodyNone"><code>main</code>   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Adding custom modules</h2>
+<p>Create a JSON file at <code>templates/modules/&lt;name&gt;/&lt;name&gt;.json</code>:</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;name&quot;: &quot;mylib&quot;,</div>
+<div class="line">  &quot;fetch_content&quot;: {</div>
+<div class="line">    &quot;module_name&quot;: &quot;mylib&quot;,</div>
+<div class="line">    &quot;url&quot;: &quot;https://github.com/org/mylib/archive/refs/tags/v1.0.0.zip&quot;</div>
+<div class="line">  },</div>
+<div class="line">  &quot;targets&quot;: {</div>
+<div class="line">    &quot;main&quot;: {</div>
+<div class="line">      &quot;link&quot;: [&quot;mylib::mylib&quot;]</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Optional fields per target: <code>cmake_include</code> (e.g. <code>"GoogleTest"</code>), <code>post_link</code> (e.g. <code>"gtest_discover_tests(${TARGET_NAME})"</code>).</p>
+<h1><a class="anchor" id="autotoc_md20"></a>
+Architecture</h1>
+<div class="fragment"><div class="line">CPGen/</div>
+<div class="line">├── include/CPGen/</div>
+<div class="line">│   ├── CLI/            # Command-line argument parser</div>
+<div class="line">│   ├── Core/           # Config, Module, Resolved data types</div>
+<div class="line">│   ├── Pipeline/       # Emitter interface + CMake/Scaffold/Tooling emitters</div>
+<div class="line">│   ├── Resolvers/      # Module &amp; project resolution from JSON definitions</div>
+<div class="line">│   ├── System/         # Path resolution, system utilities</div>
+<div class="line">│   └── TUI/            # Terminal UI components (Checkbox, Input, View)</div>
+<div class="line">├── src/                # Implementation files</div>
+<div class="line">├── templates/          # Module definitions + feature templates</div>
+<div class="line">└── tests/              # Google Test unit tests (93 tests)</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
+License</h1>
+<p>MIT </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

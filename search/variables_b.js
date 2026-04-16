@@ -1,7 +1,7 @@
 var searchData=
 [
   ['packages_5ficon_0',['PACKAGES_ICON',['../namespaceAscii.html#af96b0ea2b397be9afa76adb2975b855d',1,'Ascii']]],
-  ['path_1',['path',['../structProjectOptions.html#aac0a6a8f1a92d3e73e2a19f9ae6808ca',1,'ProjectOptions::path'],['../structProjectConfig.html#ac4b117db4cbb4185bad9c8c881ab0958',1,'ProjectConfig::path'],['../structResolvedTarget.html#a6e6465ef3171be4bf98d97a57446fad8',1,'ResolvedTarget::path']]],
+  ['path_1',['path',['../structProjectConfig.html#ac4b117db4cbb4185bad9c8c881ab0958',1,'ProjectConfig::path'],['../structResolvedTarget.html#a6e6465ef3171be4bf98d97a57446fad8',1,'ResolvedTarget::path']]],
   ['post_5flink_2',['post_link',['../structTargetInjection.html#a4d216e0105a5fa3d61d6092d05c99fae',1,'TargetInjection']]],
   ['progress_5fempty_5fleft_3',['PROGRESS_EMPTY_LEFT',['../namespaceAscii.html#aa30d44f3756f619812df73a279b489cc',1,'Ascii']]],
   ['progress_5fempty_5fmid_4',['PROGRESS_EMPTY_MID',['../namespaceAscii.html#a60f93ab42f9317c6ee858b32b5c34635',1,'Ascii']]],

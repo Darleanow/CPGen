@@ -1,0 +1,5 @@
+<map id="ToolingEmitter" name="ToolingEmitter">
+<area shape="rect" id="Node000001" title="Copies tooling configuration files from templates/features/ into the generated project." alt="" coords="5,79,110,105"/>
+<area shape="rect" id="Node000002" href="$classEmitter.html" title="Abstract base class for pipeline emitters." alt="" coords="26,5,89,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,46,60,79,55,79,55,46"/>
+</map>

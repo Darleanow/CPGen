@@ -1,0 +1,35 @@
+<map id="src/Pipeline/ScaffoldEmitter.cpp" name="src/Pipeline/ScaffoldEmitter.cpp">
+<area shape="rect" id="Node000001" title="Implements the project scaffold emitter." alt="" coords="627,5,833,31"/>
+<area shape="rect" id="Node000002" href="$ScaffoldEmitter_8hpp.html" title="Emitter that produces the project&#39;s directory scaffold and starter source files." alt="" coords="346,79,575,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="685,34,522,77,521,72,684,29"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="600,79,674,105"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="716,34,666,72,663,67,713,29"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="697,79,763,105"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="733,31,733,63,727,63,727,31"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="787,79,855,105"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="747,29,795,67,792,72,744,34"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="879,79,930,105"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="761,29,866,72,864,77,759,34"/>
+<area shape="rect" id="Node000003" href="$Emitter_8hpp.html" title="Base interface for all pipeline emitters." alt="" coords="306,153,488,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,107,419,143,415,139,448,103"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="485,226,564,252"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="472,104,502,152,521,211,516,212,497,154,468,107"/>
+<area shape="rect" id="Node000004" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="234,226,410,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,181,347,218,343,214,382,177"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="301,374,354,399"/>
+<area shape="poly" id="edge12_Node000003_Node000008" title=" " alt="" coords="406,178,419,206,431,244,435,286,432,307,424,327,400,354,370,373,367,368,397,350,420,324,427,306,430,286,426,245,414,208,401,180"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,374,63,399"/>
+<area shape="poly" id="edge13_Node000003_Node000009" title=" " alt="" coords="306,179,241,194,173,217,108,253,79,275,54,302,40,329,36,359,31,358,35,328,49,298,75,271,105,248,171,212,240,189,305,174"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="420,177,491,216,488,221,417,181"/>
+<area shape="rect" id="Node000005" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="63,300,221,326"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="292,255,188,296,186,291,290,250"/>
+<area shape="rect" id="Node000010" href="$Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="245,300,410,326"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="326,252,328,284,323,285,320,252"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="185,374,246,399"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="156,324,194,361,190,365,152,328"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="94,374,161,399"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="142,326,136,359,130,358,137,325"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="174,324,287,367,285,372,172,329"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="125,328,67,367,64,362,122,324"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="330,326,330,358,325,358,325,326"/>
+</map>

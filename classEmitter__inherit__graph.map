@@ -1,0 +1,9 @@
+<map id="Emitter" name="Emitter">
+<area shape="rect" id="Node000001" title="Abstract base class for pipeline emitters." alt="" coords="157,5,219,31"/>
+<area shape="rect" id="Node000002" href="$classCMakeEmitter.html" title="Generates a fully assembled CMakeLists.txt from a ResolvedProject." alt="" coords="5,79,109,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,41,81,81,78,76,151,36"/>
+<area shape="rect" id="Node000003" href="$classScaffoldEmitter.html" title="Generates starter source files for a new C++ project." alt="" coords="133,79,242,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,46,190,79,185,79,185,46"/>
+<area shape="rect" id="Node000004" href="$classToolingEmitter.html" title="Copies tooling configuration files from templates/features/ into the generated project." alt="" coords="266,79,371,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,36,297,76,295,81,221,41"/>
+</map>

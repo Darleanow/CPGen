@@ -81,17 +81,23 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="CLI_8hpp_source.html">CPGen/CLI/CLI.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Config_8hpp_source.html">CPGen/Core/Config.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CMakeEmitter_8hpp_source.html">CPGen/Pipeline/CMakeEmitter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GenerationPipeline_8hpp_source.html">CPGen/Pipeline/GenerationPipeline.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ScaffoldEmitter_8hpp_source.html">CPGen/Pipeline/ScaffoldEmitter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ToolingEmitter_8hpp_source.html">CPGen/Pipeline/ToolingEmitter.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ProjectResolver_8hpp_source.html">CPGen/Resolvers/ProjectResolver.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PathResolver_8hpp_source.html">CPGen/System/PathResolver.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="System_8hpp_source.html">CPGen/System/System.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Checkbox_8hpp_source.html">CPGen/TUI/Components/Basic/Checkbox.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Input_8hpp_source.html">CPGen/TUI/Components/Basic/Input.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ComponentGroup_8hpp_source.html">CPGen/TUI/Components/Groups/ComponentGroup.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Ascii_8hpp_source.html">CPGen/TUI/Misc/Ascii.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="View_8hpp_source.html">CPGen/TUI/View/View.hpp</a>&quot;</code><br />
+<code>#include &lt;exception&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;locale&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;exception&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;variant&gt;</code><br />
@@ -100,87 +106,117 @@ Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#asrc_2main_8cpp" alt=""/></div>
 <map name="asrc_2main_8cpp" id="asrc_2main_8cpp">
-<area shape="rect" title=" " alt="" coords="1134,5,1229,31"/>
-<area shape="rect" href="CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="38,241,176,267"/>
-<area shape="poly" title=" " alt="" coords="1134,22,920,25,624,33,478,40,349,51,251,64,217,72,196,81,179,95,164,112,140,152,124,192,115,227,109,225,119,190,135,149,159,109,175,91,194,77,216,67,250,59,349,45,477,35,624,28,920,19,1134,17"/>
-<area shape="rect" href="Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="216,315,374,341"/>
-<area shape="poly" title=" " alt="" coords="1133,23,911,26,603,36,315,53,211,66,175,73,152,81,87,119,57,140,33,163,17,187,9,211,12,238,28,265,54,283,96,297,200,315,200,321,95,302,51,288,24,269,7,239,4,211,12,184,29,159,54,136,84,115,150,77,174,68,210,61,314,48,603,30,911,21,1133,17"/>
-<area shape="rect" title=" " alt="" coords="1111,389,1164,414"/>
-<area shape="poly" title=" " alt="" coords="1230,19,1366,25,1536,36,1690,53,1744,64,1774,77,1793,100,1801,123,1800,179,1800,256,1795,279,1779,300,1755,318,1723,334,1641,359,1544,377,1439,390,1338,397,1180,403,1180,397,1337,392,1439,384,1543,372,1640,354,1721,329,1752,314,1775,296,1790,277,1795,255,1795,179,1795,124,1789,102,1771,81,1742,69,1689,59,1536,42,1365,30,1230,24"/>
-<area shape="rect" title=" " alt="" coords="398,315,459,341"/>
-<area shape="poly" title=" " alt="" coords="1134,23,627,42,366,59,279,70,253,76,241,81,228,97,220,115,217,134,220,155,228,178,242,204,292,265,306,276,329,288,384,309,382,314,327,292,304,281,288,269,238,207,223,180,215,156,212,134,215,113,224,95,237,77,251,70,278,65,365,54,627,37,1133,18"/>
-<area shape="rect" href="ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="251,87,496,112"/>
-<area shape="poly" title=" " alt="" coords="1134,26,870,47,515,82,474,87,474,81,515,76,870,42,1133,20"/>
-<area shape="rect" title=" " alt="" coords="719,168,786,193"/>
-<area shape="poly" title=" " alt="" coords="1134,23,991,28,809,38,646,55,590,67,572,74,561,81,555,90,553,99,561,118,613,137,705,163,703,168,611,142,557,122,548,99,550,88,557,77,569,69,588,62,645,50,808,32,991,22,1134,18"/>
-<area shape="rect" href="System_8hpp.html" title="System&#45;level utilities for probing the runtime environment." alt="" coords="774,87,957,112"/>
-<area shape="poly" title=" " alt="" coords="1134,34,930,85,929,80,1133,29"/>
-<area shape="rect" href="Checkbox_8hpp.html" title="A binary toggle widget that displays a checked/unchecked state." alt="" coords="1201,79,1368,120"/>
-<area shape="poly" title=" " alt="" coords="1199,29,1249,67,1245,72,1196,34"/>
-<area shape="rect" href="Input_8hpp.html" title="A single&#45;line text entry widget." alt="" coords="1392,79,1558,120"/>
-<area shape="poly" title=" " alt="" coords="1228,29,1388,72,1387,77,1226,34"/>
-<area shape="rect" href="ComponentGroup_8hpp.html" title="A titled container that manages a vertical list of child components." alt="" coords="981,79,1177,120"/>
-<area shape="poly" title=" " alt="" coords="1168,34,1118,72,1115,67,1164,29"/>
-<area shape="rect" href="Ascii_8hpp.html" title="Unicode / Nerd Font glyph constants used throughout the TUI." alt="" coords="1582,87,1760,112"/>
-<area shape="poly" title=" " alt="" coords="1230,24,1570,76,1594,81,1593,86,1569,82,1229,29"/>
-<area shape="rect" href="View_8hpp.html" title="Top&#45;level TUI view that owns all sections and drives the main event loop." alt="" coords="571,87,750,112"/>
-<area shape="poly" title=" " alt="" coords="1134,28,969,50,762,82,738,86,737,81,761,76,968,45,1133,23"/>
-<area shape="rect" title=" " alt="" coords="1835,87,1907,112"/>
-<area shape="poly" title=" " alt="" coords="1230,17,1336,21,1482,30,1649,48,1817,76,1827,79,1826,84,1816,82,1648,53,1482,35,1336,26,1230,23"/>
-<area shape="rect" title=" " alt="" coords="1931,87,1987,112"/>
-<area shape="poly" title=" " alt="" coords="1230,18,1579,36,1776,53,1858,64,1920,76,1924,78,1922,83,1918,82,1857,69,1776,59,1579,41,1230,24"/>
-<area shape="rect" title=" " alt="" coords="2010,87,2087,112"/>
-<area shape="poly" title=" " alt="" coords="1230,18,1616,37,1838,54,1930,65,2000,76,2007,78,2006,84,1998,82,1929,70,1837,59,1615,42,1229,24"/>
-<area shape="rect" title=" " alt="" coords="2111,87,2162,112"/>
-<area shape="poly" title=" " alt="" coords="1230,17,1412,21,1664,31,1916,48,2021,61,2100,76,2103,77,2102,83,2098,82,2020,66,1916,54,1664,36,1411,27,1230,23"/>
-<area shape="poly" title=" " alt="" coords="140,265,250,306,248,311,138,270"/>
-<area shape="poly" title=" " alt="" coords="169,265,384,312,382,317,168,270"/>
-<area shape="rect" title=" " alt="" coords="890,389,951,414"/>
-<area shape="poly" title=" " alt="" coords="375,337,386,338,613,361,839,386,875,391,874,396,839,391,612,367,385,343,374,342"/>
-<area shape="rect" title=" " alt="" coords="262,389,328,414"/>
-<area shape="poly" title=" " alt="" coords="298,341,298,373,292,373,292,341"/>
-<area shape="poly" title=" " alt="" coords="375,337,386,338,742,368,1096,394,1095,400,741,373,385,343,374,342"/>
-<area shape="rect" title=" " alt="" coords="769,389,826,414"/>
-<area shape="poly" title=" " alt="" coords="375,338,754,391,753,397,374,343"/>
-<area shape="poly" title=" " alt="" coords="365,114,327,167,307,203,292,242,289,271,292,300,286,300,284,271,287,241,302,201,323,165,361,111"/>
-<area shape="rect" href="Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="302,241,478,267"/>
-<area shape="poly" title=" " alt="" coords="367,114,349,150,344,171,347,193,356,211,369,228,364,232,352,214,342,194,339,171,344,148,363,112"/>
-<area shape="rect" href="ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="356,168,602,193"/>
-<area shape="poly" title=" " alt="" coords="391,110,453,156,449,160,388,115"/>
-<area shape="poly" title=" " alt="" coords="440,110,704,164,703,170,439,115"/>
-<area shape="rect" title=" " alt="" coords="626,168,695,193"/>
-<area shape="poly" title=" " alt="" coords="419,110,612,163,610,168,417,115"/>
-<area shape="poly" title=" " alt="" coords="375,270,325,308,321,303,372,265"/>
-<area shape="rect" href="Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="541,315,705,341"/>
-<area shape="poly" title=" " alt="" coords="430,265,570,307,568,313,429,270"/>
-<area shape="poly" title=" " alt="" coords="706,338,1096,392,1095,397,705,343"/>
-<area shape="poly" title=" " alt="" coords="603,190,867,215,976,228,1028,239,1052,261,1063,285,1071,311,1087,339,1117,375,1113,379,1082,342,1066,313,1058,287,1048,264,1026,244,975,233,867,220,602,195"/>
-<area shape="poly" title=" " alt="" coords="582,191,680,210,721,223,749,239,773,270,788,306,796,342,800,373,794,373,791,343,783,307,768,273,745,243,719,228,679,216,581,197"/>
-<area shape="poly" title=" " alt="" coords="466,196,418,234,415,229,462,192"/>
-<area shape="rect" title=" " alt="" coords="502,241,581,267"/>
-<area shape="poly" title=" " alt="" coords="491,192,523,228,519,231,487,195"/>
-<area shape="rect" title=" " alt="" coords="605,241,734,267"/>
-<area shape="poly" title=" " alt="" coords="512,191,624,233,622,238,510,196"/>
-<area shape="poly" title=" " alt="" coords="1295,120,1303,155,1304,175,1300,194,1273,252,1237,304,1198,347,1165,380,1161,376,1195,344,1233,300,1268,249,1295,193,1299,174,1298,155,1290,121"/>
-<area shape="rect" href="Component_8hpp.html" title="Abstract base class for all TUI components." alt="" coords="1097,168,1285,193"/>
-<area shape="poly" title=" " alt="" coords="1263,122,1219,159,1215,155,1260,118"/>
-<area shape="rect" title=" " alt="" coords="1360,168,1438,193"/>
-<area shape="poly" title=" " alt="" coords="1314,118,1371,156,1368,161,1311,122"/>
-<area shape="poly" title=" " alt="" coords="1191,194,1147,374,1142,373,1186,193"/>
-<area shape="rect" href="Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="911,241,1015,267"/>
-<area shape="poly" title=" " alt="" coords="1153,196,1017,239,1016,234,1152,191"/>
-<area shape="poly" title=" " alt="" coords="962,268,931,374,926,373,957,267"/>
-<area shape="poly" title=" " alt="" coords="911,265,474,323,474,318,910,260"/>
-<area shape="poly" title=" " alt="" coords="1476,121,1469,157,1452,195,1422,230,1389,263,1314,318,1241,359,1180,387,1178,382,1238,354,1311,313,1385,259,1419,227,1447,192,1464,155,1471,120"/>
-<area shape="poly" title=" " alt="" coords="1405,123,1250,166,1249,160,1403,118"/>
-<area shape="poly" title=" " alt="" coords="1458,122,1423,158,1419,154,1454,118"/>
-<area shape="poly" title=" " alt="" coords="1082,120,1087,193,1109,293,1132,373,1127,375,1103,294,1082,194,1076,121"/>
-<area shape="poly" title=" " alt="" coords="1049,122,978,173,938,207,901,243,815,377,811,375,897,240,934,203,975,169,1046,118"/>
-<area shape="poly" title=" " alt="" coords="998,123,801,170,800,165,997,118"/>
-<area shape="poly" title=" " alt="" coords="1108,118,1163,156,1160,160,1105,122"/>
-<area shape="poly" title=" " alt="" coords="716,110,762,131,783,146,800,166,813,192,821,220,825,277,819,331,809,374,804,373,814,331,820,277,816,221,808,194,795,169,779,150,759,135,714,115"/>
-<area shape="poly" title=" " alt="" coords="676,111,729,155,725,159,673,115"/>
-<area shape="poly" title=" " alt="" coords="723,110,762,117,1082,163,1082,168,761,122,722,115"/>
+<area shape="rect" title=" " alt="" coords="1668,5,1763,31"/>
+<area shape="rect" href="CLI_8hpp.html" title="Command&#45;line argument parser that produces a typed project configuration." alt="" coords="33,241,171,267"/>
+<area shape="poly" title=" " alt="" coords="1668,22,1327,25,826,33,577,41,363,51,207,64,159,72,136,81,122,96,113,113,101,152,98,191,101,226,95,226,93,191,96,151,108,111,118,93,133,77,158,67,206,59,362,46,577,35,826,28,1327,19,1667,17"/>
+<area shape="rect" href="Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="572,315,731,341"/>
+<area shape="poly" title=" " alt="" coords="1667,22,1335,24,847,31,606,39,398,49,247,63,202,72,180,81,167,101,167,118,175,135,191,150,230,175,262,191,343,232,429,265,510,290,580,308,578,314,509,295,427,270,341,237,260,196,228,179,187,154,171,138,161,119,162,99,176,77,200,67,246,58,397,44,605,33,847,26,1335,19,1667,17"/>
+<area shape="rect" title=" " alt="" coords="803,389,857,414"/>
+<area shape="poly" title=" " alt="" coords="1764,17,1943,18,2182,26,2298,33,2399,44,2475,58,2500,67,2516,77,2523,88,2526,99,2523,111,2516,121,2498,136,2476,147,2418,159,2348,163,2272,162,2120,157,2057,160,2008,170,1987,181,1971,192,1946,219,1921,245,1904,258,1882,269,1804,299,1737,317,1676,326,1618,330,1496,332,1425,335,1342,343,873,398,872,393,1342,338,1425,330,1496,327,1618,325,1675,321,1736,311,1803,293,1880,265,1901,254,1917,241,1942,215,1967,188,1984,176,2007,165,2056,154,2120,152,2272,157,2348,158,2417,154,2474,142,2496,131,2512,118,2519,108,2521,99,2519,90,2512,81,2498,72,2473,63,2398,49,2297,39,2181,31,1943,24,1763,22"/>
+<area shape="rect" title=" " alt="" coords="72,315,132,341"/>
+<area shape="poly" title=" " alt="" coords="1667,23,1322,27,813,37,340,55,180,67,130,74,105,81,54,120,35,140,20,162,11,185,8,210,12,237,23,266,40,288,62,305,59,309,36,292,18,268,7,238,3,210,6,184,15,160,30,137,50,116,102,77,129,69,179,62,339,49,813,32,1322,21,1667,17"/>
+<area shape="rect" href="CMakeEmitter_8hpp.html" title="Emitter that produces a complete CMakeLists.txt for a generated project." alt="" coords="1314,87,1538,112"/>
+<area shape="poly" title=" " alt="" coords="1672,34,1486,84,1485,79,1670,29"/>
+<area shape="rect" title=" " alt="" coords="1789,241,1868,267"/>
+<area shape="poly" title=" " alt="" coords="1726,30,1756,78,1794,158,1822,225,1817,227,1789,160,1752,80,1722,33"/>
+<area shape="rect" href="GenerationPipeline_8hpp.html" title="Orchestrates emitters and writes the generated project to disk." alt="" coords="1561,79,1742,120"/>
+<area shape="poly" title=" " alt="" coords="1708,33,1679,68,1675,65,1704,30"/>
+<area shape="rect" title=" " alt="" coords="1266,168,1333,193"/>
+<area shape="poly" title=" " alt="" coords="1667,22,1575,24,1466,32,1413,39,1366,50,1329,63,1304,81,1295,97,1291,115,1294,153,1289,153,1286,115,1290,95,1300,77,1326,59,1365,45,1412,34,1465,26,1575,18,1667,16"/>
+<area shape="rect" href="ScaffoldEmitter_8hpp.html" title="Emitter that produces the project&#39;s directory scaffold and starter source files." alt="" coords="2273,87,2502,112"/>
+<area shape="poly" title=" " alt="" coords="1764,21,1979,43,2261,76,2295,81,2294,86,2260,82,1979,49,1763,27"/>
+<area shape="rect" href="ToolingEmitter_8hpp.html" title="Emitter that produces tooling configuration files (.clang&#45;format, .clang&#45;tidy)." alt="" coords="2025,87,2249,112"/>
+<area shape="poly" title=" " alt="" coords="1764,26,2057,80,2056,86,1763,31"/>
+<area shape="rect" href="ProjectResolver_8hpp.html" title="Orchestrates the full dependency resolution pipeline for a project." alt="" coords="570,87,815,112"/>
+<area shape="poly" title=" " alt="" coords="1667,24,1317,43,1075,59,828,82,787,86,787,81,827,76,1074,54,1317,37,1667,19"/>
+<area shape="rect" href="PathResolver_8hpp.html" title="Shared utilities for locating CPGen&#39;s template directories." alt="" coords="2019,168,2236,193"/>
+<area shape="poly" title=" " alt="" coords="1764,18,2001,23,2328,35,2624,52,2723,63,2753,70,2769,77,2777,88,2779,99,2777,111,2769,122,2744,135,2698,146,2563,163,2402,173,2252,179,2252,174,2402,168,2563,157,2697,141,2742,130,2766,118,2772,108,2774,99,2772,90,2766,81,2752,75,2722,69,2624,57,2328,40,2001,29,1764,23"/>
+<area shape="rect" href="System_8hpp.html" title="System&#45;level utilities for probing the runtime environment." alt="" coords="1817,87,2000,112"/>
+<area shape="poly" title=" " alt="" coords="1746,29,1866,78,1864,83,1744,34"/>
+<area shape="rect" href="Checkbox_8hpp.html" title="A binary toggle widget that displays a checked/unchecked state." alt="" coords="190,79,356,120"/>
+<area shape="poly" title=" " alt="" coords="1668,22,1464,22,1148,28,767,46,568,61,372,82,371,76,568,56,767,41,1148,23,1464,17,1667,16"/>
+<area shape="rect" href="Input_8hpp.html" title="A single&#45;line text entry widget." alt="" coords="380,79,547,120"/>
+<area shape="poly" title=" " alt="" coords="1667,22,1490,24,1219,32,896,50,728,63,562,81,561,76,728,58,896,44,1219,27,1489,19,1667,17"/>
+<area shape="rect" href="ComponentGroup_8hpp.html" title="A titled container that manages a vertical list of child components." alt="" coords="840,79,1036,120"/>
+<area shape="poly" title=" " alt="" coords="1667,25,1409,44,1234,61,1052,81,1051,76,1233,55,1408,39,1667,20"/>
+<area shape="rect" href="Ascii_8hpp.html" title="Unicode / Nerd Font glyph constants used throughout the TUI." alt="" coords="2577,87,2755,112"/>
+<area shape="poly" title=" " alt="" coords="1764,18,2097,35,2325,52,2558,76,2589,81,2588,86,2558,82,2325,58,2096,41,1763,24"/>
+<area shape="rect" href="View_8hpp.html" title="Top&#45;level TUI view that owns all sections and drives the main event loop." alt="" coords="1060,87,1240,112"/>
+<area shape="poly" title=" " alt="" coords="1668,28,1488,50,1258,82,1232,86,1231,81,1258,76,1487,45,1667,22"/>
+<area shape="rect" title=" " alt="" coords="2831,87,2907,112"/>
+<area shape="poly" title=" " alt="" coords="1763,18,2279,34,2587,51,2715,63,2812,76,2824,79,2822,84,2811,82,2715,68,2587,57,2279,39,1763,23"/>
+<area shape="rect" title=" " alt="" coords="2930,87,3002,112"/>
+<area shape="poly" title=" " alt="" coords="1763,17,1995,20,2330,28,2671,46,2813,59,2920,76,2927,78,2926,83,2919,82,2813,65,2671,51,2330,34,1995,25,1763,22"/>
+<area shape="rect" title=" " alt="" coords="3026,87,3082,112"/>
+<area shape="poly" title=" " alt="" coords="1763,17,2011,17,2374,23,2565,30,2745,41,2899,56,3015,76,3020,78,3018,83,3013,82,2898,62,2744,46,2565,36,2374,29,2011,22,1763,22"/>
+<area shape="rect" title=" " alt="" coords="3106,87,3157,112"/>
+<area shape="poly" title=" " alt="" coords="1764,18,2466,36,2863,53,3009,64,3095,76,3098,77,3097,83,3094,82,3008,69,2863,59,2465,41,1763,23"/>
+<area shape="poly" title=" " alt="" coords="172,263,184,264,558,312,557,318,183,270,171,268"/>
+<area shape="poly" title=" " alt="" coords="105,267,105,299,99,299,99,267"/>
+<area shape="rect" title=" " alt="" coords="385,389,446,414"/>
+<area shape="poly" title=" " alt="" coords="612,344,461,389,460,384,611,339"/>
+<area shape="rect" title=" " alt="" coords="618,389,685,414"/>
+<area shape="poly" title=" " alt="" coords="654,341,654,373,649,373,649,341"/>
+<area shape="poly" title=" " alt="" coords="683,339,790,381,788,386,681,344"/>
+<area shape="rect" title=" " alt="" coords="1448,389,1505,414"/>
+<area shape="poly" title=" " alt="" coords="731,333,1433,394,1432,399,731,339"/>
+<area shape="poly" title=" " alt="" coords="1319,115,1038,148,868,170,810,200,756,236,710,274,675,306,672,302,706,270,753,232,807,195,867,165,1037,143,1319,110"/>
+<area shape="poly" title=" " alt="" coords="1425,113,1409,152,1395,175,1379,195,1312,253,1252,288,1186,314,1102,343,1040,363,978,378,873,397,872,392,977,373,1039,358,1100,338,1184,309,1250,283,1309,249,1375,191,1391,172,1404,150,1420,111"/>
+<area shape="poly" title=" " alt="" coords="1431,112,1442,167,1475,373,1470,374,1437,168,1426,113"/>
+<area shape="rect" href="Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="811,315,975,341"/>
+<area shape="poly" title=" " alt="" coords="1421,114,1391,153,1370,176,1346,196,1295,226,1252,242,1148,270,1056,294,970,314,969,309,1055,289,1147,264,1250,237,1293,221,1343,191,1366,172,1387,150,1416,111"/>
+<area shape="rect" href="Emitter_8hpp.html" title="Base interface for all pipeline emitters." alt="" coords="1508,168,1691,193"/>
+<area shape="poly" title=" " alt="" coords="1454,110,1560,159,1558,163,1452,115"/>
+<area shape="poly" title=" " alt="" coords="884,343,853,378,849,375,880,339"/>
+<area shape="poly" title=" " alt="" coords="1583,196,1465,267,1382,309,1294,343,1176,372,1058,390,952,399,873,402,872,397,952,393,1057,384,1175,367,1292,338,1380,304,1463,263,1580,192"/>
+<area shape="poly" title=" " alt="" coords="1600,195,1585,260,1570,302,1548,342,1530,364,1510,381,1506,377,1526,360,1544,339,1565,300,1580,259,1595,193"/>
+<area shape="rect" href="Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="805,241,981,267"/>
+<area shape="poly" title=" " alt="" coords="1508,193,996,244,996,238,1507,188"/>
+<area shape="poly" title=" " alt="" coords="1639,191,1776,234,1775,239,1638,196"/>
+<area shape="poly" title=" " alt="" coords="853,270,708,313,706,308,851,265"/>
+<area shape="poly" title=" " alt="" coords="895,267,895,299,890,299,890,267"/>
+<area shape="poly" title=" " alt="" coords="1676,119,1701,152,1707,173,1705,194,1689,227,1668,258,1618,311,1563,353,1515,383,1513,379,1560,349,1614,307,1664,255,1684,225,1700,193,1702,174,1696,155,1671,122"/>
+<area shape="poly" title=" " alt="" coords="1641,122,1618,156,1614,153,1636,119"/>
+<area shape="poly" title=" " alt="" coords="1561,121,1550,122,1422,126,1208,130,1097,134,999,141,924,153,900,161,885,170,878,182,877,196,883,227,878,228,871,196,873,180,882,166,897,156,923,148,998,136,1097,128,1208,124,1422,121,1550,117,1561,116"/>
+<area shape="poly" title=" " alt="" coords="1683,118,1748,166,1811,228,1807,232,1744,170,1680,122"/>
+<area shape="poly" title=" " alt="" coords="1564,123,1349,171,1347,166,1563,118"/>
+<area shape="poly" title=" " alt="" coords="2312,115,2261,122,1960,153,1706,174,1706,169,1959,148,2260,117,2311,110"/>
+<area shape="poly" title=" " alt="" coords="2308,115,1963,170,1915,197,1859,235,1856,230,1912,192,1961,165,2307,110"/>
+<area shape="poly" title=" " alt="" coords="2059,115,2013,122,1701,168,1700,162,2012,117,2058,110"/>
+<area shape="poly" title=" " alt="" coords="2064,115,1988,136,1949,151,1913,170,1876,199,1848,231,1844,227,1873,195,1910,165,1947,146,1986,131,2062,110"/>
+<area shape="poly" title=" " alt="" coords="693,113,659,300,654,299,688,112"/>
+<area shape="poly" title=" " alt="" coords="710,110,867,230,864,234,707,115"/>
+<area shape="poly" title=" " alt="" coords="778,110,828,117,1251,171,1250,176,827,122,777,115"/>
+<area shape="rect" href="ModuleResolver_8hpp.html" title="Looks up module JSON definitions on the filesystem and parses them." alt="" coords="895,168,1141,193"/>
+<area shape="poly" title=" " alt="" coords="744,110,954,161,953,166,742,115"/>
+<area shape="poly" title=" " alt="" coords="1071,191,1106,203,1136,220,1147,230,1154,242,1155,255,1150,268,1123,301,1090,328,1054,350,1015,367,937,389,873,400,872,394,936,384,1013,362,1051,345,1087,324,1119,298,1145,266,1150,254,1149,243,1143,233,1133,224,1104,208,1070,197"/>
+<area shape="poly" title=" " alt="" coords="1052,191,1170,239,1265,287,1358,338,1439,379,1437,384,1356,343,1262,292,1168,244,1050,196"/>
+<area shape="poly" title=" " alt="" coords="998,196,928,236,926,231,996,192"/>
+<area shape="poly" title=" " alt="" coords="1142,190,1774,245,1773,251,1141,195"/>
+<area shape="rect" title=" " alt="" coords="1005,241,1135,267"/>
+<area shape="poly" title=" " alt="" coords="1029,192,1054,227,1050,230,1025,195"/>
+<area shape="poly" title=" " alt="" coords="2108,196,2044,231,1963,269,1857,311,1747,343,1625,373,1521,395,1520,389,1623,368,1745,338,1855,306,1961,265,2042,226,2105,192"/>
+<area shape="poly" title=" " alt="" coords="2077,197,1884,242,1883,237,2076,191"/>
+<area shape="poly" title=" " alt="" coords="266,121,257,156,258,175,263,192,275,205,301,224,372,271,492,338,550,354,631,369,788,392,788,398,630,374,549,359,490,343,370,275,297,228,272,209,258,195,252,175,252,155,261,119"/>
+<area shape="rect" href="Component_8hpp.html" title="Abstract base class for all TUI components." alt="" coords="425,168,614,193"/>
+<area shape="poly" title=" " alt="" coords="335,118,468,160,466,165,334,123"/>
+<area shape="rect" title=" " alt="" coords="273,168,350,193"/>
+<area shape="poly" title=" " alt="" coords="285,119,301,152,296,155,280,121"/>
+<area shape="poly" title=" " alt="" coords="521,194,522,223,526,263,539,304,549,322,563,339,578,349,601,359,662,375,788,394,788,399,661,380,599,364,576,354,559,343,545,325,534,306,521,264,516,224,516,194"/>
+<area shape="rect" href="Defs_8hpp.html" title="Shared type definitions for the TUI input system." alt="" coords="195,241,300,267"/>
+<area shape="poly" title=" " alt="" coords="474,196,309,239,308,234,473,191"/>
+<area shape="poly" title=" " alt="" coords="258,266,284,300,320,339,349,361,379,379,376,383,346,365,316,343,280,304,253,269"/>
+<area shape="poly" title=" " alt="" coords="224,270,142,310,139,305,222,265"/>
+<area shape="poly" title=" " alt="" coords="444,122,419,155,413,173,415,193,436,243,460,279,491,308,537,338,583,356,651,371,788,393,788,398,650,377,582,361,534,343,488,313,455,282,432,245,410,194,408,173,414,152,439,118"/>
+<area shape="poly" title=" " alt="" coords="479,119,504,153,500,156,475,122"/>
+<area shape="poly" title=" " alt="" coords="427,123,350,162,347,158,424,118"/>
+<area shape="poly" title=" " alt="" coords="907,122,878,144,846,171,817,204,795,242,791,283,801,340,816,374,811,376,796,341,786,283,790,241,813,201,843,167,875,139,904,118"/>
+<area shape="poly" title=" " alt="" coords="1023,118,1088,138,1154,165,1245,218,1331,277,1403,333,1454,377,1451,381,1400,337,1328,281,1242,222,1152,170,1087,143,1022,123"/>
+<area shape="poly" title=" " alt="" coords="1029,118,1251,166,1250,171,1028,123"/>
+<area shape="poly" title=" " alt="" coords="840,122,600,167,599,162,839,117"/>
+<area shape="poly" title=" " alt="" coords="1162,111,1201,150,1227,172,1255,191,1294,206,1327,211,1360,218,1377,226,1396,239,1414,263,1434,299,1469,373,1464,375,1430,301,1410,266,1392,243,1375,231,1358,223,1326,216,1292,211,1253,196,1224,176,1197,154,1159,114"/>
+<area shape="poly" title=" " alt="" coords="1174,110,1264,158,1262,162,1172,115"/>
+<area shape="poly" title=" " alt="" coords="1090,115,1049,122,825,151,629,172,628,167,824,146,1048,117,1089,110"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -220,15 +256,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="amain_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,80,55,106"/>
-<area shape="rect" href="classView.html#a461691bbc52ec6fd50c134b059cb1a80" title="Append a top&#45;level section to the view." alt="" coords="123,5,244,31"/>
-<area shape="poly" title=" " alt="" coords="45,77,71,58,101,40,114,34,116,39,104,45,74,63,48,82"/>
-<area shape="rect" href="namespaceSystem.html#a1b2ff6b39ccecd14ad05226a2b78a6b2" title="Interactively check whether the terminal font supports Nerd Font glyphs." alt="" coords="115,55,252,80"/>
-<area shape="poly" title=" " alt="" coords="55,86,99,79,100,84,56,91"/>
-<area shape="rect" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6" title="Parse command&#45;line arguments into a typed configuration." alt="" coords="143,104,224,130"/>
-<area shape="poly" title=" " alt="" coords="56,94,128,106,128,111,55,99"/>
-<area shape="rect" href="classProjectResolver.html#a06860a32898338ba63bf33b4e32d5fa0" title="Run the full resolution pipeline for config." alt="" coords="103,153,264,179"/>
-<area shape="poly" title=" " alt="" coords="49,104,74,122,104,140,116,145,114,150,101,145,71,127,46,108"/>
+<area shape="rect" title=" " alt="" coords="5,5,55,31"/>
+<area shape="rect" href="classCLI.html#a10b1d98f68dd032ea0cff6b2879282d6" title="Parse command&#45;line arguments into a typed configuration." alt="" coords="103,5,183,31"/>
+<area shape="poly" title=" " alt="" coords="55,16,87,16,87,21,55,21"/>
 </map>
 </div>
 

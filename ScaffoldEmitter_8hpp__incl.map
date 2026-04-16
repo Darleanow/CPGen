@@ -1,0 +1,25 @@
+<map id="include/CPGen/Pipeline/ScaffoldEmitter.hpp" name="include/CPGen/Pipeline/ScaffoldEmitter.hpp">
+<area shape="rect" id="Node000001" title="Emitter that produces the project&#39;s directory scaffold and starter source files." alt="" coords="382,5,540,46"/>
+<area shape="rect" id="Node000002" href="$Emitter_8hpp.html" title="Base interface for all pipeline emitters." alt="" coords="306,94,488,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,48,418,83,414,80,443,45"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="485,168,564,193"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="476,45,502,93,521,152,516,154,497,95,471,48"/>
+<area shape="rect" id="Node000003" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="234,168,410,193"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,122,347,159,343,155,382,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="301,315,354,341"/>
+<area shape="poly" id="edge11_Node000002_Node000007" title=" " alt="" coords="406,119,419,147,431,185,435,227,432,248,424,268,400,296,370,314,367,309,397,292,420,266,427,247,430,227,426,186,414,149,401,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,315,63,341"/>
+<area shape="poly" id="edge12_Node000002_Node000008" title=" " alt="" coords="306,121,241,135,173,159,108,194,79,217,54,243,40,271,36,300,31,299,35,269,49,240,75,213,105,189,171,154,240,130,305,116"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="420,118,491,157,488,162,417,123"/>
+<area shape="rect" id="Node000004" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="63,241,221,267"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,196,188,238,186,233,290,191"/>
+<area shape="rect" id="Node000009" href="$Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="245,241,410,267"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="326,193,328,226,323,226,320,194"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="185,315,246,341"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="156,265,194,302,190,306,152,269"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="94,315,161,341"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="142,268,136,300,130,299,137,267"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="174,265,287,308,285,313,172,270"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="125,270,67,308,64,304,122,265"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="330,267,330,299,325,299,325,267"/>
+</map>

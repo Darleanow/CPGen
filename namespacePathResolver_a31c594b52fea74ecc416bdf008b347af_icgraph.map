@@ -1,0 +1,5 @@
+<map id="PathResolver::resolveTemplatePaths" name="PathResolver::resolveTemplatePaths">
+<area shape="rect" id="Node000001" title="Build the ordered list of template search directories." alt="" coords="267,5,468,46"/>
+<area shape="rect" id="Node000002" href="$namespacePathResolver.html#a4963220b4cdcb192fada96a3476d3250" title="Return the first existing template root directory." alt="" coords="5,13,219,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,28,219,28,219,23,251,23"/>
+</map>

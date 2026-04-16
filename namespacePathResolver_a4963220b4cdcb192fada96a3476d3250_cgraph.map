@@ -1,0 +1,7 @@
+<map id="PathResolver::findTemplatesRoot" name="PathResolver::findTemplatesRoot">
+<area shape="rect" id="Node000001" title="Return the first existing template root directory." alt="" coords="5,13,219,39"/>
+<area shape="rect" id="Node000002" href="$namespacePathResolver.html#a31c594b52fea74ecc416bdf008b347af" title="Build the ordered list of template search directories." alt="" coords="267,5,468,46"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,23,251,23,251,28,219,28"/>
+<area shape="rect" id="Node000003" href="$namespacePathResolver.html#af03c31b88b602311ad2326eb39529742" title="Resolve the absolute path of the running executable." alt="" coords="516,13,710,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,23,500,23,500,28,469,28"/>
+</map>

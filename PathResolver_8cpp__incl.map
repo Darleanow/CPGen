@@ -1,0 +1,18 @@
+<map id="src/System/PathResolver.cpp" name="src/System/PathResolver.cpp">
+<area shape="rect" id="Node000001" title="Implements the template directory resolution helpers." alt="" coords="280,5,473,31"/>
+<area shape="rect" id="Node000002" href="$PathResolver_8hpp.html" title="Shared utilities for locating CPGen&#39;s template directories." alt="" coords="5,79,223,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="333,34,174,77,172,72,331,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="204,153,261,178"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="354,34,321,54,288,81,265,110,247,140,243,137,260,107,284,77,318,50,351,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="298,79,362,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="371,33,348,67,344,64,367,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="386,79,463,105"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="387,30,410,64,406,67,382,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="487,79,541,105"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="401,29,478,69,476,74,399,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="565,79,631,105"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="415,29,551,73,549,78,413,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="74,153,154,178"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,105,117,137,111,137,111,105"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="135,103,201,142,198,147,133,107"/>
+</map>

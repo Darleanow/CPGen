@@ -1,0 +1,28 @@
+<map id="include/CPGen/Pipeline/CMakeEmitter.hpp" name="include/CPGen/Pipeline/CMakeEmitter.hpp">
+<area shape="rect" id="Node000001" title="Emitter that produces a complete CMakeLists.txt for a generated project." alt="" coords="144,5,302,46"/>
+<area shape="rect" id="Node000002" href="$Config_8hpp.html" title="Project configuration types produced by the CLI and consumed by the resolvers." alt="" coords="5,241,164,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,48,178,70,156,96,136,129,119,165,95,227,90,226,114,163,131,127,152,92,174,66,197,44"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="241,315,294,341"/>
+<area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="222,47,216,88,212,143,215,205,228,266,248,301,244,304,223,268,210,206,207,143,211,87,217,46"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="600,315,657,341"/>
+<area shape="poly" id="edge16_Node000001_Node000006" title=" " alt="" coords="303,29,385,36,474,48,553,66,583,78,605,92,638,131,648,150,653,171,655,214,648,267,641,301,635,299,643,267,650,214,648,171,643,152,634,134,601,96,581,83,551,71,473,53,385,41,302,34"/>
+<area shape="rect" id="Node000007" href="$Module_8hpp.html" title="Defines the FetchContent descriptor used by module definitions." alt="" coords="238,241,403,267"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="224,46,227,114,235,154,251,192,267,213,287,230,284,234,263,217,246,195,230,156,222,115,219,46"/>
+<area shape="rect" id="Node000008" href="$Emitter_8hpp.html" title="Base interface for all pipeline emitters." alt="" coords="409,94,592,120"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="293,44,444,87,442,92,292,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="10,315,71,341"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,269,58,303,54,300,75,266"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="95,315,162,341"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="94,266,115,300,111,303,89,269"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="116,265,227,308,225,313,115,270"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="165,263,584,318,584,323,164,269"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="314,269,287,304,283,301,310,266"/>
+<area shape="poly" id="edge13_Node000008_Node000005" title=" " alt="" coords="519,118,535,133,551,152,559,173,555,194,532,225,503,251,471,272,437,288,368,312,310,324,309,319,367,307,435,283,469,267,500,246,528,221,550,192,554,173,546,155,532,137,515,122"/>
+<area shape="poly" id="edge14_Node000008_Node000006" title=" " alt="" coords="534,118,569,137,599,166,616,199,626,235,632,299,627,300,621,236,611,201,594,169,565,141,532,123"/>
+<area shape="rect" id="Node000009" href="$Resolved_8hpp.html" title="Output types produced by the resolver pipeline." alt="" coords="260,168,437,193"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="476,123,389,163,387,158,474,118"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="461,168,540,193"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="503,120,503,152,498,152,498,120"/>
+<area shape="poly" id="edge10_Node000009_Node000002" title=" " alt="" coords="304,196,145,239,143,234,303,191"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="346,195,333,228,328,226,341,193"/>
+</map>

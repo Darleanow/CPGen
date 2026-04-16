@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['from_5fjson_0',['from_json',['../PreferencesManager_8cpp.html#a2e0a18fafb71dc220945e61570383103',1,'PreferencesManager.cpp']]]
+  ['findtemplatesroot_0',['findTemplatesRoot',['../namespacePathResolver.html#a4963220b4cdcb192fada96a3476d3250',1,'PathResolver']]]
 ];
