@@ -1,0 +1,12 @@
+{
+  "name": "fmt",
+  "fetch_content": {
+    "module_name": "fmt",
+    "url": "https://github.com/fmtlib/fmt/archive/refs/tags/11.1.4.zip"
+  },
+  "targets": {
+    "main": {
+      "link": ["fmt::fmt"]
+    }
+  }
+}

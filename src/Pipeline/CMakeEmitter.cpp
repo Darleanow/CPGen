@@ -14,30 +14,22 @@
 #include <format>
 #include <stdexcept>
 
-// ---------------------------------------------------------------------------
-// Public
-// ---------------------------------------------------------------------------
-
 std::vector<OutputFile>
 CMakeEmitter::emit(const ResolvedProject &project) {
   return {{"CMakeLists.txt", assemble(project)}};
 }
 
-// ---------------------------------------------------------------------------
-// Assembler
-// ---------------------------------------------------------------------------
-
 std::string CMakeEmitter::assemble(const ResolvedProject &project) {
   std::string out;
 
-  // Header ----------------------------------------------------------------
+  // Header
   out += minimumRequired(4.0F) + "\n";
   out += projectHeader(project.config.name) + "\n\n";
   out += cxxStandard(project.config.standard) + "\n";
   out += "set(CMAKE_CXX_EXTENSIONS OFF)\n";
   out += "set(CMAKE_EXPORT_COMPILE_COMMANDS ON)\n\n";
 
-  // FetchContent -----------------------------------------------------------
+  // FetchContent
   if (!project.modules.empty()) {
     out += fetchContentInclude() + "\n\n";
 
@@ -53,21 +45,21 @@ std::string CMakeEmitter::assemble(const ResolvedProject &project) {
     }
   }
 
-  // Compile options --------------------------------------------------------
+  // Compile options
   out += compileOptions() + "\n\n";
 
-  // Clang-tidy -------------------------------------------------------------
+  // Clang-tidy
   if (project.config.tooling.clang_tidy) {
     out += clangTidyBlock() + "\n\n";
   }
 
-  // Main executable --------------------------------------------------------
+  // Main executable
   out += targetDeclaration(TargetType::Executable, project.config.name,
                            {"src/main.cpp"}) +
          "\n\n";
   out += includeDirectories(project.config.name) + "\n";
 
-  // Injected targets -------------------------------------------------------
+  // Injected targets
   bool has_tests = false;
 
   for (const auto &target : project.targets) {
@@ -83,7 +75,7 @@ std::string CMakeEmitter::assemble(const ResolvedProject &project) {
     }
   }
 
-  // Testing ----------------------------------------------------------------
+  // Testing
   if (has_tests) {
     out += "\n" + enableTesting() + "\n";
   }
@@ -91,10 +83,7 @@ std::string CMakeEmitter::assemble(const ResolvedProject &project) {
   return out;
 }
 
-// ---------------------------------------------------------------------------
 // Injection helper
-// ---------------------------------------------------------------------------
-
 std::string
 CMakeEmitter::applyInjections(const std::vector<TargetInjection> &injections,
                               const std::string &target_name,       // NOLINT(bugprone-easily-swappable-parameters)
@@ -126,10 +115,7 @@ CMakeEmitter::applyInjections(const std::vector<TargetInjection> &injections,
   return out;
 }
 
-// ---------------------------------------------------------------------------
 // Target helpers
-// ---------------------------------------------------------------------------
-
 std::string CMakeEmitter::cmakeTargetName(const ResolvedTarget &target,
                                           const std::string &project_name) {
   switch (target.type) {
@@ -156,9 +142,7 @@ CMakeEmitter::conventionalSources(const ResolvedTarget &target) {
   }
 }
 
-// ---------------------------------------------------------------------------
 // Fragment generators (absorbed from CMakeProvider)
-// ---------------------------------------------------------------------------
 
 std::string CMakeEmitter::cppStandardString(CppStandard standard) noexcept {
   switch (standard) {

@@ -41,7 +41,6 @@ add_library(
   src/System/PathResolver.cpp
   src/Resolvers/ModuleResolver.cpp
   src/Resolvers/ProjectResolver.cpp
-  src/Generators/CMakeGenerator.cpp
   src/Pipeline/CMakeEmitter.cpp
   src/Pipeline/ScaffoldEmitter.cpp
   src/Pipeline/ToolingEmitter.cpp

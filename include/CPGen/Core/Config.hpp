@@ -13,32 +13,6 @@
 #include <vector>
 
 /**
- * @struct ProjectOptions
- * @brief Flat configuration bag used by the interactive TUI mode.
- *
- * Populated incrementally by the TUI widgets (Checkbox, Input) as the user
- * fills in the form.  This is separate from @ref ProjectConfig, which is the
- * typed output of the CLI flag parser.
- */
-struct ProjectOptions {
-  bool is_tui_mode =
-      false;            ///< Whether the application was launched in TUI mode.
-  bool has_git = false; ///< Whether to initialise a Git repository.
-
-  std::string path; ///< Absolute path to the directory where the project will
-                    ///< be generated.
-  std::string name; ///< Name of the project (becomes the leaf directory name).
-
-  bool use_template = false; ///< Whether to apply a named project template.
-  std::optional<std::string>
-      template_name; ///< Template identifier, valid only when @c use_template
-                     ///< is @c true.
-
-  std::vector<std::string>
-      modules_list; ///< Additional dependency modules requested by the user.
-};
-
-/**
  * @enum TargetType
  * @brief Describes the CMake target kind to generate for a build target.
  */

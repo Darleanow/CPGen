@@ -1,2 +1,26 @@
-build
-.cache
+# Build
+build/
+cmake-build-*/
+
+# IDE / tooling caches
+.cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Compilation artifacts
+*.o
+*.a
+*.so
+*.dylib
+
+# CMake generated
+compile_commands.json
+CMakeUserPresets.json
+
+# Doxygen output
+docs/
+
+# Gemini
+.gemini/

@@ -20,10 +20,6 @@
 ScaffoldEmitter::ScaffoldEmitter(std::filesystem::path template_root)
     : m_template_root(std::move(template_root)) {}
 
-// ---------------------------------------------------------------------------
-// Public
-// ---------------------------------------------------------------------------
-
 std::vector<OutputFile>
 ScaffoldEmitter::emit(const ResolvedProject &project) {
   std::vector<OutputFile> files;
@@ -47,10 +43,6 @@ ScaffoldEmitter::emit(const ResolvedProject &project) {
 
   return files;
 }
-
-// ---------------------------------------------------------------------------
-// Generators
-// ---------------------------------------------------------------------------
 
 std::string ScaffoldEmitter::generateMainCpp(const std::string &project_name) {
   return "#include <iostream>\n"

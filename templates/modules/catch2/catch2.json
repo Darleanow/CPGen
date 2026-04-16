@@ -1,0 +1,14 @@
+{
+  "name": "catch2",
+  "fetch_content": {
+    "module_name": "Catch2",
+    "url": "https://github.com/catchorg/Catch2/archive/refs/tags/v3.8.0.zip"
+  },
+  "targets": {
+    "test": {
+      "link": ["Catch2::Catch2WithMain"],
+      "cmake_include": "Catch",
+      "post_link": "catch_discover_tests(${TARGET_NAME})"
+    }
+  }
+}

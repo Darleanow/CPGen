@@ -1,0 +1,12 @@
+{
+  "name": "spdlog",
+  "fetch_content": {
+    "module_name": "spdlog",
+    "url": "https://github.com/gabime/spdlog/archive/refs/tags/v1.15.3.zip"
+  },
+  "targets": {
+    "main": {
+      "link": ["spdlog::spdlog"]
+    }
+  }
+}

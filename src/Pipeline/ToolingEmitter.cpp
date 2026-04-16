@@ -18,10 +18,6 @@
 ToolingEmitter::ToolingEmitter(std::filesystem::path template_root)
     : m_template_root(std::move(template_root)) {}
 
-// ---------------------------------------------------------------------------
-// Public
-// ---------------------------------------------------------------------------
-
 std::vector<OutputFile>
 ToolingEmitter::emit(const ResolvedProject &project) {
   std::vector<OutputFile> files;
@@ -36,9 +32,19 @@ ToolingEmitter::emit(const ResolvedProject &project) {
   }
 
   if (project.config.tooling.clang_format) {
-    const auto src =
-        m_template_root / "features" / "clang-format" / ".clang-format";
-    auto content = readFile(src);
+    std::string content;
+
+    if (project.config.tooling.clang_format_preset.has_value()) {
+      // Generate a .clang-format from the named preset
+      content = "---\nBasedOnStyle: " +
+                *project.config.tooling.clang_format_preset + "\n";
+    } else {
+      // Fall back to the static template file
+      const auto src =
+          m_template_root / "features" / "clang-format" / ".clang-format";
+      content = readFile(src);
+    }
+
     if (!content.empty()) {
       files.push_back({".clang-format", std::move(content)});
     }
@@ -46,10 +52,6 @@ ToolingEmitter::emit(const ResolvedProject &project) {
 
   return files;
 }
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 
 std::string ToolingEmitter::readFile(const std::filesystem::path &path) {
   if (!std::filesystem::exists(path)) {
