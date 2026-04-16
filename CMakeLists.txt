@@ -38,9 +38,14 @@ add_library(
   CPGenSource
   src/CLI/CLI.cpp
   src/System/System.cpp
+  src/System/PathResolver.cpp
   src/Resolvers/ModuleResolver.cpp
   src/Resolvers/ProjectResolver.cpp
-  src/Providers/CMakeProvider.cpp
+  src/Generators/CMakeGenerator.cpp
+  src/Pipeline/CMakeEmitter.cpp
+  src/Pipeline/ScaffoldEmitter.cpp
+  src/Pipeline/ToolingEmitter.cpp
+  src/Pipeline/GenerationPipeline.cpp
 )
 
 target_include_directories(CPGenSource
@@ -61,13 +66,13 @@ target_link_libraries(CPGenSource PUBLIC nlohmann_json::nlohmann_json)
 
 # Debug symbols for project code only — dependencies compile without -g
 foreach(target IN ITEMS CPGenSource CPGenTUI)
-  target_compile_options(${target} PRIVATE -g)
+  target_compile_options(${target} PRIVATE -g3)
 endforeach()
 
 add_executable(CPGen src/main.cpp)
 
 target_link_libraries(CPGen PRIVATE CPGenSource CPGenTUI)
-target_compile_options(CPGen PRIVATE -g)
+target_compile_options(CPGen PRIVATE -g3)
 
 add_custom_command(
   TARGET CPGen POST_BUILD
@@ -82,12 +87,14 @@ add_executable(test_suite
   tests/UTCLI.cpp
   tests/UTModuleResolver.cpp
   tests/UTProjectResolver.cpp
-  tests/UTCMakeProvider.cpp
+  tests/UTCMakeEmitter.cpp
+  tests/UTScaffoldEmitter.cpp
+  tests/UTToolingEmitter.cpp
+  tests/UTGenerationPipeline.cpp
 )
 target_include_directories(test_suite PRIVATE include)
 
 target_link_libraries(test_suite PRIVATE GTest::gtest_main CPGenSource)
-target_compile_options(test_suite PRIVATE -g)
 
 include(GoogleTest)
 gtest_discover_tests(test_suite)

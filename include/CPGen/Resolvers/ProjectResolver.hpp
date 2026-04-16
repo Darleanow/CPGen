@@ -15,7 +15,6 @@
 #include "CPGen/Core/Resolved.hpp"
 #include "CPGen/Resolvers/ModuleResolver.hpp"
 #include <memory>
-#include <ostream>
 
 /**
  * @class ProjectResolver
@@ -72,36 +71,3 @@ private:
       m_module_resolver; ///< Owned module resolver instance.
 };
 
-/**
- * @brief Debug stream operator for @ref ResolvedProject.
- *
- * Dumps a human-readable representation of the resolved project to @p os,
- * including config metadata, all modules (with optional FetchContent info),
- * and all generated targets.
- *
- * @param os   Output stream to write to.
- * @param proj The resolved project to dump.
- * @return @p os for chaining.
- *
- * @note This overload is intended for development/debugging only and will be
- *       removed once the generator pipeline is complete.
- */
-inline std::ostream &operator<<(std::ostream &os, const ResolvedProject &proj) {
-  os << "Begin dump of project config\n"
-     << "Name: " << proj.config.name << "\nPath: " << proj.config.path;
-  os << "\nBegin dump of modules: \n";
-
-  for (const auto &mod : proj.modules) {
-    os << "Name: " << mod.name;
-    if (mod.fetch_content.has_value()) {
-      os << "\nFetchContent name: " << mod.fetch_content->module_name
-         << "\nFetchContent URL:" << mod.fetch_content->url;
-    }
-  }
-  os << "\nBegin dump of deduced targets: \n";
-  for (const auto &target : proj.targets) {
-    os << "Name: " << target.name << "\nPath: " << target.path;
-  }
-
-  return os;
-}

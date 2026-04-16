@@ -63,24 +63,10 @@ public:
 
 private:
   /**
-   * @brief Populate @ref m_resolved_paths by checking well-known install
-   * locations.
-   *
-   * Also calls @ref addDevModulePath to include the in-tree @c templates/
-   * directory when running from a build directory.
+   * @brief Populate @ref m_resolved_paths via @ref PathResolver.
    * @throws std::runtime_error If no candidate directory is found.
    */
   void resolvePaths();
-
-  /**
-   * @brief Append the @c templates/ directory located next to the running
-   * executable.
-   *
-   * Uses @c /proc/self/exe (Linux only) to determine the executable's location.
-   * If the path does not exist it is silently ignored.
-   * @throws std::runtime_error If @c readlink("/proc/self/exe") fails.
-   */
-  void addDevModulePath();
 
   /**
    * @brief Read and parse a single module JSON file from @p path.

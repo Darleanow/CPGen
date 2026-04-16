@@ -20,6 +20,7 @@ ResolvedProject ProjectResolver::resolve(const ProjectConfig &config) {
     project.modules.push_back(module);
 
     for (const auto &injection : injections) {
+      project.injections.push_back(injection);
       if (seen.insert(buildTarget(injection, config)).second) {
         project.targets.push_back(buildTarget(injection, config));
       }

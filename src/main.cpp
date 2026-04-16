@@ -1,6 +1,11 @@
 #include "CPGen/CLI/CLI.hpp"
 #include "CPGen/Core/Config.hpp"
+#include "CPGen/Pipeline/CMakeEmitter.hpp"
+#include "CPGen/Pipeline/GenerationPipeline.hpp"
+#include "CPGen/Pipeline/ScaffoldEmitter.hpp"
+#include "CPGen/Pipeline/ToolingEmitter.hpp"
 #include "CPGen/Resolvers/ProjectResolver.hpp"
+#include "CPGen/System/PathResolver.hpp"
 #include "CPGen/System/System.hpp"
 #include "CPGen/TUI/Components/Basic/Checkbox.hpp"
 #include "CPGen/TUI/Components/Basic/Input.hpp"
@@ -8,10 +13,11 @@
 #include "CPGen/TUI/Misc/Ascii.hpp"
 #include "CPGen/TUI/View/View.hpp"
 
+#include <exception>
+#include <filesystem>
 #include <iostream>
 #include <locale>
 #include <memory>
-#include <exception>
 #include <string>
 #include <utility>
 #include <variant>
@@ -23,8 +29,19 @@ int main(int argc, char **argv) {
 
     if (std::holds_alternative<ProjectConfig>(opts)) {
       ProjectResolver resolver;
-      auto res = resolver.resolve(std::get<ProjectConfig>(opts));
-      std::cout << res << "\n";
+      auto project = resolver.resolve(std::get<ProjectConfig>(opts));
+
+      const auto template_root = PathResolver::findTemplatesRoot();
+      const auto output_dir = std::filesystem::path(project.config.path) /
+                              project.config.name;
+
+      GenerationPipeline pipeline;
+      pipeline.addEmitter(std::make_unique<CMakeEmitter>());
+      pipeline.addEmitter(std::make_unique<ScaffoldEmitter>(template_root));
+      pipeline.addEmitter(std::make_unique<ToolingEmitter>(template_root));
+      pipeline.execute(project, output_dir);
+
+      std::cout << "Project generated at: " << output_dir << "\n";
       return 0;
     }
 
@@ -38,9 +55,10 @@ int main(int argc, char **argv) {
 
     auto group =
         std::make_unique<ComponentGroup>("Project Options", Ascii::GEAR_ICON);
-    group->addChild(std::make_unique<Checkbox>(
-        "Enable git ?",
-        [&options](bool checked) { options.has_git = checked; }));
+    group->addChild(
+        std::make_unique<Checkbox>("Enable git ?", [&options](bool checked) {
+          options.has_git = checked;
+        }));
     group->addChild(
         std::make_unique<Checkbox>("Use template ?", [&options](bool checked) {
           options.use_template = checked;

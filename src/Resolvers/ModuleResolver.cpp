@@ -1,12 +1,12 @@
 #include "CPGen/Resolvers/ModuleResolver.hpp"
 #include "CPGen/Core/Resolved.hpp"
-#include <cstddef>
+#include "CPGen/System/PathResolver.hpp"
+
 #include <filesystem>
 #include <fstream>
 #include <nlohmann/json.hpp>
 #include <stdexcept>
 #include <string>
-#include <unistd.h>
 #include <vector>
 
 ModuleResolver::ModuleResolver() { resolvePaths(); }
@@ -71,43 +71,5 @@ ModuleResolver::readInjection(const nlohmann::json &json_obj) {
 }
 
 void ModuleResolver::resolvePaths() {
-  for (const auto &path : {
-           std::filesystem::path("~/.config/cpgen/templates/modules"),
-           std::filesystem::path("/usr/local/share/cpgen/templates/modules"),
-           std::filesystem::path("/usr/share/cpgen/templates/modules"),
-       }) {
-    if (std::filesystem::exists(path)) {
-      m_resolved_paths.push_back(path);
-    }
-  }
-
-  addDevModulePath();
-
-  if (m_resolved_paths.empty()) {
-    throw std::runtime_error("No valid path found for configuration.");
-  }
-}
-
-// Dev related todo(Darleanow): Remove this.
-// todo(Darleanow): Add win support
-void ModuleResolver::addDevModulePath() {
-  std::vector<char> buf(512);
-  std::filesystem::path dev_path;
-
-  while (true) {
-    const ssize_t len = readlink("/proc/self/exe", buf.data(), buf.size() - 1);
-    if (len == -1) {
-      throw std::runtime_error("readlink failed");
-    }
-    if (len < static_cast<ssize_t>(buf.size() - 1)) {
-      dev_path = std::string(buf.data(), static_cast<std::size_t>(len));
-      break;
-    }
-    buf.resize(buf.size() * 2);
-  }
-
-  dev_path = dev_path.parent_path() / "templates";
-  if (std::filesystem::exists(dev_path)) {
-    m_resolved_paths.push_back(dev_path);
-  }
+  m_resolved_paths = PathResolver::resolveTemplatePaths();
 }

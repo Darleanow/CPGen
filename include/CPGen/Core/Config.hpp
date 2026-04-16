@@ -90,6 +90,6 @@ struct ProjectConfig {
       CppStandard::Cpp20; ///< C++ language standard. Defaults to C++20.
   std::vector<std::string> modules; ///< Dependency module identifiers (e.g. @c
                                     ///< "gtest", @c "spdlog").
-  std::vector<TargetType> targets;  ///< Build target kinds to generate.
+  std::vector<TargetType> targets; ///< Build target kinds to generate.
   ToolingConfig tooling;            ///< Optional tooling configuration.
 };
